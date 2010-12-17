@@ -1,0 +1,18 @@
+Welcome,
+
+Version 2.x
+
+Full installer downoads available at:
+https://github.com/csharptest/JiraSVN/archives/master
+
+
+
+
+
+Older version (1.10.607.213)
+
+Installers:
+http://code.google.com/p/csharptest-net/downloads/list?can=1&q=Subversion+Jira
+
+Source code:
+svn checkout http://csharptest-net.googlecode.com/svn/tags/1.10.607.213/src/Tools/SvnPlugin SvnPlugin

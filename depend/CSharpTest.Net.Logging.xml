@@ -1,0 +1,610 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CSharpTest.Net.Logging</name>
+    </assembly>
+    <members>
+        <member name="T:CSharpTest.Net.Utils.ProcessInfo">
+            <summary>
+            Utility class for obtaining information about the currently running
+            process and AppDomain
+            </summary>
+        </member>
+        <member name="F:CSharpTest.Net.Utils.ProcessInfo.UNKNOWN">
+            <summary> Returns the string '[Unknown]'</summary>
+        </member>
+        <member name="F:CSharpTest.Net.Utils.ProcessInfo.ProcessId">
+            <summary> Returns the current process id </summary>
+        </member>
+        <member name="F:CSharpTest.Net.Utils.ProcessInfo.ProcessName">
+            <summary> Returns the current process name without an extension </summary>
+        </member>
+        <member name="F:CSharpTest.Net.Utils.ProcessInfo.ProcessFile">
+            <summary> Returns the file path to the exe for this process </summary>
+        </member>
+        <member name="F:CSharpTest.Net.Utils.ProcessInfo.AppDomainName">
+            <summary> Returns the current AppDomain's friendly name </summary>
+        </member>
+        <member name="F:CSharpTest.Net.Utils.ProcessInfo.EntryAssembly">
+            <summary> Returns the entry-point assembly or the highest stack assembly </summary>
+        </member>
+        <member name="F:CSharpTest.Net.Utils.ProcessInfo.ProductVersion">
+            <summary> Returns the product version of the entry assembly </summary>
+        </member>
+        <member name="F:CSharpTest.Net.Utils.ProcessInfo.ProductName">
+            <summary> Returns the product name of the entry assembly </summary>
+        </member>
+        <member name="F:CSharpTest.Net.Utils.ProcessInfo.CompanyName">
+            <summary> Returns the company name of the entry assembly </summary>
+        </member>
+        <member name="F:CSharpTest.Net.Utils.ProcessInfo.IsDebugging">
+            <summary> Returns true if a debugger is attached to the process </summary>
+        </member>
+        <member name="F:CSharpTest.Net.Utils.ProcessInfo.RegistrySoftwarePath">
+            <summary>
+            Returns the HKCU or HKLM path for this software application based
+            on the process that is running: Software\{CompanyName}\{ProductName}
+            </summary>
+        </member>
+        <member name="F:CSharpTest.Net.Utils.ProcessInfo.ApplicationData">
+            <summary>
+            Returns the roaming user profile path for the currently running software
+            application: {SpecialFolder.ApplicationData}\{CompanyName}\{ProductName}
+            </summary>
+        </member>
+        <member name="F:CSharpTest.Net.Utils.ProcessInfo.LocalApplicationData">
+            <summary>
+            Returns the non-roaming user profile path for the currently running software
+            application: {SpecialFolder.LocalApplicationData}\{CompanyName}\{ProductName}
+            </summary>
+        </member>
+        <member name="F:CSharpTest.Net.Utils.ProcessInfo.DefaultLogFile">
+            <summary>
+            Returns a default log file name derived as:
+            {SpecialFolder.LocalApplicationData}\{CompanyName}\{ProductName}\{AppDomainName}.txt
+            </summary>
+        </member>
+        <member name="M:CSharpTest.Net.Utils.ProcessInfo.#ctor">
+            <summary>
+            This is some ugly code, the intent is to be able to answer the above questions in 
+            a wide array of environments.  I admit now this may fail eventually.
+            </summary>
+        </member>
+        <member name="M:CSharpTest.Net.Utils.ProcessInfo.SafeName(System.String)">
+            <summary>
+            Copy from StringUtils
+            </summary>
+        </member>
+        <member name="T:CSharpTest.Net.Logging.LogLevels">
+            <summary>
+            Defines the various levels of logging
+            </summary>
+        </member>
+        <member name="F:CSharpTest.Net.Logging.LogLevels.None">
+            <summary> Logging is disabled </summary>
+        </member>
+        <member name="F:CSharpTest.Net.Logging.LogLevels.Critical">
+            <summary> Logs a Fatal error </summary>
+        </member>
+        <member name="F:CSharpTest.Net.Logging.LogLevels.Error">
+            <summary> Logs an Error </summary>
+        </member>
+        <member name="F:CSharpTest.Net.Logging.LogLevels.Warning">
+            <summary> Logs a Warning </summary>
+        </member>
+        <member name="F:CSharpTest.Net.Logging.LogLevels.Info">
+            <summary> Logs an Informational message </summary>
+        </member>
+        <member name="F:CSharpTest.Net.Logging.LogLevels.Verbose">
+            <summary> Logs a Verbose message </summary>
+        </member>
+        <member name="T:CSharpTest.Net.Logging.LogOutputs">
+            <summary>
+            Defines the various possble outputs of the logging system
+            </summary>
+        </member>
+        <member name="F:CSharpTest.Net.Logging.LogOutputs.None">
+            <summary> No default destination (Event will still fire if anyone is subscribed) </summary>
+        </member>
+        <member name="F:CSharpTest.Net.Logging.LogOutputs.TraceWrite">
+            <summary> Outputs messages to the System.Diagnostics.Trace.WriteLine() method </summary>
+            <remarks> Note: Always on by default when System.Diagnostics.Debugger.IsAttached == true </remarks>
+        </member>
+        <member name="F:CSharpTest.Net.Logging.LogOutputs.LogFile">
+            <summary> Outputs messages to this process' log file </summary>
+            <remarks> Note: Always on by default to \Users\{Current}\AppData\Local\{Process Name}\{Process File Name}.log </remarks>
+        </member>
+        <member name="F:CSharpTest.Net.Logging.LogOutputs.Console">
+            <summary> Outputs messages to the Console.[Out/Error].WriteLine() methods </summary>
+            <remarks> Note: Always on by default when running as a console application </remarks>
+        </member>
+        <member name="F:CSharpTest.Net.Logging.LogOutputs.AspNetTrace">
+            <summary> Outputs messages to the System.Web.HttpContext.Current.Trace.[Write/Warn]() methods </summary>
+            <remarks> Note: Always on by default when /configuration/system.web/trace/@enabled == true </remarks>
+        </member>
+        <member name="F:CSharpTest.Net.Logging.LogOutputs.EventLog">
+            <summary> Outputs messages to the event log </summary>
+            <remarks> Note: Always on by default for Critical errors only </remarks>
+        </member>
+        <member name="F:CSharpTest.Net.Logging.LogOutputs.All">
+            <summary> Writes to all LogOutput types available </summary>
+        </member>
+        <member name="T:CSharpTest.Net.Logging.LogOptions">
+            <summary>
+            Performance and behavior related LogOption for the log system.
+            </summary>
+        </member>
+        <member name="F:CSharpTest.Net.Logging.LogOptions.Default">
+            <summary>
+            These are the default options used.  Addtionally, if your debugging or using asp.net trace,
+            the following will also be set: LogAddFileInfo
+            </summary>
+        </member>
+        <member name="F:CSharpTest.Net.Logging.LogOptions.None">
+            <summary>
+            No LogOption enabled
+            </summary>
+        </member>
+        <member name="F:CSharpTest.Net.Logging.LogOptions.LogImmediateCaller">
+            <summary>
+            Calls new StackFrame( n ) to retrieve the immediate caller of the log routine and pass 
+            it along to all logging information.
+            </summary>
+        </member>
+        <member name="F:CSharpTest.Net.Logging.LogOptions.LogNearestCaller">
+            <summary>
+            Starting with n frames back walk back until the calling class is not decorated with the
+            ////[System.Diagnostics.DebuggerNonUserCode()] attribute.  This allows you to create wrapper
+            classes that provide logging but are not considered to be the point of origin in the log.
+            Can be slightly slower as this now reflects each class' attributes and addtionally may 
+            gather more than one stack frame.
+            </summary>
+        </member>
+        <member name="F:CSharpTest.Net.Logging.LogOptions.LogAddFileInfo">
+            <summary>
+            If this is specified the file and line number where the log call was made will be available
+            to log LogOutput.
+            </summary>
+        </member>
+        <member name="F:CSharpTest.Net.Logging.LogOptions.ConsoleColors">
+            <summary>
+            Uses a different color based on the level of the log message, Use ONLY nothing else is
+            writting to the console.
+            </summary>
+        </member>
+        <member name="F:CSharpTest.Net.Logging.LogOptions.LogAddAssemblyInfo">
+            <summary>
+            Populate the MethodAssemblyVersion and MethodAssembly properties for logging. Requires
+            at least the LogImmediateCaller information.
+            </summary>
+        </member>
+        <member name="F:CSharpTest.Net.Logging.LogOptions.GZipLogFileOnRoll">
+            <summary>
+            GZip and append a .gz extension to log files as they are rolled, the current log file
+            will remain unzipped.
+            </summary>
+        </member>
+        <member name="T:CSharpTest.Net.Logging.Implementation.MessageQueue">
+            <summary>
+            NOTE TO READER:
+            
+            I will appologize up front for this library.  I don't normally condone this type of proceedural
+            and repetitive coding.  This is ONLY being done in this library to reduce the temporal cost of
+            using it.  
+            In a nutshell: this being easy to maintain is not as important as library performance.
+            </summary>
+        </member>
+        <member name="F:CSharpTest.Net.Logging.Implementation.MessageQueue.ListenerSync">
+            <summary> This allows for async subscriptions to InternalLogWrite event </summary>
+        </member>
+        <member name="F:CSharpTest.Net.Logging.Implementation.MessageQueue.__eventCounter">
+            <summary> Keeps a running counter of events and assigns a unique one to each log entry</summary>
+        </member>
+        <member name="F:CSharpTest.Net.Logging.Implementation.MessageQueue._logFile">
+            <summary> If logging configured to disk, we manage the currently open log file here</summary>
+        </member>
+        <member name="F:CSharpTest.Net.Logging.Implementation.MessageQueue.LogFileSync">
+            <summary> Used to syncronize access to log file while writting log entries and changing the log file</summary>
+        </member>
+        <member name="M:CSharpTest.Net.Logging.Implementation.MessageQueue.WorkerThreadProc">
+            <summary>
+            This thread proc manages the pumping of messages to the listeners, this is
+            ONLY available when StartThreading() has been called via constructor of a
+            ThreadingControl() object, (client calls Log.AppStart( name ))
+            </summary>
+        </member>
+        <member name="M:CSharpTest.Net.Logging.Implementation.MessageQueue.StartThreading">
+            <summary>
+            This is NOT thread safe, locking is done through ThreadingControl
+            </summary>
+        </member>
+        <member name="M:CSharpTest.Net.Logging.Implementation.MessageQueue.StopThreading">
+            <summary>
+            This is NOT thread safe, locking is done through ThreadingControl
+            </summary>
+        </member>
+        <member name="E:CSharpTest.Net.Logging.Implementation.MessageQueue.InternalLogWrite">
+            <summary> This is the actual event list we will dispatch to when logs are written </summary>
+        </member>
+        <member name="T:Log">
+            <summary>
+            Provides an abstraction api for logging to various outputs.  This class in the global namespace for a reason.
+            Since you may want to change log infrastructure at any time, it's important that no 'Using' statements are
+            required to access the log infrastructure.  Secondly, a static class api can provide improved performance
+            over other possible types.  We will be forcing the default configuration of log4net rather than requiring
+            each component to independently configure itself.
+            </summary>
+        </member>
+        <member name="M:Log.AppStart(System.String,System.Object[])">
+            <summary> 
+            Enables calls to Log.xxx() to be processed on another thread to improve throughput... 
+            Place this in a using() statement within Main:  using( new Log.AppStart("Some Name") )
+            This call (and Disponse) IS Thread safe and can be called multiple times either 
+            concurrently, sequentially, nested, or overlapping calls are all permitted and handled.
+            </summary>
+        </member>
+        <member name="M:Log.Start(System.String,System.Object[])">
+            <summary>
+            Pushes a string into the trace stack so that log messages appear with the 'context'
+            set to the information provided.  The operation named should be performed by the
+            current thread and the IDisposable object returned should be disposed when the
+            operation completes.
+            </summary>
+            <example>
+            using( Log.Start("Reading File") )
+            {
+            	... do something ...
+            }
+            </example>
+            <param name="format"></param>
+            <param name="args"></param>
+            <returns>An IDisposable object that should be destroyed by calling the Dispose() 
+            method when the activity is complete.</returns>
+        </member>
+        <member name="M:Log.ClearStack">
+            <summary>
+            Forces any left-behind calls to Start() to be closed.
+            </summary>
+        </member>
+        <member name="M:Log.Write(System.String,System.Object[])">
+            <summary>
+            Write directly to the log reguardless of the currently configured log-LogLevel
+            </summary>
+        </member>
+        <member name="M:Log.Critical(System.Exception)">
+            <summary> Logs a Critical error </summary>
+        </member>
+        <member name="M:Log.Critical(System.Exception,System.String,System.Object[])">
+            <summary> Logs a Critical error </summary>
+        </member>
+        <member name="M:Log.Critical(System.String,System.Object[])">
+            <summary> Logs a Critical error </summary>
+        </member>
+        <member name="M:Log.Error(System.Exception)">
+            <summary> Logs an Error </summary>
+        </member>
+        <member name="M:Log.Error(System.Exception,System.String,System.Object[])">
+            <summary> Logs an Error </summary>
+        </member>
+        <member name="M:Log.Error(System.String,System.Object[])">
+            <summary> Logs an Error </summary>
+        </member>
+        <member name="M:Log.Warning(System.Exception)">
+            <summary> Logs a Warning </summary>
+        </member>
+        <member name="M:Log.Warning(System.Exception,System.String,System.Object[])">
+            <summary> Logs a Warning </summary>
+        </member>
+        <member name="M:Log.Warning(System.String,System.Object[])">
+            <summary> Logs a Warning </summary>
+        </member>
+        <member name="M:Log.Info(System.Exception)">
+            <summary> Logs a Info error </summary>
+        </member>
+        <member name="M:Log.Info(System.Exception,System.String,System.Object[])">
+            <summary> Logs a Info error </summary>
+        </member>
+        <member name="M:Log.Info(System.String,System.Object[])">
+            <summary> Logs an Informational message </summary>
+        </member>
+        <member name="M:Log.Verbose(System.Exception)">
+            <summary> Logs a Verbose error </summary>
+        </member>
+        <member name="M:Log.Verbose(System.Exception,System.String,System.Object[])">
+            <summary> Logs a Verbose error </summary>
+        </member>
+        <member name="M:Log.Verbose(System.String,System.Object[])">
+            <summary> Logs a Verbose message </summary>
+        </member>
+        <member name="E:Log.LogWrite">
+            <summary>
+            This event is raised when the logging routines are called and the LogLevel is at or
+            higher than the current Log.LogLevels field value.
+            </summary>
+        </member>
+        <member name="P:Log.IsInfoEnabled">
+            <summary> Returns true if 'Info' messages are being recorded. </summary>
+        </member>
+        <member name="P:Log.IsVerboseEnabled">
+            <summary> Returns true if 'Verbose' messages are being recorded. </summary>
+        </member>
+        <member name="T:Log.Config">
+            <summary>
+            Provides configuration options for the Log subsystem
+            </summary>
+        </member>
+        <member name="M:Log.Config.SetOutputLevel(CSharpTest.Net.Logging.LogOutputs,CSharpTest.Net.Logging.LogLevels)">
+            <summary> Changes the log level required to write to a specific output device. </summary>
+        </member>
+        <member name="M:Log.Config.SetOutputFormat(CSharpTest.Net.Logging.LogOutputs,System.String)">
+            <summary> 
+            Changes the output format used to write to a specific output device. The format of this string behaves just like
+            EventData.ToString().  The string can contain any public field or property available for the CSharpTest.Net.Logging.EventData 
+            class surrounded by braces {} and yes, properties/fields are case sensative.  The input string should look something
+            like the following examples: 
+            "[{ManagedThreadId:D2}] {Level,8} - {Message}{Location}{Exception}" -- this is the default format of ToString()
+            "{EventTime:o} [{ProcessId:D4},{ManagedThreadId:D2}] {Level,8} - {Message}{Location}{Exception}"  -- This is the default log file format.
+            </summary>
+        </member>
+        <member name="P:Log.Config.Level">
+            <summary> Gets or sets the current log LogLevel </summary>
+        </member>
+        <member name="P:Log.Config.Output">
+            <summary> Gets or sets the current log LogLevel </summary>
+        </member>
+        <member name="P:Log.Config.Options">
+            <summary> 
+            Gets or sets the availability of stack info etc.  The following performance characterists were taken with a 
+            simple example app running 10 threads each writing 1000 log statements in a tight-loop.  The times below reflect
+            threading enabled (someone having called Log.AppStart()).  The following hardware was used:
+            AMD Turion 64x2 TL-62  2.10 GHz, 3 GB RAM running Vista 32-bit SP1  (HP Notebook).  The time indicated below
+            was estimated by taking the total number of milliseconds until all threads completed and dividing by the 10,000
+            messages that were written.
+            <list>
+            	<item>Cost per call 0.005 ms with no context   (None)</item>
+            	<item>Cost per call 0.035 ms with calling method   (LogImmediateCaller)</item>
+            	<item>Cost per call 0.060 ms with calling method &amp; assembly info   (LogImmediateCaller | LogAddAssemblyInfo)</item>
+            	<item>Cost per call 0.160 ms with calling method &amp; file info   (LogImmediateCaller | LogAddFileInfo)</item>
+            	<item>Cost per call 0.190 ms with calling method &amp; assembly info &amp; file info   (LogImmediateCaller | LogAddAssemblyInfo | LogAddFileInfo)</item>
+            </list>
+            </summary>
+        </member>
+        <member name="P:Log.Config.FormatProvider">
+            <summary> Gets or sets the format provider to use when formatting strings </summary>
+        </member>
+        <member name="P:Log.Config.LogFile">
+            <summary>
+            Gets or sets the current log file name, insert '{0}' in the file's name to allow log rolling
+            </summary>
+        </member>
+        <member name="P:Log.Config.LogFileMaxSize">
+            <summary> Gets or sets the maximum size in bytes the log file is allowed to be before rolling to history </summary>
+        </member>
+        <member name="P:Log.Config.LogFileMaxHistory">
+            <summary> Gets or sets the maximum number of history log files to keep on the system </summary>
+        </member>
+        <member name="P:Log.Config.EventLogName">
+            <summary> Sets the event log name we will write events to. </summary>
+        </member>
+        <member name="P:Log.Config.EventLogSource">
+            <summary> Sets the event log source we will write events with, It's up to you to register this value. </summary>
+        </member>
+        <member name="T:CSharpTest.Net.Logging.LogEventHandler">
+            <summary>
+            Log events are raised with this event handler
+            </summary>
+        </member>
+        <member name="T:CSharpTest.Net.Logging.LogEventArgs">
+            <summary>
+            The event args passed to the log system, often multiple log entries will arrive 
+            'near' simultaneous, ALWAYs allow for ZERO or more than one.
+            </summary>
+        </member>
+        <member name="M:CSharpTest.Net.Logging.LogEventArgs.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary> /// Serialization Constructor for ISerializable /// </summary>
+        </member>
+        <member name="M:CSharpTest.Net.Logging.LogEventArgs.#ctor(System.Collections.Generic.List{CSharpTest.Net.Logging.EventData})">
+            <summary>
+            Constructs a list event log dataList to be provided the Log.LogWrite event
+            </summary>
+        </member>
+        <member name="M:CSharpTest.Net.Logging.LogEventArgs.ToArray">
+            <summary>
+            Returns the items as an array of EventData
+            </summary>
+        </member>
+        <member name="M:CSharpTest.Net.Logging.LogEventArgs.ToString">
+            <summary>
+            Returns the entire collection of EventData records as a single line-delimited string
+            </summary>
+        </member>
+        <member name="M:CSharpTest.Net.Logging.LogEventArgs.GetEnumerator">
+            <summary>
+            Returns the enumeration of the EventData structures
+            </summary>
+        </member>
+        <member name="M:CSharpTest.Net.Logging.LogEventArgs.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Returns the non-generic version of the enumeration
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:CSharpTest.Net.Logging.LogEventArgs.Count">
+            <summary>
+            Returns the count of items in the collection
+            </summary>
+        </member>
+        <member name="T:CSharpTest.Net.Logging.EventData">
+            <summary>
+            This is the class that is used to transfer log events through the system. It's basically
+            a 'picture' of the state at the time the log was written since all logging is actually
+            happening in a delayed fashion.
+            </summary>
+        </member>
+        <member name="M:CSharpTest.Net.Logging.EventData.#cctor">
+            <summary>
+            Asserts that the LogFields enumeration has the same fields as this class
+            </summary>
+        </member>
+        <member name="F:CSharpTest.Net.Logging.EventData.Level">
+            <summary> The LogLevel of the log data or LogLevels.None if Log.Write() was called </summary>
+        </member>
+        <member name="F:CSharpTest.Net.Logging.EventData.Output">
+            <summary> The outputs that should recieve this message </summary>
+        </member>
+        <member name="M:CSharpTest.Net.Logging.EventData.ToObjectArray">
+            <summary>
+            Used for string formatting, the order of these MUST match the order of names return by FieldNames
+            </summary>
+        </member>
+        <member name="M:CSharpTest.Net.Logging.EventData.ToString">
+            <summary>
+            Displays this log data in a default brief format
+            </summary>
+        </member>
+        <member name="M:CSharpTest.Net.Logging.EventData.ToString(System.String)">
+            <summary>
+            Displays this log data in a specific format.  Use '{FieldName}' to be substituded with it's value.
+            Sorry but it uses a case-sensitive match of fields in this class.
+            </summary>
+        </member>
+        <member name="M:CSharpTest.Net.Logging.EventData.Write(System.IO.TextWriter)">
+            <summary>
+            Writes this event to the text writter with the default brief format
+            </summary>
+        </member>
+        <member name="M:CSharpTest.Net.Logging.EventData.Write(System.IO.TextWriter,System.String)">
+            <summary>
+            Writes this log data in a specific format.  Use '{FieldName}' to be substituded with it's value.
+            Sorry but it uses a case-sensitive match of fields in this class.
+            </summary>
+        </member>
+        <member name="M:CSharpTest.Net.Logging.EventData.Write(System.Xml.XmlWriter)">
+            <summary>
+            Writes a custom xml format for this record.
+            </summary>
+        </member>
+        <member name="M:CSharpTest.Net.Logging.EventData.ToXml">
+            <summary>
+            Returns this data as an XmlWriter text fragment who name is the class name and each attribute
+            is the field name, again maintaining the case.
+            </summary>
+        </member>
+        <member name="M:CSharpTest.Net.Logging.EventData.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary> /// Serialization Constructor for ISerializable /// </summary>
+        </member>
+        <member name="P:CSharpTest.Net.Logging.EventData.EventId">
+            <summary> A unique integer representing the index the event was written since program start </summary>
+        </member>
+        <member name="P:CSharpTest.Net.Logging.EventData.EventTime">
+            <summary> Returns the time when the log event was raised </summary>
+        </member>
+        <member name="P:CSharpTest.Net.Logging.EventData.ProcessId">
+            <summary> The current process id </summary>
+        </member>
+        <member name="P:CSharpTest.Net.Logging.EventData.ProcessName">
+            <summary> The current process name </summary>
+        </member>
+        <member name="P:CSharpTest.Net.Logging.EventData.AppDomainName">
+            <summary> The current app domain's friendly name </summary>
+        </member>
+        <member name="P:CSharpTest.Net.Logging.EventData.EntryAssembly">
+            <summary> The current app domain's entry-point assembly name </summary>
+        </member>
+        <member name="P:CSharpTest.Net.Logging.EventData.ThreadPrincipalName">
+            <summary> The logging thread's 'CurrentPrincipal.Identity.Name' property </summary>
+        </member>
+        <member name="P:CSharpTest.Net.Logging.EventData.ManagedThreadId">
+            <summary> The managed thread id that called the log routine </summary>
+        </member>
+        <member name="P:CSharpTest.Net.Logging.EventData.ManagedThreadName">
+            <summary> The managed thread name (if any) or String.Empty </summary>
+        </member>
+        <member name="P:CSharpTest.Net.Logging.EventData.Exception">
+            <summary> An instance of the Exception class or null if none provided </summary>
+        </member>
+        <member name="P:CSharpTest.Net.Logging.EventData.Message">
+            <summary> The formatted string of the message or String.Empty if none </summary>
+        </member>
+        <member name="P:CSharpTest.Net.Logging.EventData.FileName">
+            <summary> The file name where the log was called from or null if no file dataList available/configured. </summary>
+        </member>
+        <member name="P:CSharpTest.Net.Logging.EventData.FileLine">
+            <summary> The file line number where the log was called from. </summary>
+        </member>
+        <member name="P:CSharpTest.Net.Logging.EventData.FileColumn">
+            <summary> The file column where the log was called from. </summary>
+        </member>
+        <member name="P:CSharpTest.Net.Logging.EventData.MethodAssemblyVersion">
+            <summary> The assembly's version that contained the method where the log was called from. </summary>
+        </member>
+        <member name="P:CSharpTest.Net.Logging.EventData.MethodAssembly">
+            <summary> The assembly's name that contained the method where the log was called from. </summary>
+        </member>
+        <member name="P:CSharpTest.Net.Logging.EventData.MethodType">
+            <summary> The type containing the method where the log was called from. </summary>
+        </member>
+        <member name="P:CSharpTest.Net.Logging.EventData.MethodTypeName">
+            <summary> The unqualified type containing the method where the log was called from. </summary>
+        </member>
+        <member name="P:CSharpTest.Net.Logging.EventData.MethodName">
+            <summary> The method where the log was called from. </summary>
+        </member>
+        <member name="P:CSharpTest.Net.Logging.EventData.MethodArgs">
+            <summary> The method's argument names and types. </summary>
+        </member>
+        <member name="P:CSharpTest.Net.Logging.EventData.IlOffset">
+            <summary> Returns the IL offset within the calling method </summary>
+        </member>
+        <member name="P:CSharpTest.Net.Logging.EventData.LogCurrent">
+            <summary> returns the text given the most recent call to Log.Start() that has not yet been Disponsed</summary>
+        </member>
+        <member name="P:CSharpTest.Net.Logging.EventData.LogStack">
+            <summary> returns the text given to all calls to Log.Start() that has not yet been Disponsed separated by '::' </summary>
+        </member>
+        <member name="P:CSharpTest.Net.Logging.EventData.Location">
+            <summary>
+            The full method information: Type.Name(Args)
+            </summary>
+        </member>
+        <member name="P:CSharpTest.Net.Logging.EventData.Method">
+            <summary>
+            The full method information: Type.Name(Args)
+            </summary>
+        </member>
+        <member name="P:CSharpTest.Net.Logging.EventData.FileLocation">
+            <summary>
+            Returns the full message of Message + Location + Exception
+            </summary>
+        </member>
+        <member name="P:CSharpTest.Net.Logging.EventData.FullMessage">
+            <summary>
+            Returns the full message of Message + Location + Exception
+            </summary>
+        </member>
+        <member name="F:CSharpTest.Net.Logging.Implementation.Configuration.FILE_SIZE_THREASHOLD">
+            <summary> This is the max size a file will get (roughly) before being renamed </summary>
+        </member>
+        <member name="F:CSharpTest.Net.Logging.Implementation.Configuration.FILE_MAX_HISTORY_SIZE">
+            <summary> This is the max number of files to keep, don't set too high until you revisit RollingRenameFile()</summary>
+        </member>
+        <member name="M:CSharpTest.Net.Logging.Implementation.Configuration.#cctor">
+            <summary> Initializes all readonly configuration values </summary>
+        </member>
+        <member name="M:CSharpTest.Net.Logging.Implementation.Configuration.Configure">
+            <summary> Sets appropriate (i hope) defaults to all configuration options </summary>
+        </member>
+        <member name="T:CSharpTest.Net.Logging.Implementation.SharedException">
+            <summary>
+            Exceptions of any kind are turned into this when serialized to another process... This is intentional to prevent issues
+            of crossing .Net versions as well as simple client coding mistakes (Non-Serializable Exceptions).
+            </summary>
+        </member>
+        <member name="T:CSharpTest.Net.Logging.Implementation.VersionInfo">
+            <summary>
+            This is a small utility class for computing a hash of the fields to prevent different versions from
+            having issues durring de-serialization.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,8 @@
+# Untracked files
+bin
+obj
+keys/jirasvn.snk
+*ReSharper*
+*.suo
+*.user
+/nmake.exe
