@@ -1,0 +1,4 @@
+Major = 2
+Minor = 10
+Build = 1217
+Revision = 1127

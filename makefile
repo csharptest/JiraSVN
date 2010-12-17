@@ -1,7 +1,11 @@
 # *****************************************************************************
 # JiraSVN MAKEFILE
 # *****************************************************************************
-!MESSAGE JiraSVN make utility
+!IF EXIST(src\version.txt)
+!INCLUDE src\version.txt
+!ENDIF
+#
+!MESSAGE JiraSVN make utility $(Major).$(Minor).$(Build).$(Revision)
 !MESSAGE
 .SILENT:
 # *****************************************************************************
@@ -31,15 +35,16 @@ clean : always
 
 prerequisites : \
     keys\jirasvn.snk \
-    bin\version.txt \
+    src\version.txt \
     addcopy
 
 keys\jirasvn.snk :
     ECHO WARNING: Using shared key, you should replace $@ with your own key
     copy keys\trash.snk $@
 
-bin\version.txt :
-    tools\StampVersion.exe /nologo /major:2 /minor:{0:yy} /build:{0:MMdd} /revision:{0:hmm} > bin\version.txt
+#creates new version number by running: nmake.exe -a src\version.txt
+src\version.txt :
+    tools\StampVersion.exe /nologo /major:2 /minor:{0:yy} /build:{0:MMdd} /revision:{0:hmm} > src\version.txt
 
 addcopy : always
     tools\StampCopyright.exe /nologo tools\copyright.txt src\*.csproj
