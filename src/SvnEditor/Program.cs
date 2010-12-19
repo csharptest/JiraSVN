@@ -15,6 +15,7 @@
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using CSharpTest.Net.IO;
 using CSharpTest.Net.SvnPlugin;
 using System.IO;
 
@@ -33,7 +34,14 @@ namespace CSharpTest.Net.SvnEditor
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 
-			// running as a text-editor for cmd version of svn:
+            TempFile test;
+            if (args.Length == 0)
+            {   //just for testing
+                test = new TempFile();
+                args = new string[] { test.TempPath };
+            }
+
+		    // running as a text-editor for cmd version of svn:
 			if (args.Length > 0)
 			{
 				string inputFile = args[0];

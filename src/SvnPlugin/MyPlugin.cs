@@ -50,6 +50,7 @@ namespace CSharpTest.Net.SvnPlugin
 		{
 			//System.Diagnostics.Debugger.Break();
 			Log.Write("Started, logging to {0}", Log.Config.LogFile);
+            CertificateHandler.Hook();
 		}
 
 		#region Public Interfaces:
