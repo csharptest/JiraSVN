@@ -20,15 +20,17 @@ DevEnv="$(VS90COMNTOOLS)..\IDE\devenv.exe"
 # *****************************************************************************
 
 all : prerequisites always
-	$(DevEnv) JiraSvn.sln /Rebuild Release /Out bin\build.log
+	$(DevEnv) JiraSvn.sln /Rebuild Release /Out bin\Release\build.log
 
 build : prerequisites always
     $(MSBuild) JiraSvn.sln /t:Clean;Rebuild /v:q /p:Platform="Any CPU" /p:Configuration=Debug \
-        /fileLogger /fileLoggerParameters:LogFile=bin\build.log;Verbosity=Detailed;Encoding=UTF-8
+        /fileLogger /fileLoggerParameters:LogFile=bin\Debug\build.log;Verbosity=Detailed;Encoding=UTF-8
 
 clean : always
     if exist bin\* @rd /q /s .\bin
     mkdir .\bin
+    mkdir .\bin\Debug
+    mkdir .\bin\Release
     $(MSBuild) JiraSvn.sln /t:Clean /v:q /p:Platform="Any CPU" /p:Configuration=Debug
 
 # *****************************************************************************
