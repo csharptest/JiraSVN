@@ -25,14 +25,14 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <Optimize>False</Optimize>
     <DefineConstants>TRACE</DefineConstants>
-    <OutputPath>bin\</OutputPath>
+    <OutputPath>..\..\bin\Debug</OutputPath>
     <DocumentationFile>
     </DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>False</Optimize>
     <DefineConstants>TRACE</DefineConstants>
-    <OutputPath>bin\</OutputPath>
+    <OutputPath>..\..\bin\Release</OutputPath>
     <DocumentationFile>
     </DocumentationFile>
   </PropertyGroup>
