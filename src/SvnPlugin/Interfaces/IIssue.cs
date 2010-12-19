@@ -13,10 +13,32 @@
  */
 #endregion
 using System;
-using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace CSharpTest.Net.SvnPlugin.Interfaces
 {
+    ///<summary>
+    /// Defines method Jira will use to update Estimated time.
+    ///</summary>
+    public enum TimeEstimateRecalcualationMethod
+    {
+        /// <summary>
+        /// The estimate will be reduced by the amount of work done
+        /// </summary>
+        [Description("Adjust automatically")]
+        AdjustAutomatically,
+        /// <summary>
+        /// The stimate will not be changed
+        /// </summary>
+        [Description("Leave existing estimate")]
+        DoNotChange,
+        /// <summary>
+        /// The new estimate will be set explicitly
+        /// </summary>
+        [Description("Set new estimate")]
+        SetToNewValue,
+    };
+
 	/// <summary>
 	/// Represents a single issue within an issue tracking system.
 	/// </summary>
@@ -59,5 +81,13 @@ namespace CSharpTest.Net.SvnPlugin.Interfaces
 		/// <param name="action"> The action to perform </param>
 		/// <param name="assignTo"> A user to assign the issue to, or this.AssignedTo to leave it alone </param>
 		void ProcessAction(string comment, IIssueAction action, IIssueUser assignTo);
+
+	    /// <summary>
+	    /// Adds a worklog to given issue
+	    /// </summary>
+	    /// <param name="timeSpent">Spent time in Jira format</param>
+	    /// <param name="method"></param>
+	    /// <param name="newTimeEstimate"></param>
+	    void ProcessWorklog(string timeSpent, TimeEstimateRecalcualationMethod method, string newTimeEstimate);
 	}
 }

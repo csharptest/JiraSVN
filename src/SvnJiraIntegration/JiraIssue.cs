@@ -88,6 +88,11 @@ namespace CSharpTest.Net.SvnJiraIntegration
 			_connection.ProcessAction(this, action, assignTo);
 		}
 
+	    public void ProcessWorklog(string timeSpent, TimeEstimateRecalcualationMethod method, string newTimeEstimate)
+	    {
+            _connection.ProcessWorklog(this, timeSpent, method, newTimeEstimate);
+	    }
+
 		private string[] GetCustomFieldValue(string fieldName)
 		{
 			foreach (RemoteCustomFieldValue fld in Object.customFieldValues)

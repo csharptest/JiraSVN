@@ -14,9 +14,12 @@
 #endregion
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using CSharpTest.Net.SvnPlugin.Interfaces;
 using CSharpTest.Net.SvnPlugin.Jira;
 using CSharpTest.Net.Serialization;
+using System.IO;
+using System.Windows.Forms;
 
 namespace CSharpTest.Net.SvnJiraIntegration
 {
@@ -234,27 +237,54 @@ namespace CSharpTest.Net.SvnJiraIntegration
 			throw new ApplicationException("Unable to locate a resolution containing the text 'fix'.");
 		}
 
-		internal void ProcessAction(JiraIssue issue, IIssueAction action, IIssueUser assignTo)
-		{
-			List<RemoteFieldValue> actionParams = new List<RemoteFieldValue>();
+        internal void ProcessAction(JiraIssue issue, IIssueAction action, IIssueUser assignTo)
+        {
+            List<RemoteFieldValue> actionParams = new List<RemoteFieldValue>();
 
-			RemoteField[] fields = _service.getFieldsForAction(_token, issue.DisplayId, action.Id);
-			foreach (RemoteField field in fields)
-			{
-				RemoteFieldValue param = new RemoteFieldValue();
-				string paramName = param.id = field.id;
+            RemoteField[] fields = _service.getFieldsForAction(_token, issue.DisplayId, action.Id);
+            foreach (RemoteField field in fields)
+            {
+                RemoteFieldValue param = new RemoteFieldValue();
+                string paramName = param.id = field.id;
 
-				if (StringComparer.OrdinalIgnoreCase.Equals("Resolution", field.name))
-					param.values = new string[] { FindFixResolution() };
-				else if (StringComparer.OrdinalIgnoreCase.Equals("Assignee", field.name))
-					param.values = new string[] { assignTo.Id };
-				else
-					param.values = issue.GetFieldValue(paramName);
+                if (StringComparer.OrdinalIgnoreCase.Equals("Resolution", field.name))
+                    param.values = new string[] { FindFixResolution() };
+                else if (StringComparer.OrdinalIgnoreCase.Equals("Assignee", field.name))
+                    param.values = new string[] { assignTo.Id };
+                else if (StringComparer.OrdinalIgnoreCase.Equals("Worklog", paramName))	// JIRA 4.1 - worklogs are required!
+                    continue;
+                else
+                    param.values = issue.GetFieldValue(paramName);
 
-				actionParams.Add(param);
-			}
+                actionParams.Add(param);
+            }
 
-			RemoteIssue newIssue = _service.progressWorkflowAction(_token, issue.DisplayId, action.Id, actionParams.ToArray());
-		}
+            RemoteIssue newIssue = _service.progressWorkflowAction(_token, issue.DisplayId, action.Id, actionParams.ToArray());
+        }
+
+        internal void ProcessWorklog(JiraIssue issue, string timeSpent, TimeEstimateRecalcualationMethod method, string newTimeEstimate)
+        {
+            var remoteWorklog = new RemoteWorklog();
+            remoteWorklog.comment = "Time logged";
+            remoteWorklog.timeSpent = timeSpent;
+            remoteWorklog.startDate = new DateTime();
+
+            switch (method)
+            {
+                case TimeEstimateRecalcualationMethod.AdjustAutomatically:
+                    _service.addWorklogAndAutoAdjustRemainingEstimate(_token, issue.DisplayId, remoteWorklog);
+                    break;
+
+                case TimeEstimateRecalcualationMethod.DoNotChange:
+                    _service.addWorklogAndRetainRemainingEstimate(_token, issue.DisplayId, remoteWorklog);
+                    break;
+                case TimeEstimateRecalcualationMethod.SetToNewValue:
+                    _service.addWorklogWithNewRemainingEstimate(_token, issue.DisplayId, remoteWorklog,
+                                                                newTimeEstimate);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException("ProcessWorklog");
+            }
+        }
 	}
 }

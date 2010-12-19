@@ -21,6 +21,8 @@ using System.Text;
 using CSharpTest.Net.SvnPlugin.Interfaces;
 using CSharpTest.Net.Serialization;
 using CSharpTest.Net.Reflection;
+using System.Reflection;
+using System.Runtime.CompilerServices;
 
 namespace CSharpTest.Net.SvnPlugin.UI
 {
@@ -48,6 +50,12 @@ namespace CSharpTest.Net.SvnPlugin.UI
 
 		bool _doAssign = false;
 		DataBindingList<IIssueUser> _assignees = new DataBindingList<IIssueUser>(true);
+
+	    private bool _addWorklog;
+	    private string _timeSpent;
+	    private TimeEstimateRecalcualationMethod _timeEstimateRecalcualationMethod;
+	    private string _newTimeEstimate;
+
 		#endregion
 
 		public IssuesListView(IIssuesServiceConnection service, string message, string[] files)
@@ -72,7 +80,7 @@ namespace CSharpTest.Net.SvnPlugin.UI
 			_serializer.ContinueOnError = true;
 			_serializer.Deserialize(_storage);
 
-			ServerFilterChanged(String.Empty);
+            ServerFilterChanged(String.Empty);
 		}
 
 		public void Dispose()
@@ -265,6 +273,7 @@ namespace CSharpTest.Net.SvnPlugin.UI
 					_selected.Remove(issue.Id);
 
 				RebuildActions();
+                OnPropertyChanged("CanAddWorklog");
 			}
 		}
 
@@ -338,7 +347,18 @@ namespace CSharpTest.Net.SvnPlugin.UI
 			{
 				try
 				{
-					if (actionName != null)
+                    if (AddWorklog && TimeSpent.Length > 0)
+                        issue.ProcessWorklog(_timeSpent, _timeEstimateRecalcualationMethod, _newTimeEstimate);
+                }
+				catch (Exception e)
+				{
+					Log.Error(e, "Failed to commit issue {0} - {1}", issue.DisplayId, issue.Name);
+					errors.Add(e);
+				}
+
+				try
+				{
+                    if (actionName != null)
 					{
 						IIssueUser finalAssignee = assignee;
 						if (finalAssignee == ReportedByUser.Instance)
@@ -361,8 +381,8 @@ namespace CSharpTest.Net.SvnPlugin.UI
 						issue.ProcessAction(comments.ToString(), finalAction, finalAssignee);
 					}
 					else
-						issue.AddComment(comments.ToString());
-				}
+                        issue.AddComment(comments.ToString());
+                }
 				catch (Exception e)
 				{
 					Log.Error(e, "Failed to commit issue {0} - {1}", issue.DisplayId, issue.Name);
@@ -439,7 +459,63 @@ namespace CSharpTest.Net.SvnPlugin.UI
 			set { _comments = value; OnPropertyChanged("Comments"); }
 		}
 
-		public bool CanPerformActions { get { return _actions.Count > 0; } }
+        public bool CanAddWorklog { get { return _selected.Count > 0; }  }
+
+	    public bool AddWorklog
+	    {
+            get { return _addWorklog; }
+            set { _addWorklog = value; OnPropertyChanged("AddWorklog"); }
+	    }
+
+        public string TimeSpent
+        {
+            get { return _timeSpent; }
+            set { _timeSpent  = value; OnPropertyChanged("TimeSpent"); }
+        }
+
+        public List<string> TimeEstimateMethodsAvailable
+	    {
+            get
+            {
+                var result = new List<string>();
+
+                foreach (TimeEstimateRecalcualationMethod enumValue in
+                           Enum.GetValues(typeof(TimeEstimateRecalcualationMethod)))
+                {
+                    var fi = typeof(TimeEstimateRecalcualationMethod).GetField((enumValue.ToString()));
+
+                    var da  = (DescriptionAttribute)Attribute.GetCustomAttribute(fi, typeof(DescriptionAttribute));
+
+                    if (da != null)
+                        result.Add(da.Description);
+                }
+
+                return result;
+            }
+	    }
+
+	    public bool CanSpecifyNewEstimate
+	    {
+            get
+            {
+                return AddWorklog 
+                    && _timeEstimateRecalcualationMethod == TimeEstimateRecalcualationMethod.SetToNewValue;
+            }
+	    }
+
+	    public int TimeEstimateRecalcualation
+	    {
+            get { return (int)_timeEstimateRecalcualationMethod; }
+            set { _timeEstimateRecalcualationMethod = (TimeEstimateRecalcualationMethod)value; OnPropertyChanged("TimeEstimateRecalcualation"); }
+	    }
+
+	    public string NewTimeEstimate
+	    {
+            get { return _newTimeEstimate; }
+            set { _newTimeEstimate = value; OnPropertyChanged("NewTimeEstimate"); }
+	    }
+
+        public bool CanPerformActions { get { return _actions.Count > 0; } }
 
 		public bool PerformAction
 		{

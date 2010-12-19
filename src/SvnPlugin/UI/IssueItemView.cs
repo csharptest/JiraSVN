@@ -99,5 +99,10 @@ namespace CSharpTest.Net.SvnPlugin.UI
 		{
 			Issue.ProcessAction(comment, action, assignTo);
 		}
+
+	    public void ProcessWorklog(string timeSpent, TimeEstimateRecalcualationMethod method, string newTimeEstimate)
+	    {
+            Issue.ProcessWorklog(timeSpent, method, newTimeEstimate);
+	    }
 	}
 }

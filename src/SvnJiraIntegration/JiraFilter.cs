@@ -109,7 +109,11 @@ namespace CSharpTest.Net.SvnJiraIntegration
 			{
 			}
 
-			public IIssueUser ReportedBy
+		    public void ProcessWorklog(string timeSpent, TimeEstimateRecalcualationMethod method, string newTimeEstimate)
+		    {
+		    }
+
+		    public IIssueUser ReportedBy
 			{
 				get { return JiraUser.Unknown; }
 			}
