@@ -20,7 +20,99 @@ namespace CSharpTest.Net.SvnPlugin.Jira {
     using System.Web.Services.Protocols;
     using System;
     using System.Xml.Serialization;
-    
+    using System.Reflection;
+    using System.IO;
+
+	// all this bullshit is required because of bug in jira worklog API, see
+	// http://jira.atlassian.com/browse/JRA-13698
+	// the workaround is taken from:
+	// http://forums.atlassian.com/message.jspa?messageID=257333945
+    [AttributeUsage(AttributeTargets.Method)]
+    internal class JiraSoapExtensionsAttribute :
+      SoapExtensionAttribute
+    {
+        public override Type ExtensionType
+        {
+            get
+            {
+                // return type of extension to load
+                return typeof(JiraSoapExtensions);
+            }
+        }
+
+        public override int Priority { get; set; }
+    }
+
+    internal class JiraSoapExtensions : SoapExtension
+    {
+        private Stream m_inwardStream;
+        private Stream m_outwardStream;
+
+        public override void ProcessMessage(SoapMessage message)
+        {
+            string soapMsg;
+            StreamReader readStr;
+            StreamWriter writeStr;
+
+            switch (message.Stage)
+            {
+                case SoapMessageStage.BeforeSerialize:
+                    break;
+                case SoapMessageStage.AfterDeserialize:
+                    break;
+                case SoapMessageStage.BeforeDeserialize:
+                    readStr = new StreamReader(m_outwardStream);
+                    writeStr = new StreamWriter(m_inwardStream);
+                    soapMsg = readStr.ReadToEnd();
+
+                    switch (message.MethodInfo.Name)
+                    {
+                        case "getWorklogs":
+                        case "addWorklogWithNewRemainingEstimate":
+                        case "addWorklogAndAutoAdjustRemainingEstimate":
+                        case "addWorklogAndRetainRemainingEstimate":
+                            soapMsg = soapMsg.Replace("RemoteWorklogImpl", "RemoteWorklog").Replace("service", "beans");
+                            break;
+
+                    }
+                    writeStr.Write(soapMsg);
+                    writeStr.Flush();
+                    m_inwardStream.Position = 0;
+                    break;
+                case SoapMessageStage.AfterSerialize:
+                    m_inwardStream.Position = 0;
+                    readStr = new StreamReader(m_inwardStream);
+                    writeStr = new StreamWriter(m_outwardStream);
+                    soapMsg = readStr.ReadToEnd();
+
+                    writeStr.Write(soapMsg);
+                    writeStr.Flush();
+                    break;
+            }
+        }
+
+        public override Stream ChainStream(Stream stream)
+        {
+            m_outwardStream = stream;
+            m_inwardStream = new MemoryStream();
+            return m_inwardStream;
+        }
+
+        public override object GetInitializer(Type type)
+        {
+            return GetType();
+        }
+
+        public override object GetInitializer(LogicalMethodInfo info, SoapExtensionAttribute attribute)
+        {
+            return null;
+        }
+
+        public override void Initialize(object initializer)
+        {
+        }
+
+    }
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.1434")]
@@ -2630,6 +2722,7 @@ namespace CSharpTest.Net.SvnPlugin.Jira {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://jira.atlassian.com/jira/rpc/soap/jirasoapservice-v2")]
         [return: System.Xml.Serialization.SoapElementAttribute("addWorklogWithNewRemainingEstimateReturn")]
+        [JiraSoapExtensions]
         public RemoteWorklog addWorklogWithNewRemainingEstimate(string in0, string in1, RemoteWorklog in2, string in3) {
             object[] results = this.Invoke("addWorklogWithNewRemainingEstimate", new object[] {
                         in0,
@@ -2666,6 +2759,7 @@ namespace CSharpTest.Net.SvnPlugin.Jira {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://jira.atlassian.com/jira/rpc/soap/jirasoapservice-v2")]
         [return: System.Xml.Serialization.SoapElementAttribute("addWorklogAndAutoAdjustRemainingEstimateReturn")]
+        [JiraSoapExtensions]
         public RemoteWorklog addWorklogAndAutoAdjustRemainingEstimate(string in0, string in1, RemoteWorklog in2) {
             object[] results = this.Invoke("addWorklogAndAutoAdjustRemainingEstimate", new object[] {
                         in0,
@@ -2700,6 +2794,7 @@ namespace CSharpTest.Net.SvnPlugin.Jira {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://jira.atlassian.com/jira/rpc/soap/jirasoapservice-v2")]
         [return: System.Xml.Serialization.SoapElementAttribute("addWorklogAndRetainRemainingEstimateReturn")]
+        [JiraSoapExtensions]
         public RemoteWorklog addWorklogAndRetainRemainingEstimate(string in0, string in1, RemoteWorklog in2) {
             object[] results = this.Invoke("addWorklogAndRetainRemainingEstimate", new object[] {
                         in0,
@@ -2918,6 +3013,7 @@ namespace CSharpTest.Net.SvnPlugin.Jira {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://jira.atlassian.com/jira/rpc/soap/jirasoapservice-v2")]
         [return: System.Xml.Serialization.SoapElementAttribute("getWorklogsReturn")]
+        [JiraSoapExtensions]
         public RemoteWorklog[] getWorklogs(string in0, string in1) {
             object[] results = this.Invoke("getWorklogs", new object[] {
                         in0,

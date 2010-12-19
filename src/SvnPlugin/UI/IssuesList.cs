@@ -146,16 +146,17 @@ namespace CSharpTest.Net.SvnPlugin.UI
 
 		void _listView_ItemMouseHover(object sender, ListViewItemMouseHoverEventArgs e)
 		{
-			if (e != null && e.Item != null && e.Item.Tag is IIssue)
+            if (e != null && e.Item != null && e.Item.Tag is IIssue
+				&& !string.IsNullOrEmpty(e.Item.ToolTipText))	// don't show big blank square when tip is empty
 			{
 				if (!_tipitem.Visible)
 				{
 					_tipitem.DisplayWidth = _listView.Width / 2;
-					_tipitem.Tag = e.Item;
-					_tipitem.Text = e.Item.ToolTipText;
-					_tipitem.Visible = true;
+                    _tipitem.Tag = e.Item;
+                    _tipitem.Text = e.Item.ToolTipText;
+                    _tipitem.Visible = true;
 
-				}
+                }
 			}
 		}
 		#endregion
