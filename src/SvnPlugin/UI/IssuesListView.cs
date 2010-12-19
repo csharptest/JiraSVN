@@ -80,6 +80,10 @@ namespace CSharpTest.Net.SvnPlugin.UI
 			_serializer.ContinueOnError = true;
 			_serializer.Deserialize(_storage);
 
+			// if no filter is pre-selected, select the first one, otherwise window comes up in odd state
+            if (_filters.SelectedIndex == -1 && _filters.Count > 0)
+                _filters.SelectedIndex = 0;
+
             ServerFilterChanged(String.Empty);
 		}
 
