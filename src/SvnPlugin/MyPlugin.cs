@@ -36,7 +36,8 @@ namespace CSharpTest.Net.SvnPlugin
 	[ComVisible(true), ProgId("SvnPlugin.MyPlugin"), Guid(MyPlugin.GUID), ClassInterface(ClassInterfaceType.None)]
 	public class MyPlugin : IDisposable, IBugTraqProvider, IBugTraqProvider2
 	{
-		const string GUID = "CF732FD7-AA8A-4E9D-9E15-025E4D1A7E9D";
+        const string GUID = "CF732FD7-AA8A-4E9D-9E15-025E4D1A7E9D";
+        const string CLSID = "{" + GUID + "}";
 		const string BUTTON_TEXT = "{0} Issues";
 
 		private IIssuesService _connector = null;
@@ -132,7 +133,7 @@ namespace CSharpTest.Net.SvnPlugin
 				else
 					_issues.SyncComments(originalMessage);
 
-				IssuesList form = new IssuesList(_issues);
+                IssuesList form = new IssuesList(_issues);
 				if (hParentWnd == IntPtr.Zero)
 					form.ShowInTaskbar = true;
 
@@ -451,11 +452,10 @@ namespace CSharpTest.Net.SvnPlugin
 
 		#region COM Interop/Registration
 
-		static IEnumerable<string> GetRegistryKeysToAdd()
+        static IEnumerable<string> GetRegistryKeysToAdd()
 		{
-			string myguid = String.Format("{{{0}}}", GUID.Trim('{', '}').ToUpper());
-			yield return String.Format(@"CLSID\{0}\Implemented Categories\{{3494FA92-B139-4730-9591-01135D5E7831}}", myguid);
-			yield return String.Format(@"CLSID\{0}\Implemented Categories\{{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}}", myguid);
+            yield return String.Format(@"CLSID\{0}\Implemented Categories\{{3494FA92-B139-4730-9591-01135D5E7831}}", CLSID);
+            yield return String.Format(@"CLSID\{0}\Implemented Categories\{{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}}", CLSID);
 		}
 
 		/// <summary>
@@ -468,9 +468,13 @@ namespace CSharpTest.Net.SvnPlugin
 			{
 				if (typeof(MyPlugin) == t)
 				{
-					foreach (string keypath in GetRegistryKeysToAdd())
+                    foreach (string keypath in GetRegistryKeysToAdd())
 						using (RegistryKey key = Registry.ClassesRoot.CreateSubKey(keypath))
 						{ key.Close(); }//{ Console.WriteLine(key.ToString()); }
+
+                    if (t.Assembly.Location != null && System.IO.File.Exists(t.Assembly.Location))
+                        using (RegistryKey key = Registry.ClassesRoot.CreateSubKey(String.Format(@"CLSID\{0}\InprocServer32", CLSID)))
+                            if(key != null) key.SetValue("CodeBase", t.Assembly.Location);
 				}
 			}
 			catch (Exception e)
@@ -484,10 +488,10 @@ namespace CSharpTest.Net.SvnPlugin
 		/// </summary>
 		[ComUnregisterFunction]
 		public static void UnregisterFunction(Type t)
-		{
+        {
 			try
 			{
-				foreach (string key in GetRegistryKeysToAdd())
+                foreach (string key in GetRegistryKeysToAdd())
 					Registry.ClassesRoot.DeleteSubKey(key, false);
 			}
 			catch (Exception e)

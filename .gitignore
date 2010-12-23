@@ -6,3 +6,4 @@ keys/jirasvn.snk
 *.suo
 *.user
 /nmake.exe
+/src/SvnJiraIntegration/Web References/Jira/*.datasource

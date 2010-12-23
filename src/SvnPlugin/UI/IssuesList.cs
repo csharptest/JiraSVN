@@ -16,6 +16,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Drawing;
 using System.Windows.Forms;
 using CSharpTest.Net.Reflection;
@@ -32,7 +33,7 @@ namespace CSharpTest.Net.SvnPlugin.UI
         public IssuesList(IssuesListView viewControl)
 		{
 			_viewControl = viewControl;
-			_serializer = new ObjectSerializer(this, "Top", "Left", "Height", "Width", "_splitter.SplitterDistance");
+            _serializer = new ObjectSerializer(this, "Top", "Left", "Height", "Width", "_splitter.SplitterDistance", "worklogpanel.Visible");
 			_serializer.ContinueOnError = true;
 
 			_tipitem = new ToolTipLabel();
@@ -96,6 +97,7 @@ namespace CSharpTest.Net.SvnPlugin.UI
 		private void Form_Load(object sender, EventArgs e)
 		{
 			_serializer.Deserialize(new CSharpTest.Net.Serialization.StorageClasses.RegistryStorage());
+            showTimeTrackingToolStripMenuItem.Checked = worklogpanel.Visible;
 			this.Activate();
 		}
 
@@ -208,6 +210,17 @@ namespace CSharpTest.Net.SvnPlugin.UI
 			}
 		}
 		#endregion
+
+        private void showTimeTrackingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            worklogpanel.Visible = ((ToolStripMenuItem)sender).Checked;
+        }
+
+        private void hideToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (showTimeTrackingToolStripMenuItem.Checked)
+                showTimeTrackingToolStripMenuItem.PerformClick();
+        }
 	}
 }
 

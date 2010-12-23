@@ -22,18 +22,21 @@
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>..\..\keys\jirasvn.snk</AssemblyOriginatorKeyFile>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <Optimize>False</Optimize>
     <DefineConstants>TRACE</DefineConstants>
     <OutputPath>..\..\bin\Debug</OutputPath>
     <DocumentationFile>bin\SvnJiraIntegration.xml</DocumentationFile>
+    <GenerateSerializationAssemblies>On</GenerateSerializationAssemblies>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>false</Optimize>
     <DefineConstants>TRACE</DefineConstants>
     <OutputPath>..\..\bin\Release</OutputPath>
     <DocumentationFile>bin\SvnJiraIntegration.xml</DocumentationFile>
+    <GenerateSerializationAssemblies>On</GenerateSerializationAssemblies>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Library">
@@ -61,10 +64,11 @@
     <Compile Include="JiraFilter.cs" />
     <Compile Include="JiraIssue.cs" />
     <Compile Include="JiraServices.cs" />
+    <Compile Include="Jira\JiraSoapServiceService.cs" />
     <Compile Include="NameSorter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Web References\Jira\Reference.cs">
-      <AutoGen>False</AutoGen>
+      <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
@@ -76,15 +80,93 @@
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Web References\Jira\RemoteAttachment.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Jira\RemoteAvatar.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Jira\RemoteComment.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Jira\RemoteComponent.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Jira\RemoteConfiguration.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Jira\RemoteField.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Jira\RemoteFilter.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Jira\RemoteGroup.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Jira\RemoteIssue.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Jira\RemoteIssueType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Jira\RemoteNamedObject.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Jira\RemotePermission.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Jira\RemotePermissionScheme.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Jira\RemotePriority.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Jira\RemoteProject.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Jira\RemoteProjectRole.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Jira\RemoteProjectRoleActors.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Jira\RemoteResolution.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Jira\RemoteRoleActors.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Jira\RemoteScheme.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Jira\RemoteSecurityLevel.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Jira\RemoteServerInfo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Jira\RemoteStatus.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Jira\RemoteUser.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Jira\RemoteVersion.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Jira\RemoteWorklog.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="E:\Projects\DotNet\SvnPlugin\jirasoapservice-v2.wsdl">
+    <WebReferenceUrl Include="E:\Projects\github.com\JiraSvn\src\SvnJiraIntegration\jirasoapservice-v2.wsdl">
       <UrlBehavior>Static</UrlBehavior>
       <RelPath>Web References\Jira\</RelPath>
-      <UpdateFromURL>E:\Projects\DotNet\SvnPlugin\jirasoapservice-v2.wsdl</UpdateFromURL>
+      <UpdateFromURL>E:\Projects\github.com\JiraSvn\src\SvnJiraIntegration\jirasoapservice-v2.wsdl</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>

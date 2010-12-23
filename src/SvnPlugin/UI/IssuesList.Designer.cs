@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Panel panel1;
-            System.Windows.Forms.Label label6;
             System.Windows.Forms.BindingSource possibleAssignmentsBindingSource;
             System.Windows.Forms.BindingSource actionsAvailableBindingSource;
+            System.Windows.Forms.Label label6;
             System.Windows.Forms.Panel panel2;
             System.Windows.Forms.BindingSource statusFilterBindingSource;
             System.Windows.Forms.Label label4;
@@ -49,14 +49,10 @@
             System.Windows.Forms.ColumnHeader hdrCreated;
             System.Windows.Forms.ColumnHeader hdrStatus;
             System.Windows.Forms.Label label5;
-            this._worklogGroup = new System.Windows.Forms.GroupBox();
-            this._worklogAction = new CSharpTest.Net.SvnPlugin.UI.BindingComboBox();
-            this._binding = new System.Windows.Forms.BindingSource(this.components);
-            this.remainingEstimateBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this._worklog = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this._addWorklog = new System.Windows.Forms.CheckBox();
+            this._showHideMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.showTimeTrackingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this._assignTo = new CSharpTest.Net.SvnPlugin.UI.BindingComboBox();
+            this._binding = new System.Windows.Forms.BindingSource(this.components);
             this._doAssignTo = new System.Windows.Forms.CheckBox();
             this._doTakeAction = new System.Windows.Forms.CheckBox();
             this._takeAction = new CSharpTest.Net.SvnPlugin.UI.BindingComboBox();
@@ -66,6 +62,13 @@
             this._status = new CSharpTest.Net.SvnPlugin.UI.BindingComboBox();
             this._assigned = new CSharpTest.Net.SvnPlugin.UI.BindingComboBox();
             this._filters = new CSharpTest.Net.SvnPlugin.UI.BindingComboBox();
+            this.worklogpanel = new System.Windows.Forms.Panel();
+            this._worklogGroup = new System.Windows.Forms.GroupBox();
+            this._worklogAction = new CSharpTest.Net.SvnPlugin.UI.BindingComboBox();
+            this.remainingEstimateBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this._worklog = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this._addWorklog = new System.Windows.Forms.CheckBox();
             this._splitter = new System.Windows.Forms.SplitContainer();
             this._listView = new System.Windows.Forms.ListView();
             this._contextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -73,10 +76,12 @@
             this.refreshIssueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this._comment = new System.Windows.Forms.TextBox();
+            this._hideTimeTracking = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.hideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             panel1 = new System.Windows.Forms.Panel();
-            label6 = new System.Windows.Forms.Label();
             possibleAssignmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             actionsAvailableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            label6 = new System.Windows.Forms.Label();
             panel2 = new System.Windows.Forms.Panel();
             statusFilterBindingSource = new System.Windows.Forms.BindingSource(this.components);
             label4 = new System.Windows.Forms.Label();
@@ -94,24 +99,27 @@
             hdrStatus = new System.Windows.Forms.ColumnHeader();
             label5 = new System.Windows.Forms.Label();
             panel1.SuspendLayout();
-            this._worklogGroup.SuspendLayout();
+            this._showHideMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._binding)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.remainingEstimateBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(possibleAssignmentsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(actionsAvailableBindingSource)).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(statusFilterBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(assignmentFilterBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(filtersBindingSource)).BeginInit();
+            this.worklogpanel.SuspendLayout();
+            this._worklogGroup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.remainingEstimateBindingSource)).BeginInit();
             this._splitter.Panel1.SuspendLayout();
             this._splitter.Panel2.SuspendLayout();
             this._splitter.SuspendLayout();
             this._contextMenu.SuspendLayout();
+            this._hideTimeTracking.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            panel1.Controls.Add(this._worklogGroup);
+            panel1.ContextMenuStrip = this._showHideMenu;
             panel1.Controls.Add(this._assignTo);
             panel1.Controls.Add(this._doAssignTo);
             panel1.Controls.Add(this._doTakeAction);
@@ -119,89 +127,28 @@
             panel1.Controls.Add(this.cancelButton);
             panel1.Controls.Add(this.okButton);
             panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            panel1.Location = new System.Drawing.Point(3, 316);
+            panel1.Location = new System.Drawing.Point(3, 369);
             panel1.Name = "panel1";
             panel1.Padding = new System.Windows.Forms.Padding(5);
-            panel1.Size = new System.Drawing.Size(628, 93);
+            panel1.Size = new System.Drawing.Size(628, 40);
             panel1.TabIndex = 2;
             // 
-            // _worklogGroup
+            // _showHideMenu
             // 
-            this._worklogGroup.AccessibleDescription = "";
-            this._worklogGroup.Controls.Add(this._worklogAction);
-            this._worklogGroup.Controls.Add(this._worklog);
-            this._worklogGroup.Controls.Add(this.textBox1);
-            this._worklogGroup.Controls.Add(label6);
-            this._worklogGroup.Controls.Add(this._addWorklog);
-            this._worklogGroup.Dock = System.Windows.Forms.DockStyle.Top;
-            this._worklogGroup.Location = new System.Drawing.Point(5, 5);
-            this._worklogGroup.Name = "_worklogGroup";
-            this._worklogGroup.Size = new System.Drawing.Size(618, 50);
-            this._worklogGroup.TabIndex = 6;
-            this._worklogGroup.TabStop = false;
-            this._worklogGroup.Text = "Worklog";
+            this._showHideMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.showTimeTrackingToolStripMenuItem});
+            this._showHideMenu.Name = "_showHideMenu";
+            this._showHideMenu.Size = new System.Drawing.Size(177, 26);
             // 
-            // _worklogAction
+            // showTimeTrackingToolStripMenuItem
             // 
-            this._worklogAction.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", this._binding, "AddWorklog", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this._worklogAction.DataBindings.Add(new System.Windows.Forms.Binding("IndexSelected", this._binding, "TimeEstimateRecalcualation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this._worklogAction.DataSource = this.remainingEstimateBindingSource;
-            this._worklogAction.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this._worklogAction.FormattingEnabled = true;
-            this._worklogAction.IndexSelected = -1;
-            this._worklogAction.Location = new System.Drawing.Point(285, 18);
-            this._worklogAction.Name = "_worklogAction";
-            this._worklogAction.Size = new System.Drawing.Size(145, 21);
-            this._worklogAction.TabIndex = 3;
-            // 
-            // _binding
-            // 
-            this._binding.DataSource = typeof(CSharpTest.Net.SvnPlugin.UI.IssuesListView);
-            // 
-            // remainingEstimateBindingSource
-            // 
-            this.remainingEstimateBindingSource.DataMember = "TimeEstimateMethodsAvailable";
-            this.remainingEstimateBindingSource.DataSource = this._binding;
-            // 
-            // _worklog
-            // 
-            this._worklog.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", this._binding, "AddWorklog", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this._worklog.DataBindings.Add(new System.Windows.Forms.Binding("Text", this._binding, "TimeSpent", true));
-            this._worklog.Location = new System.Drawing.Point(92, 19);
-            this._worklog.Name = "_worklog";
-            this._worklog.Size = new System.Drawing.Size(75, 20);
-            this._worklog.TabIndex = 1;
-            // 
-            // textBox1
-            // 
-            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this._binding, "NewTimeEstimate", true));
-            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", this._binding, "CanSpecifyNewEstimate", true));
-            this.textBox1.Location = new System.Drawing.Point(436, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(75, 20);
-            this.textBox1.TabIndex = 4;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", this._binding, "AddWorklog", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            label6.Location = new System.Drawing.Point(173, 22);
-            label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(106, 13);
-            label6.TabIndex = 2;
-            label6.Text = "and update estimate:";
-            // 
-            // _addWorklog
-            // 
-            this._addWorklog.AutoSize = true;
-            this._addWorklog.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this._binding, "AddWorklog", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this._addWorklog.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", this._binding, "CanAddWorklog", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this._addWorklog.Location = new System.Drawing.Point(11, 20);
-            this._addWorklog.Name = "_addWorklog";
-            this._addWorklog.Size = new System.Drawing.Size(69, 17);
-            this._addWorklog.TabIndex = 0;
-            this._addWorklog.Text = "Log time:";
-            this._addWorklog.UseVisualStyleBackColor = true;
+            this.showTimeTrackingToolStripMenuItem.Checked = true;
+            this.showTimeTrackingToolStripMenuItem.CheckOnClick = true;
+            this.showTimeTrackingToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.showTimeTrackingToolStripMenuItem.Name = "showTimeTrackingToolStripMenuItem";
+            this.showTimeTrackingToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.showTimeTrackingToolStripMenuItem.Text = "Show time tracking";
+            this.showTimeTrackingToolStripMenuItem.Click += new System.EventHandler(this.showTimeTrackingToolStripMenuItem_Click);
             // 
             // _assignTo
             // 
@@ -212,10 +159,14 @@
             this._assignTo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this._assignTo.FormattingEnabled = true;
             this._assignTo.IndexSelected = -1;
-            this._assignTo.Location = new System.Drawing.Point(298, 64);
+            this._assignTo.Location = new System.Drawing.Point(298, 11);
             this._assignTo.Name = "_assignTo";
             this._assignTo.Size = new System.Drawing.Size(144, 21);
             this._assignTo.TabIndex = 9;
+            // 
+            // _binding
+            // 
+            this._binding.DataSource = typeof(CSharpTest.Net.SvnPlugin.UI.IssuesListView);
             // 
             // possibleAssignmentsBindingSource
             // 
@@ -228,7 +179,7 @@
             this._doAssignTo.AutoSize = true;
             this._doAssignTo.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this._binding, "AssignTo", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this._doAssignTo.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", this._binding, "PerformAction", true));
-            this._doAssignTo.Location = new System.Drawing.Point(200, 68);
+            this._doAssignTo.Location = new System.Drawing.Point(200, 15);
             this._doAssignTo.Name = "_doAssignTo";
             this._doAssignTo.Size = new System.Drawing.Size(92, 17);
             this._doAssignTo.TabIndex = 8;
@@ -241,7 +192,7 @@
             this._doTakeAction.AutoSize = true;
             this._doTakeAction.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this._binding, "PerformAction", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this._doTakeAction.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", this._binding, "CanPerformActions", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this._doTakeAction.Location = new System.Drawing.Point(12, 68);
+            this._doTakeAction.Location = new System.Drawing.Point(12, 15);
             this._doTakeAction.Name = "_doTakeAction";
             this._doTakeAction.Size = new System.Drawing.Size(45, 17);
             this._doTakeAction.TabIndex = 6;
@@ -257,7 +208,7 @@
             this._takeAction.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this._takeAction.FormattingEnabled = true;
             this._takeAction.IndexSelected = -1;
-            this._takeAction.Location = new System.Drawing.Point(63, 64);
+            this._takeAction.Location = new System.Drawing.Point(63, 11);
             this._takeAction.Name = "_takeAction";
             this._takeAction.Size = new System.Drawing.Size(119, 21);
             this._takeAction.TabIndex = 7;
@@ -272,7 +223,7 @@
             this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cancelButton.Location = new System.Drawing.Point(541, 62);
+            this.cancelButton.Location = new System.Drawing.Point(541, 9);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 11;
@@ -284,12 +235,22 @@
             this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.okButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.okButton.Location = new System.Drawing.Point(460, 62);
+            this.okButton.Location = new System.Drawing.Point(460, 9);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(75, 23);
             this.okButton.TabIndex = 10;
             this.okButton.Text = "OK";
             this.okButton.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", this._binding, "AddWorklog", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            label6.Location = new System.Drawing.Point(173, 22);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(106, 13);
+            label6.TabIndex = 2;
+            label6.Text = "and update estimate:";
             // 
             // panel2
             // 
@@ -451,6 +412,81 @@
             label5.TabIndex = 0;
             label5.Text = "Comments:";
             // 
+            // worklogpanel
+            // 
+            this.worklogpanel.Controls.Add(this._worklogGroup);
+            this.worklogpanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.worklogpanel.Location = new System.Drawing.Point(3, 314);
+            this.worklogpanel.Name = "worklogpanel";
+            this.worklogpanel.Padding = new System.Windows.Forms.Padding(5, 5, 5, 0);
+            this.worklogpanel.Size = new System.Drawing.Size(628, 55);
+            this.worklogpanel.TabIndex = 2;
+            // 
+            // _worklogGroup
+            // 
+            this._worklogGroup.AccessibleDescription = "";
+            this._worklogGroup.ContextMenuStrip = this._hideTimeTracking;
+            this._worklogGroup.Controls.Add(this._worklogAction);
+            this._worklogGroup.Controls.Add(this._worklog);
+            this._worklogGroup.Controls.Add(this.textBox1);
+            this._worklogGroup.Controls.Add(label6);
+            this._worklogGroup.Controls.Add(this._addWorklog);
+            this._worklogGroup.Dock = System.Windows.Forms.DockStyle.Top;
+            this._worklogGroup.Location = new System.Drawing.Point(5, 5);
+            this._worklogGroup.Name = "_worklogGroup";
+            this._worklogGroup.Size = new System.Drawing.Size(618, 50);
+            this._worklogGroup.TabIndex = 6;
+            this._worklogGroup.TabStop = false;
+            this._worklogGroup.Text = "Time tracking";
+            // 
+            // _worklogAction
+            // 
+            this._worklogAction.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", this._binding, "AddWorklog", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this._worklogAction.DataBindings.Add(new System.Windows.Forms.Binding("IndexSelected", this._binding, "TimeEstimateRecalcualation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this._worklogAction.DataSource = this.remainingEstimateBindingSource;
+            this._worklogAction.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._worklogAction.FormattingEnabled = true;
+            this._worklogAction.IndexSelected = -1;
+            this._worklogAction.Location = new System.Drawing.Point(285, 18);
+            this._worklogAction.Name = "_worklogAction";
+            this._worklogAction.Size = new System.Drawing.Size(145, 21);
+            this._worklogAction.TabIndex = 3;
+            // 
+            // remainingEstimateBindingSource
+            // 
+            this.remainingEstimateBindingSource.DataMember = "TimeEstimateMethodsAvailable";
+            this.remainingEstimateBindingSource.DataSource = this._binding;
+            // 
+            // _worklog
+            // 
+            this._worklog.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", this._binding, "AddWorklog", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this._worklog.DataBindings.Add(new System.Windows.Forms.Binding("Text", this._binding, "TimeSpent", true));
+            this._worklog.Location = new System.Drawing.Point(92, 19);
+            this._worklog.Name = "_worklog";
+            this._worklog.Size = new System.Drawing.Size(75, 20);
+            this._worklog.TabIndex = 1;
+            // 
+            // textBox1
+            // 
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this._binding, "NewTimeEstimate", true));
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", this._binding, "CanSpecifyNewEstimate", true));
+            this.textBox1.Location = new System.Drawing.Point(436, 19);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(75, 20);
+            this.textBox1.TabIndex = 4;
+            // 
+            // _addWorklog
+            // 
+            this._addWorklog.AutoSize = true;
+            this._addWorklog.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this._binding, "AddWorklog", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this._addWorklog.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", this._binding, "CanAddWorklog", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this._addWorklog.Location = new System.Drawing.Point(11, 20);
+            this._addWorklog.Name = "_addWorklog";
+            this._addWorklog.Size = new System.Drawing.Size(69, 17);
+            this._addWorklog.TabIndex = 0;
+            this._addWorklog.Text = "Log time:";
+            this._addWorklog.UseVisualStyleBackColor = true;
+            // 
             // _splitter
             // 
             this._splitter.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -468,8 +504,8 @@
             this._splitter.Panel2.Controls.Add(this._comment);
             this._splitter.Panel2.Controls.Add(label5);
             this._splitter.Panel2.Padding = new System.Windows.Forms.Padding(3);
-            this._splitter.Size = new System.Drawing.Size(628, 241);
-            this._splitter.SplitterDistance = 151;
+            this._splitter.Size = new System.Drawing.Size(628, 239);
+            this._splitter.SplitterDistance = 148;
             this._splitter.TabIndex = 1;
             // 
             // _listView
@@ -488,7 +524,7 @@
             this._listView.FullRowSelect = true;
             this._listView.Location = new System.Drawing.Point(3, 3);
             this._listView.Name = "_listView";
-            this._listView.Size = new System.Drawing.Size(622, 145);
+            this._listView.Size = new System.Drawing.Size(622, 142);
             this._listView.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this._listView.TabIndex = 0;
             this._listView.UseCompatibleStateImageBehavior = false;
@@ -538,8 +574,22 @@
             this._comment.Location = new System.Drawing.Point(3, 24);
             this._comment.Multiline = true;
             this._comment.Name = "_comment";
-            this._comment.Size = new System.Drawing.Size(622, 59);
+            this._comment.Size = new System.Drawing.Size(622, 60);
             this._comment.TabIndex = 1;
+            // 
+            // _hideTimeTracking
+            // 
+            this._hideTimeTracking.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.hideToolStripMenuItem});
+            this._hideTimeTracking.Name = "_hideTimeTracking";
+            this._hideTimeTracking.Size = new System.Drawing.Size(100, 26);
+            // 
+            // hideToolStripMenuItem
+            // 
+            this.hideToolStripMenuItem.Name = "hideToolStripMenuItem";
+            this.hideToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+            this.hideToolStripMenuItem.Text = "&Hide";
+            this.hideToolStripMenuItem.Click += new System.EventHandler(this.hideToolStripMenuItem_Click);
             // 
             // IssuesList
             // 
@@ -550,6 +600,7 @@
             this.ClientSize = new System.Drawing.Size(634, 412);
             this.Controls.Add(this._splitter);
             this.Controls.Add(panel2);
+            this.Controls.Add(this.worklogpanel);
             this.Controls.Add(panel1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -564,10 +615,8 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Closing);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            this._worklogGroup.ResumeLayout(false);
-            this._worklogGroup.PerformLayout();
+            this._showHideMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this._binding)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.remainingEstimateBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(possibleAssignmentsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(actionsAvailableBindingSource)).EndInit();
             panel2.ResumeLayout(false);
@@ -575,11 +624,16 @@
             ((System.ComponentModel.ISupportInitialize)(statusFilterBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(assignmentFilterBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(filtersBindingSource)).EndInit();
+            this.worklogpanel.ResumeLayout(false);
+            this._worklogGroup.ResumeLayout(false);
+            this._worklogGroup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.remainingEstimateBindingSource)).EndInit();
             this._splitter.Panel1.ResumeLayout(false);
             this._splitter.Panel2.ResumeLayout(false);
             this._splitter.Panel2.PerformLayout();
             this._splitter.ResumeLayout(false);
             this._contextMenu.ResumeLayout(false);
+            this._hideTimeTracking.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -610,5 +664,10 @@
         private System.Windows.Forms.TextBox _worklog;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.CheckBox _addWorklog;
+        private System.Windows.Forms.Panel worklogpanel;
+        private System.Windows.Forms.ContextMenuStrip _showHideMenu;
+        private System.Windows.Forms.ToolStripMenuItem showTimeTrackingToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip _hideTimeTracking;
+        private System.Windows.Forms.ToolStripMenuItem hideToolStripMenuItem;
     }
 }

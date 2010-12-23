@@ -16,7 +16,7 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 using CSharpTest.Net.SvnPlugin.Interfaces;
-using CSharpTest.Net.SvnPlugin.Jira;
+using CSharpTest.Net.SvnJiraIntegration.Jira;
 using CSharpTest.Net.Serialization;
 using System.IO;
 using System.Windows.Forms;
@@ -50,7 +50,7 @@ namespace CSharpTest.Net.SvnJiraIntegration
 
 			_userName = userName;
 			_password = password;
-			_service = new SvnPlugin.Jira.JiraSoapServiceService();
+            _service = new CSharpTest.Net.SvnJiraIntegration.Jira.JiraSoapServiceService();
 			_service.Url = _rootUrl + "/rpc/soap/jirasoapservice-v2";
 			_token = null;
 
@@ -272,14 +272,14 @@ namespace CSharpTest.Net.SvnJiraIntegration
             switch (method)
             {
                 case TimeEstimateRecalcualationMethod.AdjustAutomatically:
-                    _service.addWorklogAndAutoAdjustRemainingEstimate(_token, issue.DisplayId, remoteWorklog);
+                    _service.addWorklogAndAutoAdjustRemainingEstimateFixed(_token, issue.DisplayId, remoteWorklog);
                     break;
 
                 case TimeEstimateRecalcualationMethod.DoNotChange:
-                    _service.addWorklogAndRetainRemainingEstimate(_token, issue.DisplayId, remoteWorklog);
+                    _service.addWorklogAndRetainRemainingEstimateFixed(_token, issue.DisplayId, remoteWorklog);
                     break;
                 case TimeEstimateRecalcualationMethod.SetToNewValue:
-                    _service.addWorklogWithNewRemainingEstimate(_token, issue.DisplayId, remoteWorklog,
+                    _service.addWorklogWithNewRemainingEstimateFixed(_token, issue.DisplayId, remoteWorklog,
                                                                 newTimeEstimate);
                     break;
                 default:

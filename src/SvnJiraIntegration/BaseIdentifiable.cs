@@ -15,7 +15,7 @@
 using System;
 using System.Collections.Generic;
 using CSharpTest.Net.SvnPlugin.Interfaces;
-using CSharpTest.Net.SvnPlugin.Jira;
+using CSharpTest.Net.SvnJiraIntegration.Jira;
 
 namespace CSharpTest.Net.SvnJiraIntegration
 {

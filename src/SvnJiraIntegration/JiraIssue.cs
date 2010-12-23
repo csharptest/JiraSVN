@@ -14,7 +14,7 @@
 #endregion
 using System;
 using System.Collections.Generic;
-using CSharpTest.Net.SvnPlugin.Jira;
+using CSharpTest.Net.SvnJiraIntegration.Jira;
 using CSharpTest.Net.SvnPlugin.Interfaces;
 using CSharpTest.Net.Reflection;
 
