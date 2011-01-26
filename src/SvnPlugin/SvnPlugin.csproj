@@ -28,6 +28,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <OutputPath>..\..\bin\Debug</OutputPath>
     <DocumentationFile>bin\SvnPlugin.xml</DocumentationFile>
+    <RegisterForComInterop>true</RegisterForComInterop>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>false</Optimize>
@@ -70,6 +71,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resolver.cs" />
     <Compile Include="UI\ActionMenuItem.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -132,6 +134,7 @@
   <ItemGroup>
     <EmbeddedResource Include="..\..\LICENSE-2.0.txt">
       <Link>LICENSE-2.0.txt</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

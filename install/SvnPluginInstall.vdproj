@@ -15,158 +15,158 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_0C06FA908E6B421EA693FF8C083FD3DF"
+        "MsmKey" = "8:_13D89BDEBBA646CF8D3B877312C8E379"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_5487F26AB35D4E098CF37B3CFFE8FDA0"
+        "MsmKey" = "8:_14C5408AFEA68370A508819ABF3942A0"
+        "OwnerKey" = "8:_7CBD39C635C44B9E9860833EF0E3D3C3"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_14C5408AFEA68370A508819ABF3942A0"
+        "OwnerKey" = "8:_DE8BE26581354336ABF6F5F7D27F9495"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_441E1651FBAF44C8902D4E7192AEB0EC"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_567C2660F5E8A5FFFD1FDF65F90439B7"
-        "OwnerKey" = "8:_AB7967FAD47645E08D16E4C7C67209F0"
+        "MsmKey" = "8:_5C68D5B7F80AD96478ED8425FCDDBFAF"
+        "OwnerKey" = "8:_7CBD39C635C44B9E9860833EF0E3D3C3"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_71BAA63464744B7A97347EEA59CB37F5"
+        "MsmKey" = "8:_5C68D5B7F80AD96478ED8425FCDDBFAF"
+        "OwnerKey" = "8:_DF0D6995D4D246F9B35D66F95A5C8C48"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_5C68D5B7F80AD96478ED8425FCDDBFAF"
+        "OwnerKey" = "8:_DE8BE26581354336ABF6F5F7D27F9495"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_5C68D5B7F80AD96478ED8425FCDDBFAF"
+        "OwnerKey" = "8:_14C5408AFEA68370A508819ABF3942A0"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_7CBD39C635C44B9E9860833EF0E3D3C3"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_7791D63C9F2695C4880FC34B8925D5E0"
-        "OwnerKey" = "8:_5487F26AB35D4E098CF37B3CFFE8FDA0"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_7791D63C9F2695C4880FC34B8925D5E0"
-        "OwnerKey" = "8:_AB7967FAD47645E08D16E4C7C67209F0"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_7791D63C9F2695C4880FC34B8925D5E0"
-        "OwnerKey" = "8:_567C2660F5E8A5FFFD1FDF65F90439B7"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_9B524D2A0CA5CF8EE738A93F40F1477F"
-        "OwnerKey" = "8:_7791D63C9F2695C4880FC34B8925D5E0"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_9B524D2A0CA5CF8EE738A93F40F1477F"
-        "OwnerKey" = "8:_F4BB40B8C6114E5984443DAB067B28CF"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_9B524D2A0CA5CF8EE738A93F40F1477F"
-        "OwnerKey" = "8:_567C2660F5E8A5FFFD1FDF65F90439B7"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_9B524D2A0CA5CF8EE738A93F40F1477F"
-        "OwnerKey" = "8:_AB7967FAD47645E08D16E4C7C67209F0"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_9B524D2A0CA5CF8EE738A93F40F1477F"
-        "OwnerKey" = "8:_5487F26AB35D4E098CF37B3CFFE8FDA0"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_AB7967FAD47645E08D16E4C7C67209F0"
+        "MsmKey" = "8:_C5E8EC997B1E4BAAB7A1F32CDB0AE328"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_E2F4814F256EE6E2EB9C9D42A827FEF8"
-        "OwnerKey" = "8:_7791D63C9F2695C4880FC34B8925D5E0"
+        "MsmKey" = "8:_CCA81CA2FF0F41D9A43E85C74C8D681B"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_E2F4814F256EE6E2EB9C9D42A827FEF8"
-        "OwnerKey" = "8:_F4BB40B8C6114E5984443DAB067B28CF"
+        "MsmKey" = "8:_DE8BE26581354336ABF6F5F7D27F9495"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_E2F4814F256EE6E2EB9C9D42A827FEF8"
-        "OwnerKey" = "8:_AB7967FAD47645E08D16E4C7C67209F0"
+        "MsmKey" = "8:_DF0D6995D4D246F9B35D66F95A5C8C48"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_E2F4814F256EE6E2EB9C9D42A827FEF8"
-        "OwnerKey" = "8:_567C2660F5E8A5FFFD1FDF65F90439B7"
+        "MsmKey" = "8:_F1B64BB378C57EEF93CA52831777B16F"
+        "OwnerKey" = "8:_7CBD39C635C44B9E9860833EF0E3D3C3"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_E2F4814F256EE6E2EB9C9D42A827FEF8"
-        "OwnerKey" = "8:_5487F26AB35D4E098CF37B3CFFE8FDA0"
+        "MsmKey" = "8:_F1B64BB378C57EEF93CA52831777B16F"
+        "OwnerKey" = "8:_DF0D6995D4D246F9B35D66F95A5C8C48"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_F4BB40B8C6114E5984443DAB067B28CF"
+        "MsmKey" = "8:_F1B64BB378C57EEF93CA52831777B16F"
+        "OwnerKey" = "8:_14C5408AFEA68370A508819ABF3942A0"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_FACCE1B3C2A64251853D3E9E3C683ABB"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_FC20793720D042DBA90044587F7E8325"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_AB7967FAD47645E08D16E4C7C67209F0"
+        "OwnerKey" = "8:_FACCE1B3C2A64251853D3E9E3C683ABB"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_F4BB40B8C6114E5984443DAB067B28CF"
+        "OwnerKey" = "8:_DF0D6995D4D246F9B35D66F95A5C8C48"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_567C2660F5E8A5FFFD1FDF65F90439B7"
+        "OwnerKey" = "8:_DE8BE26581354336ABF6F5F7D27F9495"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_5487F26AB35D4E098CF37B3CFFE8FDA0"
+        "OwnerKey" = "8:_7CBD39C635C44B9E9860833EF0E3D3C3"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_7791D63C9F2695C4880FC34B8925D5E0"
+        "OwnerKey" = "8:_14C5408AFEA68370A508819ABF3942A0"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_9B524D2A0CA5CF8EE738A93F40F1477F"
+        "OwnerKey" = "8:_F1B64BB378C57EEF93CA52831777B16F"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_E2F4814F256EE6E2EB9C9D42A827FEF8"
+        "OwnerKey" = "8:_5C68D5B7F80AD96478ED8425FCDDBFAF"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_441E1651FBAF44C8902D4E7192AEB0EC"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -237,60 +237,9 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0C06FA908E6B421EA693FF8C083FD3DF"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_13D89BDEBBA646CF8D3B877312C8E379"
             {
-            "SourcePath" = "8:..\\LICENSE-2.0.txt"
-            "TargetName" = "8:LICENSE-2.0.txt"
-            "Tag" = "8:"
-            "Folder" = "8:_7C760051064F401894B98C3AAA0533DB"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_567C2660F5E8A5FFFD1FDF65F90439B7"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:SvnJiraIntegration, Version=2.10.1217.1127, Culture=neutral, PublicKeyToken=ac778badf8078568, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_567C2660F5E8A5FFFD1FDF65F90439B7"
-                    {
-                    "Name" = "8:SvnJiraIntegration.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:SvnJiraIntegration.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_7C760051064F401894B98C3AAA0533DB"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_71BAA63464744B7A97347EEA59CB37F5"
-            {
-            "SourcePath" = "8:..\\src\\SvnPlugin\\bin\\SvnPlugin.dll.config"
+            "SourcePath" = "8:..\\bin\\Release\\SvnPlugin.dll.config"
             "TargetName" = "8:SvnPlugin.dll.config"
             "Tag" = "8:"
             "Folder" = "8:_7C760051064F401894B98C3AAA0533DB"
@@ -308,20 +257,20 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_7791D63C9F2695C4880FC34B8925D5E0"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_14C5408AFEA68370A508819ABF3942A0"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:SvnPlugin, Version=2.10.1217.1127, Culture=neutral, PublicKeyToken=ac778badf8078568, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:SvnPlugin, Version=2.11.125.710, Culture=neutral, PublicKeyToken=ac778badf8078568, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_7791D63C9F2695C4880FC34B8925D5E0"
+                    "_14C5408AFEA68370A508819ABF3942A0"
                     {
-                    "Name" = "8:SvnPlugin.dll"
+                    "Name" = "8:SvnPlugin.DLL"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:SvnPlugin.dll"
+            "SourcePath" = "8:SvnPlugin.DLL"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_7C760051064F401894B98C3AAA0533DB"
@@ -335,55 +284,24 @@
             "SharedLegacy" = "11:FALSE"
             "PackageAs" = "3:1"
             "Register" = "3:1"
-            "Exclude" = "11:FALSE"
+            "Exclude" = "11:TRUE"
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_9B524D2A0CA5CF8EE738A93F40F1477F"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:CSharpTest.Net.Logging, Version=1.10.1124.358, Culture=neutral, PublicKeyToken=06aee00cce822474, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_9B524D2A0CA5CF8EE738A93F40F1477F"
-                    {
-                    "Name" = "8:CSharpTest.Net.Logging.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:CSharpTest.Net.Logging.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_7C760051064F401894B98C3AAA0533DB"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_E2F4814F256EE6E2EB9C9D42A827FEF8"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_441E1651FBAF44C8902D4E7192AEB0EC"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:CSharpTest.Net.Library, Version=1.10.1124.358, Culture=neutral, PublicKeyToken=06aee00cce822474, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_E2F4814F256EE6E2EB9C9D42A827FEF8"
+                    "_441E1651FBAF44C8902D4E7192AEB0EC"
                     {
                     "Name" = "8:CSharpTest.Net.Library.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:CSharpTest.Net.Library.dll"
+            "SourcePath" = "8:..\\bin\\Release\\CSharpTest.Net.Library.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_7C760051064F401894B98C3AAA0533DB"
@@ -398,7 +316,253 @@
             "PackageAs" = "3:1"
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_5C68D5B7F80AD96478ED8425FCDDBFAF"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:CSharpTest.Net.Library, Version=1.10.1124.358, Culture=neutral, PublicKeyToken=06aee00cce822474, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_5C68D5B7F80AD96478ED8425FCDDBFAF"
+                    {
+                    "Name" = "8:CSharpTest.Net.Library.DLL"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:CSharpTest.Net.Library.DLL"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_7C760051064F401894B98C3AAA0533DB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:TRUE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_7CBD39C635C44B9E9860833EF0E3D3C3"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:SvnJiraIntegration, Version=2.11.125.710, Culture=neutral, PublicKeyToken=ac778badf8078568, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_7CBD39C635C44B9E9860833EF0E3D3C3"
+                    {
+                    "Name" = "8:SvnJiraIntegration.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:..\\bin\\Release\\SvnJiraIntegration.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_7C760051064F401894B98C3AAA0533DB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C5E8EC997B1E4BAAB7A1F32CDB0AE328"
+            {
+            "SourcePath" = "8:..\\bin\\Release\\SvnPlugin.xml"
+            "TargetName" = "8:SvnPlugin.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_7C760051064F401894B98C3AAA0533DB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_CCA81CA2FF0F41D9A43E85C74C8D681B"
+            {
+            "SourcePath" = "8:..\\bin\\Release\\LICENSE-2.0.txt"
+            "TargetName" = "8:LICENSE-2.0.txt"
+            "Tag" = "8:"
+            "Folder" = "8:_7C760051064F401894B98C3AAA0533DB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_DE8BE26581354336ABF6F5F7D27F9495"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:SvnEditor, Version=2.11.125.710, Culture=neutral, PublicKeyToken=ac778badf8078568, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_DE8BE26581354336ABF6F5F7D27F9495"
+                    {
+                    "Name" = "8:SvnEditor.exe"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:..\\bin\\Release\\SvnEditor.exe"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_7C760051064F401894B98C3AAA0533DB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_DF0D6995D4D246F9B35D66F95A5C8C48"
+            {
+            "AssemblyRegister" = "3:2"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:SvnPlugin, Version=2.11.125.710, Culture=neutral, PublicKeyToken=ac778badf8078568, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_DF0D6995D4D246F9B35D66F95A5C8C48"
+                    {
+                    "Name" = "8:SvnPlugin.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:..\\bin\\Release\\SvnPlugin.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_7C760051064F401894B98C3AAA0533DB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_F1B64BB378C57EEF93CA52831777B16F"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:CSharpTest.Net.Logging, Version=1.10.1124.358, Culture=neutral, PublicKeyToken=06aee00cce822474, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_F1B64BB378C57EEF93CA52831777B16F"
+                    {
+                    "Name" = "8:CSharpTest.Net.Logging.DLL"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:CSharpTest.Net.Logging.DLL"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_7C760051064F401894B98C3AAA0533DB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:TRUE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_FACCE1B3C2A64251853D3E9E3C683ABB"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:CSharpTest.Net.Logging, Version=1.10.1124.358, Culture=neutral, PublicKeyToken=06aee00cce822474, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_FACCE1B3C2A64251853D3E9E3C683ABB"
+                    {
+                    "Name" = "8:CSharpTest.Net.Logging.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:..\\bin\\Release\\CSharpTest.Net.Logging.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_7C760051064F401894B98C3AAA0533DB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FC20793720D042DBA90044587F7E8325"
+            {
+            "SourcePath" = "8:..\\bin\\Release\\SvnEditor.exe.config"
+            "TargetName" = "8:SvnEditor.exe.config"
+            "Tag" = "8:"
+            "Folder" = "8:_7C760051064F401894B98C3AAA0533DB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
         }
@@ -436,7 +600,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:SvnPluginInstall"
         "ProductCode" = "8:{9F7584D7-FCF3-479E-86E8-5B1CF71FAC37}"
-        "PackageCode" = "8:{B21E3229-F46A-4429-97EC-8F57FFB31151}"
+        "PackageCode" = "8:{1998BD97-7F02-4D98-A9F8-21045F645C5B}"
         "UpgradeCode" = "8:{06CE0F15-76E1-4EF2-9B81-1EE0B88BCF6E}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
@@ -631,7 +795,7 @@
                                             "Condition" = "8:"
                                             "Transitive" = "11:FALSE"
                                             "ValueTypes" = "3:1"
-                                            "Value" = "8:SvnPlugin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+                                            "Value" = "8:SvnPlugin, Version=2, Culture=neutral, PublicKeyToken=ac778badf8078568"
                                             }
                                             "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_92B76CF45B7E4FD98DD3DCD3B1C12688"
                                             {
@@ -1104,90 +1268,6 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_5487F26AB35D4E098CF37B3CFFE8FDA0"
-            {
-            "SourcePath" = "8:..\\src\\SvnJiraIntegration\\obj\\Debug\\SvnJiraIntegration.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_7C760051064F401894B98C3AAA0533DB"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            "ProjectOutputGroupRegister" = "3:1"
-            "OutputConfiguration" = "8:"
-            "OutputGroupCanonicalName" = "8:Built"
-            "OutputProjectGuid" = "8:{73680B86-524B-4296-90CE-740B2486D279}"
-            "ShowKeyOutput" = "11:TRUE"
-                "ExcludeFilters"
-                {
-                }
-            }
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_AB7967FAD47645E08D16E4C7C67209F0"
-            {
-            "SourcePath" = "8:..\\src\\SvnEditor\\obj\\Debug\\SvnEditor.exe"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_7C760051064F401894B98C3AAA0533DB"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            "ProjectOutputGroupRegister" = "3:1"
-            "OutputConfiguration" = "8:"
-            "OutputGroupCanonicalName" = "8:Built"
-            "OutputProjectGuid" = "8:{9208F806-D81A-4C53-8805-49827FD399E2}"
-            "ShowKeyOutput" = "11:TRUE"
-                "ExcludeFilters"
-                {
-                }
-            }
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_F4BB40B8C6114E5984443DAB067B28CF"
-            {
-            "SourcePath" = "8:..\\src\\SvnPlugin\\obj\\Debug\\SvnPlugin.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_7C760051064F401894B98C3AAA0533DB"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            "ProjectOutputGroupRegister" = "3:3"
-            "OutputConfiguration" = "8:"
-            "OutputGroupCanonicalName" = "8:Built"
-            "OutputProjectGuid" = "8:{CFF6CAA1-27A0-46FF-89D6-AD70F3575685}"
-            "ShowKeyOutput" = "11:TRUE"
-                "ExcludeFilters"
-                {
-                }
-            }
         }
     }
 }

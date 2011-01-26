@@ -1,4 +1,4 @@
-﻿#region Copyright 2008-2010 by Roger Knapp, Licensed under the Apache License, Version 2.0
+﻿#region Copyright 2010 by Roger Knapp, Licensed under the Apache License, Version 2.0
 /* Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -33,7 +33,7 @@ namespace CSharpTest.Net.SvnPlugin
 	/// <summary>
 	/// COM Registered InterOp for TortoiseSVN integration
 	/// </summary>
-	[ComVisible(true), ProgId("SvnPlugin.MyPlugin"), Guid(MyPlugin.GUID), ClassInterface(ClassInterfaceType.None)]
+	[ComVisible(true), ProgId("SvnPlugin.MyPlugin"), Guid(MyPlugin.GUID), ClassInterface(ClassInterfaceType.AutoDual)]
 	public class MyPlugin : IDisposable, IBugTraqProvider, IBugTraqProvider2
 	{
         const string GUID = "CF732FD7-AA8A-4E9D-9E15-025E4D1A7E9D";
@@ -51,6 +51,7 @@ namespace CSharpTest.Net.SvnPlugin
 		{
 			//System.Diagnostics.Debugger.Break();
 			Log.Write("Started, logging to {0}", Log.Config.LogFile);
+            Resolver.Hook();
             CertificateHandler.Hook();
 		}
 
@@ -472,9 +473,23 @@ namespace CSharpTest.Net.SvnPlugin
 						using (RegistryKey key = Registry.ClassesRoot.CreateSubKey(keypath))
 						{ key.Close(); }//{ Console.WriteLine(key.ToString()); }
 
+                    using (RegistryKey key = Registry.ClassesRoot.CreateSubKey(String.Format(@"CLSID\{0}\InprocServer32", CLSID)))
+                        if (key != null) key.SetValue("Assembly", t.Assembly.FullName);
+
                     if (t.Assembly.Location != null && System.IO.File.Exists(t.Assembly.Location))
+                    {
                         using (RegistryKey key = Registry.ClassesRoot.CreateSubKey(String.Format(@"CLSID\{0}\InprocServer32", CLSID)))
-                            if(key != null) key.SetValue("CodeBase", t.Assembly.Location);
+                            if (key != null) key.SetValue("CodeBase", t.Assembly.Location);
+                        using (RegistryKey key = Registry.ClassesRoot.CreateSubKey(String.Format(@"CLSID\{0}\InprocServer32\{1}", CLSID, t.Assembly.GetName().Version)))
+                        {
+                            if (key != null)
+                            {
+                                key.SetValue(null, "mscoree.dll");
+                                key.SetValue("ThreadingModel", "Both");
+                                key.SetValue("CodeBase", t.Assembly.Location);
+                            }
+                        }
+                    }
 				}
 			}
 			catch (Exception e)

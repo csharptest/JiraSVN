@@ -424,6 +424,7 @@
             // 
             // _worklogGroup
             // 
+            this._worklogGroup.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", this._binding, "CanAddWorklog", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this._worklogGroup.AccessibleDescription = "";
             this._worklogGroup.ContextMenuStrip = this._hideTimeTracking;
             this._worklogGroup.Controls.Add(this._worklogAction);
