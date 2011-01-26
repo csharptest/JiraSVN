@@ -51,8 +51,22 @@ namespace CSharpTest.Net.SvnJiraIntegration
 			_userName = userName;
 			_password = password;
             _service = new CSharpTest.Net.SvnJiraIntegration.Jira.JiraSoapServiceService();
-			_service.Url = _rootUrl + "/rpc/soap/jirasoapservice-v2";
-			_token = null;
+            _service.Url = _rootUrl + "/rpc/soap/jirasoapservice-v2";
+            _service.UseDefaultCredentials = true;
+            if (!String.IsNullOrEmpty(settings("jira:proxyurl")))
+            {
+                System.Net.ICredentials proxyAuth = System.Net.CredentialCache.DefaultCredentials;
+                UriBuilder proxyuri = new UriBuilder(settings("jira:proxyurl"));
+                if(!String.IsNullOrEmpty(proxyuri.UserName))
+                {
+                    proxyAuth = new System.Net.NetworkCredential(proxyuri.UserName, proxyuri.Password);
+                    proxyuri.Password = proxyuri.UserName = String.Empty;
+                }
+                _service.Proxy = new System.Net.WebProxy(proxyuri.Uri);
+                _service.Proxy.Credentials = proxyAuth;
+            }
+
+		    _token = null;
 
 			Connect();
 			_currentUser = GetUser(_userName);
