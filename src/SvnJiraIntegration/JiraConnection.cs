@@ -32,6 +32,7 @@ namespace CSharpTest.Net.SvnJiraIntegration
 		readonly JiraUser _currentUser;
 		readonly Dictionary<string, JiraUser> _knownUsers;
 		readonly Dictionary<string, JiraStatus> _statuses;
+        readonly Converter<string, string> _settings;
 
 		readonly JiraSoapServiceService _service;
 		private string _token;
@@ -43,6 +44,7 @@ namespace CSharpTest.Net.SvnJiraIntegration
 			if (offset > 0)
 				_rootUrl = _rootUrl.Substring(0, offset);
 
+            _settings = settings;
 			_knownUsers = new Dictionary<string, JiraUser>(StringComparer.OrdinalIgnoreCase);
 			_lookupUsers = StringComparer.OrdinalIgnoreCase.Equals(settings("resolveUserNames"), "true");
 			LoadUsers();
@@ -268,7 +270,15 @@ namespace CSharpTest.Net.SvnJiraIntegration
                 else if (StringComparer.OrdinalIgnoreCase.Equals("Worklog", paramName))	// JIRA 4.1 - worklogs are required!
                     continue;
                 else
+                {
                     param.values = issue.GetFieldValue(paramName);
+                    if (param.values == null || param.values.Length == 0 || (param.values.Length == 1 && param.values[0] == null))
+                    {
+                        string setting = _settings(String.Format("{0}:{1}", action.Name, field.name));
+                        if(setting != null)
+                            param.values = new string[] { setting };
+                    }
+                }
 
                 actionParams.Add(param);
             }
