@@ -105,6 +105,7 @@ namespace CSharpTest.Net.SvnPlugin.UI
 		{
 			//Populate initial items...
 			FoundIssues_ListChanged(null, new ListChangedEventArgs(ListChangedType.Reset, 0));
+            _comment.Focus();
 		}
 
 		void Form_Closing(object sender, FormClosingEventArgs e)

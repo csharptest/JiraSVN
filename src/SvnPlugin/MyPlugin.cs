@@ -38,7 +38,7 @@ namespace CSharpTest.Net.SvnPlugin
 	{
         const string GUID = "CF732FD7-AA8A-4E9D-9E15-025E4D1A7E9D";
         const string CLSID = "{" + GUID + "}";
-		const string BUTTON_TEXT = "{0} Issues";
+		const string BUTTON_TEXT = "(&J){0} Issues";
 
 		private IIssuesService _connector = null;
 		private IIssuesServiceConnection _service = null;
