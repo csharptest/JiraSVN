@@ -12,8 +12,8 @@
 # TOOLS
 MSBuild=%WinDir%\Microsoft.NET\Framework\v3.5\MSBuild.exe /nologo
 
-!IF "$(VS90COMNTOOLS)" != ""
-DevEnv="$(VS90COMNTOOLS)..\IDE\devenv.exe"
+!IF "$(VS100COMNTOOLS)" != ""
+DevEnv="$(VS100COMNTOOLS)..\IDE\devenv.exe"
 !ELSE
 !ERROR Visual studio not found, check env setting VS90COMNTOOLS
 !ENDIF
