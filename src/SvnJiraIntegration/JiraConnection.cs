@@ -247,7 +247,7 @@ namespace CSharpTest.Net.SvnJiraIntegration
 		{
 			foreach (RemoteResolution res in _service.getResolutions(_token))
 			{
-				if (res.name.IndexOf("fix", StringComparison.OrdinalIgnoreCase) >= 0)
+				if (res.name.IndexOf("fixed", StringComparison.OrdinalIgnoreCase) >= 0)
 					return res.id;
 			}
 			throw new ApplicationException("Unable to locate a resolution containing the text 'fix'.");
@@ -263,9 +263,9 @@ namespace CSharpTest.Net.SvnJiraIntegration
                 RemoteFieldValue param = new RemoteFieldValue();
                 string paramName = param.id = field.id;
 
-                if (StringComparer.OrdinalIgnoreCase.Equals("Resolution", field.name))
+                if (StringComparer.OrdinalIgnoreCase.Equals("Resolution", field.id))
                     param.values = new string[] { FindFixResolution() };
-                else if (StringComparer.OrdinalIgnoreCase.Equals("Assignee", field.name))
+                else if (StringComparer.OrdinalIgnoreCase.Equals("Assignee", field.id))
                     param.values = new string[] { assignTo.Id };
                 else if (StringComparer.OrdinalIgnoreCase.Equals("Worklog", paramName))	// JIRA 4.1 - worklogs are required!
                     continue;
