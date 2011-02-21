@@ -14,6 +14,7 @@
 #endregion
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
@@ -366,12 +367,18 @@ namespace CSharpTest.Net.SvnPlugin
 		{
 			try
 			{
-				bugIDOut = bugID;
+			    string fileName = Process.GetCurrentProcess().MainModule.FileVersionInfo.ProductName;
+			    bool isGit = fileName == "TortoiseGit";
+			    if(!isGit) {
+    				bugIDOut = bugID;
+			    }
+                
+			    bugIDOut = string.Empty;
 				revPropNames = new string[0];
 				revPropValues = new string[0];
 
 				string message = GetCommitMsg(hParentWnd, parameters, originalMessage, commonRoot, pathList);
-				if (_issues != null)
+				if (_issues != null && !isGit)
 				{
 					foreach (IIssue issue in _issues.SelectedIssues)
 					{ bugIDOut = issue.DisplayId; break; }
