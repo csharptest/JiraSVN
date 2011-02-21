@@ -223,7 +223,8 @@ namespace CSharpTest.Net.SvnPlugin.UI
                 showTimeTrackingToolStripMenuItem.PerformClick();
         }
 
-        private void _comment_KeyDown(object sender, KeyEventArgs e) {
+        protected override void OnKeyDown(KeyEventArgs e) {
+            base.OnKeyDown(e);
             if(e.Control && !e.Alt && !e.Shift && e.KeyCode == Keys.Return) {
                 okButton.PerformClick();
             }

@@ -1,4 +1,6 @@
-﻿namespace CSharpTest.Net.SvnPlugin.UI
+﻿using System.Windows.Forms;
+
+namespace CSharpTest.Net.SvnPlugin.UI
 {
     partial class IssuesList
     {
@@ -586,13 +588,12 @@
             this._comment.DataBindings.Add(new System.Windows.Forms.Binding("Text", this._binding, "Comments", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this._comment.Dock = System.Windows.Forms.DockStyle.Fill;
             this._comment.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this._comment.ImeMode = System.Windows.Forms.ImeMode.On;
+            this._comment.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this._comment.Location = new System.Drawing.Point(3, 23);
             this._comment.Multiline = true;
             this._comment.Name = "_comment";
             this._comment.Size = new System.Drawing.Size(987, 192);
             this._comment.TabIndex = 0;
-            this._comment.KeyDown += new System.Windows.Forms.KeyEventHandler(this._comment_KeyDown);
             // 
             // IssuesList
             // 
@@ -605,6 +606,7 @@
             this.Controls.Add(panel2);
             this.Controls.Add(this.worklogpanel);
             this.Controls.Add(panel1);
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(650, 417);
