@@ -222,6 +222,12 @@ namespace CSharpTest.Net.SvnPlugin.UI
             if (showTimeTrackingToolStripMenuItem.Checked)
                 showTimeTrackingToolStripMenuItem.PerformClick();
         }
+
+        private void _comment_KeyDown(object sender, KeyEventArgs e) {
+            if(e.Control && !e.Alt && !e.Shift && e.KeyCode == Keys.Return) {
+                okButton.PerformClick();
+            }
+        }
 	}
 }
 

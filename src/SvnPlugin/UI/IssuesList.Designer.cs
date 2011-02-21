@@ -592,6 +592,7 @@
             this._comment.Name = "_comment";
             this._comment.Size = new System.Drawing.Size(987, 192);
             this._comment.TabIndex = 0;
+            this._comment.KeyDown += new System.Windows.Forms.KeyEventHandler(this._comment_KeyDown);
             // 
             // IssuesList
             // 
