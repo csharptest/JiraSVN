@@ -367,9 +367,9 @@ namespace CSharpTest.Net.SvnPlugin
 		{
 			try
 			{
-			    string fileName = Process.GetCurrentProcess().MainModule.FileVersionInfo.ProductName;
-			    bool isGit = fileName == "TortoiseGit";
-			    if(!isGit) {
+			    string productName = Process.GetCurrentProcess().MainModule.FileVersionInfo.ProductName;
+			    bool isGitOrHg = productName == "TortoiseGit" || productName == "TortoiseHg";
+			    if(!isGitOrHg) {
     				bugIDOut = bugID;
 			    }
                 
@@ -378,7 +378,7 @@ namespace CSharpTest.Net.SvnPlugin
 				revPropValues = new string[0];
 
 				string message = GetCommitMsg(hParentWnd, parameters, originalMessage, commonRoot, pathList);
-				if (_issues != null && !isGit)
+				if (_issues != null && !isGitOrHg)
 				{
 					foreach (IIssue issue in _issues.SelectedIssues)
 					{ bugIDOut = issue.DisplayId; break; }
