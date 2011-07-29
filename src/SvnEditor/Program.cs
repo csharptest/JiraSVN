@@ -82,7 +82,7 @@ namespace CSharpTest.Net.SvnEditor
 							File.Delete(inputFile);
 						else
 						{
-							message = plugin.CommitChanges(IntPtr.Zero, message, -1, paths);
+                            message = plugin.CommitChanges(IntPtr.Zero, String.Empty, message, -1, commonRoot, paths);
 
 							if (message.Length > 0)
 								File.WriteAllText(inputFile, message);

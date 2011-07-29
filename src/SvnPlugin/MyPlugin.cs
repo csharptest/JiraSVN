@@ -18,13 +18,11 @@ using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using Microsoft.Win32;
-using System.Security.Cryptography;
 using Interop.BugTraqProvider;
 using CSharpTest.Net.WinForms;
 using CSharpTest.Net.Crypto;
 using CSharpTest.Net.SvnPlugin.Interfaces;
 using CSharpTest.Net.SvnPlugin.UI;
-using System.Runtime.CompilerServices;
 using System.Configuration;
 using CSharpTest.Net.Serialization;
 
@@ -33,18 +31,19 @@ namespace CSharpTest.Net.SvnPlugin
 	/// <summary>
 	/// COM Registered InterOp for TortoiseSVN integration
 	/// </summary>
-	[ComVisible(true), ProgId("SvnPlugin.MyPlugin"), Guid(MyPlugin.GUID), ClassInterface(ClassInterfaceType.AutoDual)]
-	public class MyPlugin : IDisposable, IBugTraqProvider, IBugTraqProvider2
+	[ComVisible(true), ProgId("SvnPlugin.MyPlugin"), Guid(GUID), ClassInterface(ClassInterfaceType.AutoDual)]
+	public class MyPlugin : IDisposable, IBugTraqProvider2
 	{
         const string GUID = "CF732FD7-AA8A-4E9D-9E15-025E4D1A7E9D";
         const string CLSID = "{" + GUID + "}";
-		const string BUTTON_TEXT = "{0} Issues";
+		const string BUTTON_TEXT = "{0}";
 
 		private IIssuesService _connector = null;
 		private IIssuesServiceConnection _service = null;
 		private IssuesListView _issues = null;
 		private Configuration _config = null;
 		private bool _cancelled = true;
+	    private string _commonURL = string.Empty;
 
 		/// <summary> Constructs a MyPlugin </summary>
 		public MyPlugin()
@@ -71,6 +70,18 @@ namespace CSharpTest.Net.SvnPlugin
 			KeyValueConfigurationElement setting = _config.AppSettings.Settings[name];
 			return setting == null ? null : setting.Value;
 		}
+
+        /// <summary>Returns a setting. This is taken out of svn propertiesor config file </summary>
+        private string GetSetting(string name, string commonRoot) 
+        {
+            var result = string.Empty;
+            if (!String.IsNullOrEmpty(commonRoot)) 
+            { //Read from svn...
+                SvnProperties props = new SvnProperties(commonRoot);
+                result = props.Search(".", true, name);
+            }
+            return !String.IsNullOrEmpty(result) ? result : GetAppSetting(name);
+        }
 
 		/// <summary> Returns the Issue tracking connector </summary>
 		public IIssuesService Connector
@@ -155,23 +166,29 @@ namespace CSharpTest.Net.SvnPlugin
 		/// <summary>
 		/// Commit the requested changes for any related issues
 		/// </summary>
-		public string CommitChanges(IntPtr hParentWnd, string originalMessage, int revision, string[] files)
+        public string CommitChanges(IntPtr hParentWnd, string rootUrl, string originalMessage, int revision, string commonRoot, string[] files)
 		{
 			if (Canceled) return originalMessage;
 			if (_service == null || _issues == null)
 				throw new UnauthorizedAccessException();
-
+			
 			_issues.SyncComments(originalMessage);
 
 			StringBuilder sbResponse = new StringBuilder();
 			sbResponse.AppendFormat("{0}", originalMessage);
 
-			if (GetAppSetting("addRevisionComment") == "false")
+            if (GetSetting("jira:addRevisionComment", commonRoot) == "false")
 				revision = -1;
-			if (GetAppSetting("addFilesComment") == "false")
-				files = new string[0];
+            if (GetSetting("jira:addFilesComment", commonRoot) == "false")
+                files = new string[0];
+            else {
+                //replace the commonRoot to rootUrl. This will also let us know of the branch/trunk...
+                for (var i = 0; i < files.Length; i++) {
+                    files[i] = files[i].Replace(commonRoot.Replace('\\', '/'), rootUrl);
+                }
+            }
 
-			foreach (Exception e in _issues.CommitChanges(revision, files))
+		    foreach (Exception e in _issues.CommitChanges(revision, files))
 			{
 				sbResponse.AppendLine();
 				sbResponse.AppendFormat("ERROR: {0}", e.Message);
@@ -319,6 +336,12 @@ namespace CSharpTest.Net.SvnPlugin
 			}
 		}
 
+        string GetIssueId(IIssue issue, string commonRoot) 
+        {
+            var prefix = GetSetting("jira:idprefix", commonRoot);
+            return issue.DisplayId.Replace(prefix, String.Empty);
+        }
+
 		#endregion
 
 		/// <summary> Releases any locked resources </summary>
@@ -357,7 +380,7 @@ namespace CSharpTest.Net.SvnPlugin
 		{
 			try
 			{
-				return GetCommitMsg(hParentWnd, parameters, originalMessage, commonRoot, pathList);
+				return GetCommitMsg(hParentWnd, String.Empty, originalMessage, commonRoot, pathList);
 			}
 			catch (Exception e) { Log.Error(e); throw; }
 		}
@@ -370,11 +393,16 @@ namespace CSharpTest.Net.SvnPlugin
 				revPropNames = new string[0];
 				revPropValues = new string[0];
 
-				string message = GetCommitMsg(hParentWnd, parameters, originalMessage, commonRoot, pathList);
-				if (_issues != null)
-				{
-					foreach (IIssue issue in _issues.SelectedIssues)
-					{ bugIDOut = issue.DisplayId; break; }
+                string message = GetCommitMsg(hParentWnd, commonURL, originalMessage, commonRoot, pathList);
+				if (_issues != null) {
+				    
+                    bugIDOut = string.Empty;
+                    var first = true;
+                    foreach (IIssue issue in _issues.SelectedIssues)
+					{
+                        bugIDOut += first ? GetIssueId(issue, commonRoot) : "," + GetIssueId(issue, commonRoot);
+                        first = false;
+                    }
 				}
 				return message;
 			}
@@ -383,8 +411,9 @@ namespace CSharpTest.Net.SvnPlugin
 
 		string IBugTraqProvider2.CheckCommit(IntPtr hParentWnd, string parameters, string commonURL, string commonRoot, string[] pathList, string commitMessage)
 		{
-			try
-			{
+			try 
+            {
+			    _commonURL = commonURL;
 				return String.Empty;
 			}
 			catch (Exception e) { Log.Error(e); throw; }
@@ -394,7 +423,7 @@ namespace CSharpTest.Net.SvnPlugin
 		{
 			try
 			{
-				return CommitChanges(hParentWnd, originalMessage, revision, pathList);
+                return CommitChanges(hParentWnd, _commonURL, originalMessage, revision, commonRoot, pathList);
 			}
 			catch (Exception e) { Log.Error(e); throw; }
 		}
@@ -443,7 +472,7 @@ namespace CSharpTest.Net.SvnPlugin
 			try
 			{
 				string message = GetCommitMsg(hParentWnd, parameters, originalMessage, commonRoot, pathList);
-				message = CommitChanges(hParentWnd, message, -1, new string[0]);
+                message = CommitChanges(hParentWnd, string.Empty, message, -1, commonRoot, new string[0]);
 				return message;
 			}
 			catch (Exception e) { Log.Error(e); throw; }
