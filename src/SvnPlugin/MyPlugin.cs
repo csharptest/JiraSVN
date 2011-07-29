@@ -132,12 +132,12 @@ namespace CSharpTest.Net.SvnPlugin
 		/// <summary>
 		/// Prompt the user for the comments and related issues
 		/// </summary>
-		public string GetCommitMsg(IntPtr hParentWnd, string rootUrl, string originalMessage, string commonRoot, string[] files)
+		public string GetCommitMsg(IntPtr hParentWnd, string parameters, string originalMessage, string commonRoot, string[] files)
 		{
 			string message = originalMessage;
 			try
 			{
-				if (!Logon(hParentWnd, rootUrl, commonRoot))
+				if (!Logon(hParentWnd, parameters, commonRoot))
 					return originalMessage;
 
 				if (_issues == null)
@@ -253,19 +253,9 @@ namespace CSharpTest.Net.SvnPlugin
 		{
 			serviceUri = user = password = null;
 
-			if (String.IsNullOrEmpty(parameters) && !String.IsNullOrEmpty(commonRoot))
-			{ //Read from svn...
-				SvnProperties props = new SvnProperties(commonRoot);
-				string testUri = props.Search(".", true, Connector.UriPropertyName);
-				if (!String.IsNullOrEmpty(testUri))
-					parameters = testUri;
-			}
-			if (String.IsNullOrEmpty(parameters))
-			{
-				string test = System.Configuration.ConfigurationManager.AppSettings[Connector.UriPropertyName];
-				if (!String.IsNullOrEmpty(test))
-					parameters = test;
-			}
+            if(String.IsNullOrEmpty(parameters)) {
+                parameters = GetSetting(Connector.UriPropertyName, commonRoot);
+            }
 
 			Uri uri;
 			if (Uri.TryCreate(parameters, UriKind.Absolute, out uri))
@@ -331,7 +321,7 @@ namespace CSharpTest.Net.SvnPlugin
 			catch (Exception e)
 			{
 				Log.Error(e);
-				message = e.Message;
+                message = e.Message + " Cannot find \"" + serviceUri + "\"";
 				return false;
 			}
 		}
@@ -339,7 +329,7 @@ namespace CSharpTest.Net.SvnPlugin
         string GetIssueId(IIssue issue, string commonRoot) 
         {
             var prefix = GetSetting("jira:idprefix", commonRoot);
-            return issue.DisplayId.Replace(prefix, String.Empty);
+            return !String.IsNullOrEmpty(prefix) ? issue.DisplayId.Replace(prefix, String.Empty) : issue.DisplayId;
         }
 
 		#endregion
@@ -393,7 +383,7 @@ namespace CSharpTest.Net.SvnPlugin
 				revPropNames = new string[0];
 				revPropValues = new string[0];
 
-                string message = GetCommitMsg(hParentWnd, commonURL, originalMessage, commonRoot, pathList);
+                string message = GetCommitMsg(hParentWnd, parameters, originalMessage, commonRoot, pathList);
 				if (_issues != null) {
 				    
                     bugIDOut = string.Empty;
