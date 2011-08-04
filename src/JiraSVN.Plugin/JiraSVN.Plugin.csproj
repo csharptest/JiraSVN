@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{CFF6CAA1-27A0-46FF-89D6-AD70F3575685}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -57,14 +57,6 @@
   <ItemGroup>
     <Compile Include="CertificateHandler.cs" />
     <Compile Include="IBugTraqProvider.cs" />
-    <Compile Include="Interfaces\IIdentifiable.cs" />
-    <Compile Include="Interfaces\IIssue.cs" />
-    <Compile Include="Interfaces\IIssueAction.cs" />
-    <Compile Include="Interfaces\IIssueFilter.cs" />
-    <Compile Include="Interfaces\IIssuesServiceConnection.cs" />
-    <Compile Include="Interfaces\IIssuesService.cs" />
-    <Compile Include="Interfaces\IIssueState.cs" />
-    <Compile Include="Interfaces\IIssueUser.cs" />
     <Compile Include="MyPlugin.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -140,6 +132,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JiraSVN.Common\JiraSVN.Common.csproj">
+      <Project>{702EC31A-EAB5-4159-B9AC-24815F179550}</Project>
+      <Name>JiraSVN.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

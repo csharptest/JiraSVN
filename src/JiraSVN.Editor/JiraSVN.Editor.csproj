@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{9208F806-D81A-4C53-8805-49827FD399E2}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -42,10 +42,7 @@
       <HintPath>..\..\depend\CSharpTest.Net.Library.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
@@ -57,19 +54,21 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\SvnPlugin\app.config">
-      <Link>app.config</Link>
-    </None>
+    <ProjectReference Include="..\JiraSVN.Common\JiraSVN.Common.csproj">
+      <Project>{702EC31A-EAB5-4159-B9AC-24815F179550}</Project>
+      <Name>JiraSVN.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JiraSVN.Jira\JiraSVN.Jira.csproj">
+      <Project>{73680B86-524B-4296-90CE-740B2486D279}</Project>
+      <Name>JiraSVN.Jira</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JiraSVN.Plugin\JiraSVN.Plugin.csproj">
+      <Project>{CFF6CAA1-27A0-46FF-89D6-AD70F3575685}</Project>
+      <Name>JiraSVN.Plugin</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SvnJiraIntegration\SvnJiraIntegration.csproj">
-      <Project>{73680B86-524B-4296-90CE-740B2486D279}</Project>
-      <Name>SvnJiraIntegration</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SvnPlugin\SvnPlugin.csproj">
-      <Project>{CFF6CAA1-27A0-46FF-89D6-AD70F3575685}</Project>
-      <Name>SvnPlugin</Name>
-    </ProjectReference>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
