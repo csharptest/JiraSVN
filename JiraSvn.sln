@@ -34,6 +34,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JiraSVN.Plugin", "src\JiraS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JiraSVN.Editor", "src\JiraSVN.Editor\JiraSVN.Editor.csproj", "{9208F806-D81A-4C53-8805-49827FD399E2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AssemblyInfo", "AssemblyInfo", "{7FA263D1-FC5D-4560-8339-599BA2F8957A}"
+	ProjectSection(SolutionItems) = preProject
+		src\AssemblyInfo\JiraSVNAssemblyInfo.cs = src\AssemblyInfo\JiraSVNAssemblyInfo.cs
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -14,5 +14,13 @@
 #endregion
 using System.Reflection;
 
-[assembly: AssemblyTitle("SvnEditor.exe")]
-[assembly: AssemblyDescription("SvnEditor Utility.")]
+[assembly: AssemblyProduct("https://github.com/Wattos/JiraSVN")]
+[assembly: AssemblyConfiguration("Debug")]
+
+[assembly: AssemblyCompany("Roger Knapp")]
+[assembly: AssemblyCopyright("Copyright 2008 by Roger Knapp, Licensed under the Apache License, Version 2.0")]
+
+[assembly: AssemblyVersion("3.0.0.0")]
+[assembly: AssemblyFileVersion("3.0.0.0")]
+
+[assembly: ObfuscateAssembly(false)]

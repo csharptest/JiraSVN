@@ -59,6 +59,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\AssemblyInfo\JiraSVNAssemblyInfo.cs">
+      <Link>Properties\JiraSVNAssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="BaseIdentifiable.cs" />
     <Compile Include="JiraConnection.cs" />
     <Compile Include="JiraFilter.cs" />
@@ -185,7 +188,7 @@
       <Project>{702EC31A-EAB5-4159-B9AC-24815F179550}</Project>
       <Name>JiraSVN.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SvnPlugin\JiraSVN.Plugin.csproj">
+    <ProjectReference Include="..\JiraSVN.Plugin\JiraSVN.Plugin.csproj">
       <Project>{CFF6CAA1-27A0-46FF-89D6-AD70F3575685}</Project>
       <Name>JiraSVN.Plugin</Name>
     </ProjectReference>

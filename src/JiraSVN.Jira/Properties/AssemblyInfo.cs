@@ -14,15 +14,5 @@
 #endregion
 using System.Reflection;
 
-[assembly: AssemblyTitle("SvnEditor.exe")]
-[assembly: AssemblyDescription("SvnEditor Utility.")]
-[assembly: AssemblyProduct("http://CSharpTest.Net/Projects")]
-[assembly: AssemblyConfiguration("Debug")]
-
-[assembly: AssemblyCompany("Roger Knapp")]
-[assembly: AssemblyCopyright("Copyright 2008 by Roger Knapp, Licensed under the Apache License, Version 2.0")]
-
-[assembly: AssemblyVersion("2.11.125.710")]
-[assembly: AssemblyFileVersion("2.11.125.710")]
-
-[assembly: ObfuscateAssembly(false)]
+[assembly: AssemblyTitle("JiraSVN Jira")]
+[assembly: AssemblyDescription("This is the assembly which implements the JIRA integration")]

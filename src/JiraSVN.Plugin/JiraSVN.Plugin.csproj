@@ -55,6 +55,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\AssemblyInfo\JiraSVNAssemblyInfo.cs">
+      <Link>Properties\JiraSVNAssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="CertificateHandler.cs" />
     <Compile Include="IBugTraqProvider.cs" />
     <Compile Include="MyPlugin.cs" />
