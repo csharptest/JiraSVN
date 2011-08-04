@@ -7,8 +7,8 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{9208F806-D81A-4C53-8805-49827FD399E2}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>CSharpTest.Net.SvnEditor</RootNamespace>
-    <AssemblyName>SvnEditor</AssemblyName>
+    <RootNamespace>CSharpTest.Net.JiraSVN.Editor</RootNamespace>
+    <AssemblyName>CSharpTest.Net.JiraSVN.Editor</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <RunPostBuildEvent>Always</RunPostBuildEvent>
     <DocumentationFile Condition="'$(OutputType)' == 'Library'">$(OutputPath)$(AssemblyName).xml</DocumentationFile>
@@ -24,17 +24,18 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <Optimize>False</Optimize>
-    <DefineConstants>TRACE</DefineConstants>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
     <OutputPath>..\..\bin\Debug</OutputPath>
-    <DocumentationFile>
-    </DocumentationFile>
+    <DocumentationFile>..\..\bin\Debug\CSharpTest.Net.JiraSVN.Editor.XML</DocumentationFile>
+    <DebugType>full</DebugType>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <Optimize>False</Optimize>
+    <Optimize>true</Optimize>
     <DefineConstants>TRACE</DefineConstants>
     <OutputPath>..\..\bin\Release</OutputPath>
-    <DocumentationFile>
-    </DocumentationFile>
+    <DocumentationFile>..\..\bin\Release\CSharpTest.Net.JiraSVN.Editor.XML</DocumentationFile>
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CSharpTest.Net.Library, Version=1.10.1124.358, Culture=neutral, PublicKeyToken=06aee00cce822474, processorArchitecture=MSIL">

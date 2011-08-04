@@ -13,11 +13,9 @@
  */
 #endregion
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows.Forms;
 
-namespace CSharpTest.Net.SvnPlugin.UI
+namespace CSharpTest.Net.JiraSVN.Plugin.UI
 {
 	/// <summary>
 	/// What is this for?

@@ -13,6 +13,8 @@
  */
 #endregion
 using System.Reflection;
+using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("SvnEditor.exe")]
 [assembly: AssemblyDescription("SvnEditor Utility.")]
+[assembly: Guid("D5187378-BECB-11E0-A20F-3F474824019B")]

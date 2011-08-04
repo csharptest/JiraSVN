@@ -15,16 +15,12 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Runtime.InteropServices;
-using System.Threading;
 using System.Text;
-using CSharpTest.Net.SvnPlugin.Interfaces;
-using CSharpTest.Net.Serialization;
+using CSharpTest.Net.JiraSVN.Common.Interfaces;
 using CSharpTest.Net.Reflection;
-using System.Reflection;
-using System.Runtime.CompilerServices;
+using CSharpTest.Net.Serialization;
 
-namespace CSharpTest.Net.SvnPlugin.UI
+namespace CSharpTest.Net.JiraSVN.Plugin.UI
 {
 	class IssuesListView : IDisposable, INotifyPropertyChanged
 	{

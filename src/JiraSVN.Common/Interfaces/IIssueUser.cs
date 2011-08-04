@@ -12,29 +12,15 @@
  * limitations under the License.
  */
 #endregion
-using System;
-using System.Collections.Generic;
 
-namespace CSharpTest.Net.SvnPlugin.Interfaces
+namespace CSharpTest.Net.JiraSVN.Common.Interfaces
 {
 	/// <summary>
-	/// Wraps an established connection to an issue tracking system
+	/// Represents a user of the issue tracking system, used to identify who reported the issue and 
+	/// to whom the issue is currently assigned.  Also used to transfer ownership of an issue.
 	/// </summary>
 	[System.Runtime.InteropServices.ComVisible(false)]
-	public interface IIssuesServiceConnection : IDisposable
+	public interface IIssueUser : IIdentifiable
 	{
-		/// <summary> Returns the current user </summary>
-		IIssueUser CurrentUser { get; }
-
-		/// <summary>
-		/// Retrieves a list of filters/groups of issues that can be retrieved from the server.
-		/// </summary>
-		IIssueFilter[] GetFilters();
-
-		/// <summary>
-		/// Returns all known users in the system, throwing NotSupportedException or NotImplementedExcpetion
-		/// will cause the system to track unique users seen.
-		/// </summary>
-		IIssueUser[] GetUsers();
 	}
 }

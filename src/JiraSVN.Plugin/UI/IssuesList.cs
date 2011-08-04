@@ -13,16 +13,13 @@
  */
 #endregion
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Configuration;
 using System.Drawing;
 using System.Windows.Forms;
+using CSharpTest.Net.JiraSVN.Common.Interfaces;
 using CSharpTest.Net.Reflection;
-using CSharpTest.Net.SvnPlugin.Interfaces;
 
-namespace CSharpTest.Net.SvnPlugin.UI
+namespace CSharpTest.Net.JiraSVN.Plugin.UI
 {
     partial class IssuesList : Form
     {

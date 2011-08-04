@@ -14,10 +14,9 @@
 #endregion
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.IO;
 
-namespace CSharpTest.Net.SvnPlugin
+namespace CSharpTest.Net.JiraSVN.Plugin
 {
 	class SvnProperties
 	{

@@ -14,11 +14,11 @@
 #endregion
 using System;
 using System.Collections.Generic;
-using CSharpTest.Net.SvnJiraIntegration.Jira;
-using CSharpTest.Net.SvnPlugin.Interfaces;
+using CSharpTest.Net.JiraSVN.Common.Interfaces;
+using CSharpTest.Net.JiraSVN.Jira.Jira;
 using CSharpTest.Net.Reflection;
 
-namespace CSharpTest.Net.SvnJiraIntegration
+namespace CSharpTest.Net.JiraSVN.Jira
 {
 	class JiraIssue : BaseIdentifiable<RemoteIssue>, IIssue
 	{

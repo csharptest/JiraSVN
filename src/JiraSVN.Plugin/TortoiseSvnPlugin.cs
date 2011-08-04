@@ -14,25 +14,25 @@
 #endregion
 using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
-using System.Runtime.InteropServices;
-using Microsoft.Win32;
-using Interop.BugTraqProvider;
-using CSharpTest.Net.WinForms;
 using CSharpTest.Net.Crypto;
-using CSharpTest.Net.SvnPlugin.Interfaces;
-using CSharpTest.Net.SvnPlugin.UI;
-using System.Configuration;
+using CSharpTest.Net.JiraSVN.Common.Interfaces;
+using CSharpTest.Net.JiraSVN.Plugin.UI;
 using CSharpTest.Net.Serialization;
+using CSharpTest.Net.WinForms;
+using Interop.BugTraqProvider;
+using Microsoft.Win32;
 
-namespace CSharpTest.Net.SvnPlugin
+namespace CSharpTest.Net.JiraSVN.Plugin
 {
 	/// <summary>
 	/// COM Registered InterOp for TortoiseSVN integration
 	/// </summary>
-	[ComVisible(true), ProgId("SvnPlugin.MyPlugin"), Guid(GUID), ClassInterface(ClassInterfaceType.AutoDual)]
-	public class MyPlugin : IDisposable, IBugTraqProvider2
+    [ComVisible(true), ProgId("CSharpTest.Net.JiraSVN.Plugin.TortoiseSvnPlugin"), Guid(GUID), ClassInterface(ClassInterfaceType.AutoDual)]
+	public class TortoiseSvnPlugin : IDisposable, IBugTraqProvider2
 	{
         const string GUID = "CF732FD7-AA8A-4E9D-9E15-025E4D1A7E9D";
         const string CLSID = "{" + GUID + "}";
@@ -46,10 +46,12 @@ namespace CSharpTest.Net.SvnPlugin
 	    private string _commonURL = string.Empty;
 
 		/// <summary> Constructs a MyPlugin </summary>
-		public MyPlugin()
+		public TortoiseSvnPlugin()
 		{
-			//System.Diagnostics.Debugger.Break();
-			Log.Write("Started, logging to {0}", Log.Config.LogFile);
+#if DEBUG
+			System.Diagnostics.Debugger.Launch();
+#endif
+            Log.Write("Started, logging to {0}", Log.Config.LogFile);
             Resolver.Hook();
             CertificateHandler.Hook();
 		}
@@ -94,7 +96,7 @@ namespace CSharpTest.Net.SvnPlugin
 					Log.Verbose("IIssuesService = '{0}'", fullClass);
 
 					if (string.IsNullOrEmpty(fullClass))
-						throw new ApplicationException("Unable to locate CSharpTest.Net.SvnPlugin.Interfaces.IIssuesService entry in app.config");
+						throw new ApplicationException("Unable to locate CSharpTest.Net.JiraSVN.Common.Interfaces.IIssuesService entry in app.config");
 					_connector = (IIssuesService)Type.GetType(fullClass, true).InvokeMember("", System.Reflection.BindingFlags.CreateInstance, null, null, null);
 				}
 				return _connector;
@@ -486,7 +488,7 @@ namespace CSharpTest.Net.SvnPlugin
 		{
 			try
 			{
-				if (typeof(MyPlugin) == t)
+				if (typeof(TortoiseSvnPlugin) == t)
 				{
                     foreach (string keypath in GetRegistryKeysToAdd())
 						using (RegistryKey key = Registry.ClassesRoot.CreateSubKey(keypath))

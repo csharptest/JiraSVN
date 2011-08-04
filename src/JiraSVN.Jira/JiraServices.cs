@@ -13,13 +13,10 @@
  */
 #endregion
 using System;
-using System.Collections.Generic;
-using CSharpTest.Net.SvnPlugin.Interfaces;
 using System.Web.Services.Protocols;
-using System.IO;
-using System.Net;
+using CSharpTest.Net.JiraSVN.Common.Interfaces;
 
-namespace CSharpTest.Net.SvnJiraIntegration
+namespace CSharpTest.Net.JiraSVN.Jira
 {
 	/// <summary>
 	/// Provides an initial connection to Jira Services

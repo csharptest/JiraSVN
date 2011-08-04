@@ -12,10 +12,8 @@
  * limitations under the License.
  */
 #endregion
-using System;
-using System.Collections.Generic;
 
-namespace CSharpTest.Net.SvnJiraIntegration.Jira
+namespace CSharpTest.Net.JiraSVN.Jira.Jira
 {
     /// <summary>
     /// ROK - Hack to fix the invalid return type of these methods

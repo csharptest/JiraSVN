@@ -13,9 +13,8 @@
  */
 #endregion
 using System;
-using System.Collections.Generic;
 
-namespace CSharpTest.Net.SvnPlugin.Interfaces
+namespace CSharpTest.Net.JiraSVN.Common.Interfaces
 {
 	/// <summary>
 	/// Connection to the main issue tracking service 

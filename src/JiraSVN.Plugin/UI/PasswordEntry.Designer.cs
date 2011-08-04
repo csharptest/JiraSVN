@@ -1,4 +1,4 @@
-﻿namespace CSharpTest.Net.SvnPlugin
+﻿namespace CSharpTest.Net.JiraSVN.Plugin
 {
 	partial class PasswordEntry
 	{

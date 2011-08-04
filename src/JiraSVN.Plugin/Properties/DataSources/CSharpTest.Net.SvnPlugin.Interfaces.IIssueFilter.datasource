@@ -6,5 +6,5 @@
     cause the file to be unrecognizable by the program.
 -->
 <GenericObjectDataSource DisplayName="IIssueFilter" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
-   <TypeInfo>CSharpTest.Net.SvnPlugin.Interfaces.IIssueFilter, SvnPlugin, Version=1.0.403.120, Culture=neutral, PublicKeyToken=null</TypeInfo>
+   <TypeInfo>CSharpTest.Net.JiraSVN.Common.Interfaces.IIssueFilter, SvnPlugin, Version=1.0.403.120, Culture=neutral, PublicKeyToken=null</TypeInfo>
 </GenericObjectDataSource>

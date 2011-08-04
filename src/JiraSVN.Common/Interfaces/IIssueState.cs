@@ -12,10 +12,8 @@
  * limitations under the License.
  */
 #endregion
-using System;
-using System.Collections.Generic;
 
-namespace CSharpTest.Net.SvnPlugin.Interfaces
+namespace CSharpTest.Net.JiraSVN.Common.Interfaces
 {
 	/// <summary>
 	/// Represents the current state of an issue (ie. Open, Closed, Resolved, etc.)

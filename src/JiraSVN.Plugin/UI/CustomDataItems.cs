@@ -12,12 +12,9 @@
  * limitations under the License.
  */
 #endregion
-using System;
-using System.Collections.Generic;
-using System.Text;
-using CSharpTest.Net.SvnPlugin.Interfaces;
+using CSharpTest.Net.JiraSVN.Common.Interfaces;
 
-namespace CSharpTest.Net.SvnPlugin.UI
+namespace CSharpTest.Net.JiraSVN.Plugin.UI
 {
 	class AllUsersFilter : IIssueUser
 	{

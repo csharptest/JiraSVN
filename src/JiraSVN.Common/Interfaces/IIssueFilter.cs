@@ -12,16 +12,30 @@
  * limitations under the License.
  */
 #endregion
-using System;
-using System.Collections.Generic;
 
-namespace CSharpTest.Net.SvnPlugin.Interfaces
+namespace CSharpTest.Net.JiraSVN.Common.Interfaces
 {
 	/// <summary>
-	/// Represents an activity/action that can be performed on an issue
+	/// Represents a group of displayable issues
 	/// </summary>
 	[System.Runtime.InteropServices.ComVisible(false)]
-	public interface IIssueAction : IIdentifiable
+	public interface IIssueFilter : IIdentifiable
 	{
+		/// <summary>
+		/// Returns the list of issues matching this filter/group
+		/// </summary>
+		IIssue[] GetIssues();
+	}
+
+	/// <summary>
+	/// Represents a group of displayable issues
+	/// </summary>
+	[System.Runtime.InteropServices.ComVisible(false)]
+	public interface IIssueFilterWithSearch : IIssueFilter
+	{
+		/// <summary>
+		/// Returns the list of issues matching this filter/group
+		/// </summary>
+		IIssue[] GetIssues(string searchText);
 	}
 }

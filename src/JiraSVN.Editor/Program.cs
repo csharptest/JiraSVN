@@ -14,12 +14,12 @@
 #endregion
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Windows.Forms;
 using CSharpTest.Net.IO;
-using CSharpTest.Net.SvnPlugin;
-using System.IO;
+using CSharpTest.Net.JiraSVN.Plugin;
 
-namespace CSharpTest.Net.SvnEditor
+namespace CSharpTest.Net.JiraSVN.Editor
 {
 	static class Program
 	{
@@ -72,7 +72,7 @@ namespace CSharpTest.Net.SvnEditor
 					string[] paths = filesChanged.ToArray();
 					string commonRoot = Environment.CurrentDirectory;
 
-					using (MyPlugin plugin = new MyPlugin())
+					using (TortoiseSvnPlugin plugin = new TortoiseSvnPlugin())
 					{
 						if (!plugin.IsConfigured(IntPtr.Zero, String.Empty, Environment.CurrentDirectory))
 							throw new OperationCanceledException(String.Format("Unable to locate the svn-property {0} in the path: \r\n{0}", commonRoot, plugin.Connector.UriPropertyName));

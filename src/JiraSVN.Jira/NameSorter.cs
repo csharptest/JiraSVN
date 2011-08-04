@@ -14,9 +14,9 @@
 #endregion
 using System;
 using System.Collections.Generic;
-using CSharpTest.Net.SvnPlugin.Interfaces;
+using CSharpTest.Net.JiraSVN.Common.Interfaces;
 
-namespace CSharpTest.Net.SvnJiraIntegration
+namespace CSharpTest.Net.JiraSVN.Jira
 {
 	class NameSorter<T> : IComparer<T>
 		where T : IIdentifiable

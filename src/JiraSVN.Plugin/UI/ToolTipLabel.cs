@@ -13,11 +13,10 @@
  */
 #endregion
 using System;
-using System.Collections.Generic;
-using System.Windows.Forms;
 using System.Drawing;
+using System.Windows.Forms;
 
-namespace CSharpTest.Net.SvnPlugin.UI
+namespace CSharpTest.Net.JiraSVN.Plugin.UI
 {
 	class ToolTipLabel : Label
 	{

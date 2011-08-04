@@ -12,17 +12,14 @@
  * limitations under the License.
  */
 #endregion
-using System;
-using System.Collections.Generic;
 
-namespace CSharpTest.Net.SvnPlugin.Interfaces
+namespace CSharpTest.Net.JiraSVN.Common.Interfaces
 {
 	/// <summary>
-	/// Represents a user of the issue tracking system, used to identify who reported the issue and 
-	/// to whom the issue is currently assigned.  Also used to transfer ownership of an issue.
+	/// Represents an activity/action that can be performed on an issue
 	/// </summary>
 	[System.Runtime.InteropServices.ComVisible(false)]
-	public interface IIssueUser : IIdentifiable
+	public interface IIssueAction : IIdentifiable
 	{
 	}
 }

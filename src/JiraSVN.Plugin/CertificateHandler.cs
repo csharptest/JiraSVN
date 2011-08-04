@@ -15,12 +15,12 @@
 using System;
 using System.Net;
 using System.Net.Security;
-using System.Windows.Forms;
-using CSharpTest.Net.Serialization;
-using CSharpTest.Net.SvnPlugin.Properties;
 using System.Security.Cryptography.X509Certificates;
+using System.Windows.Forms;
+using CSharpTest.Net.JiraSVN.Plugin.Properties;
+using CSharpTest.Net.Serialization;
 
-namespace CSharpTest.Net.SvnPlugin
+namespace CSharpTest.Net.JiraSVN.Plugin
 {
     static class CertificateHandler
     {

@@ -7,8 +7,8 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{73680B86-524B-4296-90CE-740B2486D279}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>CSharpTest.Net.SvnJiraIntegration</RootNamespace>
-    <AssemblyName>SvnJiraIntegration</AssemblyName>
+    <RootNamespace>CSharpTest.Net.JiraSVN.Jira</RootNamespace>
+    <AssemblyName>CSharpTest.Net.JiraSVN.Jira</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <StartupObject>
     </StartupObject>
@@ -25,18 +25,23 @@
     <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <Optimize>False</Optimize>
-    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>false</Optimize>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
     <OutputPath>..\..\bin\Debug</OutputPath>
-    <DocumentationFile>bin\SvnJiraIntegration.xml</DocumentationFile>
+    <DocumentationFile>..\..\bin\Debug\CSharpTest.Net.JiraSVN.Jira.XML</DocumentationFile>
     <GenerateSerializationAssemblies>On</GenerateSerializationAssemblies>
+    <DebugType>full</DebugType>
+    <BaseAddress>6291456</BaseAddress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <Optimize>false</Optimize>
+    <Optimize>true</Optimize>
     <DefineConstants>TRACE</DefineConstants>
     <OutputPath>..\..\bin\Release</OutputPath>
-    <DocumentationFile>bin\SvnJiraIntegration.xml</DocumentationFile>
+    <DocumentationFile>..\..\bin\Release\CSharpTest.Net.JiraSVN.Jira.XML</DocumentationFile>
     <GenerateSerializationAssemblies>On</GenerateSerializationAssemblies>
+    <BaseAddress>6291456</BaseAddress>
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Library">
@@ -49,14 +54,9 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.EnterpriseServices" />
-    <Reference Include="System.Security" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
+    <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\AssemblyInfo\JiraSVNAssemblyInfo.cs">

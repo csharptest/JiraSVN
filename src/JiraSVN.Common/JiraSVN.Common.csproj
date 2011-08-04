@@ -8,8 +8,8 @@
     <ProjectGuid>{702EC31A-EAB5-4159-B9AC-24815F179550}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>JiraSVN.Common</RootNamespace>
-    <AssemblyName>JiraSVN.Common</AssemblyName>
+    <RootNamespace>CSharpTest.Net.JiraSVN.Common</RootNamespace>
+    <AssemblyName>CSharpTest.Net.JiraSVN.Common</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SignAssembly>true</SignAssembly>
@@ -19,31 +19,35 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\..\bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\bin\Debug\CSharpTest.Net.JiraSVN.Common.XML</DocumentationFile>
+    <BaseAddress>7340032</BaseAddress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
+    <DebugType>none</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>..\..\bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\CSharpTest.Net.JiraSVN.Common.XML</DocumentationFile>
+    <BaseAddress>7340032</BaseAddress>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="..\AssemblyInfo\JiraSVNAssemblyInfo.cs">
       <Link>Properties\JiraSVNAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="IIdentifiable.cs" />
-    <Compile Include="IIssue.cs" />
-    <Compile Include="IIssueAction.cs" />
-    <Compile Include="IIssueFilter.cs" />
-    <Compile Include="IIssuesService.cs" />
-    <Compile Include="IIssuesServiceConnection.cs" />
-    <Compile Include="IIssueState.cs" />
-    <Compile Include="IIssueUser.cs" />
+    <Compile Include="Interfaces\IIdentifiable.cs" />
+    <Compile Include="Interfaces\IIssue.cs" />
+    <Compile Include="Interfaces\IIssueAction.cs" />
+    <Compile Include="Interfaces\IIssueFilter.cs" />
+    <Compile Include="Interfaces\IIssuesService.cs" />
+    <Compile Include="Interfaces\IIssuesServiceConnection.cs" />
+    <Compile Include="Interfaces\IIssueState.cs" />
+    <Compile Include="Interfaces\IIssueUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

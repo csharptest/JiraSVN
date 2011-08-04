@@ -1,4 +1,4 @@
-﻿namespace CSharpTest.Net.SvnPlugin.UI
+﻿namespace CSharpTest.Net.JiraSVN.Plugin.UI
 {
     partial class IssuesList
     {
@@ -51,20 +51,20 @@
             System.Windows.Forms.Label label5;
             this._showHideMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.showTimeTrackingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this._assignTo = new CSharpTest.Net.SvnPlugin.UI.BindingComboBox();
+            this._assignTo = new CSharpTest.Net.JiraSVN.Plugin.UI.BindingComboBox();
             this._binding = new System.Windows.Forms.BindingSource(this.components);
             this._doAssignTo = new System.Windows.Forms.CheckBox();
             this._doTakeAction = new System.Windows.Forms.CheckBox();
-            this._takeAction = new CSharpTest.Net.SvnPlugin.UI.BindingComboBox();
+            this._takeAction = new CSharpTest.Net.JiraSVN.Plugin.UI.BindingComboBox();
             this.cancelButton = new System.Windows.Forms.Button();
             this.okButton = new System.Windows.Forms.Button();
             this._search = new System.Windows.Forms.TextBox();
-            this._status = new CSharpTest.Net.SvnPlugin.UI.BindingComboBox();
-            this._assigned = new CSharpTest.Net.SvnPlugin.UI.BindingComboBox();
-            this._filters = new CSharpTest.Net.SvnPlugin.UI.BindingComboBox();
+            this._status = new CSharpTest.Net.JiraSVN.Plugin.UI.BindingComboBox();
+            this._assigned = new CSharpTest.Net.JiraSVN.Plugin.UI.BindingComboBox();
+            this._filters = new CSharpTest.Net.JiraSVN.Plugin.UI.BindingComboBox();
             this.worklogpanel = new System.Windows.Forms.Panel();
             this._worklogGroup = new System.Windows.Forms.GroupBox();
-            this._worklogAction = new CSharpTest.Net.SvnPlugin.UI.BindingComboBox();
+            this._worklogAction = new CSharpTest.Net.JiraSVN.Plugin.UI.BindingComboBox();
             this.remainingEstimateBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this._worklog = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -166,7 +166,7 @@
             // 
             // _binding
             // 
-            this._binding.DataSource = typeof(CSharpTest.Net.SvnPlugin.UI.IssuesListView);
+            this._binding.DataSource = typeof(CSharpTest.Net.JiraSVN.Plugin.UI.IssuesListView);
             // 
             // possibleAssignmentsBindingSource
             // 
@@ -645,15 +645,15 @@
         private System.Windows.Forms.Button cancelButton;
 		private System.Windows.Forms.ListView _listView;
 		private System.Windows.Forms.CheckBox _doTakeAction;
-		private CSharpTest.Net.SvnPlugin.UI.BindingComboBox _filters;
+		private CSharpTest.Net.JiraSVN.Plugin.UI.BindingComboBox _filters;
 		private System.Windows.Forms.TextBox _search;
-		private CSharpTest.Net.SvnPlugin.UI.BindingComboBox _status;
-		private CSharpTest.Net.SvnPlugin.UI.BindingComboBox _assigned;
+		private CSharpTest.Net.JiraSVN.Plugin.UI.BindingComboBox _status;
+		private CSharpTest.Net.JiraSVN.Plugin.UI.BindingComboBox _assigned;
 		private System.Windows.Forms.TextBox _comment;
 		private System.Windows.Forms.SplitContainer _splitter;
 		private System.Windows.Forms.CheckBox _doAssignTo;
-		private CSharpTest.Net.SvnPlugin.UI.BindingComboBox _takeAction;
-        private CSharpTest.Net.SvnPlugin.UI.BindingComboBox _assignTo;
+		private CSharpTest.Net.JiraSVN.Plugin.UI.BindingComboBox _takeAction;
+        private CSharpTest.Net.JiraSVN.Plugin.UI.BindingComboBox _assignTo;
 		private System.Windows.Forms.BindingSource _binding;
 		private System.Windows.Forms.ContextMenuStrip _contextMenu;
 		private System.Windows.Forms.ToolStripMenuItem viewIssueToolStripMenuItem;

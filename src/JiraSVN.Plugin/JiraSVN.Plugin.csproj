@@ -7,8 +7,8 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{CFF6CAA1-27A0-46FF-89D6-AD70F3575685}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>CSharpTest.Net.SvnPlugin</RootNamespace>
-    <AssemblyName>SvnPlugin</AssemblyName>
+    <RootNamespace>CSharpTest.Net.JiraSVN.Plugin</RootNamespace>
+    <AssemblyName>CSharpTest.Net.JiraSVN.Plugin</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <StartupObject>
     </StartupObject>
@@ -25,16 +25,19 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <Optimize>False</Optimize>
-    <DefineConstants>TRACE</DefineConstants>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
     <OutputPath>..\..\bin\Debug</OutputPath>
-    <DocumentationFile>bin\SvnPlugin.xml</DocumentationFile>
+    <DocumentationFile>..\..\bin\Debug\CSharpTest.Net.JiraSVN.Plugin.XML</DocumentationFile>
     <RegisterForComInterop>true</RegisterForComInterop>
+    <DebugType>full</DebugType>
+    <BaseAddress>5242880</BaseAddress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <Optimize>false</Optimize>
+    <Optimize>true</Optimize>
     <DefineConstants>TRACE</DefineConstants>
     <OutputPath>..\..\bin\Release</OutputPath>
-    <DocumentationFile>bin\SvnPlugin.xml</DocumentationFile>
+    <DocumentationFile>..\..\bin\Release\CSharpTest.Net.JiraSVN.Plugin.XML</DocumentationFile>
+    <BaseAddress>5242880</BaseAddress>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Library">
@@ -48,11 +51,7 @@
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.EnterpriseServices" />
-    <Reference Include="System.Security" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\AssemblyInfo\JiraSVNAssemblyInfo.cs">
@@ -60,7 +59,7 @@
     </Compile>
     <Compile Include="CertificateHandler.cs" />
     <Compile Include="IBugTraqProvider.cs" />
-    <Compile Include="MyPlugin.cs" />
+    <Compile Include="TortoiseSvnPlugin.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -134,6 +133,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

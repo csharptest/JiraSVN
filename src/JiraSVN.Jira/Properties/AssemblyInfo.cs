@@ -13,6 +13,8 @@
  */
 #endregion
 using System.Reflection;
+using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("JiraSVN Jira")]
 [assembly: AssemblyDescription("This is the assembly which implements the JIRA integration")]
+[assembly: Guid("E3D2D2FA-BECB-11E0-AFE8-49474824019B")]

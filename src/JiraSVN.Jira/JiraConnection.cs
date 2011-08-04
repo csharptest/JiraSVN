@@ -14,14 +14,11 @@
 #endregion
 using System;
 using System.Collections.Generic;
-using System.Reflection;
-using CSharpTest.Net.SvnPlugin.Interfaces;
-using CSharpTest.Net.SvnJiraIntegration.Jira;
+using CSharpTest.Net.JiraSVN.Common.Interfaces;
+using CSharpTest.Net.JiraSVN.Jira.Jira;
 using CSharpTest.Net.Serialization;
-using System.IO;
-using System.Windows.Forms;
 
-namespace CSharpTest.Net.SvnJiraIntegration
+namespace CSharpTest.Net.JiraSVN.Jira
 {
 	class JiraConnection : IIssuesServiceConnection
 	{
@@ -52,7 +49,7 @@ namespace CSharpTest.Net.SvnJiraIntegration
 
 			_userName = userName;
 			_password = password;
-            _service = new CSharpTest.Net.SvnJiraIntegration.Jira.JiraSoapServiceService();
+            _service = new CSharpTest.Net.JiraSVN.Jira.Jira.JiraSoapServiceService();
             _service.Url = _rootUrl + "/rpc/soap/jirasoapservice-v2";
             _service.UseDefaultCredentials = true;
             if (!String.IsNullOrEmpty(settings("jira:proxyurl")))

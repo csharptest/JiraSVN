@@ -13,31 +13,27 @@
  */
 #endregion
 using System;
-using System.Collections.Generic;
 
-namespace CSharpTest.Net.SvnPlugin.Interfaces
+namespace CSharpTest.Net.JiraSVN.Common.Interfaces
 {
 	/// <summary>
-	/// Represents a group of displayable issues
+	/// Wraps an established connection to an issue tracking system
 	/// </summary>
 	[System.Runtime.InteropServices.ComVisible(false)]
-	public interface IIssueFilter : IIdentifiable
+	public interface IIssuesServiceConnection : IDisposable
 	{
-		/// <summary>
-		/// Returns the list of issues matching this filter/group
-		/// </summary>
-		IIssue[] GetIssues();
-	}
+		/// <summary> Returns the current user </summary>
+		IIssueUser CurrentUser { get; }
 
-	/// <summary>
-	/// Represents a group of displayable issues
-	/// </summary>
-	[System.Runtime.InteropServices.ComVisible(false)]
-	public interface IIssueFilterWithSearch : IIssueFilter
-	{
 		/// <summary>
-		/// Returns the list of issues matching this filter/group
+		/// Retrieves a list of filters/groups of issues that can be retrieved from the server.
 		/// </summary>
-		IIssue[] GetIssues(string searchText);
+		IIssueFilter[] GetFilters();
+
+		/// <summary>
+		/// Returns all known users in the system, throwing NotSupportedException or NotImplementedExcpetion
+		/// will cause the system to track unique users seen.
+		/// </summary>
+		IIssueUser[] GetUsers();
 	}
 }

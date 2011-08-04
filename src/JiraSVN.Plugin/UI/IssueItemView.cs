@@ -13,10 +13,9 @@
  */
 #endregion
 using System;
-using System.Collections.Generic;
-using CSharpTest.Net.SvnPlugin.Interfaces;
+using CSharpTest.Net.JiraSVN.Common.Interfaces;
 
-namespace CSharpTest.Net.SvnPlugin.UI
+namespace CSharpTest.Net.JiraSVN.Plugin.UI
 {
 	class IssueItemView : IIssue
 	{

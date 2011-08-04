@@ -13,11 +13,10 @@
  */
 #endregion
 using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
-using CSharpTest.Net.SvnPlugin.Interfaces;
+using CSharpTest.Net.JiraSVN.Common.Interfaces;
 
-namespace CSharpTest.Net.SvnPlugin.UI
+namespace CSharpTest.Net.JiraSVN.Plugin.UI
 {
 	class ActionMenuItem : ToolStripMenuItem
 	{

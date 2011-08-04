@@ -15,10 +15,10 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using CSharpTest.Net.SvnPlugin.Interfaces;
 using System.Runtime.InteropServices;
+using CSharpTest.Net.JiraSVN.Common.Interfaces;
 
-namespace CSharpTest.Net.SvnPlugin.UI
+namespace CSharpTest.Net.JiraSVN.Plugin.UI
 {
 	/// <summary>
 	/// A simple binding list interface IBindingList[T] that doubles as an IList[T]
