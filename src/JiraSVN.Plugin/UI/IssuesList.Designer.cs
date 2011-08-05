@@ -79,8 +79,6 @@
             this._worklog = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this._worklogGroup = new System.Windows.Forms.GroupBox();
-            this._hideTimeTracking = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.hideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this._splitter = new System.Windows.Forms.SplitContainer();
             panel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -122,7 +120,6 @@
             groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.remainingEstimateBindingSource)).BeginInit();
             this._worklogGroup.SuspendLayout();
-            this._hideTimeTracking.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this._splitter.Panel1.SuspendLayout();
             this._splitter.Panel2.SuspendLayout();
@@ -137,10 +134,10 @@
             panel1.Controls.Add(this.okButton);
             panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             panel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            panel1.Location = new System.Drawing.Point(3, 459);
+            panel1.Location = new System.Drawing.Point(8, 452);
             panel1.Name = "panel1";
-            panel1.Padding = new System.Windows.Forms.Padding(1);
-            panel1.Size = new System.Drawing.Size(646, 31);
+            panel1.Padding = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            panel1.Size = new System.Drawing.Size(636, 33);
             panel1.TabIndex = 2;
             // 
             // _showHideMenu
@@ -162,10 +159,10 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cancelButton.Location = new System.Drawing.Point(566, 4);
+            this.cancelButton.Location = new System.Drawing.Point(559, 5);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 11;
@@ -174,10 +171,9 @@
             // 
             // okButton
             // 
-            this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.okButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.okButton.Location = new System.Drawing.Point(485, 4);
+            this.okButton.Location = new System.Drawing.Point(478, 5);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(75, 23);
             this.okButton.TabIndex = 10;
@@ -203,7 +199,7 @@
             label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
             label6.AutoSize = true;
             label6.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", this._binding, "AddWorklog", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            label6.Location = new System.Drawing.Point(301, 7);
+            label6.Location = new System.Drawing.Point(299, 7);
             label6.Name = "label6";
             label6.Size = new System.Drawing.Size(106, 13);
             label6.TabIndex = 2;
@@ -214,9 +210,9 @@
             panel2.AutoSize = true;
             panel2.Controls.Add(this.tableLayoutPanel3);
             panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            panel2.Location = new System.Drawing.Point(3, 3);
+            panel2.Location = new System.Drawing.Point(8, 8);
             panel2.Name = "panel2";
-            panel2.Size = new System.Drawing.Size(646, 73);
+            panel2.Size = new System.Drawing.Size(636, 73);
             panel2.TabIndex = 0;
             panel2.TabStop = false;
             panel2.Text = "Filter";
@@ -245,7 +241,7 @@
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(640, 54);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(630, 54);
             this.tableLayoutPanel3.TabIndex = 8;
             // 
             // _filters
@@ -260,7 +256,7 @@
             this._filters.IndexSelected = -1;
             this._filters.Location = new System.Drawing.Point(79, 3);
             this._filters.Name = "_filters";
-            this._filters.Size = new System.Drawing.Size(558, 21);
+            this._filters.Size = new System.Drawing.Size(548, 21);
             this._filters.TabIndex = 1;
             // 
             // filtersBindingSource
@@ -270,12 +266,13 @@
             // 
             // _search
             // 
-            this._search.DataBindings.Add(new System.Windows.Forms.Binding("Text", this._binding, "TextFilter", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this._search.DataBindings.Add(new System.Windows.Forms.Binding("Text", this._binding, "TextFilter", true, System.Windows.Forms.DataSourceUpdateMode.Never));
             this._search.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._search.Location = new System.Drawing.Point(421, 30);
+            this._search.Location = new System.Drawing.Point(415, 30);
             this._search.Name = "_search";
-            this._search.Size = new System.Drawing.Size(216, 20);
+            this._search.Size = new System.Drawing.Size(212, 20);
             this._search.TabIndex = 7;
+            this._search.TextChanged += new System.EventHandler(this._search_TextChanged);
             // 
             // label2
             // 
@@ -291,7 +288,7 @@
             // 
             label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(364, 34);
+            label3.Location = new System.Drawing.Point(358, 34);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(51, 13);
             label3.TabIndex = 6;
@@ -305,9 +302,9 @@
             this._status.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this._status.FormattingEnabled = true;
             this._status.IndexSelected = -1;
-            this._status.Location = new System.Drawing.Point(250, 30);
+            this._status.Location = new System.Drawing.Point(247, 30);
             this._status.Name = "_status";
-            this._status.Size = new System.Drawing.Size(105, 21);
+            this._status.Size = new System.Drawing.Size(102, 21);
             this._status.TabIndex = 5;
             // 
             // statusFilterBindingSource
@@ -329,7 +326,7 @@
             // 
             label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
             label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(204, 34);
+            label4.Location = new System.Drawing.Point(201, 34);
             label4.Name = "label4";
             label4.Size = new System.Drawing.Size(40, 13);
             label4.TabIndex = 4;
@@ -345,7 +342,7 @@
             this._assigned.IndexSelected = -1;
             this._assigned.Location = new System.Drawing.Point(79, 30);
             this._assigned.Name = "_assigned";
-            this._assigned.Size = new System.Drawing.Size(105, 21);
+            this._assigned.Size = new System.Drawing.Size(102, 21);
             this._assigned.TabIndex = 3;
             // 
             // assignmentFilterBindingSource
@@ -391,9 +388,9 @@
             // 
             groupBox1.Controls.Add(this._listView);
             groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            groupBox1.Location = new System.Drawing.Point(3, 3);
+            groupBox1.Location = new System.Drawing.Point(0, 0);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new System.Drawing.Size(640, 201);
+            groupBox1.Size = new System.Drawing.Size(636, 200);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Issues";
@@ -414,7 +411,7 @@
             this._listView.FullRowSelect = true;
             this._listView.Location = new System.Drawing.Point(3, 16);
             this._listView.Name = "_listView";
-            this._listView.Size = new System.Drawing.Size(634, 182);
+            this._listView.Size = new System.Drawing.Size(630, 181);
             this._listView.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this._listView.TabIndex = 0;
             this._listView.UseCompatibleStateImageBehavior = false;
@@ -460,9 +457,9 @@
             groupBox2.AutoSize = true;
             groupBox2.Controls.Add(this.tableLayoutPanel2);
             groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            groupBox2.Location = new System.Drawing.Point(3, 123);
+            groupBox2.Location = new System.Drawing.Point(0, 121);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new System.Drawing.Size(640, 46);
+            groupBox2.Size = new System.Drawing.Size(636, 46);
             groupBox2.TabIndex = 10;
             groupBox2.TabStop = false;
             groupBox2.Text = "Status";
@@ -484,7 +481,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(634, 27);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(630, 27);
             this.tableLayoutPanel2.TabIndex = 10;
             // 
             // _doTakeAction
@@ -509,9 +506,9 @@
             this._assignTo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this._assignTo.FormattingEnabled = true;
             this._assignTo.IndexSelected = -1;
-            this._assignTo.Location = new System.Drawing.Point(415, 3);
+            this._assignTo.Location = new System.Drawing.Point(413, 3);
             this._assignTo.Name = "_assignTo";
-            this._assignTo.Size = new System.Drawing.Size(216, 21);
+            this._assignTo.Size = new System.Drawing.Size(214, 21);
             this._assignTo.TabIndex = 9;
             // 
             // _takeAction
@@ -525,7 +522,7 @@
             this._takeAction.IndexSelected = -1;
             this._takeAction.Location = new System.Drawing.Point(79, 3);
             this._takeAction.Name = "_takeAction";
-            this._takeAction.Size = new System.Drawing.Size(216, 21);
+            this._takeAction.Size = new System.Drawing.Size(214, 21);
             this._takeAction.TabIndex = 7;
             // 
             // _doAssignTo
@@ -534,7 +531,7 @@
             this._doAssignTo.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this._binding, "AssignTo", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this._doAssignTo.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", this._binding, "PerformAction", true));
             this._doAssignTo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._doAssignTo.Location = new System.Drawing.Point(301, 3);
+            this._doAssignTo.Location = new System.Drawing.Point(299, 3);
             this._doAssignTo.Name = "_doAssignTo";
             this._doAssignTo.Size = new System.Drawing.Size(108, 21);
             this._doAssignTo.TabIndex = 8;
@@ -546,9 +543,9 @@
             groupBox3.AutoSize = true;
             groupBox3.Controls.Add(this._comment);
             groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            groupBox3.Location = new System.Drawing.Point(3, 3);
+            groupBox3.Location = new System.Drawing.Point(0, 0);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new System.Drawing.Size(640, 74);
+            groupBox3.Size = new System.Drawing.Size(636, 75);
             groupBox3.TabIndex = 11;
             groupBox3.TabStop = false;
             groupBox3.Text = "Comment";
@@ -562,7 +559,7 @@
             this._comment.Location = new System.Drawing.Point(3, 16);
             this._comment.Multiline = true;
             this._comment.Name = "_comment";
-            this._comment.Size = new System.Drawing.Size(634, 55);
+            this._comment.Size = new System.Drawing.Size(630, 56);
             this._comment.TabIndex = 1;
             // 
             // _addWorklog
@@ -587,9 +584,9 @@
             this._worklogAction.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this._worklogAction.FormattingEnabled = true;
             this._worklogAction.IndexSelected = -1;
-            this._worklogAction.Location = new System.Drawing.Point(79, 3);
+            this._worklogAction.Location = new System.Drawing.Point(413, 3);
             this._worklogAction.Name = "_worklogAction";
-            this._worklogAction.Size = new System.Drawing.Size(216, 21);
+            this._worklogAction.Size = new System.Drawing.Size(129, 21);
             this._worklogAction.TabIndex = 3;
             // 
             // remainingEstimateBindingSource
@@ -602,9 +599,9 @@
             this._worklog.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", this._binding, "AddWorklog", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this._worklog.DataBindings.Add(new System.Windows.Forms.Binding("Text", this._binding, "TimeSpent", true));
             this._worklog.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._worklog.Location = new System.Drawing.Point(415, 3);
+            this._worklog.Location = new System.Drawing.Point(79, 3);
             this._worklog.Name = "_worklog";
-            this._worklog.Size = new System.Drawing.Size(117, 20);
+            this._worklog.Size = new System.Drawing.Size(214, 20);
             this._worklog.TabIndex = 1;
             // 
             // textBox1
@@ -612,39 +609,24 @@
             this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this._binding, "NewTimeEstimate", true));
             this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", this._binding, "CanSpecifyNewEstimate", true));
             this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(538, 3);
+            this.textBox1.Location = new System.Drawing.Point(548, 3);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(93, 20);
+            this.textBox1.Size = new System.Drawing.Size(79, 20);
             this.textBox1.TabIndex = 4;
             // 
             // _worklogGroup
             // 
             this._worklogGroup.AccessibleDescription = "";
             this._worklogGroup.AutoSize = true;
-            this._worklogGroup.ContextMenuStrip = this._hideTimeTracking;
             this._worklogGroup.Controls.Add(this.tableLayoutPanel1);
             this._worklogGroup.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", this._binding, "CanAddWorklog", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this._worklogGroup.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this._worklogGroup.Location = new System.Drawing.Point(3, 77);
+            this._worklogGroup.Location = new System.Drawing.Point(0, 75);
             this._worklogGroup.Name = "_worklogGroup";
-            this._worklogGroup.Size = new System.Drawing.Size(640, 46);
+            this._worklogGroup.Size = new System.Drawing.Size(636, 46);
             this._worklogGroup.TabIndex = 6;
             this._worklogGroup.TabStop = false;
             this._worklogGroup.Text = "Time tracking";
-            // 
-            // _hideTimeTracking
-            // 
-            this._hideTimeTracking.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.hideToolStripMenuItem});
-            this._hideTimeTracking.Name = "_hideTimeTracking";
-            this._hideTimeTracking.Size = new System.Drawing.Size(96, 26);
-            // 
-            // hideToolStripMenuItem
-            // 
-            this.hideToolStripMenuItem.Name = "hideToolStripMenuItem";
-            this.hideToolStripMenuItem.Size = new System.Drawing.Size(95, 22);
-            this.hideToolStripMenuItem.Text = "&Hide";
-            this.hideToolStripMenuItem.Click += new System.EventHandler(this.hideToolStripMenuItem_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -653,11 +635,11 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 76F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 114F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.87611F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.12389F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.85586F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.14414F));
             this.tableLayoutPanel1.Controls.Add(this.textBox1, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this._worklog, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this._worklogAction, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this._worklog, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this._worklogAction, 3, 0);
             this.tableLayoutPanel1.Controls.Add(label6, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this._addWorklog, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -665,29 +647,28 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(634, 27);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(630, 27);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
             // _splitter
             // 
             this._splitter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._splitter.Location = new System.Drawing.Point(3, 76);
+            this._splitter.Location = new System.Drawing.Point(8, 81);
             this._splitter.Name = "_splitter";
             this._splitter.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // _splitter.Panel1
             // 
             this._splitter.Panel1.Controls.Add(groupBox1);
-            this._splitter.Panel1.Padding = new System.Windows.Forms.Padding(3);
             // 
             // _splitter.Panel2
             // 
             this._splitter.Panel2.Controls.Add(groupBox3);
             this._splitter.Panel2.Controls.Add(this._worklogGroup);
             this._splitter.Panel2.Controls.Add(groupBox2);
-            this._splitter.Panel2.Padding = new System.Windows.Forms.Padding(3);
-            this._splitter.Size = new System.Drawing.Size(646, 383);
-            this._splitter.SplitterDistance = 207;
+            this._splitter.Size = new System.Drawing.Size(636, 371);
+            this._splitter.SplitterDistance = 200;
             this._splitter.TabIndex = 1;
             // 
             // IssuesList
@@ -697,6 +678,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.cancelButton;
             this.ClientSize = new System.Drawing.Size(652, 493);
+            this.ContextMenuStrip = this._showHideMenu;
             this.Controls.Add(this._splitter);
             this.Controls.Add(panel2);
             this.Controls.Add(panel1);
@@ -705,7 +687,7 @@
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(650, 450);
             this.Name = "IssuesList";
-            this.Padding = new System.Windows.Forms.Padding(3);
+            this.Padding = new System.Windows.Forms.Padding(8);
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Select Issue(s)";
@@ -735,7 +717,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.remainingEstimateBindingSource)).EndInit();
             this._worklogGroup.ResumeLayout(false);
             this._worklogGroup.PerformLayout();
-            this._hideTimeTracking.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this._splitter.Panel1.ResumeLayout(false);
@@ -775,8 +756,6 @@
         private System.Windows.Forms.CheckBox _addWorklog;
         private System.Windows.Forms.ContextMenuStrip _showHideMenu;
         private System.Windows.Forms.ToolStripMenuItem showTimeTrackingToolStripMenuItem;
-        private System.Windows.Forms.ContextMenuStrip _hideTimeTracking;
-        private System.Windows.Forms.ToolStripMenuItem hideToolStripMenuItem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;

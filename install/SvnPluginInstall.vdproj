@@ -93,18 +93,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_83CAFA3BA375D51B03BF4FB699662A55"
-        "OwnerKey" = "8:_6E91974C932F4690A4CD063976D9CFA6"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_83CAFA3BA375D51B03BF4FB699662A55"
-        "OwnerKey" = "8:_F1E2C47A7341CADC544B3893E58B89AE"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_A1C1FA7C617CD7E584A7075B2D17D500"
         "OwnerKey" = "8:_1CEB6A7157EE88E64DDDD720E61B7DF3"
         "MsmSig" = "8:_UNDEFINED"
@@ -523,11 +511,6 @@
             "AssemblyAsmDisplayName" = "8:CSharpTest.Net.JiraSVN.Jira.XmlSerializers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=60c82babf932569d, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_6ADBF9B5DFD948DD8F9EA3EE131D8AA9"
-                    {
-                    "Name" = "8:CSharpTest.Net.JiraSVN.Jira.XmlSerializers.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:..\\bin\\Release\\CSharpTest.Net.JiraSVN.Jira.XmlSerializers.dll"
             "TargetName" = "8:"
@@ -576,26 +559,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_83CAFA3BA375D51B03BF4FB699662A55"
-            {
-            "SourcePath" = "8:CSharpTest.Net.JiraSVN.Plugin.tlb"
-            "TargetName" = "8:CSharpTest.Net.JiraSVN.Plugin.tlb"
-            "Tag" = "8:"
-            "Folder" = "8:_7C760051064F401894B98C3AAA0533DB"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:2"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_A1C1FA7C617CD7E584A7075B2D17D500"
@@ -749,11 +712,6 @@
             "AssemblyAsmDisplayName" = "8:CSharpTest.Net.JiraSVN.Editor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=60c82babf932569d, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_F3134B3AF559458EA00D7CB5950FC360"
-                    {
-                    "Name" = "8:CSharpTest.Net.JiraSVN.Editor.exe"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:..\\bin\\Release\\CSharpTest.Net.JiraSVN.Editor.exe"
             "TargetName" = "8:"
@@ -808,7 +766,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:JiraTortoiseSvnPlugin"
         "ProductCode" = "8:{9F7584D7-FCF3-479E-86E8-5B1CF71FAC37}"
-        "PackageCode" = "8:{1465C9ED-044A-43B7-ACA0-09EDFF44A5FA}"
+        "PackageCode" = "8:{4AB514F7-6AEC-435C-B8C0-C06AC6D09BAE}"
         "UpgradeCode" = "8:{06CE0F15-76E1-4EF2-9B81-1EE0B88BCF6E}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"

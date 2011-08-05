@@ -195,20 +195,20 @@ namespace CSharpTest.Net.JiraSVN.Jira
 			{ Log.Error(e, "Failed to view issue at uri = {0}.", url); }
 		}
 
-		internal IIssue[] GetIssuesByFilter(JiraFilter filter)
+        internal IIssue[] GetIssuesByFilter(JiraFilter filter, int offsett, int maxNumber)
 		{
 			List<JiraIssue> issues = new List<JiraIssue>();
-			foreach (RemoteIssue issue in _service.getIssuesFromFilter(_token, filter.Id))
+            foreach (RemoteIssue issue in _service.getIssuesFromFilterWithLimit(_token, filter.Id, offsett, maxNumber))
 				issues.Add( new JiraIssue(this, issue) );
 			return issues.ToArray();
 		}
 
-		internal IIssue[] GetAllIssues(string text)
+        internal IIssue[] GetAllIssues(string text, int offsett, int maxNumber)
 		{
 			List<JiraIssue> issues = new List<JiraIssue>();
 			//RemoteProject[] projects = _service.getProjectsNoSchemes(_token);
 			//RemoteIssue[] allissues = _service.getIssuesFromTextSearchWithProject(_token, new string[] { projects[0].key }, " ", 100);
-			RemoteIssue[] allissues = _service.getIssuesFromTextSearch(_token, text);
+            RemoteIssue[] allissues = _service.getIssuesFromTextSearchWithLimit(_token, text, offsett, maxNumber);
 			foreach (RemoteIssue issue in allissues)
 				issues.Add(new JiraIssue(this, issue));
 			return issues.ToArray();

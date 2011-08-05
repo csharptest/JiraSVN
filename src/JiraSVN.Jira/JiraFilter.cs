@@ -26,10 +26,10 @@ namespace CSharpTest.Net.JiraSVN.Jira
 		{
 			_connection = conn;
 		}
-				
-		public IIssue[] GetIssues()
+
+        public IIssue[] GetIssues(int offsett, int maxNumber)
 		{
-			return _connection.GetIssuesByFilter(this);
+            return _connection.GetIssuesByFilter(this, offsett, maxNumber);
 		}
 	}
 
@@ -43,25 +43,25 @@ namespace CSharpTest.Net.JiraSVN.Jira
 			_connection = conn;
 		}
 
-		public IIssue[] GetIssues()
+		public IIssue[] GetIssues(int offsett, int maxNumber)
 		{
 			//return _connection.GetAllIssues();
 			return new IIssue[1] { JiraAllFilterMessage.Instance };
 		}
 
-		public IIssue[] GetIssues(string text)
+        public IIssue[] GetIssues(string text, int offsett, int maxNumber)
 		{
 			try
 			{
 				if (String.IsNullOrEmpty(text) || text.Trim().Length < 2)
-					return GetIssues();
+					return GetIssues(offsett, maxNumber);
 
-				return _connection.GetAllIssues(text);
+                return _connection.GetAllIssues(text, offsett, maxNumber);
 			}
 			catch (Exception e)
 			{
 				Log.Warning(e);
-				return GetIssues();
+                return GetIssues(offsett, maxNumber);
 			}
 		}
 

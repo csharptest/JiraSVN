@@ -134,9 +134,9 @@ namespace CSharpTest.Net.JiraSVN.Plugin.UI
 			{
 				IIssue[] items;
 				if (filter is IIssueFilterWithSearch)
-					items = ((IIssueFilterWithSearch)filter).GetIssues(_textFilter);
+					items = ((IIssueFilterWithSearch)filter).GetIssues(_textFilter, 0, 50);
 				else
-					items = filter.GetIssues();
+					items = filter.GetIssues(0, 50);
 
 				foreach (IIssue issue in items)
 				{

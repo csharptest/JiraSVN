@@ -323,7 +323,7 @@ namespace CSharpTest.Net.JiraSVN.Plugin
 			catch (Exception e)
 			{
 				Log.Error(e);
-                message = e.Message + " Cannot find \"" + serviceUri + "\"";
+                message = e.Message + "\nurl: \"" + serviceUri + "\"";
 				return false;
 			}
 		}

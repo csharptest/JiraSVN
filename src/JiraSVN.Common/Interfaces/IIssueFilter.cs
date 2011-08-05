@@ -24,7 +24,7 @@ namespace CSharpTest.Net.JiraSVN.Common.Interfaces
 		/// <summary>
 		/// Returns the list of issues matching this filter/group
 		/// </summary>
-		IIssue[] GetIssues();
+		IIssue[] GetIssues(int offsett, int maxNumber);
 	}
 
 	/// <summary>
@@ -36,6 +36,6 @@ namespace CSharpTest.Net.JiraSVN.Common.Interfaces
 		/// <summary>
 		/// Returns the list of issues matching this filter/group
 		/// </summary>
-		IIssue[] GetIssues(string searchText);
+        IIssue[] GetIssues(string searchText, int offsett, int maxNumber);
 	}
 }

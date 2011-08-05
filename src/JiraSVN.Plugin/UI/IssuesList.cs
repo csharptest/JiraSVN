@@ -26,11 +26,12 @@ namespace CSharpTest.Net.JiraSVN.Plugin.UI
 		readonly ToolTipLabel _tipitem;
 		readonly IssuesListView _viewControl;
 		readonly ObjectSerializer _serializer;
+        private Timer _textChangedtimer;
 
         public IssuesList(IssuesListView viewControl)
 		{
 			_viewControl = viewControl;
-            _serializer = new ObjectSerializer(this, "Top", "Left", "Height", "Width", "_splitter.SplitterDistance", "worklogpanel.Visible");
+            _serializer = new ObjectSerializer(this, "Top", "Left", "Height", "Width", "_splitter.SplitterDistance", "_worklogGroup.Visible");
 			_serializer.ContinueOnError = true;
 
 			_tipitem = new ToolTipLabel();
@@ -42,6 +43,9 @@ namespace CSharpTest.Net.JiraSVN.Plugin.UI
 
 			_viewControl.FoundIssues.ListChanged += new ListChangedEventHandler(FoundIssues_ListChanged);
 			_binding.DataSource = _viewControl;
+            _textChangedtimer = new Timer();
+            _textChangedtimer.Interval = 500;
+            _textChangedtimer.Tick += new EventHandler(_textChangedtimer_Tick);
 		}
 
 		void FoundIssues_ListChanged(object sender, ListChangedEventArgs e)
@@ -94,7 +98,7 @@ namespace CSharpTest.Net.JiraSVN.Plugin.UI
 		private void Form_Load(object sender, EventArgs e)
 		{
 			_serializer.Deserialize(new CSharpTest.Net.Serialization.StorageClasses.RegistryStorage());
-            showTimeTrackingToolStripMenuItem.Checked = worklogpanel.Visible;
+            showTimeTrackingToolStripMenuItem.Checked = _worklogGroup.Visible;
 			this.Activate();
 		}
 
@@ -210,13 +214,30 @@ namespace CSharpTest.Net.JiraSVN.Plugin.UI
 
         private void showTimeTrackingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            worklogpanel.Visible = ((ToolStripMenuItem)sender).Checked;
+            _worklogGroup.Visible = ((ToolStripMenuItem)sender).Checked;
         }
 
         private void hideToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (showTimeTrackingToolStripMenuItem.Checked)
                 showTimeTrackingToolStripMenuItem.PerformClick();
+        }
+
+        private void _search_TextChanged(object sender, EventArgs e)
+        {
+            //stop and start the timer
+            _textChangedtimer.Stop();
+            _textChangedtimer.Start();
+        }
+
+        void _textChangedtimer_Tick(object sender, EventArgs e)
+        {
+            //force a binding
+            foreach (Binding binding in _search.DataBindings)
+                binding.WriteValue();
+
+            //dont execute this again
+            _textChangedtimer.Stop();
         }
 
 	}
