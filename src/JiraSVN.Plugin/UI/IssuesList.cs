@@ -218,6 +218,7 @@ namespace CSharpTest.Net.JiraSVN.Plugin.UI
             if (showTimeTrackingToolStripMenuItem.Checked)
                 showTimeTrackingToolStripMenuItem.PerformClick();
         }
+
 	}
 }
 

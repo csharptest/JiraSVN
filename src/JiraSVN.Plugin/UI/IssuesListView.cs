@@ -76,9 +76,10 @@ namespace CSharpTest.Net.JiraSVN.Plugin.UI
 			_serializer.ContinueOnError = true;
 			_serializer.Deserialize(_storage);
 
-			// if no filter is pre-selected, select the first one, otherwise window comes up in odd state
+			// if no filter is pre-selected, select the last one, as this is the search filter
+            // this increases the performance (no need to display all items)
             if (_filters.SelectedIndex == -1 && _filters.Count > 0)
-                _filters.SelectedIndex = 0;
+                _filters.SelectedIndex = _filters.Count - 1; 
 
             ServerFilterChanged(String.Empty);
 		}

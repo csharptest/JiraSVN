@@ -75,31 +75,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_2ECD65B8B4DB49AAB439384F4420CC26"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_39F18C3AA8E44DD094FD01158A54E1B3"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_4EDE1F4BC2D84EE697869F4AED5494CB"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_52033C017F824082828576088503131F"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_540756DFCAAC4400AF607B6724E01DD8"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -111,8 +87,14 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_9A07A457BD2247EFA116582216C98C4A"
-        "OwnerKey" = "8:_UNDEFINED"
+        "MsmKey" = "8:_83CAFA3BA375D51B03BF4FB699662A55"
+        "OwnerKey" = "8:_0FD3491B93FA45B8AF481B1CCE59AC78"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_83CAFA3BA375D51B03BF4FB699662A55"
+        "OwnerKey" = "8:_F1E2C47A7341CADC544B3893E58B89AE"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -159,37 +141,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_C4CCC7BA72694672B4E836E0B56B82AD"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_C556621666BB4D5280B66824EAEDFEF6"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_DE614A1832984C35BC3683BDA35123C9"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_E0F1AEAE241A4D8BB451163C2A63C032"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_E88670F692924A8EB343BBA3F632E8CC"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_F04E9DB761534B5F8ED06E886A5ED671"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -233,6 +185,18 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_64C8FCC0D9D64D0B85F8267939D7EE1E"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_BD07992B840F40999E6E37799690C2E9"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_AEDFCD49EE1843E9ADF16B44EDAAD6AE"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -287,18 +251,6 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_1704412B341E5FBE5EEA2264E3D92290"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_AEDFCD49EE1843E9ADF16B44EDAAD6AE"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_BD07992B840F40999E6E37799690C2E9"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -544,26 +496,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2ECD65B8B4DB49AAB439384F4420CC26"
-            {
-            "SourcePath" = "8:..\\bin\\Release\\CSharpTest.Net.Logging.xml"
-            "TargetName" = "8:CSharpTest.Net.Logging.xml"
-            "Tag" = "8:"
-            "Folder" = "8:_7C760051064F401894B98C3AAA0533DB"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_39F18C3AA8E44DD094FD01158A54E1B3"
             {
             "AssemblyRegister" = "3:1"
@@ -579,66 +511,6 @@
                 }
             "SourcePath" = "8:..\\bin\\Release\\CSharpTest.Net.JiraSVN.Editor.exe"
             "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_7C760051064F401894B98C3AAA0533DB"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4EDE1F4BC2D84EE697869F4AED5494CB"
-            {
-            "SourcePath" = "8:..\\bin\\Release\\CSharpTest.Net.Library.xml"
-            "TargetName" = "8:CSharpTest.Net.Library.xml"
-            "Tag" = "8:"
-            "Folder" = "8:_7C760051064F401894B98C3AAA0533DB"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_52033C017F824082828576088503131F"
-            {
-            "SourcePath" = "8:..\\bin\\Release\\CSharpTest.Net.JiraSVN.Plugin.XML"
-            "TargetName" = "8:CSharpTest.Net.JiraSVN.Plugin.XML"
-            "Tag" = "8:"
-            "Folder" = "8:_7C760051064F401894B98C3AAA0533DB"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_540756DFCAAC4400AF607B6724E01DD8"
-            {
-            "SourcePath" = "8:..\\bin\\Release\\CSharpTest.Net.JiraSVN.Common.pdb"
-            "TargetName" = "8:CSharpTest.Net.JiraSVN.Common.pdb"
             "Tag" = "8:"
             "Folder" = "8:_7C760051064F401894B98C3AAA0533DB"
             "Condition" = "8:"
@@ -686,10 +558,10 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9A07A457BD2247EFA116582216C98C4A"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_83CAFA3BA375D51B03BF4FB699662A55"
             {
-            "SourcePath" = "8:..\\bin\\Release\\CSharpTest.Net.Logging.pdb"
-            "TargetName" = "8:CSharpTest.Net.Logging.pdb"
+            "SourcePath" = "8:CSharpTest.Net.JiraSVN.Plugin.tlb"
+            "TargetName" = "8:CSharpTest.Net.JiraSVN.Plugin.tlb"
             "Tag" = "8:"
             "Folder" = "8:_7C760051064F401894B98C3AAA0533DB"
             "Condition" = "8:"
@@ -701,9 +573,9 @@
             "Permanent" = "11:FALSE"
             "SharedLegacy" = "11:FALSE"
             "PackageAs" = "3:1"
-            "Register" = "3:1"
+            "Register" = "3:2"
             "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_A1C1FA7C617CD7E584A7075B2D17D500"
@@ -819,110 +691,10 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C4CCC7BA72694672B4E836E0B56B82AD"
-            {
-            "SourcePath" = "8:..\\bin\\Release\\CSharpTest.Net.JiraSVN.Plugin.pdb"
-            "TargetName" = "8:CSharpTest.Net.JiraSVN.Plugin.pdb"
-            "Tag" = "8:"
-            "Folder" = "8:_7C760051064F401894B98C3AAA0533DB"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C556621666BB4D5280B66824EAEDFEF6"
-            {
-            "SourcePath" = "8:..\\bin\\Release\\CSharpTest.Net.JiraSVN.Common.XML"
-            "TargetName" = "8:CSharpTest.Net.JiraSVN.Common.XML"
-            "Tag" = "8:"
-            "Folder" = "8:_7C760051064F401894B98C3AAA0533DB"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DE614A1832984C35BC3683BDA35123C9"
-            {
-            "SourcePath" = "8:..\\bin\\Release\\CSharpTest.Net.JiraSVN.Jira.XML"
-            "TargetName" = "8:CSharpTest.Net.JiraSVN.Jira.XML"
-            "Tag" = "8:"
-            "Folder" = "8:_7C760051064F401894B98C3AAA0533DB"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E0F1AEAE241A4D8BB451163C2A63C032"
             {
             "SourcePath" = "8:..\\bin\\Release\\LICENSE-2.0.txt"
             "TargetName" = "8:LICENSE-2.0.txt"
-            "Tag" = "8:"
-            "Folder" = "8:_7C760051064F401894B98C3AAA0533DB"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E88670F692924A8EB343BBA3F632E8CC"
-            {
-            "SourcePath" = "8:..\\bin\\Release\\CSharpTest.Net.Library.pdb"
-            "TargetName" = "8:CSharpTest.Net.Library.pdb"
-            "Tag" = "8:"
-            "Folder" = "8:_7C760051064F401894B98C3AAA0533DB"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F04E9DB761534B5F8ED06E886A5ED671"
-            {
-            "SourcePath" = "8:..\\bin\\Release\\CSharpTest.Net.JiraSVN.Editor.XML"
-            "TargetName" = "8:CSharpTest.Net.JiraSVN.Editor.XML"
             "Tag" = "8:"
             "Folder" = "8:_7C760051064F401894B98C3AAA0533DB"
             "Condition" = "8:"
