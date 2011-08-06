@@ -36,20 +36,26 @@ namespace CSharpTest.Net.JiraSVN.Jira
 
 		public JiraConnection(string url, string userName, string password, Converter<string, string> settings)
 		{
+            Log.Verbose("Creating a new connection");
 			_rootUrl = url.TrimEnd('\\', '/');
 			int offset = _rootUrl.LastIndexOf("/rpc/soap/jirasoapservice-v2");
 			if (offset > 0)
 				_rootUrl = _rootUrl.Substring(0, offset);
 
+            Log.Info("Root Url: {0}", _rootUrl);
             _settings = settings;
 			_knownUsers = new Dictionary<string, JiraUser>(StringComparer.OrdinalIgnoreCase);
 			_lookupUsers = StringComparer.OrdinalIgnoreCase.Equals(settings("resolveUserNames"), "true");
-			LoadUsers();
+            Log.Info("LookUp Users: {0}", _lookupUsers);
+            
+            LoadUsers();
 			_statuses = new Dictionary<string, JiraStatus>(StringComparer.Ordinal);
 
 			_userName = userName;
 			_password = password;
-            _service = new CSharpTest.Net.JiraSVN.Jira.Jira.JiraSoapServiceService();
+            Log.Verbose("Creating a new internal Soap Service");
+            _service = new JiraSoapServiceService();
+            Log.Verbose("Service Created");
             _service.Url = _rootUrl + "/rpc/soap/jirasoapservice-v2";
             _service.UseDefaultCredentials = true;
             if (!String.IsNullOrEmpty(settings("jira:proxyurl")))
@@ -67,11 +73,16 @@ namespace CSharpTest.Net.JiraSVN.Jira
 
 		    _token = null;
 
+            Log.Verbose("Connecting...");
 			Connect();
+            Log.Verbose("Connection Successfull");
 			_currentUser = GetUser(_userName);
 
+            Log.Verbose("Getting Statuses");
 			foreach (RemoteStatus rs in _service.getStatuses(_token))
 				_statuses[rs.id] = new JiraStatus(rs);
+
+            Log.Verbose("Finished creating a new connection");
 		}
 
 		private void LoadUsers()
@@ -293,15 +304,15 @@ namespace CSharpTest.Net.JiraSVN.Jira
             switch (method)
             {
                 case TimeEstimateRecalcualationMethod.AdjustAutomatically:
-                    _service.addWorklogAndAutoAdjustRemainingEstimateFixed(_token, issue.DisplayId, remoteWorklog);
+                    //_service.addWorklogAndAutoAdjustRemainingEstimateFixed(_token, issue.DisplayId, remoteWorklog);
                     break;
 
                 case TimeEstimateRecalcualationMethod.DoNotChange:
-                    _service.addWorklogAndRetainRemainingEstimateFixed(_token, issue.DisplayId, remoteWorklog);
+                    //_service.addWorklogAndRetainRemainingEstimateFixed(_token, issue.DisplayId, remoteWorklog);
                     break;
                 case TimeEstimateRecalcualationMethod.SetToNewValue:
-                    _service.addWorklogWithNewRemainingEstimateFixed(_token, issue.DisplayId, remoteWorklog,
-                                                                newTimeEstimate);
+                    //_service.addWorklogWithNewRemainingEstimateFixed(_token, issue.DisplayId, remoteWorklog,
+                    //                                            newTimeEstimate);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException("ProcessWorklog");

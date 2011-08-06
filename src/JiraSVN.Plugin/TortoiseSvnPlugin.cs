@@ -25,6 +25,7 @@ using CSharpTest.Net.Serialization;
 using CSharpTest.Net.WinForms;
 using Interop.BugTraqProvider;
 using Microsoft.Win32;
+using System.Reflection;
 
 namespace CSharpTest.Net.JiraSVN.Plugin
 {
@@ -50,10 +51,10 @@ namespace CSharpTest.Net.JiraSVN.Plugin
 		{
 #if DEBUG
 			System.Diagnostics.Debugger.Launch();
-#endif
-            Log.Write("Started, logging to {0}", Log.Config.LogFile);
             Resolver.Hook();
             CertificateHandler.Hook();
+#endif
+            Log.Write("Started, logging to {0}", Log.Config.LogFile);
 		}
 
 		#region Public Interfaces:
@@ -65,8 +66,9 @@ namespace CSharpTest.Net.JiraSVN.Plugin
 		{
 			if (_config == null)
 			{
-				Log.Verbose("Settings = {0}", this.GetType().Assembly.Location);
+				Log.Verbose("Loading Settings = {0}", this.GetType().Assembly.Location);
 				_config = ConfigurationManager.OpenExeConfiguration(this.GetType().Assembly.Location);
+                Log.Verbose("Loaded");
 			}
 
 			KeyValueConfigurationElement setting = _config.AppSettings.Settings[name];
@@ -76,13 +78,16 @@ namespace CSharpTest.Net.JiraSVN.Plugin
         /// <summary>Returns a setting. This is taken out of svn propertiesor config file </summary>
         private string GetSetting(string name, string commonRoot) 
         {
+            Log.Verbose("Getting Setting for name = {0} commonRoot = {1}", name, commonRoot); 
             var result = string.Empty;
             if (!String.IsNullOrEmpty(commonRoot)) 
             { //Read from svn...
                 SvnProperties props = new SvnProperties(commonRoot);
                 result = props.Search(".", true, name);
             }
-            return !String.IsNullOrEmpty(result) ? result : GetAppSetting(name);
+            result = !String.IsNullOrEmpty(result) ? result : GetAppSetting(name);
+            Log.Verbose("Setting for name = {0} commonRoot = {1} is {3} ", name, commonRoot, result); 
+            return result;
         }
 
 		/// <summary> Returns the Issue tracking connector </summary>
@@ -92,13 +97,16 @@ namespace CSharpTest.Net.JiraSVN.Plugin
 			{
 				if (_connector == null)
 				{
-					string fullClass = GetAppSetting(typeof(IIssuesService).FullName);
+                    Log.Verbose("Creating a new Connector for the service");
+                    string fullClass = GetAppSetting(typeof(IIssuesService).FullName);
 					Log.Verbose("IIssuesService = '{0}'", fullClass);
 
 					if (string.IsNullOrEmpty(fullClass))
 						throw new ApplicationException("Unable to locate CSharpTest.Net.JiraSVN.Common.Interfaces.IIssuesService entry in app.config");
 					_connector = (IIssuesService)Type.GetType(fullClass, true).InvokeMember("", System.Reflection.BindingFlags.CreateInstance, null, null, null);
-				}
+				   
+                    Log.Verbose("Connector Created");
+                }
 				return _connector;
 			}
 		}
@@ -118,16 +126,22 @@ namespace CSharpTest.Net.JiraSVN.Plugin
 		/// </summary>
 		public bool Logon(IntPtr hParentWnd, string rootUrl, string commonRoot)
 		{
+            Log.Verbose("Logging into Issue Services");
 			string message;
-			if (_service != null)
-				return true;
+            if (_service != null)
+            {
+                Log.Verbose("Already Logged. No more work required");
+                return true;
+            }
 
+            Log.Verbose("Not Logged. Logging in");
 			if (!TryLogon(hParentWnd, rootUrl, commonRoot, out message, out _service))
 			{
 				ShowError(hParentWnd, String.Format("Unable to connect to {1}, check your configuration.\r\nReason: {0}", message, Connector.ServiceName), "Login Error");
 				return false;
 			}
 
+            Log.Verbose("Finished Logging in");
 			return _service != null;
 		}
 
@@ -136,6 +150,8 @@ namespace CSharpTest.Net.JiraSVN.Plugin
 		/// </summary>
 		public string GetCommitMsg(IntPtr hParentWnd, string parameters, string originalMessage, string commonRoot, string[] files)
 		{
+            Log.Verbose("Loading form...");
+            DateTime time = DateTime.Now;
 			string message = originalMessage;
 			try
 			{
@@ -147,10 +163,13 @@ namespace CSharpTest.Net.JiraSVN.Plugin
 				else
 					_issues.SyncComments(originalMessage);
 
+                Log.Verbose("Opening form");
+                Log.Info("Time required to connect: {0}", DateTime.Now - time);
                 IssuesList form = new IssuesList(_issues);
 				if (hParentWnd == IntPtr.Zero)
 					form.ShowInTaskbar = true;
 
+                Log.Info("Time required to open form: {0}", DateTime.Now - time);
 				if (form.ShowDialog(Win32Window.FromHandle(hParentWnd)) != DialogResult.OK)
 				{ _cancelled = true; return originalMessage; }
 
@@ -230,16 +249,23 @@ namespace CSharpTest.Net.JiraSVN.Plugin
 
 		string ReadSettings(IntPtr hParentWnd, string serviceUri, ref string userId)
 		{
+            Log.Verbose("Acquiring username and password");
 			INameValueStore storage = new CSharpTest.Net.Serialization.StorageClasses.RegistryStorage();
 			try
 			{
+                Log.Verbose("Trying to read username and password from the cache");
 				string password;
 				storage.Read(serviceUri, "UserName", out userId);
-				if (storage.Read(serviceUri, "Password", out password))
-					return Encryption.CurrentUser.Decrypt(password);
+                if (storage.Read(serviceUri, "Password", out password))
+                {
+                    string pass = Encryption.CurrentUser.Decrypt(password);
+                    Log.Verbose("Successfully read Username and password from the cache");
+                    return pass;
+                }
 			}
 			catch { }
 
+            Log.Verbose("Failed reading username and password from the cache. Prompting user");
 			PasswordEntry pwdDlg = new PasswordEntry(userId, serviceUri);
 			if (pwdDlg.ShowDialog(Win32Window.FromHandle(hParentWnd)) == DialogResult.OK)
 			{
@@ -254,7 +280,7 @@ namespace CSharpTest.Net.JiraSVN.Plugin
 		bool TryParseParameters(IntPtr hParentWnd, string parameters, string commonRoot, out string serviceUri, out string user, out string password)
 		{
 			serviceUri = user = password = null;
-
+            Log.Verbose("Parsing Parameters");
             if(String.IsNullOrEmpty(parameters)) {
                 parameters = GetSetting(Connector.UriPropertyName, commonRoot);
             }
@@ -263,6 +289,7 @@ namespace CSharpTest.Net.JiraSVN.Plugin
 			if (Uri.TryCreate(parameters, UriKind.Absolute, out uri))
 			{
 				serviceUri = String.Format("{0}://{1}:{2}{3}", uri.Scheme, uri.Host, uri.Port, uri.PathAndQuery);
+                Log.Verbose("Using uri: {0}", serviceUri);
 
 				if (!String.IsNullOrEmpty(uri.UserInfo))
 				{
@@ -281,9 +308,13 @@ namespace CSharpTest.Net.JiraSVN.Plugin
 				else
 					password = ReadSettings(hParentWnd, serviceUri, ref user);
 
-				if (!String.IsNullOrEmpty(user) && !String.IsNullOrEmpty(password))
-					return true;
+                if (!String.IsNullOrEmpty(user) && !String.IsNullOrEmpty(password))
+                {
+                    Log.Verbose("Successfully acquired username and password");
+                    return true;
+                }
 			}
+            Log.Error("Could not create uri with the parameters provided. Uri: {0}", uri);
 			return false;
 		}
 
@@ -323,7 +354,7 @@ namespace CSharpTest.Net.JiraSVN.Plugin
 			catch (Exception e)
 			{
 				Log.Error(e);
-                message = e.Message + "\nurl: \"" + serviceUri + "\"";
+                message = e.Message;
 				return false;
 			}
 		}

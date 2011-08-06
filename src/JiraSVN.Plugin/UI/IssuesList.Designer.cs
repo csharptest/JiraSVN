@@ -33,7 +33,6 @@
             System.Windows.Forms.BindingSource possibleAssignmentsBindingSource;
             System.Windows.Forms.BindingSource actionsAvailableBindingSource;
             System.Windows.Forms.Label label6;
-            System.Windows.Forms.GroupBox panel2;
             System.Windows.Forms.BindingSource filtersBindingSource;
             System.Windows.Forms.Label label2;
             System.Windows.Forms.Label label3;
@@ -48,30 +47,31 @@
             System.Windows.Forms.ColumnHeader hdrLastMod;
             System.Windows.Forms.ColumnHeader hdrCreated;
             System.Windows.Forms.ColumnHeader hdrStatus;
-            System.Windows.Forms.GroupBox groupBox1;
-            System.Windows.Forms.GroupBox groupBox2;
-            System.Windows.Forms.GroupBox groupBox3;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IssuesList));
             this._showHideMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.showTimeTrackingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cancelButton = new System.Windows.Forms.Button();
             this.okButton = new System.Windows.Forms.Button();
             this._binding = new System.Windows.Forms.BindingSource(this.components);
+            this._filterGroup = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this._filters = new CSharpTest.Net.JiraSVN.Plugin.UI.BindingComboBox();
             this._search = new System.Windows.Forms.TextBox();
             this._status = new CSharpTest.Net.JiraSVN.Plugin.UI.BindingComboBox();
             this._assigned = new CSharpTest.Net.JiraSVN.Plugin.UI.BindingComboBox();
+            this._issuesGroup = new System.Windows.Forms.GroupBox();
             this._listView = new System.Windows.Forms.ListView();
             this._contextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.viewIssueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.refreshIssueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.statusGroup = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this._doTakeAction = new System.Windows.Forms.CheckBox();
             this._assignTo = new CSharpTest.Net.JiraSVN.Plugin.UI.BindingComboBox();
             this._takeAction = new CSharpTest.Net.JiraSVN.Plugin.UI.BindingComboBox();
             this._doAssignTo = new System.Windows.Forms.CheckBox();
+            this._commentGroup = new System.Windows.Forms.GroupBox();
             this._comment = new System.Windows.Forms.TextBox();
             this._addWorklog = new System.Windows.Forms.CheckBox();
             this._worklogAction = new CSharpTest.Net.JiraSVN.Plugin.UI.BindingComboBox();
@@ -85,7 +85,6 @@
             possibleAssignmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             actionsAvailableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             label6 = new System.Windows.Forms.Label();
-            panel2 = new System.Windows.Forms.GroupBox();
             filtersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             label2 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
@@ -100,24 +99,21 @@
             hdrLastMod = new System.Windows.Forms.ColumnHeader();
             hdrCreated = new System.Windows.Forms.ColumnHeader();
             hdrStatus = new System.Windows.Forms.ColumnHeader();
-            groupBox1 = new System.Windows.Forms.GroupBox();
-            groupBox2 = new System.Windows.Forms.GroupBox();
-            groupBox3 = new System.Windows.Forms.GroupBox();
             panel1.SuspendLayout();
             this._showHideMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(possibleAssignmentsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._binding)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(actionsAvailableBindingSource)).BeginInit();
-            panel2.SuspendLayout();
+            this._filterGroup.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(filtersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(statusFilterBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(assignmentFilterBindingSource)).BeginInit();
-            groupBox1.SuspendLayout();
+            this._issuesGroup.SuspendLayout();
             this._contextMenu.SuspendLayout();
-            groupBox2.SuspendLayout();
+            this.statusGroup.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            groupBox3.SuspendLayout();
+            this._commentGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.remainingEstimateBindingSource)).BeginInit();
             this._worklogGroup.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -205,17 +201,17 @@
             label6.TabIndex = 2;
             label6.Text = "and update estimate:";
             // 
-            // panel2
+            // _filterGroup
             // 
-            panel2.AutoSize = true;
-            panel2.Controls.Add(this.tableLayoutPanel3);
-            panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            panel2.Location = new System.Drawing.Point(8, 8);
-            panel2.Name = "panel2";
-            panel2.Size = new System.Drawing.Size(636, 73);
-            panel2.TabIndex = 0;
-            panel2.TabStop = false;
-            panel2.Text = "Filter";
+            this._filterGroup.AutoSize = true;
+            this._filterGroup.Controls.Add(this.tableLayoutPanel3);
+            this._filterGroup.Dock = System.Windows.Forms.DockStyle.Top;
+            this._filterGroup.Location = new System.Drawing.Point(8, 8);
+            this._filterGroup.Name = "_filterGroup";
+            this._filterGroup.Size = new System.Drawing.Size(636, 73);
+            this._filterGroup.TabIndex = 0;
+            this._filterGroup.TabStop = false;
+            this._filterGroup.Text = "Filter";
             // 
             // tableLayoutPanel3
             // 
@@ -384,16 +380,16 @@
             hdrStatus.Text = "Status";
             hdrStatus.Width = 100;
             // 
-            // groupBox1
+            // _issuesGroup
             // 
-            groupBox1.Controls.Add(this._listView);
-            groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            groupBox1.Location = new System.Drawing.Point(0, 0);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new System.Drawing.Size(636, 200);
-            groupBox1.TabIndex = 1;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Issues";
+            this._issuesGroup.Controls.Add(this._listView);
+            this._issuesGroup.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._issuesGroup.Location = new System.Drawing.Point(0, 0);
+            this._issuesGroup.Name = "_issuesGroup";
+            this._issuesGroup.Size = new System.Drawing.Size(636, 200);
+            this._issuesGroup.TabIndex = 1;
+            this._issuesGroup.TabStop = false;
+            this._issuesGroup.Text = "Issues";
             // 
             // _listView
             // 
@@ -452,17 +448,17 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(162, 6);
             // 
-            // groupBox2
+            // statusGroup
             // 
-            groupBox2.AutoSize = true;
-            groupBox2.Controls.Add(this.tableLayoutPanel2);
-            groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            groupBox2.Location = new System.Drawing.Point(0, 121);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new System.Drawing.Size(636, 46);
-            groupBox2.TabIndex = 10;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Status";
+            this.statusGroup.AutoSize = true;
+            this.statusGroup.Controls.Add(this.tableLayoutPanel2);
+            this.statusGroup.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.statusGroup.Location = new System.Drawing.Point(0, 121);
+            this.statusGroup.Name = "statusGroup";
+            this.statusGroup.Size = new System.Drawing.Size(636, 46);
+            this.statusGroup.TabIndex = 10;
+            this.statusGroup.TabStop = false;
+            this.statusGroup.Text = "Status";
             // 
             // tableLayoutPanel2
             // 
@@ -538,17 +534,17 @@
             this._doAssignTo.Text = "and assign to:";
             this._doAssignTo.UseVisualStyleBackColor = true;
             // 
-            // groupBox3
+            // _commentGroup
             // 
-            groupBox3.AutoSize = true;
-            groupBox3.Controls.Add(this._comment);
-            groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            groupBox3.Location = new System.Drawing.Point(0, 0);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Size = new System.Drawing.Size(636, 75);
-            groupBox3.TabIndex = 11;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "Comment";
+            this._commentGroup.AutoSize = true;
+            this._commentGroup.Controls.Add(this._comment);
+            this._commentGroup.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._commentGroup.Location = new System.Drawing.Point(0, 0);
+            this._commentGroup.Name = "_commentGroup";
+            this._commentGroup.Size = new System.Drawing.Size(636, 75);
+            this._commentGroup.TabIndex = 11;
+            this._commentGroup.TabStop = false;
+            this._commentGroup.Text = "Comment";
             // 
             // _comment
             // 
@@ -660,13 +656,13 @@
             // 
             // _splitter.Panel1
             // 
-            this._splitter.Panel1.Controls.Add(groupBox1);
+            this._splitter.Panel1.Controls.Add(this._issuesGroup);
             // 
             // _splitter.Panel2
             // 
-            this._splitter.Panel2.Controls.Add(groupBox3);
+            this._splitter.Panel2.Controls.Add(this._commentGroup);
             this._splitter.Panel2.Controls.Add(this._worklogGroup);
-            this._splitter.Panel2.Controls.Add(groupBox2);
+            this._splitter.Panel2.Controls.Add(this.statusGroup);
             this._splitter.Size = new System.Drawing.Size(636, 371);
             this._splitter.SplitterDistance = 200;
             this._splitter.TabIndex = 1;
@@ -680,7 +676,7 @@
             this.ClientSize = new System.Drawing.Size(652, 493);
             this.ContextMenuStrip = this._showHideMenu;
             this.Controls.Add(this._splitter);
-            this.Controls.Add(panel2);
+            this.Controls.Add(this._filterGroup);
             this.Controls.Add(panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -699,21 +695,21 @@
             ((System.ComponentModel.ISupportInitialize)(possibleAssignmentsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._binding)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(actionsAvailableBindingSource)).EndInit();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
+            this._filterGroup.ResumeLayout(false);
+            this._filterGroup.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(filtersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(statusFilterBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(assignmentFilterBindingSource)).EndInit();
-            groupBox1.ResumeLayout(false);
+            this._issuesGroup.ResumeLayout(false);
             this._contextMenu.ResumeLayout(false);
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
+            this.statusGroup.ResumeLayout(false);
+            this.statusGroup.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            groupBox3.ResumeLayout(false);
-            groupBox3.PerformLayout();
+            this._commentGroup.ResumeLayout(false);
+            this._commentGroup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.remainingEstimateBindingSource)).EndInit();
             this._worklogGroup.ResumeLayout(false);
             this._worklogGroup.PerformLayout();
@@ -759,5 +755,9 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.GroupBox statusGroup;
+        private System.Windows.Forms.GroupBox _commentGroup;
+        private System.Windows.Forms.GroupBox _issuesGroup;
+        private System.Windows.Forms.GroupBox _filterGroup;
     }
 }
