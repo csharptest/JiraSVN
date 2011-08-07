@@ -304,15 +304,15 @@ namespace CSharpTest.Net.JiraSVN.Jira
             switch (method)
             {
                 case TimeEstimateRecalcualationMethod.AdjustAutomatically:
-                    //_service.addWorklogAndAutoAdjustRemainingEstimateFixed(_token, issue.DisplayId, remoteWorklog);
+                    _service.addWorklogAndAutoAdjustRemainingEstimateFixed(_token, issue.DisplayId, remoteWorklog);
                     break;
 
                 case TimeEstimateRecalcualationMethod.DoNotChange:
-                    //_service.addWorklogAndRetainRemainingEstimateFixed(_token, issue.DisplayId, remoteWorklog);
+                    _service.addWorklogAndRetainRemainingEstimateFixed(_token, issue.DisplayId, remoteWorklog);
                     break;
                 case TimeEstimateRecalcualationMethod.SetToNewValue:
-                    //_service.addWorklogWithNewRemainingEstimateFixed(_token, issue.DisplayId, remoteWorklog,
-                    //                                            newTimeEstimate);
+                    _service.addWorklogWithNewRemainingEstimateFixed(_token, issue.DisplayId, remoteWorklog,
+                                                                newTimeEstimate);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException("ProcessWorklog");
