@@ -104,11 +104,11 @@
             ((System.ComponentModel.ISupportInitialize)(possibleAssignmentsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._binding)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(actionsAvailableBindingSource)).BeginInit();
-            this._filterGroup.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(filtersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(statusFilterBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(assignmentFilterBindingSource)).BeginInit();
+            this._filterGroup.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this._issuesGroup.SuspendLayout();
             this._contextMenu.SuspendLayout();
             this.statusGroup.SuspendLayout();
@@ -195,11 +195,100 @@
             label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
             label6.AutoSize = true;
             label6.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", this._binding, "AddWorklog", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            label6.Location = new System.Drawing.Point(299, 7);
+            label6.Location = new System.Drawing.Point(294, 7);
             label6.Name = "label6";
             label6.Size = new System.Drawing.Size(106, 13);
             label6.TabIndex = 2;
             label6.Text = "and update estimate:";
+            // 
+            // filtersBindingSource
+            // 
+            filtersBindingSource.DataMember = "Filters";
+            filtersBindingSource.DataSource = this._binding;
+            // 
+            // label2
+            // 
+            label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(3, 7);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(61, 13);
+            label2.TabIndex = 0;
+            label2.Text = "Apply Filter:";
+            // 
+            // label3
+            // 
+            label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(358, 34);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(51, 13);
+            label3.TabIndex = 6;
+            label3.Text = "Contains:";
+            // 
+            // statusFilterBindingSource
+            // 
+            statusFilterBindingSource.DataMember = "StatusFilter";
+            statusFilterBindingSource.DataSource = this._binding;
+            // 
+            // label1
+            // 
+            label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(3, 34);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(65, 13);
+            label1.TabIndex = 2;
+            label1.Text = "Assinged to:";
+            // 
+            // label4
+            // 
+            label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label4.AutoSize = true;
+            label4.Location = new System.Drawing.Point(201, 34);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(40, 13);
+            label4.TabIndex = 4;
+            label4.Text = "Status:";
+            // 
+            // assignmentFilterBindingSource
+            // 
+            assignmentFilterBindingSource.DataMember = "AssignmentFilter";
+            assignmentFilterBindingSource.DataSource = this._binding;
+            // 
+            // hdrId
+            // 
+            hdrId.Text = "Id";
+            // 
+            // hdrSummary
+            // 
+            hdrSummary.Text = "Summary";
+            hdrSummary.Width = 400;
+            // 
+            // hdrAssignedTo
+            // 
+            hdrAssignedTo.Text = "Assigned To";
+            hdrAssignedTo.Width = 100;
+            // 
+            // hdrReportedBy
+            // 
+            hdrReportedBy.Text = "Reported By";
+            hdrReportedBy.Width = 100;
+            // 
+            // hdrLastMod
+            // 
+            hdrLastMod.Text = "Last Modified";
+            hdrLastMod.Width = 100;
+            // 
+            // hdrCreated
+            // 
+            hdrCreated.Text = "Created On";
+            hdrCreated.Width = 100;
+            // 
+            // hdrStatus
+            // 
+            hdrStatus.Text = "Status";
+            hdrStatus.Width = 100;
             // 
             // _filterGroup
             // 
@@ -255,11 +344,6 @@
             this._filters.Size = new System.Drawing.Size(548, 21);
             this._filters.TabIndex = 1;
             // 
-            // filtersBindingSource
-            // 
-            filtersBindingSource.DataMember = "Filters";
-            filtersBindingSource.DataSource = this._binding;
-            // 
             // _search
             // 
             this._search.DataBindings.Add(new System.Windows.Forms.Binding("Text", this._binding, "TextFilter", true, System.Windows.Forms.DataSourceUpdateMode.Never));
@@ -269,26 +353,6 @@
             this._search.Size = new System.Drawing.Size(212, 20);
             this._search.TabIndex = 7;
             this._search.TextChanged += new System.EventHandler(this._search_TextChanged);
-            // 
-            // label2
-            // 
-            label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(3, 7);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(61, 13);
-            label2.TabIndex = 0;
-            label2.Text = "Apply Filter:";
-            // 
-            // label3
-            // 
-            label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(358, 34);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(51, 13);
-            label3.TabIndex = 6;
-            label3.Text = "Contains:";
             // 
             // _status
             // 
@@ -303,31 +367,6 @@
             this._status.Size = new System.Drawing.Size(102, 21);
             this._status.TabIndex = 5;
             // 
-            // statusFilterBindingSource
-            // 
-            statusFilterBindingSource.DataMember = "StatusFilter";
-            statusFilterBindingSource.DataSource = this._binding;
-            // 
-            // label1
-            // 
-            label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(3, 34);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(65, 13);
-            label1.TabIndex = 2;
-            label1.Text = "Assinged to:";
-            // 
-            // label4
-            // 
-            label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(201, 34);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(40, 13);
-            label4.TabIndex = 4;
-            label4.Text = "Status:";
-            // 
             // _assigned
             // 
             this._assigned.DataBindings.Add(new System.Windows.Forms.Binding("IndexSelected", this._binding, "SelectedAssignmentFilter", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
@@ -340,45 +379,6 @@
             this._assigned.Name = "_assigned";
             this._assigned.Size = new System.Drawing.Size(102, 21);
             this._assigned.TabIndex = 3;
-            // 
-            // assignmentFilterBindingSource
-            // 
-            assignmentFilterBindingSource.DataMember = "AssignmentFilter";
-            assignmentFilterBindingSource.DataSource = this._binding;
-            // 
-            // hdrId
-            // 
-            hdrId.Text = "Id";
-            // 
-            // hdrSummary
-            // 
-            hdrSummary.Text = "Summary";
-            hdrSummary.Width = 400;
-            // 
-            // hdrAssignedTo
-            // 
-            hdrAssignedTo.Text = "Assigned To";
-            hdrAssignedTo.Width = 100;
-            // 
-            // hdrReportedBy
-            // 
-            hdrReportedBy.Text = "Reported By";
-            hdrReportedBy.Width = 100;
-            // 
-            // hdrLastMod
-            // 
-            hdrLastMod.Text = "Last Modified";
-            hdrLastMod.Width = 100;
-            // 
-            // hdrCreated
-            // 
-            hdrCreated.Text = "Created On";
-            hdrCreated.Width = 100;
-            // 
-            // hdrStatus
-            // 
-            hdrStatus.Text = "Status";
-            hdrStatus.Width = 100;
             // 
             // _issuesGroup
             // 
@@ -466,7 +466,7 @@
             this.tableLayoutPanel2.ColumnCount = 4;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 76F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.15783F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 114F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 124F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.84217F));
             this.tableLayoutPanel2.Controls.Add(this._doTakeAction, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this._assignTo, 3, 0);
@@ -502,9 +502,9 @@
             this._assignTo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this._assignTo.FormattingEnabled = true;
             this._assignTo.IndexSelected = -1;
-            this._assignTo.Location = new System.Drawing.Point(413, 3);
+            this._assignTo.Location = new System.Drawing.Point(418, 3);
             this._assignTo.Name = "_assignTo";
-            this._assignTo.Size = new System.Drawing.Size(214, 21);
+            this._assignTo.Size = new System.Drawing.Size(209, 21);
             this._assignTo.TabIndex = 9;
             // 
             // _takeAction
@@ -518,7 +518,7 @@
             this._takeAction.IndexSelected = -1;
             this._takeAction.Location = new System.Drawing.Point(79, 3);
             this._takeAction.Name = "_takeAction";
-            this._takeAction.Size = new System.Drawing.Size(214, 21);
+            this._takeAction.Size = new System.Drawing.Size(209, 21);
             this._takeAction.TabIndex = 7;
             // 
             // _doAssignTo
@@ -527,9 +527,9 @@
             this._doAssignTo.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this._binding, "AssignTo", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this._doAssignTo.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", this._binding, "PerformAction", true));
             this._doAssignTo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._doAssignTo.Location = new System.Drawing.Point(299, 3);
+            this._doAssignTo.Location = new System.Drawing.Point(294, 3);
             this._doAssignTo.Name = "_doAssignTo";
-            this._doAssignTo.Size = new System.Drawing.Size(108, 21);
+            this._doAssignTo.Size = new System.Drawing.Size(118, 21);
             this._doAssignTo.TabIndex = 8;
             this._doAssignTo.Text = "and assign to:";
             this._doAssignTo.UseVisualStyleBackColor = true;
@@ -580,9 +580,9 @@
             this._worklogAction.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this._worklogAction.FormattingEnabled = true;
             this._worklogAction.IndexSelected = -1;
-            this._worklogAction.Location = new System.Drawing.Point(413, 3);
+            this._worklogAction.Location = new System.Drawing.Point(418, 3);
             this._worklogAction.Name = "_worklogAction";
-            this._worklogAction.Size = new System.Drawing.Size(129, 21);
+            this._worklogAction.Size = new System.Drawing.Size(126, 21);
             this._worklogAction.TabIndex = 3;
             // 
             // remainingEstimateBindingSource
@@ -597,7 +597,7 @@
             this._worklog.Dock = System.Windows.Forms.DockStyle.Fill;
             this._worklog.Location = new System.Drawing.Point(79, 3);
             this._worklog.Name = "_worklog";
-            this._worklog.Size = new System.Drawing.Size(214, 20);
+            this._worklog.Size = new System.Drawing.Size(209, 20);
             this._worklog.TabIndex = 1;
             // 
             // textBox1
@@ -605,9 +605,9 @@
             this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this._binding, "NewTimeEstimate", true));
             this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", this._binding, "CanSpecifyNewEstimate", true));
             this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(548, 3);
+            this.textBox1.Location = new System.Drawing.Point(550, 3);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(79, 20);
+            this.textBox1.Size = new System.Drawing.Size(77, 20);
             this.textBox1.TabIndex = 4;
             // 
             // _worklogGroup
@@ -630,7 +630,7 @@
             this.tableLayoutPanel1.ColumnCount = 5;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 76F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 114F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 124F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.85586F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.14414F));
             this.tableLayoutPanel1.Controls.Add(this.textBox1, 4, 0);
@@ -695,13 +695,13 @@
             ((System.ComponentModel.ISupportInitialize)(possibleAssignmentsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._binding)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(actionsAvailableBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(filtersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(statusFilterBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(assignmentFilterBindingSource)).EndInit();
             this._filterGroup.ResumeLayout(false);
             this._filterGroup.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(filtersBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(statusFilterBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(assignmentFilterBindingSource)).EndInit();
             this._issuesGroup.ResumeLayout(false);
             this._contextMenu.ResumeLayout(false);
             this.statusGroup.ResumeLayout(false);
