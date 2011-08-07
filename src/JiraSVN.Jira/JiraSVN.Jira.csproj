@@ -81,7 +81,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="jirasoapservice-v2.wsdl" />
     <None Include="Web References\Jira\jirasoapservice-v2.wsdl" />
     <None Include="Web References\Jira\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
