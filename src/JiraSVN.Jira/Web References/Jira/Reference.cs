@@ -254,7 +254,6 @@ namespace CSharpTest.Net.JiraSVN.Jira.Jira {
         
         /// <remarks/>
         public JiraSoapServiceService() {
-            this.Url = global::CSharpTest.Net.JiraSVN.Jira.Properties.Settings.Default.CSharpTest_Net_JiraSVN_Jira_WebReference_JiraSoapServiceService;
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;

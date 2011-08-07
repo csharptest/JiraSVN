@@ -15,38 +15,14 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_1704412B341E5FBE5EEA2264E3D92290"
-        "OwnerKey" = "8:_73330E219EC0475C826BA330ABD8F61A"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_1704412B341E5FBE5EEA2264E3D92290"
-        "OwnerKey" = "8:_E509D4AF343244C286D60B7A70FAE2C3"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_1704412B341E5FBE5EEA2264E3D92290"
+        "MsmKey" = "8:_22969C2735242277195993BD31AA426A"
         "OwnerKey" = "8:_825F17156251476C990C03BF476E27A6"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_1704412B341E5FBE5EEA2264E3D92290"
-        "OwnerKey" = "8:_F1E2C47A7341CADC544B3893E58B89AE"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_2BEE8C08BCCFDAC24A643E5A4E1EAF03"
-        "OwnerKey" = "8:_73330E219EC0475C826BA330ABD8F61A"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_2BEE8C08BCCFDAC24A643E5A4E1EAF03"
-        "OwnerKey" = "8:_F1E2C47A7341CADC544B3893E58B89AE"
+        "MsmKey" = "8:_22969C2735242277195993BD31AA426A"
+        "OwnerKey" = "8:_E509D4AF343244C286D60B7A70FAE2C3"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -99,36 +75,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_F1E2C47A7341CADC544B3893E58B89AE"
-        "OwnerKey" = "8:_73330E219EC0475C826BA330ABD8F61A"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_F27AF7FB6ADD3A6887E61FEA48463C9B"
-        "OwnerKey" = "8:_F1E2C47A7341CADC544B3893E58B89AE"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_F27AF7FB6ADD3A6887E61FEA48463C9B"
-        "OwnerKey" = "8:_E509D4AF343244C286D60B7A70FAE2C3"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_F27AF7FB6ADD3A6887E61FEA48463C9B"
-        "OwnerKey" = "8:_825F17156251476C990C03BF476E27A6"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_F27AF7FB6ADD3A6887E61FEA48463C9B"
-        "OwnerKey" = "8:_73330E219EC0475C826BA330ABD8F61A"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_E509D4AF343244C286D60B7A70FAE2C3"
         "MsmSig" = "8:_UNDEFINED"
@@ -148,25 +94,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_22969C2735242277195993BD31AA426A"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_73330E219EC0475C826BA330ABD8F61A"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_F1E2C47A7341CADC544B3893E58B89AE"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_F27AF7FB6ADD3A6887E61FEA48463C9B"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_1704412B341E5FBE5EEA2264E3D92290"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -237,20 +171,20 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_1704412B341E5FBE5EEA2264E3D92290"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_22969C2735242277195993BD31AA426A"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:CSharpTest.Net.JiraSVN.Common, Version=3.0.0.0, Culture=neutral, PublicKeyToken=60c82babf932569d, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:CSharpTest.Net.Library, Version=1.10.1124.358, Culture=neutral, PublicKeyToken=06aee00cce822474, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_1704412B341E5FBE5EEA2264E3D92290"
+                    "_22969C2735242277195993BD31AA426A"
                     {
-                    "Name" = "8:CSharpTest.Net.JiraSVN.Common.dll"
+                    "Name" = "8:CSharpTest.Net.Library.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:CSharpTest.Net.JiraSVN.Common.dll"
+            "SourcePath" = "8:CSharpTest.Net.Library.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_D9D881A53988432D804F54E2730CF829"
@@ -359,68 +293,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_F1E2C47A7341CADC544B3893E58B89AE"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:CSharpTest.Net.JiraSVN.Plugin, Version=3.0.0.0, Culture=neutral, PublicKeyToken=60c82babf932569d, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_F1E2C47A7341CADC544B3893E58B89AE"
-                    {
-                    "Name" = "8:CSharpTest.Net.JiraSVN.Plugin.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:CSharpTest.Net.JiraSVN.Plugin.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_7C760051064F401894B98C3AAA0533DB"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:TRUE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_F27AF7FB6ADD3A6887E61FEA48463C9B"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:CSharpTest.Net.Library, Version=1.10.1124.358, Culture=neutral, PublicKeyToken=06aee00cce822474, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_F27AF7FB6ADD3A6887E61FEA48463C9B"
-                    {
-                    "Name" = "8:CSharpTest.Net.Library.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:CSharpTest.Net.Library.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_D9D881A53988432D804F54E2730CF829"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
         }
         "FileType"
         {
@@ -466,14 +338,14 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:TortoiseSVN Jira Plugin ( 32 bit )"
-        "ProductCode" = "8:{6FB1CF7A-CB1E-4057-B3AD-5D8A28870806}"
-        "PackageCode" = "8:{97370DD5-80FC-4D2B-9DBD-84FFF72C332F}"
+        "ProductCode" = "8:{C25B3C85-C574-4E49-9CF2-A31FF155EC39}"
+        "PackageCode" = "8:{CA39F98B-8123-4020-A999-A25D6A284272}"
         "UpgradeCode" = "8:{06CE0F15-76E1-4EF2-9B81-1EE0B88BCF6E}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:3.0.0.0"
+        "ProductVersion" = "8:3.0.0"
         "Manufacturer" = "8:CSharpTest.Net"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
