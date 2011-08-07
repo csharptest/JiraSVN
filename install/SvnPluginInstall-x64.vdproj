@@ -15,20 +15,20 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_22969C2735242277195993BD31AA426A"
-        "OwnerKey" = "8:_825F17156251476C990C03BF476E27A6"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_22969C2735242277195993BD31AA426A"
+        "MsmKey" = "8:_2BEE8C08BCCFDAC24A643E5A4E1EAF03"
         "OwnerKey" = "8:_E509D4AF343244C286D60B7A70FAE2C3"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_2BEE8C08BCCFDAC24A643E5A4E1EAF03"
-        "OwnerKey" = "8:_E509D4AF343244C286D60B7A70FAE2C3"
+        "OwnerKey" = "8:_73330E219EC0475C826BA330ABD8F61A"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_2BEE8C08BCCFDAC24A643E5A4E1EAF03"
+        "OwnerKey" = "8:_EE30F60D387EE51A0557F5C2D85C2F21"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -47,6 +47,54 @@
         {
         "MsmKey" = "8:_825F17156251476C990C03BF476E27A6"
         "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_87F3FB8C9A2830B89D5FCB9AAE3B37B0"
+        "OwnerKey" = "8:_EE30F60D387EE51A0557F5C2D85C2F21"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_87F3FB8C9A2830B89D5FCB9AAE3B37B0"
+        "OwnerKey" = "8:_E509D4AF343244C286D60B7A70FAE2C3"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_87F3FB8C9A2830B89D5FCB9AAE3B37B0"
+        "OwnerKey" = "8:_825F17156251476C990C03BF476E27A6"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_87F3FB8C9A2830B89D5FCB9AAE3B37B0"
+        "OwnerKey" = "8:_73330E219EC0475C826BA330ABD8F61A"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_8CBE494DF5CF32F58D52006D60FAE45F"
+        "OwnerKey" = "8:_73330E219EC0475C826BA330ABD8F61A"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_8CBE494DF5CF32F58D52006D60FAE45F"
+        "OwnerKey" = "8:_E509D4AF343244C286D60B7A70FAE2C3"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_8CBE494DF5CF32F58D52006D60FAE45F"
+        "OwnerKey" = "8:_825F17156251476C990C03BF476E27A6"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_8CBE494DF5CF32F58D52006D60FAE45F"
+        "OwnerKey" = "8:_EE30F60D387EE51A0557F5C2D85C2F21"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -75,6 +123,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_EE30F60D387EE51A0557F5C2D85C2F21"
+        "OwnerKey" = "8:_73330E219EC0475C826BA330ABD8F61A"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_E509D4AF343244C286D60B7A70FAE2C3"
         "MsmSig" = "8:_UNDEFINED"
@@ -94,13 +148,25 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_22969C2735242277195993BD31AA426A"
+        "OwnerKey" = "8:_73330E219EC0475C826BA330ABD8F61A"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_73330E219EC0475C826BA330ABD8F61A"
+        "OwnerKey" = "8:_EE30F60D387EE51A0557F5C2D85C2F21"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_87F3FB8C9A2830B89D5FCB9AAE3B37B0"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_8CBE494DF5CF32F58D52006D60FAE45F"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -171,14 +237,45 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_22969C2735242277195993BD31AA426A"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_2BEE8C08BCCFDAC24A643E5A4E1EAF03"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:TRUE"
+            "AssemblyAsmDisplayName" = "8:CSharpTest.Net.Logging, Version=1.10.1124.358, Culture=neutral, PublicKeyToken=06aee00cce822474, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_2BEE8C08BCCFDAC24A643E5A4E1EAF03"
+                    {
+                    "Name" = "8:CSharpTest.Net.Logging.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:CSharpTest.Net.Logging.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_D9D881A53988432D804F54E2730CF829"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_87F3FB8C9A2830B89D5FCB9AAE3B37B0"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:CSharpTest.Net.Library, Version=1.10.1124.358, Culture=neutral, PublicKeyToken=06aee00cce822474, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_22969C2735242277195993BD31AA426A"
+                    "_87F3FB8C9A2830B89D5FCB9AAE3B37B0"
                     {
                     "Name" = "8:CSharpTest.Net.Library.dll"
                     "Attributes" = "3:512"
@@ -202,20 +299,20 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_2BEE8C08BCCFDAC24A643E5A4E1EAF03"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_8CBE494DF5CF32F58D52006D60FAE45F"
             {
             "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:TRUE"
-            "AssemblyAsmDisplayName" = "8:CSharpTest.Net.Logging, Version=1.10.1124.358, Culture=neutral, PublicKeyToken=06aee00cce822474, processorArchitecture=MSIL"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:CSharpTest.Net.JiraSVN.Common, Version=3.0.0.0, Culture=neutral, PublicKeyToken=60c82babf932569d, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_2BEE8C08BCCFDAC24A643E5A4E1EAF03"
+                    "_8CBE494DF5CF32F58D52006D60FAE45F"
                     {
-                    "Name" = "8:CSharpTest.Net.Logging.dll"
+                    "Name" = "8:CSharpTest.Net.JiraSVN.Common.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:CSharpTest.Net.Logging.dll"
+            "SourcePath" = "8:CSharpTest.Net.JiraSVN.Common.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_D9D881A53988432D804F54E2730CF829"
@@ -293,6 +390,37 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_EE30F60D387EE51A0557F5C2D85C2F21"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:CSharpTest.Net.JiraSVN.Plugin, Version=3.0.0.0, Culture=neutral, PublicKeyToken=60c82babf932569d, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_EE30F60D387EE51A0557F5C2D85C2F21"
+                    {
+                    "Name" = "8:CSharpTest.Net.JiraSVN.Plugin.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:CSharpTest.Net.JiraSVN.Plugin.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_7C760051064F401894B98C3AAA0533DB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:TRUE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
         }
         "FileType"
         {
@@ -339,7 +467,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:TortoiseSVN Jira Plugin ( 64 bit )"
         "ProductCode" = "8:{FB78A350-2F0C-45AF-9756-797E24747596}"
-        "PackageCode" = "8:{62ACFF4E-DD43-4024-9F58-CD60B8DE1BE8}"
+        "PackageCode" = "8:{56FA68CB-9996-48F4-A86C-7869B147AA4A}"
         "UpgradeCode" = "8:{06CE0F15-76E1-4EF2-9B81-1EE0B88BCF6E}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
