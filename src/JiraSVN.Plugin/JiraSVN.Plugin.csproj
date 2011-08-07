@@ -31,10 +31,10 @@
     <RegisterForComInterop>false</RegisterForComInterop>
     <DebugType>full</DebugType>
     <BaseAddress>5242880</BaseAddress>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <Optimize>true</Optimize>
+    <Optimize>false</Optimize>
     <DefineConstants>
     </DefineConstants>
     <OutputPath>..\..\bin\Release</OutputPath>
@@ -58,8 +58,10 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\AssemblyInfo\JiraSVNAssemblyInfo.cs">
@@ -76,6 +78,12 @@
     <Compile Include="Resolver.cs" />
     <Compile Include="UI\ActionMenuItem.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ConnectingDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ConnectingDialog.Designer.cs">
+      <DependentUpon>ConnectingDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\OptionUrlEntry.cs">
       <SubType>Form</SubType>
@@ -141,6 +149,10 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ConnectingDialog.resx">
+      <DependentUpon>ConnectingDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>

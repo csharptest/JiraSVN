@@ -26,6 +26,7 @@ using CSharpTest.Net.WinForms;
 using Interop.BugTraqProvider;
 using Microsoft.Win32;
 using System.Reflection;
+using System.ComponentModel;
 
 namespace CSharpTest.Net.JiraSVN.Plugin
 {
@@ -45,15 +46,16 @@ namespace CSharpTest.Net.JiraSVN.Plugin
 		private Configuration _config = null;
 		private bool _cancelled = true;
 	    private string _commonURL = string.Empty;
+        private ConnectingDialog _connectingDialog;
 
 		/// <summary> Constructs a MyPlugin </summary>
 		public TortoiseSvnPlugin()
 		{
 #if DEBUG
 			System.Diagnostics.Debugger.Launch();
-            //Resolver.Hook();
-            //CertificateHandler.Hook();
 #endif
+            _connectingDialog = new ConnectingDialog();
+            _connectingDialog.Worker.DoWork += BackgroundWorkerDoWork;
             Log.Write("Started, logging to {0}", Log.Config.LogFile);
 		}
 
@@ -127,7 +129,6 @@ namespace CSharpTest.Net.JiraSVN.Plugin
 		public bool Logon(IntPtr hParentWnd, string rootUrl, string commonRoot)
 		{
             Log.Verbose("Logging into Issue Services");
-			string message;
             if (_service != null)
             {
                 Log.Verbose("Already Logged. No more work required");
@@ -135,15 +136,34 @@ namespace CSharpTest.Net.JiraSVN.Plugin
             }
 
             Log.Verbose("Not Logged. Logging in");
-			if (!TryLogon(hParentWnd, rootUrl, commonRoot, out message, out _service))
-			{
-				ShowError(hParentWnd, String.Format("Unable to connect to {1}, check your configuration.\r\nReason: {0}", message, Connector.ServiceName), "Login Error");
-				return false;
-			}
+            _connectingDialog.Argument = new object[] { hParentWnd, rootUrl, commonRoot };
+            var connectionResult = _connectingDialog.ShowDialog(Win32Window.FromHandle(hParentWnd));
+            if ( connectionResult == DialogResult.OK )
+                _service = _connectingDialog.Result as IIssuesServiceConnection;
+            if ( connectionResult == DialogResult.Abort)
+                ShowError(hParentWnd, _connectingDialog.Error.Message, "Login Error");
+            else if (connectionResult == DialogResult.Cancel)
+                _service = null;
 
             Log.Verbose("Finished Logging in");
 			return _service != null;
 		}
+
+        private void BackgroundWorkerDoWork(object sender, DoWorkEventArgs args )
+        {
+            string message;
+            IIssuesServiceConnection service;
+            var arguments = ((object[])args.Argument);
+            IntPtr hParentWnd = (IntPtr)arguments[0];
+            string rootUrl = (string)arguments[1];
+            string commonRoot = (string)arguments[2];
+
+            if (!TryLogon(hParentWnd, rootUrl, commonRoot, out message, out service))
+            {
+                throw new ApplicationException(String.Format("Unable to connect to {1}, check your configuration.\r\nReason: {0}", message, Connector.ServiceName));
+            }
+            args.Result = service;
+        }
 
 		/// <summary>
 		/// Prompt the user for the comments and related issues

@@ -467,7 +467,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:TortoiseSVN Jira Plugin ( 64 bit )"
         "ProductCode" = "8:{F1A93432-37BE-4300-AE4D-F8B160BD3C11}"
-        "PackageCode" = "8:{FA35D2D9-E370-4365-A076-9A9C6E69B824}"
+        "PackageCode" = "8:{F5691EAD-5D4D-4D89-893C-FF90C8F865EC}"
         "UpgradeCode" = "8:{06CE0F15-76E1-4EF2-9B81-1EE0B88BCF6E}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
