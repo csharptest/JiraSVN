@@ -254,7 +254,7 @@ namespace CSharpTest.Net.JiraSVN.Jira.Jira {
         
         /// <remarks/>
         public JiraSoapServiceService() {
-            this.Url = "http://localhost:8080/rpc/soap/jirasoapservice-v2";
+            this.Url = global::CSharpTest.Net.JiraSVN.Jira.Properties.Settings.Default.CSharpTest_Net_JiraSVN_Jira_WebReference_JiraSoapServiceService;
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;
@@ -3038,14 +3038,12 @@ namespace CSharpTest.Net.JiraSVN.Jira.Jira {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("addWorklogWithNewRemainingEstimateReturn")]
-        public RemoteWorklog addWorklogWithNewRemainingEstimate(string in0, string in1, RemoteWorklog in2, string in3) {
-            object[] results = this.Invoke("addWorklogWithNewRemainingEstimate", new object[] {
+        public void addWorklogWithNewRemainingEstimate(string in0, string in1, RemoteWorklog in2, string in3) {
+            this.Invoke("addWorklogWithNewRemainingEstimate", new object[] {
                         in0,
                         in1,
                         in2,
                         in3});
-            return ((RemoteWorklog)(results[0]));
         }
         
         /// <remarks/>
@@ -3068,19 +3066,17 @@ namespace CSharpTest.Net.JiraSVN.Jira.Jira {
         private void OnaddWorklogWithNewRemainingEstimateOperationCompleted(object arg) {
             if ((this.addWorklogWithNewRemainingEstimateCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.addWorklogWithNewRemainingEstimateCompleted(this, new addWorklogWithNewRemainingEstimateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.addWorklogWithNewRemainingEstimateCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("addWorklogAndAutoAdjustRemainingEstimateReturn")]
-        public RemoteWorklog addWorklogAndAutoAdjustRemainingEstimate(string in0, string in1, RemoteWorklog in2) {
-            object[] results = this.Invoke("addWorklogAndAutoAdjustRemainingEstimate", new object[] {
+        public void addWorklogAndAutoAdjustRemainingEstimate(string in0, string in1, RemoteWorklog in2) {
+            this.Invoke("addWorklogAndAutoAdjustRemainingEstimate", new object[] {
                         in0,
                         in1,
                         in2});
-            return ((RemoteWorklog)(results[0]));
         }
         
         /// <remarks/>
@@ -3102,19 +3098,17 @@ namespace CSharpTest.Net.JiraSVN.Jira.Jira {
         private void OnaddWorklogAndAutoAdjustRemainingEstimateOperationCompleted(object arg) {
             if ((this.addWorklogAndAutoAdjustRemainingEstimateCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.addWorklogAndAutoAdjustRemainingEstimateCompleted(this, new addWorklogAndAutoAdjustRemainingEstimateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.addWorklogAndAutoAdjustRemainingEstimateCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("addWorklogAndRetainRemainingEstimateReturn")]
-        public RemoteWorklog addWorklogAndRetainRemainingEstimate(string in0, string in1, RemoteWorklog in2) {
-            object[] results = this.Invoke("addWorklogAndRetainRemainingEstimate", new object[] {
+        public void addWorklogAndRetainRemainingEstimate(string in0, string in1, RemoteWorklog in2) {
+            this.Invoke("addWorklogAndRetainRemainingEstimate", new object[] {
                         in0,
                         in1,
                         in2});
-            return ((RemoteWorklog)(results[0]));
         }
         
         /// <remarks/>
@@ -3136,7 +3130,7 @@ namespace CSharpTest.Net.JiraSVN.Jira.Jira {
         private void OnaddWorklogAndRetainRemainingEstimateOperationCompleted(object arg) {
             if ((this.addWorklogAndRetainRemainingEstimateCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.addWorklogAndRetainRemainingEstimateCompleted(this, new addWorklogAndRetainRemainingEstimateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.addWorklogAndRetainRemainingEstimateCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -7597,81 +7591,15 @@ namespace CSharpTest.Net.JiraSVN.Jira.Jira {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.4927")]
-    public delegate void addWorklogWithNewRemainingEstimateCompletedEventHandler(object sender, addWorklogWithNewRemainingEstimateCompletedEventArgs e);
+    public delegate void addWorklogWithNewRemainingEstimateCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.4927")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class addWorklogWithNewRemainingEstimateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal addWorklogWithNewRemainingEstimateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RemoteWorklog Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RemoteWorklog)(this.results[0]));
-            }
-        }
-    }
+    public delegate void addWorklogAndAutoAdjustRemainingEstimateCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.4927")]
-    public delegate void addWorklogAndAutoAdjustRemainingEstimateCompletedEventHandler(object sender, addWorklogAndAutoAdjustRemainingEstimateCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.4927")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class addWorklogAndAutoAdjustRemainingEstimateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal addWorklogAndAutoAdjustRemainingEstimateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RemoteWorklog Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RemoteWorklog)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.4927")]
-    public delegate void addWorklogAndRetainRemainingEstimateCompletedEventHandler(object sender, addWorklogAndRetainRemainingEstimateCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.4927")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class addWorklogAndRetainRemainingEstimateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal addWorklogAndRetainRemainingEstimateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RemoteWorklog Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RemoteWorklog)(this.results[0]));
-            }
-        }
-    }
+    public delegate void addWorklogAndRetainRemainingEstimateCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.4927")]

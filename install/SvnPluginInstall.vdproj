@@ -39,6 +39,30 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_2BEE8C08BCCFDAC24A643E5A4E1EAF03"
+        "OwnerKey" = "8:_73330E219EC0475C826BA330ABD8F61A"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_2BEE8C08BCCFDAC24A643E5A4E1EAF03"
+        "OwnerKey" = "8:_F1E2C47A7341CADC544B3893E58B89AE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_2BEE8C08BCCFDAC24A643E5A4E1EAF03"
+        "OwnerKey" = "8:_E509D4AF343244C286D60B7A70FAE2C3"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_2BEE8C08BCCFDAC24A643E5A4E1EAF03"
+        "OwnerKey" = "8:_825F17156251476C990C03BF476E27A6"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_73330E219EC0475C826BA330ABD8F61A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -53,30 +77,6 @@
         {
         "MsmKey" = "8:_92ECE06BF9E84F43917372B2404279A2"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_A1C1FA7C617CD7E584A7075B2D17D500"
-        "OwnerKey" = "8:_F1E2C47A7341CADC544B3893E58B89AE"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_A1C1FA7C617CD7E584A7075B2D17D500"
-        "OwnerKey" = "8:_E509D4AF343244C286D60B7A70FAE2C3"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_A1C1FA7C617CD7E584A7075B2D17D500"
-        "OwnerKey" = "8:_825F17156251476C990C03BF476E27A6"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_A1C1FA7C617CD7E584A7075B2D17D500"
-        "OwnerKey" = "8:_73330E219EC0475C826BA330ABD8F61A"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -136,6 +136,12 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_2BEE8C08BCCFDAC24A643E5A4E1EAF03"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_825F17156251476C990C03BF476E27A6"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -149,12 +155,6 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_F1E2C47A7341CADC544B3893E58B89AE"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_A1C1FA7C617CD7E584A7075B2D17D500"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -268,34 +268,14 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_92ECE06BF9E84F43917372B2404279A2"
-            {
-            "SourcePath" = "8:..\\res\\Tortoise.ico"
-            "TargetName" = "8:Tortoise.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_7C760051064F401894B98C3AAA0533DB"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_A1C1FA7C617CD7E584A7075B2D17D500"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_2BEE8C08BCCFDAC24A643E5A4E1EAF03"
             {
             "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyIsInGAC" = "11:TRUE"
             "AssemblyAsmDisplayName" = "8:CSharpTest.Net.Logging, Version=1.10.1124.358, Culture=neutral, PublicKeyToken=06aee00cce822474, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_A1C1FA7C617CD7E584A7075B2D17D500"
+                    "_2BEE8C08BCCFDAC24A643E5A4E1EAF03"
                     {
                     "Name" = "8:CSharpTest.Net.Logging.dll"
                     "Attributes" = "3:512"
@@ -317,6 +297,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_92ECE06BF9E84F43917372B2404279A2"
+            {
+            "SourcePath" = "8:..\\res\\Tortoise.ico"
+            "TargetName" = "8:Tortoise.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_7C760051064F401894B98C3AAA0533DB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E0F1AEAE241A4D8BB451163C2A63C032"
@@ -466,14 +466,14 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:TortoiseSVN Jira Plugin ( 32 bit )"
-        "ProductCode" = "8:{9F7584D7-FCF3-479E-86E8-5B1CF71FAC37}"
-        "PackageCode" = "8:{F1AA640F-A3DA-4874-8B15-FD4D0BFAB647}"
+        "ProductCode" = "8:{6FB1CF7A-CB1E-4057-B3AD-5D8A28870806}"
+        "PackageCode" = "8:{97370DD5-80FC-4D2B-9DBD-84FFF72C332F}"
         "UpgradeCode" = "8:{06CE0F15-76E1-4EF2-9B81-1EE0B88BCF6E}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:1.10.523"
+        "ProductVersion" = "8:3.0.0.0"
         "Manufacturer" = "8:CSharpTest.Net"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"

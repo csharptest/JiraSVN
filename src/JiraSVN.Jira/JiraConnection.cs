@@ -304,14 +304,14 @@ namespace CSharpTest.Net.JiraSVN.Jira
             switch (method)
             {
                 case TimeEstimateRecalcualationMethod.AdjustAutomatically:
-                    _service.addWorklogAndAutoAdjustRemainingEstimateFixed(_token, issue.DisplayId, remoteWorklog);
+                    _service.addWorklogAndAutoAdjustRemainingEstimate(_token, issue.DisplayId, remoteWorklog);
                     break;
 
                 case TimeEstimateRecalcualationMethod.DoNotChange:
-                    _service.addWorklogAndRetainRemainingEstimateFixed(_token, issue.DisplayId, remoteWorklog);
+                    _service.addWorklogAndRetainRemainingEstimate(_token, issue.DisplayId, remoteWorklog);
                     break;
                 case TimeEstimateRecalcualationMethod.SetToNewValue:
-                    _service.addWorklogWithNewRemainingEstimateFixed(_token, issue.DisplayId, remoteWorklog,
+                    _service.addWorklogWithNewRemainingEstimate(_token, issue.DisplayId, remoteWorklog,
                                                                 newTimeEstimate);
                     break;
                 default:

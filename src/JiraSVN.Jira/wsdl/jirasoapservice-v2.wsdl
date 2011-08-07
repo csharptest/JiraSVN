@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:intf="http://localhost:8080/rpc/soap/jirasoapservice-v2" xmlns:tns1="http://beans.soap.rpc.jira.atlassian.com" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns2="http://exception.rpc.jira.atlassian.com" xmlns:impl="http://localhost:8080/rpc/soap/jirasoapservice-v2" targetNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns1="http://beans.soap.rpc.jira.atlassian.com" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns2="http://exception.rpc.jira.atlassian.com" xmlns:impl="http://localhost:8080/rpc/soap/jirasoapservice-v2" xmlns:intf="http://localhost:8080/rpc/soap/jirasoapservice-v2" targetNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://beans.soap.rpc.jira.atlassian.com">
       <xsd:import namespace="http://localhost:8080/rpc/soap/jirasoapservice-v2" />
@@ -36,7 +36,7 @@
           <xsd:extension base="tns1:RemoteEntity">
             <xsd:sequence>
               <xsd:element name="name" nillable="true" type="xsd:string" />
-              <xsd:element name="users" nillable="true" type="impl:ArrayOf_tns1_RemoteUser" />
+              <xsd:element name="users" nillable="true" type="intf:ArrayOf_tns1_RemoteUser" />
             </xsd:sequence>
           </xsd:extension>
         </xsd:complexContent>
@@ -94,23 +94,23 @@
         <xsd:sequence>
           <xsd:element name="customfieldId" nillable="true" type="xsd:string" />
           <xsd:element name="key" nillable="true" type="xsd:string" />
-          <xsd:element name="values" nillable="true" type="impl:ArrayOf_xsd_string" />
+          <xsd:element name="values" nillable="true" type="intf:ArrayOf_xsd_string" />
         </xsd:sequence>
       </xsd:complexType>
       <xsd:complexType name="RemoteIssue">
         <xsd:complexContent mixed="false">
           <xsd:extension base="tns1:AbstractRemoteEntity">
             <xsd:sequence>
-              <xsd:element name="affectsVersions" nillable="true" type="impl:ArrayOf_tns1_RemoteVersion" />
+              <xsd:element name="affectsVersions" nillable="true" type="intf:ArrayOf_tns1_RemoteVersion" />
               <xsd:element name="assignee" nillable="true" type="xsd:string" />
-              <xsd:element name="attachmentNames" nillable="true" type="impl:ArrayOf_xsd_string" />
-              <xsd:element name="components" nillable="true" type="impl:ArrayOf_tns1_RemoteComponent" />
+              <xsd:element name="attachmentNames" nillable="true" type="intf:ArrayOf_xsd_string" />
+              <xsd:element name="components" nillable="true" type="intf:ArrayOf_tns1_RemoteComponent" />
               <xsd:element name="created" nillable="true" type="xsd:dateTime" />
-              <xsd:element name="customFieldValues" nillable="true" type="impl:ArrayOf_tns1_RemoteCustomFieldValue" />
+              <xsd:element name="customFieldValues" nillable="true" type="intf:ArrayOf_tns1_RemoteCustomFieldValue" />
               <xsd:element name="description" nillable="true" type="xsd:string" />
               <xsd:element name="duedate" nillable="true" type="xsd:dateTime" />
               <xsd:element name="environment" nillable="true" type="xsd:string" />
-              <xsd:element name="fixVersions" nillable="true" type="impl:ArrayOf_tns1_RemoteVersion" />
+              <xsd:element name="fixVersions" nillable="true" type="intf:ArrayOf_tns1_RemoteVersion" />
               <xsd:element name="key" nillable="true" type="xsd:string" />
               <xsd:element name="priority" nillable="true" type="xsd:string" />
               <xsd:element name="project" nillable="true" type="xsd:string" />
@@ -182,14 +182,14 @@
       <xsd:complexType name="RemotePermissionMapping">
         <xsd:sequence>
           <xsd:element name="permission" nillable="true" type="tns1:RemotePermission" />
-          <xsd:element name="remoteEntities" nillable="true" type="impl:ArrayOf_tns1_RemoteEntity" />
+          <xsd:element name="remoteEntities" nillable="true" type="intf:ArrayOf_tns1_RemoteEntity" />
         </xsd:sequence>
       </xsd:complexType>
       <xsd:complexType name="RemotePermissionScheme">
         <xsd:complexContent mixed="false">
           <xsd:extension base="tns1:RemoteScheme">
             <xsd:sequence>
-              <xsd:element name="permissionMappings" nillable="true" type="impl:ArrayOf_tns1_RemotePermissionMapping" />
+              <xsd:element name="permissionMappings" nillable="true" type="intf:ArrayOf_tns1_RemotePermissionMapping" />
             </xsd:sequence>
           </xsd:extension>
         </xsd:complexContent>
@@ -246,14 +246,14 @@
           <xsd:element name="parameter" nillable="true" type="xsd:string" />
           <xsd:element name="projectRole" nillable="true" type="tns1:RemoteProjectRole" />
           <xsd:element name="type" nillable="true" type="xsd:string" />
-          <xsd:element name="users" nillable="true" type="impl:ArrayOf_tns1_RemoteUser" />
+          <xsd:element name="users" nillable="true" type="intf:ArrayOf_tns1_RemoteUser" />
         </xsd:sequence>
       </xsd:complexType>
       <xsd:complexType name="RemoteRoleActors">
         <xsd:sequence>
           <xsd:element name="projectRole" nillable="true" type="tns1:RemoteProjectRole" />
-          <xsd:element name="roleActors" nillable="true" type="impl:ArrayOf_tns1_RemoteRoleActor" />
-          <xsd:element name="users" nillable="true" type="impl:ArrayOf_tns1_RemoteUser" />
+          <xsd:element name="roleActors" nillable="true" type="intf:ArrayOf_tns1_RemoteRoleActor" />
+          <xsd:element name="users" nillable="true" type="intf:ArrayOf_tns1_RemoteUser" />
         </xsd:sequence>
       </xsd:complexType>
       <xsd:complexType name="RemoteProjectRoleActors">
@@ -287,7 +287,7 @@
       <xsd:complexType name="RemoteFieldValue">
         <xsd:sequence>
           <xsd:element name="id" nillable="true" type="xsd:string" />
-          <xsd:element name="values" nillable="true" type="impl:ArrayOf_xsd_string" />
+          <xsd:element name="values" nillable="true" type="intf:ArrayOf_xsd_string" />
         </xsd:sequence>
       </xsd:complexType>
       <xsd:complexType name="RemoteSecurityLevel">
@@ -595,7 +595,7 @@
     <wsdl:part name="in2" type="tns1:RemoteProject" />
   </wsdl:message>
   <wsdl:message name="getSecuritySchemesResponse">
-    <wsdl:part name="getSecuritySchemesReturn" type="impl:ArrayOf_tns1_RemoteScheme" />
+    <wsdl:part name="getSecuritySchemesReturn" type="intf:ArrayOf_tns1_RemoteScheme" />
   </wsdl:message>
   <wsdl:message name="getIssueByIdRequest">
     <wsdl:part name="in0" type="xsd:string" />
@@ -603,7 +603,7 @@
   </wsdl:message>
   <wsdl:message name="addActorsToProjectRoleRequest">
     <wsdl:part name="in0" type="xsd:string" />
-    <wsdl:part name="in1" type="impl:ArrayOf_xsd_string" />
+    <wsdl:part name="in1" type="intf:ArrayOf_xsd_string" />
     <wsdl:part name="in2" type="tns1:RemoteProjectRole" />
     <wsdl:part name="in3" type="tns1:RemoteProject" />
     <wsdl:part name="in4" type="xsd:string" />
@@ -628,7 +628,7 @@
     <wsdl:part name="getUserReturn" type="tns1:RemoteUser" />
   </wsdl:message>
   <wsdl:message name="getProjectRolesResponse">
-    <wsdl:part name="getProjectRolesReturn" type="impl:ArrayOf_tns1_RemoteProjectRole" />
+    <wsdl:part name="getProjectRolesReturn" type="intf:ArrayOf_tns1_RemoteProjectRole" />
   </wsdl:message>
   <wsdl:message name="getSavedFiltersRequest">
     <wsdl:part name="in0" type="xsd:string" />
@@ -649,7 +649,7 @@
     <wsdl:part name="getProjectRoleActorsReturn" type="tns1:RemoteProjectRoleActors" />
   </wsdl:message>
   <wsdl:message name="getWorklogsResponse">
-    <wsdl:part name="getWorklogsReturn" type="impl:ArrayOf_tns1_RemoteWorklog" />
+    <wsdl:part name="getWorklogsReturn" type="intf:ArrayOf_tns1_RemoteWorklog" />
   </wsdl:message>
   <wsdl:message name="getIssueCountForFilterRequest">
     <wsdl:part name="in0" type="xsd:string" />
@@ -669,7 +669,7 @@
     <wsdl:part name="getDefaultRoleActorsReturn" type="tns1:RemoteRoleActors" />
   </wsdl:message>
   <wsdl:message name="getAvailableActionsResponse">
-    <wsdl:part name="getAvailableActionsReturn" type="impl:ArrayOf_tns1_RemoteNamedObject" />
+    <wsdl:part name="getAvailableActionsReturn" type="intf:ArrayOf_tns1_RemoteNamedObject" />
   </wsdl:message>
   <wsdl:message name="deleteProjectRoleRequest">
     <wsdl:part name="in0" type="xsd:string" />
@@ -679,14 +679,14 @@
   <wsdl:message name="updateIssueRequest">
     <wsdl:part name="in0" type="xsd:string" />
     <wsdl:part name="in1" type="xsd:string" />
-    <wsdl:part name="in2" type="impl:ArrayOf_tns1_RemoteFieldValue" />
+    <wsdl:part name="in2" type="intf:ArrayOf_tns1_RemoteFieldValue" />
   </wsdl:message>
   <wsdl:message name="getIssuesFromTextSearchResponse">
-    <wsdl:part name="getIssuesFromTextSearchReturn" type="impl:ArrayOf_tns1_RemoteIssue" />
+    <wsdl:part name="getIssuesFromTextSearchReturn" type="intf:ArrayOf_tns1_RemoteIssue" />
   </wsdl:message>
   <wsdl:message name="removeActorsFromProjectRoleResponse" />
   <wsdl:message name="getIssuesFromFilterWithLimitResponse">
-    <wsdl:part name="getIssuesFromFilterWithLimitReturn" type="impl:ArrayOf_tns1_RemoteIssue" />
+    <wsdl:part name="getIssuesFromFilterWithLimitReturn" type="intf:ArrayOf_tns1_RemoteIssue" />
   </wsdl:message>
   <wsdl:message name="hasPermissionToUpdateWorklogResponse">
     <wsdl:part name="hasPermissionToUpdateWorklogReturn" type="xsd:boolean" />
@@ -733,16 +733,16 @@
     <wsdl:part name="addBase64EncodedAttachmentsToIssueReturn" type="xsd:boolean" />
   </wsdl:message>
   <wsdl:message name="getNotificationSchemesResponse">
-    <wsdl:part name="getNotificationSchemesReturn" type="impl:ArrayOf_tns1_RemoteScheme" />
+    <wsdl:part name="getNotificationSchemesReturn" type="intf:ArrayOf_tns1_RemoteScheme" />
   </wsdl:message>
   <wsdl:message name="getIssuesFromTextSearchWithProjectRequest">
     <wsdl:part name="in0" type="xsd:string" />
-    <wsdl:part name="in1" type="impl:ArrayOf_xsd_string" />
+    <wsdl:part name="in1" type="intf:ArrayOf_xsd_string" />
     <wsdl:part name="in2" type="xsd:string" />
     <wsdl:part name="in3" type="xsd:int" />
   </wsdl:message>
   <wsdl:message name="getPrioritiesResponse">
-    <wsdl:part name="getPrioritiesReturn" type="impl:ArrayOf_tns1_RemotePriority" />
+    <wsdl:part name="getPrioritiesReturn" type="intf:ArrayOf_tns1_RemotePriority" />
   </wsdl:message>
   <wsdl:message name="deletePermissionFromRequest">
     <wsdl:part name="in0" type="xsd:string" />
@@ -758,7 +758,9 @@
     <wsdl:part name="in1" type="xsd:string" />
     <wsdl:part name="in2" type="xsd:boolean" />
   </wsdl:message>
-  <wsdl:message name="addWorklogWithNewRemainingEstimateResponse" />
+  <wsdl:message name="addWorklogWithNewRemainingEstimateResponse">
+    <!--<wsdl:part name="addWorklogWithNewRemainingEstimateReturn" type="tns1:RemoteWorklog" /> FIX. This seems to be incorrect -->
+  </wsdl:message>
   <wsdl:message name="deleteUserRequest">
     <wsdl:part name="in0" type="xsd:string" />
     <wsdl:part name="in1" type="xsd:string" />
@@ -767,10 +769,12 @@
     <wsdl:part name="in0" type="xsd:string" />
     <wsdl:part name="in1" type="xsd:string" />
   </wsdl:message>
-  <wsdl:message name="addWorklogAndAutoAdjustRemainingEstimateResponse" />
+  <wsdl:message name="addWorklogAndAutoAdjustRemainingEstimateResponse">
+    <!--<wsdl:part name="addWorklogAndAutoAdjustRemainingEstimateReturn" type="tns1:RemoteWorklog" /> FIX. This seems to be incorrect -->
+  </wsdl:message>
   <wsdl:message name="addDefaultActorsToProjectRoleRequest">
     <wsdl:part name="in0" type="xsd:string" />
-    <wsdl:part name="in1" type="impl:ArrayOf_xsd_string" />
+    <wsdl:part name="in1" type="intf:ArrayOf_xsd_string" />
     <wsdl:part name="in2" type="tns1:RemoteProjectRole" />
     <wsdl:part name="in3" type="xsd:string" />
   </wsdl:message>
@@ -789,7 +793,7 @@
     <wsdl:part name="in1" type="xsd:string" />
   </wsdl:message>
   <wsdl:message name="getIssuesFromTextSearchWithLimitResponse">
-    <wsdl:part name="getIssuesFromTextSearchWithLimitReturn" type="impl:ArrayOf_tns1_RemoteIssue" />
+    <wsdl:part name="getIssuesFromTextSearchWithLimitReturn" type="intf:ArrayOf_tns1_RemoteIssue" />
   </wsdl:message>
   <wsdl:message name="getStatusesRequest">
     <wsdl:part name="in0" type="xsd:string" />
@@ -798,7 +802,7 @@
     <wsdl:part name="logoutReturn" type="xsd:boolean" />
   </wsdl:message>
   <wsdl:message name="getIssuesFromJqlSearchResponse">
-    <wsdl:part name="getIssuesFromJqlSearchReturn" type="impl:ArrayOf_tns1_RemoteIssue" />
+    <wsdl:part name="getIssuesFromJqlSearchReturn" type="intf:ArrayOf_tns1_RemoteIssue" />
   </wsdl:message>
   <wsdl:message name="addWorklogAndRetainRemainingEstimateRequest">
     <wsdl:part name="in0" type="xsd:string" />
@@ -828,7 +832,7 @@
     <wsdl:part name="in0" type="xsd:string" />
   </wsdl:message>
   <wsdl:message name="getSavedFiltersResponse">
-    <wsdl:part name="getSavedFiltersReturn" type="impl:ArrayOf_tns1_RemoteFilter" />
+    <wsdl:part name="getSavedFiltersReturn" type="intf:ArrayOf_tns1_RemoteFilter" />
   </wsdl:message>
   <wsdl:message name="getSecurityLevelsRequest">
     <wsdl:part name="in0" type="xsd:string" />
@@ -844,12 +848,12 @@
   <wsdl:message name="deleteProjectRoleResponse" />
   <wsdl:message name="removeDefaultActorsFromProjectRoleRequest">
     <wsdl:part name="in0" type="xsd:string" />
-    <wsdl:part name="in1" type="impl:ArrayOf_xsd_string" />
+    <wsdl:part name="in1" type="intf:ArrayOf_xsd_string" />
     <wsdl:part name="in2" type="tns1:RemoteProjectRole" />
     <wsdl:part name="in3" type="xsd:string" />
   </wsdl:message>
   <wsdl:message name="getFavouriteFiltersResponse">
-    <wsdl:part name="getFavouriteFiltersReturn" type="impl:ArrayOf_tns1_RemoteFilter" />
+    <wsdl:part name="getFavouriteFiltersReturn" type="intf:ArrayOf_tns1_RemoteFilter" />
   </wsdl:message>
   <wsdl:message name="archiveVersionResponse" />
   <wsdl:message name="getProjectRolesRequest">
@@ -917,9 +921,11 @@
     <wsdl:part name="getProjectByKeyReturn" type="tns1:RemoteProject" />
   </wsdl:message>
   <wsdl:message name="updateWorklogAndAutoAdjustRemainingEstimateResponse" />
-  <wsdl:message name="addWorklogAndRetainRemainingEstimateResponse" />
+  <wsdl:message name="addWorklogAndRetainRemainingEstimateResponse">
+    <!-- <wsdl:part name="addWorklogAndRetainRemainingEstimateReturn" type="tns1:RemoteWorklog" /> FIX this seems to be incorrect-->
+  </wsdl:message>
   <wsdl:message name="getIssuesFromFilterResponse">
-    <wsdl:part name="getIssuesFromFilterReturn" type="impl:ArrayOf_tns1_RemoteIssue" />
+    <wsdl:part name="getIssuesFromFilterReturn" type="intf:ArrayOf_tns1_RemoteIssue" />
   </wsdl:message>
   <wsdl:message name="removeUserFromGroupRequest">
     <wsdl:part name="in0" type="xsd:string" />
@@ -934,7 +940,7 @@
     <wsdl:part name="in0" type="xsd:string" />
   </wsdl:message>
   <wsdl:message name="getResolutionsResponse">
-    <wsdl:part name="getResolutionsReturn" type="impl:ArrayOf_tns1_RemoteResolution" />
+    <wsdl:part name="getResolutionsReturn" type="intf:ArrayOf_tns1_RemoteResolution" />
   </wsdl:message>
   <wsdl:message name="createUserRequest">
     <wsdl:part name="in0" type="xsd:string" />
@@ -948,13 +954,13 @@
     <wsdl:part name="in1" type="tns1:RemoteProjectRole" />
   </wsdl:message>
   <wsdl:message name="getSecurityLevelsResponse">
-    <wsdl:part name="getSecurityLevelsReturn" type="impl:ArrayOf_tns1_RemoteSecurityLevel" />
+    <wsdl:part name="getSecurityLevelsReturn" type="intf:ArrayOf_tns1_RemoteSecurityLevel" />
   </wsdl:message>
   <wsdl:message name="getStatusesResponse">
-    <wsdl:part name="getStatusesReturn" type="impl:ArrayOf_tns1_RemoteStatus" />
+    <wsdl:part name="getStatusesReturn" type="intf:ArrayOf_tns1_RemoteStatus" />
   </wsdl:message>
   <wsdl:message name="getAttachmentsFromIssueResponse">
-    <wsdl:part name="getAttachmentsFromIssueReturn" type="impl:ArrayOf_tns1_RemoteAttachment" />
+    <wsdl:part name="getAttachmentsFromIssueReturn" type="intf:ArrayOf_tns1_RemoteAttachment" />
   </wsdl:message>
   <wsdl:message name="RemoteValidationException">
     <wsdl:part name="fault" type="tns2:RemoteValidationException" />
@@ -974,11 +980,11 @@
   <wsdl:message name="addBase64EncodedAttachmentsToIssueRequest">
     <wsdl:part name="in0" type="xsd:string" />
     <wsdl:part name="in1" type="xsd:string" />
-    <wsdl:part name="in2" type="impl:ArrayOf_xsd_string" />
-    <wsdl:part name="in3" type="impl:ArrayOf_xsd_string" />
+    <wsdl:part name="in2" type="intf:ArrayOf_xsd_string" />
+    <wsdl:part name="in3" type="intf:ArrayOf_xsd_string" />
   </wsdl:message>
   <wsdl:message name="getSubTaskIssueTypesResponse">
-    <wsdl:part name="getSubTaskIssueTypesReturn" type="impl:ArrayOf_tns1_RemoteIssueType" />
+    <wsdl:part name="getSubTaskIssueTypesReturn" type="intf:ArrayOf_tns1_RemoteIssueType" />
   </wsdl:message>
   <wsdl:message name="createProjectRoleResponse">
     <wsdl:part name="createProjectRoleReturn" type="tns1:RemoteProjectRole" />
@@ -988,7 +994,7 @@
   </wsdl:message>
   <wsdl:message name="removeActorsFromProjectRoleRequest">
     <wsdl:part name="in0" type="xsd:string" />
-    <wsdl:part name="in1" type="impl:ArrayOf_xsd_string" />
+    <wsdl:part name="in1" type="intf:ArrayOf_xsd_string" />
     <wsdl:part name="in2" type="tns1:RemoteProjectRole" />
     <wsdl:part name="in3" type="tns1:RemoteProject" />
     <wsdl:part name="in4" type="xsd:string" />
@@ -998,7 +1004,7 @@
     <wsdl:part name="in1" type="xsd:string" />
   </wsdl:message>
   <wsdl:message name="getIssuesFromTextSearchWithProjectResponse">
-    <wsdl:part name="getIssuesFromTextSearchWithProjectReturn" type="impl:ArrayOf_tns1_RemoteIssue" />
+    <wsdl:part name="getIssuesFromTextSearchWithProjectReturn" type="intf:ArrayOf_tns1_RemoteIssue" />
   </wsdl:message>
   <wsdl:message name="getAssociatedPermissionSchemesRequest">
     <wsdl:part name="in0" type="xsd:string" />
@@ -1024,14 +1030,14 @@
     <wsdl:part name="addPermissionToReturn" type="tns1:RemotePermissionScheme" />
   </wsdl:message>
   <wsdl:message name="getFieldsForEditResponse">
-    <wsdl:part name="getFieldsForEditReturn" type="impl:ArrayOf_tns1_RemoteField" />
+    <wsdl:part name="getFieldsForEditReturn" type="intf:ArrayOf_tns1_RemoteField" />
   </wsdl:message>
   <wsdl:message name="deleteProjectRequest">
     <wsdl:part name="in0" type="xsd:string" />
     <wsdl:part name="in1" type="xsd:string" />
   </wsdl:message>
   <wsdl:message name="getAssociatedPermissionSchemesResponse">
-    <wsdl:part name="getAssociatedPermissionSchemesReturn" type="impl:ArrayOf_tns1_RemoteScheme" />
+    <wsdl:part name="getAssociatedPermissionSchemesReturn" type="intf:ArrayOf_tns1_RemoteScheme" />
   </wsdl:message>
   <wsdl:message name="getIssueByIdResponse">
     <wsdl:part name="getIssueByIdReturn" type="tns1:RemoteIssue" />
@@ -1055,13 +1061,13 @@
     <wsdl:part name="in1" type="xsd:string" />
   </wsdl:message>
   <wsdl:message name="getAllPermissionsResponse">
-    <wsdl:part name="getAllPermissionsReturn" type="impl:ArrayOf_tns1_RemotePermission" />
+    <wsdl:part name="getAllPermissionsReturn" type="intf:ArrayOf_tns1_RemotePermission" />
   </wsdl:message>
   <wsdl:message name="getPermissionSchemesResponse">
-    <wsdl:part name="getPermissionSchemesReturn" type="impl:ArrayOf_tns1_RemotePermissionScheme" />
+    <wsdl:part name="getPermissionSchemesReturn" type="intf:ArrayOf_tns1_RemotePermissionScheme" />
   </wsdl:message>
   <wsdl:message name="getFieldsForActionResponse">
-    <wsdl:part name="getFieldsForActionReturn" type="impl:ArrayOf_tns1_RemoteField" />
+    <wsdl:part name="getFieldsForActionReturn" type="intf:ArrayOf_tns1_RemoteField" />
   </wsdl:message>
   <wsdl:message name="progressWorkflowActionResponse">
     <wsdl:part name="progressWorkflowActionReturn" type="tns1:RemoteIssue" />
@@ -1090,7 +1096,7 @@
     <wsdl:part name="in0" type="xsd:string" />
     <wsdl:part name="in1" type="xsd:string" />
     <wsdl:part name="in2" type="xsd:string" />
-    <wsdl:part name="in3" type="impl:ArrayOf_tns1_RemoteFieldValue" />
+    <wsdl:part name="in3" type="intf:ArrayOf_tns1_RemoteFieldValue" />
   </wsdl:message>
   <wsdl:message name="createProjectResponse">
     <wsdl:part name="createProjectReturn" type="tns1:RemoteProject" />
@@ -1109,7 +1115,7 @@
     <wsdl:part name="editCommentReturn" type="tns1:RemoteComment" />
   </wsdl:message>
   <wsdl:message name="getAssociatedNotificationSchemesResponse">
-    <wsdl:part name="getAssociatedNotificationSchemesReturn" type="impl:ArrayOf_tns1_RemoteScheme" />
+    <wsdl:part name="getAssociatedNotificationSchemesReturn" type="intf:ArrayOf_tns1_RemoteScheme" />
   </wsdl:message>
   <wsdl:message name="deleteWorklogAndAutoAdjustRemainingEstimateRequest">
     <wsdl:part name="in0" type="xsd:string" />
@@ -1154,7 +1160,7 @@
   <wsdl:message name="removeAllRoleActorsByNameAndTypeResponse" />
   <wsdl:message name="updateWorklogAndRetainRemainingEstimateResponse" />
   <wsdl:message name="getVersionsResponse">
-    <wsdl:part name="getVersionsReturn" type="impl:ArrayOf_tns1_RemoteVersion" />
+    <wsdl:part name="getVersionsReturn" type="intf:ArrayOf_tns1_RemoteVersion" />
   </wsdl:message>
   <wsdl:message name="deleteIssueResponse" />
   <wsdl:message name="setProjectAvatarRequest">
@@ -1170,7 +1176,7 @@
     <wsdl:part name="getResolutionDateByIdReturn" type="xsd:dateTime" />
   </wsdl:message>
   <wsdl:message name="getCustomFieldsResponse">
-    <wsdl:part name="getCustomFieldsReturn" type="impl:ArrayOf_tns1_RemoteField" />
+    <wsdl:part name="getCustomFieldsReturn" type="intf:ArrayOf_tns1_RemoteField" />
   </wsdl:message>
   <wsdl:message name="deletePermissionSchemeRequest">
     <wsdl:part name="in0" type="xsd:string" />
@@ -1180,10 +1186,10 @@
     <wsdl:part name="addVersionReturn" type="tns1:RemoteVersion" />
   </wsdl:message>
   <wsdl:message name="getIssueTypesForProjectResponse">
-    <wsdl:part name="getIssueTypesForProjectReturn" type="impl:ArrayOf_tns1_RemoteIssueType" />
+    <wsdl:part name="getIssueTypesForProjectReturn" type="intf:ArrayOf_tns1_RemoteIssueType" />
   </wsdl:message>
   <wsdl:message name="getSubTaskIssueTypesForProjectResponse">
-    <wsdl:part name="getSubTaskIssueTypesForProjectReturn" type="impl:ArrayOf_tns1_RemoteIssueType" />
+    <wsdl:part name="getSubTaskIssueTypesForProjectReturn" type="intf:ArrayOf_tns1_RemoteIssueType" />
   </wsdl:message>
   <wsdl:message name="hasPermissionToCreateWorklogResponse">
     <wsdl:part name="hasPermissionToCreateWorklogReturn" type="xsd:boolean" />
@@ -1222,7 +1228,7 @@
     <wsdl:part name="in0" type="xsd:string" />
   </wsdl:message>
   <wsdl:message name="getComponentsResponse">
-    <wsdl:part name="getComponentsReturn" type="impl:ArrayOf_tns1_RemoteComponent" />
+    <wsdl:part name="getComponentsReturn" type="intf:ArrayOf_tns1_RemoteComponent" />
   </wsdl:message>
   <wsdl:message name="getCommentResponse">
     <wsdl:part name="getCommentReturn" type="tns1:RemoteComment" />
@@ -1251,11 +1257,11 @@
   <wsdl:message name="addAttachmentsToIssueRequest">
     <wsdl:part name="in0" type="xsd:string" />
     <wsdl:part name="in1" type="xsd:string" />
-    <wsdl:part name="in2" type="impl:ArrayOf_xsd_string" />
-    <wsdl:part name="in3" type="impl:ArrayOf_xsd_base64Binary" />
+    <wsdl:part name="in2" type="intf:ArrayOf_xsd_string" />
+    <wsdl:part name="in3" type="intf:ArrayOf_xsd_base64Binary" />
   </wsdl:message>
   <wsdl:message name="getIssueTypesResponse">
-    <wsdl:part name="getIssueTypesReturn" type="impl:ArrayOf_tns1_RemoteIssueType" />
+    <wsdl:part name="getIssueTypesReturn" type="intf:ArrayOf_tns1_RemoteIssueType" />
   </wsdl:message>
   <wsdl:message name="hasPermissionToDeleteWorklogRequest">
     <wsdl:part name="in0" type="xsd:string" />
@@ -1305,7 +1311,7 @@
   </wsdl:message>
   <wsdl:message name="addUserToGroupResponse" />
   <wsdl:message name="getProjectAvatarsResponse">
-    <wsdl:part name="getProjectAvatarsReturn" type="impl:ArrayOf_tns1_RemoteAvatar" />
+    <wsdl:part name="getProjectAvatarsReturn" type="intf:ArrayOf_tns1_RemoteAvatar" />
   </wsdl:message>
   <wsdl:message name="getResolutionDateByKeyResponse">
     <wsdl:part name="getResolutionDateByKeyReturn" type="xsd:dateTime" />
@@ -1315,690 +1321,690 @@
     <wsdl:part name="in1" type="tns1:RemoteGroup" />
   </wsdl:message>
   <wsdl:message name="getProjectsNoSchemesResponse">
-    <wsdl:part name="getProjectsNoSchemesReturn" type="impl:ArrayOf_tns1_RemoteProject" />
+    <wsdl:part name="getProjectsNoSchemesReturn" type="intf:ArrayOf_tns1_RemoteProject" />
   </wsdl:message>
   <wsdl:message name="getCommentsResponse">
-    <wsdl:part name="getCommentsReturn" type="impl:ArrayOf_tns1_RemoteComment" />
+    <wsdl:part name="getCommentsReturn" type="intf:ArrayOf_tns1_RemoteComment" />
   </wsdl:message>
   <wsdl:portType name="JiraSoapService">
     <wsdl:operation name="getComment" parameterOrder="in0 in1">
-      <wsdl:input name="getCommentRequest" message="impl:getCommentRequest" />
-      <wsdl:output name="getCommentResponse" message="impl:getCommentResponse" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="getCommentRequest" message="intf:getCommentRequest" />
+      <wsdl:output name="getCommentResponse" message="intf:getCommentResponse" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="createGroup" parameterOrder="in0 in1 in2">
-      <wsdl:input name="createGroupRequest" message="impl:createGroupRequest" />
-      <wsdl:output name="createGroupResponse" message="impl:createGroupResponse" />
-      <wsdl:fault name="RemoteValidationException" message="impl:RemoteValidationException" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="createGroupRequest" message="intf:createGroupRequest" />
+      <wsdl:output name="createGroupResponse" message="intf:createGroupResponse" />
+      <wsdl:fault name="RemoteValidationException" message="intf:RemoteValidationException" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="getServerInfo" parameterOrder="in0">
-      <wsdl:input name="getServerInfoRequest" message="impl:getServerInfoRequest" />
-      <wsdl:output name="getServerInfoResponse" message="impl:getServerInfoResponse" />
+      <wsdl:input name="getServerInfoRequest" message="intf:getServerInfoRequest" />
+      <wsdl:output name="getServerInfoResponse" message="intf:getServerInfoResponse" />
     </wsdl:operation>
     <wsdl:operation name="getGroup" parameterOrder="in0 in1">
-      <wsdl:input name="getGroupRequest" message="impl:getGroupRequest" />
-      <wsdl:output name="getGroupResponse" message="impl:getGroupResponse" />
-      <wsdl:fault name="RemoteValidationException" message="impl:RemoteValidationException" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="getGroupRequest" message="intf:getGroupRequest" />
+      <wsdl:output name="getGroupResponse" message="intf:getGroupResponse" />
+      <wsdl:fault name="RemoteValidationException" message="intf:RemoteValidationException" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="login" parameterOrder="in0 in1">
-      <wsdl:input name="loginRequest" message="impl:loginRequest" />
-      <wsdl:output name="loginResponse" message="impl:loginResponse" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="loginRequest" message="intf:loginRequest" />
+      <wsdl:output name="loginResponse" message="intf:loginResponse" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="getUser" parameterOrder="in0 in1">
-      <wsdl:input name="getUserRequest" message="impl:getUserRequest" />
-      <wsdl:output name="getUserResponse" message="impl:getUserResponse" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
+      <wsdl:input name="getUserRequest" message="intf:getUserRequest" />
+      <wsdl:output name="getUserResponse" message="intf:getUserResponse" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
     </wsdl:operation>
     <wsdl:operation name="createUser" parameterOrder="in0 in1 in2 in3 in4">
-      <wsdl:input name="createUserRequest" message="impl:createUserRequest" />
-      <wsdl:output name="createUserResponse" message="impl:createUserResponse" />
-      <wsdl:fault name="RemoteValidationException" message="impl:RemoteValidationException" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="createUserRequest" message="intf:createUserRequest" />
+      <wsdl:output name="createUserResponse" message="intf:createUserResponse" />
+      <wsdl:fault name="RemoteValidationException" message="intf:RemoteValidationException" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="getComponents" parameterOrder="in0 in1">
-      <wsdl:input name="getComponentsRequest" message="impl:getComponentsRequest" />
-      <wsdl:output name="getComponentsResponse" message="impl:getComponentsResponse" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="getComponentsRequest" message="intf:getComponentsRequest" />
+      <wsdl:output name="getComponentsResponse" message="intf:getComponentsResponse" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="getIssue" parameterOrder="in0 in1">
-      <wsdl:input name="getIssueRequest" message="impl:getIssueRequest" />
-      <wsdl:output name="getIssueResponse" message="impl:getIssueResponse" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="getIssueRequest" message="intf:getIssueRequest" />
+      <wsdl:output name="getIssueResponse" message="intf:getIssueResponse" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="createIssue" parameterOrder="in0 in1">
-      <wsdl:input name="createIssueRequest" message="impl:createIssueRequest" />
-      <wsdl:output name="createIssueResponse" message="impl:createIssueResponse" />
-      <wsdl:fault name="RemoteValidationException" message="impl:RemoteValidationException" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="createIssueRequest" message="intf:createIssueRequest" />
+      <wsdl:output name="createIssueResponse" message="intf:createIssueResponse" />
+      <wsdl:fault name="RemoteValidationException" message="intf:RemoteValidationException" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="getAvailableActions" parameterOrder="in0 in1">
-      <wsdl:input name="getAvailableActionsRequest" message="impl:getAvailableActionsRequest" />
-      <wsdl:output name="getAvailableActionsResponse" message="impl:getAvailableActionsResponse" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="getAvailableActionsRequest" message="intf:getAvailableActionsRequest" />
+      <wsdl:output name="getAvailableActionsResponse" message="intf:getAvailableActionsResponse" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="getSubTaskIssueTypes" parameterOrder="in0">
-      <wsdl:input name="getSubTaskIssueTypesRequest" message="impl:getSubTaskIssueTypesRequest" />
-      <wsdl:output name="getSubTaskIssueTypesResponse" message="impl:getSubTaskIssueTypesResponse" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
+      <wsdl:input name="getSubTaskIssueTypesRequest" message="intf:getSubTaskIssueTypesRequest" />
+      <wsdl:output name="getSubTaskIssueTypesResponse" message="intf:getSubTaskIssueTypesResponse" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
     </wsdl:operation>
     <wsdl:operation name="getConfiguration" parameterOrder="in0">
-      <wsdl:input name="getConfigurationRequest" message="impl:getConfigurationRequest" />
-      <wsdl:output name="getConfigurationResponse" message="impl:getConfigurationResponse" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="getConfigurationRequest" message="intf:getConfigurationRequest" />
+      <wsdl:output name="getConfigurationResponse" message="intf:getConfigurationResponse" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="createProject" parameterOrder="in0 in1 in2 in3 in4 in5 in6 in7 in8">
-      <wsdl:input name="createProjectRequest" message="impl:createProjectRequest" />
-      <wsdl:output name="createProjectResponse" message="impl:createProjectResponse" />
-      <wsdl:fault name="RemoteValidationException" message="impl:RemoteValidationException" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="createProjectRequest" message="intf:createProjectRequest" />
+      <wsdl:output name="createProjectResponse" message="intf:createProjectResponse" />
+      <wsdl:fault name="RemoteValidationException" message="intf:RemoteValidationException" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="updateProject" parameterOrder="in0 in1">
-      <wsdl:input name="updateProjectRequest" message="impl:updateProjectRequest" />
-      <wsdl:output name="updateProjectResponse" message="impl:updateProjectResponse" />
-      <wsdl:fault name="RemoteValidationException" message="impl:RemoteValidationException" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="updateProjectRequest" message="intf:updateProjectRequest" />
+      <wsdl:output name="updateProjectResponse" message="intf:updateProjectResponse" />
+      <wsdl:fault name="RemoteValidationException" message="intf:RemoteValidationException" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="getProjectByKey" parameterOrder="in0 in1">
-      <wsdl:input name="getProjectByKeyRequest" message="impl:getProjectByKeyRequest" />
-      <wsdl:output name="getProjectByKeyResponse" message="impl:getProjectByKeyResponse" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="getProjectByKeyRequest" message="intf:getProjectByKeyRequest" />
+      <wsdl:output name="getProjectByKeyResponse" message="intf:getProjectByKeyResponse" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="removeAllRoleActorsByProject" parameterOrder="in0 in1">
-      <wsdl:input name="removeAllRoleActorsByProjectRequest" message="impl:removeAllRoleActorsByProjectRequest" />
-      <wsdl:output name="removeAllRoleActorsByProjectResponse" message="impl:removeAllRoleActorsByProjectResponse" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="removeAllRoleActorsByProjectRequest" message="intf:removeAllRoleActorsByProjectRequest" />
+      <wsdl:output name="removeAllRoleActorsByProjectResponse" message="intf:removeAllRoleActorsByProjectResponse" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="getPriorities" parameterOrder="in0">
-      <wsdl:input name="getPrioritiesRequest" message="impl:getPrioritiesRequest" />
-      <wsdl:output name="getPrioritiesResponse" message="impl:getPrioritiesResponse" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
+      <wsdl:input name="getPrioritiesRequest" message="intf:getPrioritiesRequest" />
+      <wsdl:output name="getPrioritiesResponse" message="intf:getPrioritiesResponse" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
     </wsdl:operation>
     <wsdl:operation name="getResolutions" parameterOrder="in0">
-      <wsdl:input name="getResolutionsRequest" message="impl:getResolutionsRequest" />
-      <wsdl:output name="getResolutionsResponse" message="impl:getResolutionsResponse" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
+      <wsdl:input name="getResolutionsRequest" message="intf:getResolutionsRequest" />
+      <wsdl:output name="getResolutionsResponse" message="intf:getResolutionsResponse" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
     </wsdl:operation>
     <wsdl:operation name="getIssueTypes" parameterOrder="in0">
-      <wsdl:input name="getIssueTypesRequest" message="impl:getIssueTypesRequest" />
-      <wsdl:output name="getIssueTypesResponse" message="impl:getIssueTypesResponse" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
+      <wsdl:input name="getIssueTypesRequest" message="intf:getIssueTypesRequest" />
+      <wsdl:output name="getIssueTypesResponse" message="intf:getIssueTypesResponse" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
     </wsdl:operation>
     <wsdl:operation name="getStatuses" parameterOrder="in0">
-      <wsdl:input name="getStatusesRequest" message="impl:getStatusesRequest" />
-      <wsdl:output name="getStatusesResponse" message="impl:getStatusesResponse" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
+      <wsdl:input name="getStatusesRequest" message="intf:getStatusesRequest" />
+      <wsdl:output name="getStatusesResponse" message="intf:getStatusesResponse" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
     </wsdl:operation>
     <wsdl:operation name="getProjectRoles" parameterOrder="in0">
-      <wsdl:input name="getProjectRolesRequest" message="impl:getProjectRolesRequest" />
-      <wsdl:output name="getProjectRolesResponse" message="impl:getProjectRolesResponse" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="getProjectRolesRequest" message="intf:getProjectRolesRequest" />
+      <wsdl:output name="getProjectRolesResponse" message="intf:getProjectRolesResponse" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="getProjectRole" parameterOrder="in0 in1">
-      <wsdl:input name="getProjectRoleRequest" message="impl:getProjectRoleRequest" />
-      <wsdl:output name="getProjectRoleResponse" message="impl:getProjectRoleResponse" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="getProjectRoleRequest" message="intf:getProjectRoleRequest" />
+      <wsdl:output name="getProjectRoleResponse" message="intf:getProjectRoleResponse" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="getProjectRoleActors" parameterOrder="in0 in1 in2">
-      <wsdl:input name="getProjectRoleActorsRequest" message="impl:getProjectRoleActorsRequest" />
-      <wsdl:output name="getProjectRoleActorsResponse" message="impl:getProjectRoleActorsResponse" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="getProjectRoleActorsRequest" message="intf:getProjectRoleActorsRequest" />
+      <wsdl:output name="getProjectRoleActorsResponse" message="intf:getProjectRoleActorsResponse" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="getDefaultRoleActors" parameterOrder="in0 in1">
-      <wsdl:input name="getDefaultRoleActorsRequest" message="impl:getDefaultRoleActorsRequest" />
-      <wsdl:output name="getDefaultRoleActorsResponse" message="impl:getDefaultRoleActorsResponse" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="getDefaultRoleActorsRequest" message="intf:getDefaultRoleActorsRequest" />
+      <wsdl:output name="getDefaultRoleActorsResponse" message="intf:getDefaultRoleActorsResponse" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="removeAllRoleActorsByNameAndType" parameterOrder="in0 in1 in2">
-      <wsdl:input name="removeAllRoleActorsByNameAndTypeRequest" message="impl:removeAllRoleActorsByNameAndTypeRequest" />
-      <wsdl:output name="removeAllRoleActorsByNameAndTypeResponse" message="impl:removeAllRoleActorsByNameAndTypeResponse" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="removeAllRoleActorsByNameAndTypeRequest" message="intf:removeAllRoleActorsByNameAndTypeRequest" />
+      <wsdl:output name="removeAllRoleActorsByNameAndTypeResponse" message="intf:removeAllRoleActorsByNameAndTypeResponse" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="deleteProjectRole" parameterOrder="in0 in1 in2">
-      <wsdl:input name="deleteProjectRoleRequest" message="impl:deleteProjectRoleRequest" />
-      <wsdl:output name="deleteProjectRoleResponse" message="impl:deleteProjectRoleResponse" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="deleteProjectRoleRequest" message="intf:deleteProjectRoleRequest" />
+      <wsdl:output name="deleteProjectRoleResponse" message="intf:deleteProjectRoleResponse" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="updateProjectRole" parameterOrder="in0 in1">
-      <wsdl:input name="updateProjectRoleRequest" message="impl:updateProjectRoleRequest" />
-      <wsdl:output name="updateProjectRoleResponse" message="impl:updateProjectRoleResponse" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="updateProjectRoleRequest" message="intf:updateProjectRoleRequest" />
+      <wsdl:output name="updateProjectRoleResponse" message="intf:updateProjectRoleResponse" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="createProjectRole" parameterOrder="in0 in1">
-      <wsdl:input name="createProjectRoleRequest" message="impl:createProjectRoleRequest" />
-      <wsdl:output name="createProjectRoleResponse" message="impl:createProjectRoleResponse" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="createProjectRoleRequest" message="intf:createProjectRoleRequest" />
+      <wsdl:output name="createProjectRoleResponse" message="intf:createProjectRoleResponse" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="isProjectRoleNameUnique" parameterOrder="in0 in1">
-      <wsdl:input name="isProjectRoleNameUniqueRequest" message="impl:isProjectRoleNameUniqueRequest" />
-      <wsdl:output name="isProjectRoleNameUniqueResponse" message="impl:isProjectRoleNameUniqueResponse" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="isProjectRoleNameUniqueRequest" message="intf:isProjectRoleNameUniqueRequest" />
+      <wsdl:output name="isProjectRoleNameUniqueResponse" message="intf:isProjectRoleNameUniqueResponse" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="addActorsToProjectRole" parameterOrder="in0 in1 in2 in3 in4">
-      <wsdl:input name="addActorsToProjectRoleRequest" message="impl:addActorsToProjectRoleRequest" />
-      <wsdl:output name="addActorsToProjectRoleResponse" message="impl:addActorsToProjectRoleResponse" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="addActorsToProjectRoleRequest" message="intf:addActorsToProjectRoleRequest" />
+      <wsdl:output name="addActorsToProjectRoleResponse" message="intf:addActorsToProjectRoleResponse" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="removeActorsFromProjectRole" parameterOrder="in0 in1 in2 in3 in4">
-      <wsdl:input name="removeActorsFromProjectRoleRequest" message="impl:removeActorsFromProjectRoleRequest" />
-      <wsdl:output name="removeActorsFromProjectRoleResponse" message="impl:removeActorsFromProjectRoleResponse" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="removeActorsFromProjectRoleRequest" message="intf:removeActorsFromProjectRoleRequest" />
+      <wsdl:output name="removeActorsFromProjectRoleResponse" message="intf:removeActorsFromProjectRoleResponse" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="addDefaultActorsToProjectRole" parameterOrder="in0 in1 in2 in3">
-      <wsdl:input name="addDefaultActorsToProjectRoleRequest" message="impl:addDefaultActorsToProjectRoleRequest" />
-      <wsdl:output name="addDefaultActorsToProjectRoleResponse" message="impl:addDefaultActorsToProjectRoleResponse" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="addDefaultActorsToProjectRoleRequest" message="intf:addDefaultActorsToProjectRoleRequest" />
+      <wsdl:output name="addDefaultActorsToProjectRoleResponse" message="intf:addDefaultActorsToProjectRoleResponse" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="removeDefaultActorsFromProjectRole" parameterOrder="in0 in1 in2 in3">
-      <wsdl:input name="removeDefaultActorsFromProjectRoleRequest" message="impl:removeDefaultActorsFromProjectRoleRequest" />
-      <wsdl:output name="removeDefaultActorsFromProjectRoleResponse" message="impl:removeDefaultActorsFromProjectRoleResponse" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="removeDefaultActorsFromProjectRoleRequest" message="intf:removeDefaultActorsFromProjectRoleRequest" />
+      <wsdl:output name="removeDefaultActorsFromProjectRoleResponse" message="intf:removeDefaultActorsFromProjectRoleResponse" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="getAssociatedNotificationSchemes" parameterOrder="in0 in1">
-      <wsdl:input name="getAssociatedNotificationSchemesRequest" message="impl:getAssociatedNotificationSchemesRequest" />
-      <wsdl:output name="getAssociatedNotificationSchemesResponse" message="impl:getAssociatedNotificationSchemesResponse" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="getAssociatedNotificationSchemesRequest" message="intf:getAssociatedNotificationSchemesRequest" />
+      <wsdl:output name="getAssociatedNotificationSchemesResponse" message="intf:getAssociatedNotificationSchemesResponse" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="getAssociatedPermissionSchemes" parameterOrder="in0 in1">
-      <wsdl:input name="getAssociatedPermissionSchemesRequest" message="impl:getAssociatedPermissionSchemesRequest" />
-      <wsdl:output name="getAssociatedPermissionSchemesResponse" message="impl:getAssociatedPermissionSchemesResponse" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="getAssociatedPermissionSchemesRequest" message="intf:getAssociatedPermissionSchemesRequest" />
+      <wsdl:output name="getAssociatedPermissionSchemesResponse" message="intf:getAssociatedPermissionSchemesResponse" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="deleteProject" parameterOrder="in0 in1">
-      <wsdl:input name="deleteProjectRequest" message="impl:deleteProjectRequest" />
-      <wsdl:output name="deleteProjectResponse" message="impl:deleteProjectResponse" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="deleteProjectRequest" message="intf:deleteProjectRequest" />
+      <wsdl:output name="deleteProjectResponse" message="intf:deleteProjectResponse" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="getProjectById" parameterOrder="in0 in1">
-      <wsdl:input name="getProjectByIdRequest" message="impl:getProjectByIdRequest" />
-      <wsdl:output name="getProjectByIdResponse" message="impl:getProjectByIdResponse" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="getProjectByIdRequest" message="intf:getProjectByIdRequest" />
+      <wsdl:output name="getProjectByIdResponse" message="intf:getProjectByIdResponse" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="getVersions" parameterOrder="in0 in1">
-      <wsdl:input name="getVersionsRequest" message="impl:getVersionsRequest" />
-      <wsdl:output name="getVersionsResponse" message="impl:getVersionsResponse" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="getVersionsRequest" message="intf:getVersionsRequest" />
+      <wsdl:output name="getVersionsResponse" message="intf:getVersionsResponse" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="getCustomFields" parameterOrder="in0">
-      <wsdl:input name="getCustomFieldsRequest" message="impl:getCustomFieldsRequest" />
-      <wsdl:output name="getCustomFieldsResponse" message="impl:getCustomFieldsResponse" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="getCustomFieldsRequest" message="intf:getCustomFieldsRequest" />
+      <wsdl:output name="getCustomFieldsResponse" message="intf:getCustomFieldsResponse" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="getComments" parameterOrder="in0 in1">
-      <wsdl:input name="getCommentsRequest" message="impl:getCommentsRequest" />
-      <wsdl:output name="getCommentsResponse" message="impl:getCommentsResponse" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="getCommentsRequest" message="intf:getCommentsRequest" />
+      <wsdl:output name="getCommentsResponse" message="intf:getCommentsResponse" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="getFavouriteFilters" parameterOrder="in0">
-      <wsdl:input name="getFavouriteFiltersRequest" message="impl:getFavouriteFiltersRequest" />
-      <wsdl:output name="getFavouriteFiltersResponse" message="impl:getFavouriteFiltersResponse" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="getFavouriteFiltersRequest" message="intf:getFavouriteFiltersRequest" />
+      <wsdl:output name="getFavouriteFiltersResponse" message="intf:getFavouriteFiltersResponse" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="releaseVersion" parameterOrder="in0 in1 in2">
-      <wsdl:input name="releaseVersionRequest" message="impl:releaseVersionRequest" />
-      <wsdl:output name="releaseVersionResponse" message="impl:releaseVersionResponse" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="releaseVersionRequest" message="intf:releaseVersionRequest" />
+      <wsdl:output name="releaseVersionResponse" message="intf:releaseVersionResponse" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="archiveVersion" parameterOrder="in0 in1 in2 in3">
-      <wsdl:input name="archiveVersionRequest" message="impl:archiveVersionRequest" />
-      <wsdl:output name="archiveVersionResponse" message="impl:archiveVersionResponse" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="archiveVersionRequest" message="intf:archiveVersionRequest" />
+      <wsdl:output name="archiveVersionResponse" message="intf:archiveVersionResponse" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="updateIssue" parameterOrder="in0 in1 in2">
-      <wsdl:input name="updateIssueRequest" message="impl:updateIssueRequest" />
-      <wsdl:output name="updateIssueResponse" message="impl:updateIssueResponse" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="updateIssueRequest" message="intf:updateIssueRequest" />
+      <wsdl:output name="updateIssueResponse" message="intf:updateIssueResponse" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="getFieldsForEdit" parameterOrder="in0 in1">
-      <wsdl:input name="getFieldsForEditRequest" message="impl:getFieldsForEditRequest" />
-      <wsdl:output name="getFieldsForEditResponse" message="impl:getFieldsForEditResponse" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="getFieldsForEditRequest" message="intf:getFieldsForEditRequest" />
+      <wsdl:output name="getFieldsForEditResponse" message="intf:getFieldsForEditResponse" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="getIssueTypesForProject" parameterOrder="in0 in1">
-      <wsdl:input name="getIssueTypesForProjectRequest" message="impl:getIssueTypesForProjectRequest" />
-      <wsdl:output name="getIssueTypesForProjectResponse" message="impl:getIssueTypesForProjectResponse" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
+      <wsdl:input name="getIssueTypesForProjectRequest" message="intf:getIssueTypesForProjectRequest" />
+      <wsdl:output name="getIssueTypesForProjectResponse" message="intf:getIssueTypesForProjectResponse" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
     </wsdl:operation>
     <wsdl:operation name="getSubTaskIssueTypesForProject" parameterOrder="in0 in1">
-      <wsdl:input name="getSubTaskIssueTypesForProjectRequest" message="impl:getSubTaskIssueTypesForProjectRequest" />
-      <wsdl:output name="getSubTaskIssueTypesForProjectResponse" message="impl:getSubTaskIssueTypesForProjectResponse" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
+      <wsdl:input name="getSubTaskIssueTypesForProjectRequest" message="intf:getSubTaskIssueTypesForProjectRequest" />
+      <wsdl:output name="getSubTaskIssueTypesForProjectResponse" message="intf:getSubTaskIssueTypesForProjectResponse" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
     </wsdl:operation>
     <wsdl:operation name="addUserToGroup" parameterOrder="in0 in1 in2">
-      <wsdl:input name="addUserToGroupRequest" message="impl:addUserToGroupRequest" />
-      <wsdl:output name="addUserToGroupResponse" message="impl:addUserToGroupResponse" />
-      <wsdl:fault name="RemoteValidationException" message="impl:RemoteValidationException" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="addUserToGroupRequest" message="intf:addUserToGroupRequest" />
+      <wsdl:output name="addUserToGroupResponse" message="intf:addUserToGroupResponse" />
+      <wsdl:fault name="RemoteValidationException" message="intf:RemoteValidationException" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="removeUserFromGroup" parameterOrder="in0 in1 in2">
-      <wsdl:input name="removeUserFromGroupRequest" message="impl:removeUserFromGroupRequest" />
-      <wsdl:output name="removeUserFromGroupResponse" message="impl:removeUserFromGroupResponse" />
-      <wsdl:fault name="RemoteValidationException" message="impl:RemoteValidationException" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="removeUserFromGroupRequest" message="intf:removeUserFromGroupRequest" />
+      <wsdl:output name="removeUserFromGroupResponse" message="intf:removeUserFromGroupResponse" />
+      <wsdl:fault name="RemoteValidationException" message="intf:RemoteValidationException" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="getSecurityLevel" parameterOrder="in0 in1">
-      <wsdl:input name="getSecurityLevelRequest" message="impl:getSecurityLevelRequest" />
-      <wsdl:output name="getSecurityLevelResponse" message="impl:getSecurityLevelResponse" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="getSecurityLevelRequest" message="intf:getSecurityLevelRequest" />
+      <wsdl:output name="getSecurityLevelResponse" message="intf:getSecurityLevelResponse" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="addComment" parameterOrder="in0 in1 in2">
-      <wsdl:input name="addCommentRequest" message="impl:addCommentRequest" />
-      <wsdl:output name="addCommentResponse" message="impl:addCommentResponse" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="addCommentRequest" message="intf:addCommentRequest" />
+      <wsdl:output name="addCommentResponse" message="intf:addCommentResponse" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="logout" parameterOrder="in0">
-      <wsdl:input name="logoutRequest" message="impl:logoutRequest" />
-      <wsdl:output name="logoutResponse" message="impl:logoutResponse" />
+      <wsdl:input name="logoutRequest" message="intf:logoutRequest" />
+      <wsdl:output name="logoutResponse" message="intf:logoutResponse" />
     </wsdl:operation>
     <wsdl:operation name="getProjectWithSchemesById" parameterOrder="in0 in1">
-      <wsdl:input name="getProjectWithSchemesByIdRequest" message="impl:getProjectWithSchemesByIdRequest" />
-      <wsdl:output name="getProjectWithSchemesByIdResponse" message="impl:getProjectWithSchemesByIdResponse" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="getProjectWithSchemesByIdRequest" message="intf:getProjectWithSchemesByIdRequest" />
+      <wsdl:output name="getProjectWithSchemesByIdResponse" message="intf:getProjectWithSchemesByIdResponse" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="getSecurityLevels" parameterOrder="in0 in1">
-      <wsdl:input name="getSecurityLevelsRequest" message="impl:getSecurityLevelsRequest" />
-      <wsdl:output name="getSecurityLevelsResponse" message="impl:getSecurityLevelsResponse" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="getSecurityLevelsRequest" message="intf:getSecurityLevelsRequest" />
+      <wsdl:output name="getSecurityLevelsResponse" message="intf:getSecurityLevelsResponse" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="getProjectAvatars" parameterOrder="in0 in1 in2">
-      <wsdl:input name="getProjectAvatarsRequest" message="impl:getProjectAvatarsRequest" />
-      <wsdl:output name="getProjectAvatarsResponse" message="impl:getProjectAvatarsResponse" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="getProjectAvatarsRequest" message="intf:getProjectAvatarsRequest" />
+      <wsdl:output name="getProjectAvatarsResponse" message="intf:getProjectAvatarsResponse" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="setProjectAvatar" parameterOrder="in0 in1 in2">
-      <wsdl:input name="setProjectAvatarRequest" message="impl:setProjectAvatarRequest" />
-      <wsdl:output name="setProjectAvatarResponse" message="impl:setProjectAvatarResponse" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="setProjectAvatarRequest" message="intf:setProjectAvatarRequest" />
+      <wsdl:output name="setProjectAvatarResponse" message="intf:setProjectAvatarResponse" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="getProjectAvatar" parameterOrder="in0 in1">
-      <wsdl:input name="getProjectAvatarRequest" message="impl:getProjectAvatarRequest" />
-      <wsdl:output name="getProjectAvatarResponse" message="impl:getProjectAvatarResponse" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="getProjectAvatarRequest" message="intf:getProjectAvatarRequest" />
+      <wsdl:output name="getProjectAvatarResponse" message="intf:getProjectAvatarResponse" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="deleteProjectAvatar" parameterOrder="in0 in1">
-      <wsdl:input name="deleteProjectAvatarRequest" message="impl:deleteProjectAvatarRequest" />
-      <wsdl:output name="deleteProjectAvatarResponse" message="impl:deleteProjectAvatarResponse" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="deleteProjectAvatarRequest" message="intf:deleteProjectAvatarRequest" />
+      <wsdl:output name="deleteProjectAvatarResponse" message="intf:deleteProjectAvatarResponse" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="getNotificationSchemes" parameterOrder="in0">
-      <wsdl:input name="getNotificationSchemesRequest" message="impl:getNotificationSchemesRequest" />
-      <wsdl:output name="getNotificationSchemesResponse" message="impl:getNotificationSchemesResponse" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="getNotificationSchemesRequest" message="intf:getNotificationSchemesRequest" />
+      <wsdl:output name="getNotificationSchemesResponse" message="intf:getNotificationSchemesResponse" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="getPermissionSchemes" parameterOrder="in0">
-      <wsdl:input name="getPermissionSchemesRequest" message="impl:getPermissionSchemesRequest" />
-      <wsdl:output name="getPermissionSchemesResponse" message="impl:getPermissionSchemesResponse" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="getPermissionSchemesRequest" message="intf:getPermissionSchemesRequest" />
+      <wsdl:output name="getPermissionSchemesResponse" message="intf:getPermissionSchemesResponse" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="getAllPermissions" parameterOrder="in0">
-      <wsdl:input name="getAllPermissionsRequest" message="impl:getAllPermissionsRequest" />
-      <wsdl:output name="getAllPermissionsResponse" message="impl:getAllPermissionsResponse" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="getAllPermissionsRequest" message="intf:getAllPermissionsRequest" />
+      <wsdl:output name="getAllPermissionsResponse" message="intf:getAllPermissionsResponse" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="createPermissionScheme" parameterOrder="in0 in1 in2">
-      <wsdl:input name="createPermissionSchemeRequest" message="impl:createPermissionSchemeRequest" />
-      <wsdl:output name="createPermissionSchemeResponse" message="impl:createPermissionSchemeResponse" />
-      <wsdl:fault name="RemoteValidationException" message="impl:RemoteValidationException" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="createPermissionSchemeRequest" message="intf:createPermissionSchemeRequest" />
+      <wsdl:output name="createPermissionSchemeResponse" message="intf:createPermissionSchemeResponse" />
+      <wsdl:fault name="RemoteValidationException" message="intf:RemoteValidationException" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="addPermissionTo" parameterOrder="in0 in1 in2 in3">
-      <wsdl:input name="addPermissionToRequest" message="impl:addPermissionToRequest" />
-      <wsdl:output name="addPermissionToResponse" message="impl:addPermissionToResponse" />
-      <wsdl:fault name="RemoteValidationException" message="impl:RemoteValidationException" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="addPermissionToRequest" message="intf:addPermissionToRequest" />
+      <wsdl:output name="addPermissionToResponse" message="intf:addPermissionToResponse" />
+      <wsdl:fault name="RemoteValidationException" message="intf:RemoteValidationException" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="deletePermissionFrom" parameterOrder="in0 in1 in2 in3">
-      <wsdl:input name="deletePermissionFromRequest" message="impl:deletePermissionFromRequest" />
-      <wsdl:output name="deletePermissionFromResponse" message="impl:deletePermissionFromResponse" />
-      <wsdl:fault name="RemoteValidationException" message="impl:RemoteValidationException" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="deletePermissionFromRequest" message="intf:deletePermissionFromRequest" />
+      <wsdl:output name="deletePermissionFromResponse" message="intf:deletePermissionFromResponse" />
+      <wsdl:fault name="RemoteValidationException" message="intf:RemoteValidationException" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="deletePermissionScheme" parameterOrder="in0 in1">
-      <wsdl:input name="deletePermissionSchemeRequest" message="impl:deletePermissionSchemeRequest" />
-      <wsdl:output name="deletePermissionSchemeResponse" message="impl:deletePermissionSchemeResponse" />
-      <wsdl:fault name="RemoteValidationException" message="impl:RemoteValidationException" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="deletePermissionSchemeRequest" message="intf:deletePermissionSchemeRequest" />
+      <wsdl:output name="deletePermissionSchemeResponse" message="intf:deletePermissionSchemeResponse" />
+      <wsdl:fault name="RemoteValidationException" message="intf:RemoteValidationException" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="createIssueWithSecurityLevel" parameterOrder="in0 in1 in2">
-      <wsdl:input name="createIssueWithSecurityLevelRequest" message="impl:createIssueWithSecurityLevelRequest" />
-      <wsdl:output name="createIssueWithSecurityLevelResponse" message="impl:createIssueWithSecurityLevelResponse" />
-      <wsdl:fault name="RemoteValidationException" message="impl:RemoteValidationException" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="createIssueWithSecurityLevelRequest" message="intf:createIssueWithSecurityLevelRequest" />
+      <wsdl:output name="createIssueWithSecurityLevelResponse" message="intf:createIssueWithSecurityLevelResponse" />
+      <wsdl:fault name="RemoteValidationException" message="intf:RemoteValidationException" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="addAttachmentsToIssue" parameterOrder="in0 in1 in2 in3">
-      <wsdl:input name="addAttachmentsToIssueRequest" message="impl:addAttachmentsToIssueRequest" />
-      <wsdl:output name="addAttachmentsToIssueResponse" message="impl:addAttachmentsToIssueResponse" />
-      <wsdl:fault name="RemoteValidationException" message="impl:RemoteValidationException" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="addAttachmentsToIssueRequest" message="intf:addAttachmentsToIssueRequest" />
+      <wsdl:output name="addAttachmentsToIssueResponse" message="intf:addAttachmentsToIssueResponse" />
+      <wsdl:fault name="RemoteValidationException" message="intf:RemoteValidationException" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="getAttachmentsFromIssue" parameterOrder="in0 in1">
-      <wsdl:input name="getAttachmentsFromIssueRequest" message="impl:getAttachmentsFromIssueRequest" />
-      <wsdl:output name="getAttachmentsFromIssueResponse" message="impl:getAttachmentsFromIssueResponse" />
-      <wsdl:fault name="RemoteValidationException" message="impl:RemoteValidationException" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="getAttachmentsFromIssueRequest" message="intf:getAttachmentsFromIssueRequest" />
+      <wsdl:output name="getAttachmentsFromIssueResponse" message="intf:getAttachmentsFromIssueResponse" />
+      <wsdl:fault name="RemoteValidationException" message="intf:RemoteValidationException" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="deleteIssue" parameterOrder="in0 in1">
-      <wsdl:input name="deleteIssueRequest" message="impl:deleteIssueRequest" />
-      <wsdl:output name="deleteIssueResponse" message="impl:deleteIssueResponse" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="deleteIssueRequest" message="intf:deleteIssueRequest" />
+      <wsdl:output name="deleteIssueResponse" message="intf:deleteIssueResponse" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="hasPermissionToEditComment" parameterOrder="in0 in1">
-      <wsdl:input name="hasPermissionToEditCommentRequest" message="impl:hasPermissionToEditCommentRequest" />
-      <wsdl:output name="hasPermissionToEditCommentResponse" message="impl:hasPermissionToEditCommentResponse" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="hasPermissionToEditCommentRequest" message="intf:hasPermissionToEditCommentRequest" />
+      <wsdl:output name="hasPermissionToEditCommentResponse" message="intf:hasPermissionToEditCommentResponse" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="editComment" parameterOrder="in0 in1">
-      <wsdl:input name="editCommentRequest" message="impl:editCommentRequest" />
-      <wsdl:output name="editCommentResponse" message="impl:editCommentResponse" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="editCommentRequest" message="intf:editCommentRequest" />
+      <wsdl:output name="editCommentResponse" message="intf:editCommentResponse" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="getFieldsForAction" parameterOrder="in0 in1 in2">
-      <wsdl:input name="getFieldsForActionRequest" message="impl:getFieldsForActionRequest" />
-      <wsdl:output name="getFieldsForActionResponse" message="impl:getFieldsForActionResponse" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="getFieldsForActionRequest" message="intf:getFieldsForActionRequest" />
+      <wsdl:output name="getFieldsForActionResponse" message="intf:getFieldsForActionResponse" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="progressWorkflowAction" parameterOrder="in0 in1 in2 in3">
-      <wsdl:input name="progressWorkflowActionRequest" message="impl:progressWorkflowActionRequest" />
-      <wsdl:output name="progressWorkflowActionResponse" message="impl:progressWorkflowActionResponse" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="progressWorkflowActionRequest" message="intf:progressWorkflowActionRequest" />
+      <wsdl:output name="progressWorkflowActionResponse" message="intf:progressWorkflowActionResponse" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="getIssueById" parameterOrder="in0 in1">
-      <wsdl:input name="getIssueByIdRequest" message="impl:getIssueByIdRequest" />
-      <wsdl:output name="getIssueByIdResponse" message="impl:getIssueByIdResponse" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="getIssueByIdRequest" message="intf:getIssueByIdRequest" />
+      <wsdl:output name="getIssueByIdResponse" message="intf:getIssueByIdResponse" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="addWorklogWithNewRemainingEstimate" parameterOrder="in0 in1 in2 in3">
-      <wsdl:input name="addWorklogWithNewRemainingEstimateRequest" message="impl:addWorklogWithNewRemainingEstimateRequest" />
-      <wsdl:output name="addWorklogWithNewRemainingEstimateResponse" message="impl:addWorklogWithNewRemainingEstimateResponse" />
-      <wsdl:fault name="RemoteValidationException" message="impl:RemoteValidationException" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="addWorklogWithNewRemainingEstimateRequest" message="intf:addWorklogWithNewRemainingEstimateRequest" />
+      <wsdl:output name="addWorklogWithNewRemainingEstimateResponse" message="intf:addWorklogWithNewRemainingEstimateResponse" />
+      <wsdl:fault name="RemoteValidationException" message="intf:RemoteValidationException" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="addWorklogAndAutoAdjustRemainingEstimate" parameterOrder="in0 in1 in2">
-      <wsdl:input name="addWorklogAndAutoAdjustRemainingEstimateRequest" message="impl:addWorklogAndAutoAdjustRemainingEstimateRequest" />
-      <wsdl:output name="addWorklogAndAutoAdjustRemainingEstimateResponse" message="impl:addWorklogAndAutoAdjustRemainingEstimateResponse" />
-      <wsdl:fault name="RemoteValidationException" message="impl:RemoteValidationException" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="addWorklogAndAutoAdjustRemainingEstimateRequest" message="intf:addWorklogAndAutoAdjustRemainingEstimateRequest" />
+      <wsdl:output name="addWorklogAndAutoAdjustRemainingEstimateResponse" message="intf:addWorklogAndAutoAdjustRemainingEstimateResponse" />
+      <wsdl:fault name="RemoteValidationException" message="intf:RemoteValidationException" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="addWorklogAndRetainRemainingEstimate" parameterOrder="in0 in1 in2">
-      <wsdl:input name="addWorklogAndRetainRemainingEstimateRequest" message="impl:addWorklogAndRetainRemainingEstimateRequest" />
-      <wsdl:output name="addWorklogAndRetainRemainingEstimateResponse" message="impl:addWorklogAndRetainRemainingEstimateResponse" />
-      <wsdl:fault name="RemoteValidationException" message="impl:RemoteValidationException" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="addWorklogAndRetainRemainingEstimateRequest" message="intf:addWorklogAndRetainRemainingEstimateRequest" />
+      <wsdl:output name="addWorklogAndRetainRemainingEstimateResponse" message="intf:addWorklogAndRetainRemainingEstimateResponse" />
+      <wsdl:fault name="RemoteValidationException" message="intf:RemoteValidationException" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="deleteWorklogWithNewRemainingEstimate" parameterOrder="in0 in1 in2">
-      <wsdl:input name="deleteWorklogWithNewRemainingEstimateRequest" message="impl:deleteWorklogWithNewRemainingEstimateRequest" />
-      <wsdl:output name="deleteWorklogWithNewRemainingEstimateResponse" message="impl:deleteWorklogWithNewRemainingEstimateResponse" />
-      <wsdl:fault name="RemoteValidationException" message="impl:RemoteValidationException" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="deleteWorklogWithNewRemainingEstimateRequest" message="intf:deleteWorklogWithNewRemainingEstimateRequest" />
+      <wsdl:output name="deleteWorklogWithNewRemainingEstimateResponse" message="intf:deleteWorklogWithNewRemainingEstimateResponse" />
+      <wsdl:fault name="RemoteValidationException" message="intf:RemoteValidationException" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="deleteWorklogAndAutoAdjustRemainingEstimate" parameterOrder="in0 in1">
-      <wsdl:input name="deleteWorklogAndAutoAdjustRemainingEstimateRequest" message="impl:deleteWorklogAndAutoAdjustRemainingEstimateRequest" />
-      <wsdl:output name="deleteWorklogAndAutoAdjustRemainingEstimateResponse" message="impl:deleteWorklogAndAutoAdjustRemainingEstimateResponse" />
-      <wsdl:fault name="RemoteValidationException" message="impl:RemoteValidationException" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="deleteWorklogAndAutoAdjustRemainingEstimateRequest" message="intf:deleteWorklogAndAutoAdjustRemainingEstimateRequest" />
+      <wsdl:output name="deleteWorklogAndAutoAdjustRemainingEstimateResponse" message="intf:deleteWorklogAndAutoAdjustRemainingEstimateResponse" />
+      <wsdl:fault name="RemoteValidationException" message="intf:RemoteValidationException" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="deleteWorklogAndRetainRemainingEstimate" parameterOrder="in0 in1">
-      <wsdl:input name="deleteWorklogAndRetainRemainingEstimateRequest" message="impl:deleteWorklogAndRetainRemainingEstimateRequest" />
-      <wsdl:output name="deleteWorklogAndRetainRemainingEstimateResponse" message="impl:deleteWorklogAndRetainRemainingEstimateResponse" />
-      <wsdl:fault name="RemoteValidationException" message="impl:RemoteValidationException" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="deleteWorklogAndRetainRemainingEstimateRequest" message="intf:deleteWorklogAndRetainRemainingEstimateRequest" />
+      <wsdl:output name="deleteWorklogAndRetainRemainingEstimateResponse" message="intf:deleteWorklogAndRetainRemainingEstimateResponse" />
+      <wsdl:fault name="RemoteValidationException" message="intf:RemoteValidationException" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="updateWorklogWithNewRemainingEstimate" parameterOrder="in0 in1 in2">
-      <wsdl:input name="updateWorklogWithNewRemainingEstimateRequest" message="impl:updateWorklogWithNewRemainingEstimateRequest" />
-      <wsdl:output name="updateWorklogWithNewRemainingEstimateResponse" message="impl:updateWorklogWithNewRemainingEstimateResponse" />
-      <wsdl:fault name="RemoteValidationException" message="impl:RemoteValidationException" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="updateWorklogWithNewRemainingEstimateRequest" message="intf:updateWorklogWithNewRemainingEstimateRequest" />
+      <wsdl:output name="updateWorklogWithNewRemainingEstimateResponse" message="intf:updateWorklogWithNewRemainingEstimateResponse" />
+      <wsdl:fault name="RemoteValidationException" message="intf:RemoteValidationException" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="updateWorklogAndAutoAdjustRemainingEstimate" parameterOrder="in0 in1">
-      <wsdl:input name="updateWorklogAndAutoAdjustRemainingEstimateRequest" message="impl:updateWorklogAndAutoAdjustRemainingEstimateRequest" />
-      <wsdl:output name="updateWorklogAndAutoAdjustRemainingEstimateResponse" message="impl:updateWorklogAndAutoAdjustRemainingEstimateResponse" />
-      <wsdl:fault name="RemoteValidationException" message="impl:RemoteValidationException" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="updateWorklogAndAutoAdjustRemainingEstimateRequest" message="intf:updateWorklogAndAutoAdjustRemainingEstimateRequest" />
+      <wsdl:output name="updateWorklogAndAutoAdjustRemainingEstimateResponse" message="intf:updateWorklogAndAutoAdjustRemainingEstimateResponse" />
+      <wsdl:fault name="RemoteValidationException" message="intf:RemoteValidationException" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="updateWorklogAndRetainRemainingEstimate" parameterOrder="in0 in1">
-      <wsdl:input name="updateWorklogAndRetainRemainingEstimateRequest" message="impl:updateWorklogAndRetainRemainingEstimateRequest" />
-      <wsdl:output name="updateWorklogAndRetainRemainingEstimateResponse" message="impl:updateWorklogAndRetainRemainingEstimateResponse" />
-      <wsdl:fault name="RemoteValidationException" message="impl:RemoteValidationException" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="updateWorklogAndRetainRemainingEstimateRequest" message="intf:updateWorklogAndRetainRemainingEstimateRequest" />
+      <wsdl:output name="updateWorklogAndRetainRemainingEstimateResponse" message="intf:updateWorklogAndRetainRemainingEstimateResponse" />
+      <wsdl:fault name="RemoteValidationException" message="intf:RemoteValidationException" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="getWorklogs" parameterOrder="in0 in1">
-      <wsdl:input name="getWorklogsRequest" message="impl:getWorklogsRequest" />
-      <wsdl:output name="getWorklogsResponse" message="impl:getWorklogsResponse" />
-      <wsdl:fault name="RemoteValidationException" message="impl:RemoteValidationException" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="getWorklogsRequest" message="intf:getWorklogsRequest" />
+      <wsdl:output name="getWorklogsResponse" message="intf:getWorklogsResponse" />
+      <wsdl:fault name="RemoteValidationException" message="intf:RemoteValidationException" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="hasPermissionToCreateWorklog" parameterOrder="in0 in1">
-      <wsdl:input name="hasPermissionToCreateWorklogRequest" message="impl:hasPermissionToCreateWorklogRequest" />
-      <wsdl:output name="hasPermissionToCreateWorklogResponse" message="impl:hasPermissionToCreateWorklogResponse" />
-      <wsdl:fault name="RemoteValidationException" message="impl:RemoteValidationException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="hasPermissionToCreateWorklogRequest" message="intf:hasPermissionToCreateWorklogRequest" />
+      <wsdl:output name="hasPermissionToCreateWorklogResponse" message="intf:hasPermissionToCreateWorklogResponse" />
+      <wsdl:fault name="RemoteValidationException" message="intf:RemoteValidationException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="hasPermissionToDeleteWorklog" parameterOrder="in0 in1">
-      <wsdl:input name="hasPermissionToDeleteWorklogRequest" message="impl:hasPermissionToDeleteWorklogRequest" />
-      <wsdl:output name="hasPermissionToDeleteWorklogResponse" message="impl:hasPermissionToDeleteWorklogResponse" />
-      <wsdl:fault name="RemoteValidationException" message="impl:RemoteValidationException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="hasPermissionToDeleteWorklogRequest" message="intf:hasPermissionToDeleteWorklogRequest" />
+      <wsdl:output name="hasPermissionToDeleteWorklogResponse" message="intf:hasPermissionToDeleteWorklogResponse" />
+      <wsdl:fault name="RemoteValidationException" message="intf:RemoteValidationException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="hasPermissionToUpdateWorklog" parameterOrder="in0 in1">
-      <wsdl:input name="hasPermissionToUpdateWorklogRequest" message="impl:hasPermissionToUpdateWorklogRequest" />
-      <wsdl:output name="hasPermissionToUpdateWorklogResponse" message="impl:hasPermissionToUpdateWorklogResponse" />
-      <wsdl:fault name="RemoteValidationException" message="impl:RemoteValidationException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="hasPermissionToUpdateWorklogRequest" message="intf:hasPermissionToUpdateWorklogRequest" />
+      <wsdl:output name="hasPermissionToUpdateWorklogResponse" message="intf:hasPermissionToUpdateWorklogResponse" />
+      <wsdl:fault name="RemoteValidationException" message="intf:RemoteValidationException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="getResolutionDateByKey" parameterOrder="in0 in1">
-      <wsdl:input name="getResolutionDateByKeyRequest" message="impl:getResolutionDateByKeyRequest" />
-      <wsdl:output name="getResolutionDateByKeyResponse" message="impl:getResolutionDateByKeyResponse" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="getResolutionDateByKeyRequest" message="intf:getResolutionDateByKeyRequest" />
+      <wsdl:output name="getResolutionDateByKeyResponse" message="intf:getResolutionDateByKeyResponse" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="getResolutionDateById" parameterOrder="in0 in1">
-      <wsdl:input name="getResolutionDateByIdRequest" message="impl:getResolutionDateByIdRequest" />
-      <wsdl:output name="getResolutionDateByIdResponse" message="impl:getResolutionDateByIdResponse" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="getResolutionDateByIdRequest" message="intf:getResolutionDateByIdRequest" />
+      <wsdl:output name="getResolutionDateByIdResponse" message="intf:getResolutionDateByIdResponse" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="getIssueCountForFilter" parameterOrder="in0 in1">
-      <wsdl:input name="getIssueCountForFilterRequest" message="impl:getIssueCountForFilterRequest" />
-      <wsdl:output name="getIssueCountForFilterResponse" message="impl:getIssueCountForFilterResponse" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="getIssueCountForFilterRequest" message="intf:getIssueCountForFilterRequest" />
+      <wsdl:output name="getIssueCountForFilterResponse" message="intf:getIssueCountForFilterResponse" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="getIssuesFromTextSearch" parameterOrder="in0 in1">
-      <wsdl:input name="getIssuesFromTextSearchRequest" message="impl:getIssuesFromTextSearchRequest" />
-      <wsdl:output name="getIssuesFromTextSearchResponse" message="impl:getIssuesFromTextSearchResponse" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="getIssuesFromTextSearchRequest" message="intf:getIssuesFromTextSearchRequest" />
+      <wsdl:output name="getIssuesFromTextSearchResponse" message="intf:getIssuesFromTextSearchResponse" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="getIssuesFromTextSearchWithProject" parameterOrder="in0 in1 in2 in3">
-      <wsdl:input name="getIssuesFromTextSearchWithProjectRequest" message="impl:getIssuesFromTextSearchWithProjectRequest" />
-      <wsdl:output name="getIssuesFromTextSearchWithProjectResponse" message="impl:getIssuesFromTextSearchWithProjectResponse" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="getIssuesFromTextSearchWithProjectRequest" message="intf:getIssuesFromTextSearchWithProjectRequest" />
+      <wsdl:output name="getIssuesFromTextSearchWithProjectResponse" message="intf:getIssuesFromTextSearchWithProjectResponse" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="getIssuesFromJqlSearch" parameterOrder="in0 in1 in2">
-      <wsdl:input name="getIssuesFromJqlSearchRequest" message="impl:getIssuesFromJqlSearchRequest" />
-      <wsdl:output name="getIssuesFromJqlSearchResponse" message="impl:getIssuesFromJqlSearchResponse" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="getIssuesFromJqlSearchRequest" message="intf:getIssuesFromJqlSearchRequest" />
+      <wsdl:output name="getIssuesFromJqlSearchResponse" message="intf:getIssuesFromJqlSearchResponse" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="deleteUser" parameterOrder="in0 in1">
-      <wsdl:input name="deleteUserRequest" message="impl:deleteUserRequest" />
-      <wsdl:output name="deleteUserResponse" message="impl:deleteUserResponse" />
-      <wsdl:fault name="RemoteValidationException" message="impl:RemoteValidationException" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="deleteUserRequest" message="intf:deleteUserRequest" />
+      <wsdl:output name="deleteUserResponse" message="intf:deleteUserResponse" />
+      <wsdl:fault name="RemoteValidationException" message="intf:RemoteValidationException" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="updateGroup" parameterOrder="in0 in1">
-      <wsdl:input name="updateGroupRequest" message="impl:updateGroupRequest" />
-      <wsdl:output name="updateGroupResponse" message="impl:updateGroupResponse" />
-      <wsdl:fault name="RemoteValidationException" message="impl:RemoteValidationException" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="updateGroupRequest" message="intf:updateGroupRequest" />
+      <wsdl:output name="updateGroupResponse" message="intf:updateGroupResponse" />
+      <wsdl:fault name="RemoteValidationException" message="intf:RemoteValidationException" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="deleteGroup" parameterOrder="in0 in1 in2">
-      <wsdl:input name="deleteGroupRequest" message="impl:deleteGroupRequest" />
-      <wsdl:output name="deleteGroupResponse" message="impl:deleteGroupResponse" />
-      <wsdl:fault name="RemoteValidationException" message="impl:RemoteValidationException" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="deleteGroupRequest" message="intf:deleteGroupRequest" />
+      <wsdl:output name="deleteGroupResponse" message="intf:deleteGroupResponse" />
+      <wsdl:fault name="RemoteValidationException" message="intf:RemoteValidationException" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="refreshCustomFields" parameterOrder="in0">
-      <wsdl:input name="refreshCustomFieldsRequest" message="impl:refreshCustomFieldsRequest" />
-      <wsdl:output name="refreshCustomFieldsResponse" message="impl:refreshCustomFieldsResponse" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="refreshCustomFieldsRequest" message="intf:refreshCustomFieldsRequest" />
+      <wsdl:output name="refreshCustomFieldsResponse" message="intf:refreshCustomFieldsResponse" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="getSavedFilters" parameterOrder="in0">
-      <wsdl:input name="getSavedFiltersRequest" message="impl:getSavedFiltersRequest" />
-      <wsdl:output name="getSavedFiltersResponse" message="impl:getSavedFiltersResponse" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="getSavedFiltersRequest" message="intf:getSavedFiltersRequest" />
+      <wsdl:output name="getSavedFiltersResponse" message="intf:getSavedFiltersResponse" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="addBase64EncodedAttachmentsToIssue" parameterOrder="in0 in1 in2 in3">
-      <wsdl:input name="addBase64EncodedAttachmentsToIssueRequest" message="impl:addBase64EncodedAttachmentsToIssueRequest" />
-      <wsdl:output name="addBase64EncodedAttachmentsToIssueResponse" message="impl:addBase64EncodedAttachmentsToIssueResponse" />
-      <wsdl:fault name="RemoteValidationException" message="impl:RemoteValidationException" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="addBase64EncodedAttachmentsToIssueRequest" message="intf:addBase64EncodedAttachmentsToIssueRequest" />
+      <wsdl:output name="addBase64EncodedAttachmentsToIssueResponse" message="intf:addBase64EncodedAttachmentsToIssueResponse" />
+      <wsdl:fault name="RemoteValidationException" message="intf:RemoteValidationException" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="createProjectFromObject" parameterOrder="in0 in1">
-      <wsdl:input name="createProjectFromObjectRequest" message="impl:createProjectFromObjectRequest" />
-      <wsdl:output name="createProjectFromObjectResponse" message="impl:createProjectFromObjectResponse" />
-      <wsdl:fault name="RemoteValidationException" message="impl:RemoteValidationException" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="createProjectFromObjectRequest" message="intf:createProjectFromObjectRequest" />
+      <wsdl:output name="createProjectFromObjectResponse" message="intf:createProjectFromObjectResponse" />
+      <wsdl:fault name="RemoteValidationException" message="intf:RemoteValidationException" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="getSecuritySchemes" parameterOrder="in0">
-      <wsdl:input name="getSecuritySchemesRequest" message="impl:getSecuritySchemesRequest" />
-      <wsdl:output name="getSecuritySchemesResponse" message="impl:getSecuritySchemesResponse" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="getSecuritySchemesRequest" message="intf:getSecuritySchemesRequest" />
+      <wsdl:output name="getSecuritySchemesResponse" message="intf:getSecuritySchemesResponse" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="addVersion" parameterOrder="in0 in1 in2">
-      <wsdl:input name="addVersionRequest" message="impl:addVersionRequest" />
-      <wsdl:output name="addVersionResponse" message="impl:addVersionResponse" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="addVersionRequest" message="intf:addVersionRequest" />
+      <wsdl:output name="addVersionResponse" message="intf:addVersionResponse" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="getIssuesFromFilter" parameterOrder="in0 in1">
-      <wsdl:input name="getIssuesFromFilterRequest" message="impl:getIssuesFromFilterRequest" />
-      <wsdl:output name="getIssuesFromFilterResponse" message="impl:getIssuesFromFilterResponse" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="getIssuesFromFilterRequest" message="intf:getIssuesFromFilterRequest" />
+      <wsdl:output name="getIssuesFromFilterResponse" message="intf:getIssuesFromFilterResponse" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="getIssuesFromFilterWithLimit" parameterOrder="in0 in1 in2 in3">
-      <wsdl:input name="getIssuesFromFilterWithLimitRequest" message="impl:getIssuesFromFilterWithLimitRequest" />
-      <wsdl:output name="getIssuesFromFilterWithLimitResponse" message="impl:getIssuesFromFilterWithLimitResponse" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="getIssuesFromFilterWithLimitRequest" message="intf:getIssuesFromFilterWithLimitRequest" />
+      <wsdl:output name="getIssuesFromFilterWithLimitResponse" message="intf:getIssuesFromFilterWithLimitResponse" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="getIssuesFromTextSearchWithLimit" parameterOrder="in0 in1 in2 in3">
-      <wsdl:input name="getIssuesFromTextSearchWithLimitRequest" message="impl:getIssuesFromTextSearchWithLimitRequest" />
-      <wsdl:output name="getIssuesFromTextSearchWithLimitResponse" message="impl:getIssuesFromTextSearchWithLimitResponse" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="getIssuesFromTextSearchWithLimitRequest" message="intf:getIssuesFromTextSearchWithLimitRequest" />
+      <wsdl:output name="getIssuesFromTextSearchWithLimitResponse" message="intf:getIssuesFromTextSearchWithLimitResponse" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="getProjectsNoSchemes" parameterOrder="in0">
-      <wsdl:input name="getProjectsNoSchemesRequest" message="impl:getProjectsNoSchemesRequest" />
-      <wsdl:output name="getProjectsNoSchemesResponse" message="impl:getProjectsNoSchemesResponse" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteAuthenticationException" message="impl:RemoteAuthenticationException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="getProjectsNoSchemesRequest" message="intf:getProjectsNoSchemesRequest" />
+      <wsdl:output name="getProjectsNoSchemesResponse" message="intf:getProjectsNoSchemesResponse" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteAuthenticationException" message="intf:RemoteAuthenticationException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
     <wsdl:operation name="setNewProjectAvatar" parameterOrder="in0 in1 in2 in3">
-      <wsdl:input name="setNewProjectAvatarRequest" message="impl:setNewProjectAvatarRequest" />
-      <wsdl:output name="setNewProjectAvatarResponse" message="impl:setNewProjectAvatarResponse" />
-      <wsdl:fault name="RemotePermissionException" message="impl:RemotePermissionException" />
-      <wsdl:fault name="RemoteException" message="impl:RemoteException" />
+      <wsdl:input name="setNewProjectAvatarRequest" message="intf:setNewProjectAvatarRequest" />
+      <wsdl:output name="setNewProjectAvatarResponse" message="intf:setNewProjectAvatarResponse" />
+      <wsdl:fault name="RemotePermissionException" message="intf:RemotePermissionException" />
+      <wsdl:fault name="RemoteException" message="intf:RemoteException" />
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="jirasoapservice-v2SoapBinding" type="impl:JiraSoapService">
+  <wsdl:binding name="jirasoapservice-v2SoapBinding" type="intf:JiraSoapService">
     <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
     <wsdl:operation name="getComment">
       <wsdlsoap:operation soapAction="" />
@@ -3706,7 +3712,7 @@
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="JiraSoapServiceService">
-    <wsdl:port name="jirasoapservice-v2" binding="impl:jirasoapservice-v2SoapBinding">
+    <wsdl:port name="jirasoapservice-v2" binding="intf:jirasoapservice-v2SoapBinding">
       <wsdlsoap:address location="http://localhost:8080/rpc/soap/jirasoapservice-v2" />
     </wsdl:port>
   </wsdl:service>
