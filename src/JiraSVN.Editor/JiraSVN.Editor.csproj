@@ -41,10 +41,6 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CSharpTest.Net.Library, Version=1.10.1124.358, Culture=neutral, PublicKeyToken=06aee00cce822474, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\depend\CSharpTest.Net.Library.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -64,14 +60,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\JiraSVN.Common\JiraSVN.Common.csproj">
-      <Project>{702EC31A-EAB5-4159-B9AC-24815F179550}</Project>
-      <Name>JiraSVN.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\JiraSVN.Jira\JiraSVN.Jira.csproj">
-      <Project>{73680B86-524B-4296-90CE-740B2486D279}</Project>
-      <Name>JiraSVN.Jira</Name>
-    </ProjectReference>
     <ProjectReference Include="..\JiraSVN.Plugin\JiraSVN.Plugin.csproj">
       <Project>{CFF6CAA1-27A0-46FF-89D6-AD70F3575685}</Project>
       <Name>JiraSVN.Plugin</Name>

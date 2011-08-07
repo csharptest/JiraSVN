@@ -33,12 +33,12 @@ namespace CSharpTest.Net.JiraSVN.Plugin
 	/// COM Registered InterOp for TortoiseSVN integration
 	/// </summary>
     [ComVisible(true), ProgId("CSharpTest.Net.JiraSVN.Plugin.TortoiseSvnPlugin"), Guid(GUID), ClassInterface(ClassInterfaceType.AutoDual)]
-	public class TortoiseSvnPlugin : IDisposable, IBugTraqProvider2
+    public class TortoiseSvnPlugin : IDisposable, IBugTraqProvider, IBugTraqProvider2
 	{
         const string GUID = "CF732FD7-AA8A-4E9D-9E15-025E4D1A7E9D";
         const string CLSID = "{" + GUID + "}";
 		const string BUTTON_TEXT = "{0}";
-
+        
 		private IIssuesService _connector = null;
 		private IIssuesServiceConnection _service = null;
 		private IssuesListView _issues = null;
@@ -51,8 +51,8 @@ namespace CSharpTest.Net.JiraSVN.Plugin
 		{
 #if DEBUG
 			System.Diagnostics.Debugger.Launch();
-            Resolver.Hook();
-            CertificateHandler.Hook();
+            //Resolver.Hook();
+            //CertificateHandler.Hook();
 #endif
             Log.Write("Started, logging to {0}", Log.Config.LogFile);
 		}
@@ -166,11 +166,10 @@ namespace CSharpTest.Net.JiraSVN.Plugin
                 Log.Verbose("Opening form");
                 Log.Info("Time required to connect: {0}", DateTime.Now - time);
                 IssuesList form = new IssuesList(_issues);
-				if (hParentWnd == IntPtr.Zero)
-					form.ShowInTaskbar = true;
-
+				form.ShowInTaskbar = hParentWnd == IntPtr.Zero;
+                
                 Log.Info("Time required to open form: {0}", DateTime.Now - time);
-				if (form.ShowDialog(Win32Window.FromHandle(hParentWnd)) != DialogResult.OK)
+                if (form.ShowDialog(Win32Window.FromHandle(hParentWnd)) != DialogResult.OK)
 				{ _cancelled = true; return originalMessage; }
 
 				_cancelled = false;
@@ -507,8 +506,8 @@ namespace CSharpTest.Net.JiraSVN.Plugin
 
         static IEnumerable<string> GetRegistryKeysToAdd()
 		{
-            yield return String.Format(@"CLSID\{0}\Implemented Categories\{{3494FA92-B139-4730-9591-01135D5E7831}}", CLSID);
-            yield return String.Format(@"CLSID\{0}\Implemented Categories\{{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}}", CLSID);
+            return new string[] {@"Implemented Categories\{3494FA92-B139-4730-9591-01135D5E7831}", 
+                                 @"Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}"};
 		}
 
 		/// <summary>
@@ -519,30 +518,35 @@ namespace CSharpTest.Net.JiraSVN.Plugin
 		{
 			try
 			{
-				if (typeof(TortoiseSvnPlugin) == t)
+                if (typeof(TortoiseSvnPlugin) == t)
 				{
-                    foreach (string keypath in GetRegistryKeysToAdd())
-						using (RegistryKey key = Registry.ClassesRoot.CreateSubKey(keypath))
-						{ key.Close(); }//{ Console.WriteLine(key.ToString()); }
-
-                    using (RegistryKey key = Registry.ClassesRoot.CreateSubKey(String.Format(@"CLSID\{0}\InprocServer32", CLSID)))
-                        if (key != null) key.SetValue("Assembly", t.Assembly.FullName);
-
-                    if (t.Assembly.Location != null && System.IO.File.Exists(t.Assembly.Location))
+                    using (var rootKey = Registry.ClassesRoot.CreateSubKey(string.Format(@"CLSID\{0}", CLSID)))
                     {
-                        using (RegistryKey key = Registry.ClassesRoot.CreateSubKey(String.Format(@"CLSID\{0}\InprocServer32", CLSID)))
-                            if (key != null) key.SetValue("CodeBase", t.Assembly.Location);
-                        using (RegistryKey key = Registry.ClassesRoot.CreateSubKey(String.Format(@"CLSID\{0}\InprocServer32\{1}", CLSID, t.Assembly.GetName().Version)))
+                        foreach (string keypath in GetRegistryKeysToAdd())
+                            using (RegistryKey key = rootKey.CreateSubKey(keypath))
+						    { key.Close(); }
+
+                        using (RegistryKey key = rootKey.CreateSubKey(@"InprocServer32"))
+                            if (key != null) key.SetValue("Assembly", t.Assembly.FullName);
+
+                        if (t.Assembly.Location != null && System.IO.File.Exists(t.Assembly.Location))
                         {
-                            if (key != null)
+                            using (RegistryKey key = rootKey.CreateSubKey(@"InprocServer32"))
+                                if (key != null) key.SetValue("CodeBase", t.Assembly.Location);
+                            using (RegistryKey key = rootKey.CreateSubKey(String.Format(@"InprocServer32\{1}", t.Assembly.GetName().Version)))
                             {
-                                key.SetValue(null, "mscoree.dll");
-                                key.SetValue("ThreadingModel", "Both");
-                                key.SetValue("CodeBase", t.Assembly.Location);
+                                if (key != null)
+                                {
+                                    key.SetValue(null, "mscoree.dll");
+                                    key.SetValue("ThreadingModel", "Both");
+                                    key.SetValue("CodeBase", t.Assembly.Location);
+                                }
                             }
                         }
-                    }
-				}
+                        rootKey.Close();
+				    }
+                }
+                    
 			}
 			catch (Exception e)
 			{
@@ -559,7 +563,7 @@ namespace CSharpTest.Net.JiraSVN.Plugin
 			try
 			{
                 foreach (string key in GetRegistryKeysToAdd())
-					Registry.ClassesRoot.DeleteSubKey(key, false);
+					Registry.ClassesRoot.DeleteSubKey(string.Format(@"CLSID\{0}\", CLSID) + key.TrimStart('\\'), false);
 			}
 			catch (Exception e)
 			{
@@ -568,6 +572,6 @@ namespace CSharpTest.Net.JiraSVN.Plugin
 		}
 
 		#endregion
-	}
+    }
 
 }

@@ -16,7 +16,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
-using CSharpTest.Net.IO;
 using CSharpTest.Net.JiraSVN.Plugin;
 
 namespace CSharpTest.Net.JiraSVN.Editor
@@ -33,13 +32,6 @@ namespace CSharpTest.Net.JiraSVN.Editor
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-
-            TempFile test;
-            if (args.Length == 0)
-            {   //just for testing
-                test = new TempFile();
-                args = new string[] { test.TempPath };
-            }
 
 		    // running as a text-editor for cmd version of svn:
 			if (args.Length > 0)
@@ -75,7 +67,7 @@ namespace CSharpTest.Net.JiraSVN.Editor
 					using (TortoiseSvnPlugin plugin = new TortoiseSvnPlugin())
 					{
 						if (!plugin.IsConfigured(IntPtr.Zero, String.Empty, Environment.CurrentDirectory))
-							throw new OperationCanceledException(String.Format("Unable to locate the svn-property {0} in the path: \r\n{0}", commonRoot, plugin.Connector.UriPropertyName));
+							throw new OperationCanceledException(String.Format("Unable to configure the plugin. Please look into the log file at \r\n"));
 
 						string message = plugin.GetCommitMsg(IntPtr.Zero, String.Empty, inputMessage, commonRoot, paths);
 						if (plugin.Canceled)

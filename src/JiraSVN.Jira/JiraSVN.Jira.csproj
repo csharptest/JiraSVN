@@ -57,6 +57,7 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.XML" />
@@ -70,7 +71,6 @@
     <Compile Include="JiraFilter.cs" />
     <Compile Include="JiraIssue.cs" />
     <Compile Include="JiraServices.cs" />
-    <Compile Include="Jira\JiraSoapServiceService.cs" />
     <Compile Include="NameSorter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Web References\Jira\Reference.cs">
@@ -177,8 +177,6 @@
       </ServiceLocationURL>
       <CachedDynamicPropName>
       </CachedDynamicPropName>
-      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>SvnJiraIntegration_Jira_JiraSoapServiceService</CachedSettingsPropName>
     </WebReferenceUrl>
   </ItemGroup>
   <ItemGroup>
@@ -190,10 +188,6 @@
     <ProjectReference Include="..\JiraSVN.Common\JiraSVN.Common.csproj">
       <Project>{702EC31A-EAB5-4159-B9AC-24815F179550}</Project>
       <Name>JiraSVN.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\JiraSVN.Plugin\JiraSVN.Plugin.csproj">
-      <Project>{CFF6CAA1-27A0-46FF-89D6-AD70F3575685}</Project>
-      <Name>JiraSVN.Plugin</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

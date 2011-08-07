@@ -13,10 +13,15 @@
 // 
 #pragma warning disable 1591
 
-namespace CSharpTest.Net.JiraSVN.Jira.Jira
-{
-
-
+namespace CSharpTest.Net.JiraSVN.Jira.Jira {
+    using System.Diagnostics;
+    using System.Web.Services;
+    using System.ComponentModel;
+    using System.Web.Services.Protocols;
+    using System;
+    using System.Xml.Serialization;
+    
+    
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.4927")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]

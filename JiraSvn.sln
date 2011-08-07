@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Installs", "Installs", "{F6560B64-884B-4DE8-98D7-F2F2FEBB6B9D}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Jira SVN Plugin", "install\SvnPluginInstall.vdproj", "{89199631-4493-44F6-AFCB-D3A49A30BDF6}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Jira SVN Plugin-x64", "install\SvnPluginInstall.vdproj", "{89199631-4493-44F6-AFCB-D3A49A30BDF6}"
 	ProjectSection(ProjectDependencies) = postProject
 		{9208F806-D81A-4C53-8805-49827FD399E2} = {9208F806-D81A-4C53-8805-49827FD399E2}
 		{73680B86-524B-4296-90CE-740B2486D279} = {73680B86-524B-4296-90CE-740B2486D279}
