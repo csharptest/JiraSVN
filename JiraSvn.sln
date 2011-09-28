@@ -3,13 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Installs", "Installs", "{F6560B64-884B-4DE8-98D7-F2F2FEBB6B9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SvnPlugin", "src\SvnPlugin\SvnPlugin.csproj", "{CFF6CAA1-27A0-46FF-89D6-AD70F3575685}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SvnJiraIntegration", "src\SvnJiraIntegration\SvnJiraIntegration.csproj", "{73680B86-524B-4296-90CE-740B2486D279}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SvnEditor", "src\SvnEditor\SvnEditor.csproj", "{9208F806-D81A-4C53-8805-49827FD399E2}"
-EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Jira SVN Plugin", "install\SvnPluginInstall.vdproj", "{89199631-4493-44F6-AFCB-D3A49A30BDF6}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Jira SVN Plugin-x64", "install\SvnPluginInstall.vdproj", "{89199631-4493-44F6-AFCB-D3A49A30BDF6}"
 	ProjectSection(ProjectDependencies) = postProject
 		{9208F806-D81A-4C53-8805-49827FD399E2} = {9208F806-D81A-4C53-8805-49827FD399E2}
 		{73680B86-524B-4296-90CE-740B2486D279} = {73680B86-524B-4296-90CE-740B2486D279}
@@ -32,6 +26,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Files", "Files", "{E1990692
 		README = README
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JiraSVN.Common", "src\JiraSVN.Common\JiraSVN.Common.csproj", "{702EC31A-EAB5-4159-B9AC-24815F179550}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JiraSVN.Jira", "src\JiraSVN.Jira\JiraSVN.Jira.csproj", "{73680B86-524B-4296-90CE-740B2486D279}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JiraSVN.Plugin", "src\JiraSVN.Plugin\JiraSVN.Plugin.csproj", "{CFF6CAA1-27A0-46FF-89D6-AD70F3575685}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JiraSVN.Editor", "src\JiraSVN.Editor\JiraSVN.Editor.csproj", "{9208F806-D81A-4C53-8805-49827FD399E2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AssemblyInfo", "AssemblyInfo", "{7FA263D1-FC5D-4560-8339-599BA2F8957A}"
+	ProjectSection(SolutionItems) = preProject
+		src\AssemblyInfo\JiraSVNAssemblyInfo.cs = src\AssemblyInfo\JiraSVNAssemblyInfo.cs
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,28 +47,6 @@ Global
 		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CFF6CAA1-27A0-46FF-89D6-AD70F3575685}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CFF6CAA1-27A0-46FF-89D6-AD70F3575685}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CFF6CAA1-27A0-46FF-89D6-AD70F3575685}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{CFF6CAA1-27A0-46FF-89D6-AD70F3575685}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CFF6CAA1-27A0-46FF-89D6-AD70F3575685}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CFF6CAA1-27A0-46FF-89D6-AD70F3575685}.Release|x64.ActiveCfg = Release|Any CPU
-		{73680B86-524B-4296-90CE-740B2486D279}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{73680B86-524B-4296-90CE-740B2486D279}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{73680B86-524B-4296-90CE-740B2486D279}.Debug|x64.ActiveCfg = Debug|x64
-		{73680B86-524B-4296-90CE-740B2486D279}.Debug|x64.Build.0 = Debug|x64
-		{73680B86-524B-4296-90CE-740B2486D279}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{73680B86-524B-4296-90CE-740B2486D279}.Release|Any CPU.Build.0 = Release|Any CPU
-		{73680B86-524B-4296-90CE-740B2486D279}.Release|x64.ActiveCfg = Release|x64
-		{73680B86-524B-4296-90CE-740B2486D279}.Release|x64.Build.0 = Release|x64
-		{9208F806-D81A-4C53-8805-49827FD399E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9208F806-D81A-4C53-8805-49827FD399E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9208F806-D81A-4C53-8805-49827FD399E2}.Debug|x64.ActiveCfg = Debug|x64
-		{9208F806-D81A-4C53-8805-49827FD399E2}.Debug|x64.Build.0 = Debug|x64
-		{9208F806-D81A-4C53-8805-49827FD399E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9208F806-D81A-4C53-8805-49827FD399E2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9208F806-D81A-4C53-8805-49827FD399E2}.Release|x64.ActiveCfg = Release|x64
-		{9208F806-D81A-4C53-8805-49827FD399E2}.Release|x64.Build.0 = Release|x64
 		{89199631-4493-44F6-AFCB-D3A49A30BDF6}.Debug|Any CPU.ActiveCfg = Release
 		{89199631-4493-44F6-AFCB-D3A49A30BDF6}.Debug|x64.ActiveCfg = Release
 		{89199631-4493-44F6-AFCB-D3A49A30BDF6}.Debug|x64.Build.0 = Release
@@ -76,6 +61,30 @@ Global
 		{23E160F6-2341-4468-A326-D2E500D9E531}.Release|Any CPU.Build.0 = Release
 		{23E160F6-2341-4468-A326-D2E500D9E531}.Release|x64.ActiveCfg = Release
 		{23E160F6-2341-4468-A326-D2E500D9E531}.Release|x64.Build.0 = Release
+		{702EC31A-EAB5-4159-B9AC-24815F179550}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{702EC31A-EAB5-4159-B9AC-24815F179550}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{702EC31A-EAB5-4159-B9AC-24815F179550}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{702EC31A-EAB5-4159-B9AC-24815F179550}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{702EC31A-EAB5-4159-B9AC-24815F179550}.Release|Any CPU.Build.0 = Release|Any CPU
+		{702EC31A-EAB5-4159-B9AC-24815F179550}.Release|x64.ActiveCfg = Release|Any CPU
+		{73680B86-524B-4296-90CE-740B2486D279}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73680B86-524B-4296-90CE-740B2486D279}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73680B86-524B-4296-90CE-740B2486D279}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{73680B86-524B-4296-90CE-740B2486D279}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73680B86-524B-4296-90CE-740B2486D279}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73680B86-524B-4296-90CE-740B2486D279}.Release|x64.ActiveCfg = Release|Any CPU
+		{CFF6CAA1-27A0-46FF-89D6-AD70F3575685}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFF6CAA1-27A0-46FF-89D6-AD70F3575685}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFF6CAA1-27A0-46FF-89D6-AD70F3575685}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{CFF6CAA1-27A0-46FF-89D6-AD70F3575685}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFF6CAA1-27A0-46FF-89D6-AD70F3575685}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFF6CAA1-27A0-46FF-89D6-AD70F3575685}.Release|x64.ActiveCfg = Release|Any CPU
+		{9208F806-D81A-4C53-8805-49827FD399E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9208F806-D81A-4C53-8805-49827FD399E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9208F806-D81A-4C53-8805-49827FD399E2}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{9208F806-D81A-4C53-8805-49827FD399E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9208F806-D81A-4C53-8805-49827FD399E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9208F806-D81A-4C53-8805-49827FD399E2}.Release|x64.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
