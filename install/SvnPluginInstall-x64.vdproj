@@ -15,31 +15,85 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_2BEE8C08BCCFDAC24A643E5A4E1EAF03"
-        "OwnerKey" = "8:_E509D4AF343244C286D60B7A70FAE2C3"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_2BEE8C08BCCFDAC24A643E5A4E1EAF03"
+        "MsmKey" = "8:_0267F99E4373A632F7DE1E887DA45410"
         "OwnerKey" = "8:_73330E219EC0475C826BA330ABD8F61A"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_2BEE8C08BCCFDAC24A643E5A4E1EAF03"
-        "OwnerKey" = "8:_EE30F60D387EE51A0557F5C2D85C2F21"
+        "MsmKey" = "8:_079682D4BE9941E5BF992EFDAC0D0EA0"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_2BEE8C08BCCFDAC24A643E5A4E1EAF03"
-        "OwnerKey" = "8:_825F17156251476C990C03BF476E27A6"
+        "MsmKey" = "8:_0A0CB0B04BCD41D9A1E541F7074584AF"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_27D06E886243449F965C6A0986ED8DAB"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_2F3E1985565E30E7D38063B918DA7373"
+        "OwnerKey" = "8:_0267F99E4373A632F7DE1E887DA45410"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_2F3E1985565E30E7D38063B918DA7373"
+        "OwnerKey" = "8:_E509D4AF343244C286D60B7A70FAE2C3"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_2F3E1985565E30E7D38063B918DA7373"
+        "OwnerKey" = "8:_73330E219EC0475C826BA330ABD8F61A"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_33CB478F6D804D2BB1E5BBF0644BF01B"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_34F98AC0CA4D4E6E8BE02990F31833AD"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_44995AB9EC9246FAA6153150EBFAB300"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_4568CB5687284E84B032DBDFF844A294"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_53E94AB1854C4A10BA64452996881332"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_73330E219EC0475C826BA330ABD8F61A"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_7A72E2E08DEA47D5861F193DE6F0EFE9"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -51,55 +105,61 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_87F3FB8C9A2830B89D5FCB9AAE3B37B0"
-        "OwnerKey" = "8:_EE30F60D387EE51A0557F5C2D85C2F21"
+        "MsmKey" = "8:_85C378CBD03E413DA27B76542B936850"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_87F3FB8C9A2830B89D5FCB9AAE3B37B0"
-        "OwnerKey" = "8:_E509D4AF343244C286D60B7A70FAE2C3"
+        "MsmKey" = "8:_91BE0DED3D804EF6A208986E8A0D99E2"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_87F3FB8C9A2830B89D5FCB9AAE3B37B0"
-        "OwnerKey" = "8:_825F17156251476C990C03BF476E27A6"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_87F3FB8C9A2830B89D5FCB9AAE3B37B0"
-        "OwnerKey" = "8:_73330E219EC0475C826BA330ABD8F61A"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_8CBE494DF5CF32F58D52006D60FAE45F"
-        "OwnerKey" = "8:_73330E219EC0475C826BA330ABD8F61A"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_8CBE494DF5CF32F58D52006D60FAE45F"
-        "OwnerKey" = "8:_E509D4AF343244C286D60B7A70FAE2C3"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_8CBE494DF5CF32F58D52006D60FAE45F"
-        "OwnerKey" = "8:_825F17156251476C990C03BF476E27A6"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_8CBE494DF5CF32F58D52006D60FAE45F"
-        "OwnerKey" = "8:_EE30F60D387EE51A0557F5C2D85C2F21"
+        "MsmKey" = "8:_922A078966FB443A8E8F9AE1643828F1"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_92ECE06BF9E84F43917372B2404279A2"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C072642C06A34A658B0DE3443AE38BFE"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_CDFA1A96748DCD886822EC508B912011"
+        "OwnerKey" = "8:_0267F99E4373A632F7DE1E887DA45410"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_CDFA1A96748DCD886822EC508B912011"
+        "OwnerKey" = "8:_E509D4AF343244C286D60B7A70FAE2C3"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_CDFA1A96748DCD886822EC508B912011"
+        "OwnerKey" = "8:_825F17156251476C990C03BF476E27A6"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_CDFA1A96748DCD886822EC508B912011"
+        "OwnerKey" = "8:_73330E219EC0475C826BA330ABD8F61A"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E099ACFE58C24C269AA20B3D515B7F1E"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -123,8 +183,56 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_EE30F60D387EE51A0557F5C2D85C2F21"
+        "MsmKey" = "8:_E86B301CB0A970A10DDE9A97A9623067"
         "OwnerKey" = "8:_73330E219EC0475C826BA330ABD8F61A"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E86B301CB0A970A10DDE9A97A9623067"
+        "OwnerKey" = "8:_E509D4AF343244C286D60B7A70FAE2C3"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E86B301CB0A970A10DDE9A97A9623067"
+        "OwnerKey" = "8:_825F17156251476C990C03BF476E27A6"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E86B301CB0A970A10DDE9A97A9623067"
+        "OwnerKey" = "8:_0267F99E4373A632F7DE1E887DA45410"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_F9C4A0192684E8BB7CD1FB21E9A937F4"
+        "OwnerKey" = "8:_0267F99E4373A632F7DE1E887DA45410"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_F9C4A0192684E8BB7CD1FB21E9A937F4"
+        "OwnerKey" = "8:_E509D4AF343244C286D60B7A70FAE2C3"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_F9C4A0192684E8BB7CD1FB21E9A937F4"
+        "OwnerKey" = "8:_825F17156251476C990C03BF476E27A6"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_F9C4A0192684E8BB7CD1FB21E9A937F4"
+        "OwnerKey" = "8:_73330E219EC0475C826BA330ABD8F61A"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_FFE8CD4AACEE446F89EAF0F6ADC7B40D"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -136,7 +244,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_2BEE8C08BCCFDAC24A643E5A4E1EAF03"
+        "OwnerKey" = "8:_7A72E2E08DEA47D5861F193DE6F0EFE9"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -154,19 +262,31 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_EE30F60D387EE51A0557F5C2D85C2F21"
+        "OwnerKey" = "8:_0267F99E4373A632F7DE1E887DA45410"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_87F3FB8C9A2830B89D5FCB9AAE3B37B0"
+        "OwnerKey" = "8:_2F3E1985565E30E7D38063B918DA7373"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_8CBE494DF5CF32F58D52006D60FAE45F"
+        "OwnerKey" = "8:_F9C4A0192684E8BB7CD1FB21E9A937F4"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_CDFA1A96748DCD886822EC508B912011"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_E86B301CB0A970A10DDE9A97A9623067"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -229,7 +349,7 @@
                 {
                 "Name" = "8:.NET Framework"
                 "Message" = "8:[VSDNETMSG]"
-                "Version" = "8:3.5.21022"
+                "FrameworkVersion" = "8:3.5.21022  "
                 "AllowLaterVersions" = "11:FALSE"
                 "InstallUrl" = "8:http://go.microsoft.com/fwlink/?LinkId=76617"
                 }
@@ -237,20 +357,126 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_2BEE8C08BCCFDAC24A643E5A4E1EAF03"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0267F99E4373A632F7DE1E887DA45410"
             {
             "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:TRUE"
-            "AssemblyAsmDisplayName" = "8:CSharpTest.Net.Logging, Version=1.10.1124.358, Culture=neutral, PublicKeyToken=06aee00cce822474, processorArchitecture=MSIL"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:CSharpTest.Net.JiraSVN.Plugin, Version=3.0.0.0, Culture=neutral, PublicKeyToken=60c82babf932569d, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_2BEE8C08BCCFDAC24A643E5A4E1EAF03"
+                    "_0267F99E4373A632F7DE1E887DA45410"
                     {
-                    "Name" = "8:CSharpTest.Net.Logging.dll"
+                    "Name" = "8:CSharpTest.Net.JiraSVN.Plugin.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:CSharpTest.Net.Logging.dll"
+            "SourcePath" = "8:CSharpTest.Net.JiraSVN.Plugin.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_7C760051064F401894B98C3AAA0533DB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:TRUE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_079682D4BE9941E5BF992EFDAC0D0EA0"
+            {
+            "SourcePath" = "8:..\\depend\\SharpSvn\\Licenses\\SharpSvn-License.txt"
+            "TargetName" = "8:SharpSvn-License.txt"
+            "Tag" = "8:"
+            "Folder" = "8:_AA2EE52B5C2F4CC5A800B1D99B92AA19"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0A0CB0B04BCD41D9A1E541F7074584AF"
+            {
+            "SourcePath" = "8:..\\depend\\SharpSvn\\x64\\SharpSvn-Sasl21-23-x64.dll"
+            "TargetName" = "8:SharpSvn-Sasl21-23-x64.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_7C760051064F401894B98C3AAA0533DB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_27D06E886243449F965C6A0986ED8DAB"
+            {
+            "SourcePath" = "8:..\\depend\\SharpSvn\\Licenses\\BerkeleyDB-License.txt"
+            "TargetName" = "8:BerkeleyDB-License.txt"
+            "Tag" = "8:"
+            "Folder" = "8:_AA2EE52B5C2F4CC5A800B1D99B92AA19"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_2F3E1985565E30E7D38063B918DA7373"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:SharpSvn, Version=1.7000.1934.11812, Culture=neutral, PublicKeyToken=d729672594885a28, processorArchitecture=x86"
+                "ScatterAssemblies"
+                {
+                    "_2F3E1985565E30E7D38063B918DA7373"
+                    {
+                    "Name" = "8:SharpSvn.dll"
+                    "Attributes" = "3:512"
+                    }
+                    "_4D388DCF0A8A53F48BE9AF518156D489"
+                    {
+                    "Name" = "8:SharpSvn-SASL21-23-Win32.dll"
+                    "Attributes" = "3:1"
+                    }
+                    "_8C89807E043267CA0E9A1B7AACCF9603"
+                    {
+                    "Name" = "8:SharpSvn-DB44-20-Win32.dll"
+                    "Attributes" = "3:1"
+                    }
+                    "_CD46B3CCF88C51FFFCE29A1683505D1B"
+                    {
+                    "Name" = "8:SharpPlink-Win32.svnExe"
+                    "Attributes" = "3:1"
+                    }
+                }
+            "SourcePath" = "8:SharpSvn.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_D9D881A53988432D804F54E2730CF829"
@@ -264,18 +490,264 @@
             "SharedLegacy" = "11:FALSE"
             "PackageAs" = "3:1"
             "Register" = "3:1"
-            "Exclude" = "11:FALSE"
+            "Exclude" = "11:TRUE"
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_87F3FB8C9A2830B89D5FCB9AAE3B37B0"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_33CB478F6D804D2BB1E5BBF0644BF01B"
+            {
+            "SourcePath" = "8:..\\depend\\SharpSvn\\Licenses\\Neon-License.txt"
+            "TargetName" = "8:Neon-License.txt"
+            "Tag" = "8:"
+            "Folder" = "8:_AA2EE52B5C2F4CC5A800B1D99B92AA19"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_34F98AC0CA4D4E6E8BE02990F31833AD"
+            {
+            "SourcePath" = "8:..\\depend\\SharpSvn\\Licenses\\Cyrus-Sasl-License.txt"
+            "TargetName" = "8:Cyrus-Sasl-License.txt"
+            "Tag" = "8:"
+            "Folder" = "8:_AA2EE52B5C2F4CC5A800B1D99B92AA19"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_44995AB9EC9246FAA6153150EBFAB300"
+            {
+            "SourcePath" = "8:..\\depend\\SharpSvn\\Licenses\\Serf-License.txt"
+            "TargetName" = "8:Serf-License.txt"
+            "Tag" = "8:"
+            "Folder" = "8:_AA2EE52B5C2F4CC5A800B1D99B92AA19"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4568CB5687284E84B032DBDFF844A294"
+            {
+            "SourcePath" = "8:..\\depend\\SharpSvn\\Licenses\\OpenSsl-License.txt"
+            "TargetName" = "8:OpenSsl-License.txt"
+            "Tag" = "8:"
+            "Folder" = "8:_AA2EE52B5C2F4CC5A800B1D99B92AA19"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_53E94AB1854C4A10BA64452996881332"
+            {
+            "SourcePath" = "8:..\\depend\\SharpSvn\\Licenses\\ZLib-License.txt"
+            "TargetName" = "8:ZLib-License.txt"
+            "Tag" = "8:"
+            "Folder" = "8:_AA2EE52B5C2F4CC5A800B1D99B92AA19"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_7A72E2E08DEA47D5861F193DE6F0EFE9"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:SharpSvn, Version=1.7001.1937.11872, Culture=neutral, PublicKeyToken=d729672594885a28, processorArchitecture=AMD64"
+                "ScatterAssemblies"
+                {
+                    "_02A5F13CC27C23BBCDB9A38D30B6B423"
+                    {
+                    "Name" = "8:SharpSvn-DB44-20-x64.dll"
+                    "Attributes" = "3:1"
+                    }
+                    "_17698FE9DAD4C0E5777BF98345325C06"
+                    {
+                    "Name" = "8:SharpPlink-x64.svnExe"
+                    "Attributes" = "3:1"
+                    }
+                    "_65AB2C334D8DCB79A1199E440C6FBA3D"
+                    {
+                    "Name" = "8:SharpSvn-SASL21-23-x64.dll"
+                    "Attributes" = "3:1"
+                    }
+                    "_7A72E2E08DEA47D5861F193DE6F0EFE9"
+                    {
+                    "Name" = "8:SharpSvn.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:..\\depend\\SharpSvn\\x64\\SharpSvn.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_7C760051064F401894B98C3AAA0533DB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_85C378CBD03E413DA27B76542B936850"
+            {
+            "SourcePath" = "8:..\\depend\\SharpSvn\\Licenses\\Apr-License.txt"
+            "TargetName" = "8:Apr-License.txt"
+            "Tag" = "8:"
+            "Folder" = "8:_AA2EE52B5C2F4CC5A800B1D99B92AA19"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_91BE0DED3D804EF6A208986E8A0D99E2"
+            {
+            "SourcePath" = "8:..\\depend\\SharpSvn\\Licenses\\Apr-Util-License.txt"
+            "TargetName" = "8:Apr-Util-License.txt"
+            "Tag" = "8:"
+            "Folder" = "8:_AA2EE52B5C2F4CC5A800B1D99B92AA19"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_922A078966FB443A8E8F9AE1643828F1"
+            {
+            "SourcePath" = "8:..\\depend\\SharpSvn\\Licenses\\Subversion-License.txt"
+            "TargetName" = "8:Subversion-License.txt"
+            "Tag" = "8:"
+            "Folder" = "8:_AA2EE52B5C2F4CC5A800B1D99B92AA19"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_92ECE06BF9E84F43917372B2404279A2"
+            {
+            "SourcePath" = "8:..\\res\\Tortoise.ico"
+            "TargetName" = "8:Tortoise.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_7C760051064F401894B98C3AAA0533DB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C072642C06A34A658B0DE3443AE38BFE"
+            {
+            "SourcePath" = "8:..\\depend\\SharpSvn\\x64\\SharpPlink-x64.svnExe"
+            "TargetName" = "8:SharpPlink-x64.svnExe"
+            "Tag" = "8:"
+            "Folder" = "8:_7C760051064F401894B98C3AAA0533DB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_CDFA1A96748DCD886822EC508B912011"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:CSharpTest.Net.Library, Version=1.10.1124.358, Culture=neutral, PublicKeyToken=06aee00cce822474, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_87F3FB8C9A2830B89D5FCB9AAE3B37B0"
+                    "_CDFA1A96748DCD886822EC508B912011"
                     {
                     "Name" = "8:CSharpTest.Net.Library.dll"
                     "Attributes" = "3:512"
@@ -299,41 +771,10 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_8CBE494DF5CF32F58D52006D60FAE45F"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E099ACFE58C24C269AA20B3D515B7F1E"
             {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:CSharpTest.Net.JiraSVN.Common, Version=3.0.0.0, Culture=neutral, PublicKeyToken=60c82babf932569d, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_8CBE494DF5CF32F58D52006D60FAE45F"
-                    {
-                    "Name" = "8:CSharpTest.Net.JiraSVN.Common.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:CSharpTest.Net.JiraSVN.Common.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_D9D881A53988432D804F54E2730CF829"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_92ECE06BF9E84F43917372B2404279A2"
-            {
-            "SourcePath" = "8:..\\res\\Tortoise.ico"
-            "TargetName" = "8:Tortoise.ico"
+            "SourcePath" = "8:..\\depend\\SharpSvn\\x64\\SharpSvn-DB44-20-x64.dll"
+            "TargetName" = "8:SharpSvn-DB44-20-x64.dll"
             "Tag" = "8:"
             "Folder" = "8:_7C760051064F401894B98C3AAA0533DB"
             "Condition" = "8:"
@@ -355,7 +796,7 @@
             "SourcePath" = "8:..\\bin\\Release\\LICENSE-2.0.txt"
             "TargetName" = "8:LICENSE-2.0.txt"
             "Tag" = "8:"
-            "Folder" = "8:_7C760051064F401894B98C3AAA0533DB"
+            "Folder" = "8:_AA2EE52B5C2F4CC5A800B1D99B92AA19"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -386,27 +827,27 @@
             "SharedLegacy" = "11:FALSE"
             "PackageAs" = "3:1"
             "Register" = "3:1"
-            "Exclude" = "11:FALSE"
+            "Exclude" = "11:TRUE"
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_EE30F60D387EE51A0557F5C2D85C2F21"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_E86B301CB0A970A10DDE9A97A9623067"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:CSharpTest.Net.JiraSVN.Plugin, Version=3.0.0.0, Culture=neutral, PublicKeyToken=60c82babf932569d, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:CSharpTest.Net.JiraSVN.Common, Version=3.0.0.0, Culture=neutral, PublicKeyToken=60c82babf932569d, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_EE30F60D387EE51A0557F5C2D85C2F21"
+                    "_E86B301CB0A970A10DDE9A97A9623067"
                     {
-                    "Name" = "8:CSharpTest.Net.JiraSVN.Plugin.dll"
+                    "Name" = "8:CSharpTest.Net.JiraSVN.Common.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:CSharpTest.Net.JiraSVN.Plugin.dll"
+            "SourcePath" = "8:CSharpTest.Net.JiraSVN.Common.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_7C760051064F401894B98C3AAA0533DB"
+            "Folder" = "8:_D9D881A53988432D804F54E2730CF829"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -417,8 +858,59 @@
             "SharedLegacy" = "11:FALSE"
             "PackageAs" = "3:1"
             "Register" = "3:1"
-            "Exclude" = "11:TRUE"
+            "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_F9C4A0192684E8BB7CD1FB21E9A937F4"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:CSharpTest.Net.Logging, Version=1.10.1124.358, Culture=neutral, PublicKeyToken=06aee00cce822474, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_F9C4A0192684E8BB7CD1FB21E9A937F4"
+                    {
+                    "Name" = "8:CSharpTest.Net.Logging.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:CSharpTest.Net.Logging.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_D9D881A53988432D804F54E2730CF829"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FFE8CD4AACEE446F89EAF0F6ADC7B40D"
+            {
+            "SourcePath" = "8:..\\depend\\SharpSvn\\Licenses\\Putty-License.txt"
+            "TargetName" = "8:Putty-License.txt"
+            "Tag" = "8:"
+            "Folder" = "8:_AA2EE52B5C2F4CC5A800B1D99B92AA19"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
         }
@@ -437,6 +929,17 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_AA2EE52B5C2F4CC5A800B1D99B92AA19"
+                    {
+                    "Name" = "8:Licenses"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_2180910896CB4308907DB02FDEB2263E"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
             "{C7E34266-2C30-44B9-A9A3-4E394ABD6E18}:_D9D881A53988432D804F54E2730CF829"
@@ -467,8 +970,9 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:TortoiseSVN Jira Plugin ( 64 bit )"
         "ProductCode" = "8:{FB78A350-2F0C-45AF-9756-797E24747596}"
-        "PackageCode" = "8:{56FA68CB-9996-48F4-A86C-7869B147AA4A}"
+        "PackageCode" = "8:{FB503A28-23F5-4256-9677-BBCB16D6A2C1}"
         "UpgradeCode" = "8:{06CE0F15-76E1-4EF2-9B81-1EE0B88BCF6E}"
+        "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
@@ -749,7 +1253,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_DE0C20A05A814F819DAF22AE9927FBB5"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:Status"
+                    "DisplayName" = "8:Progress"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdAdminProgressDlg.wid"
@@ -793,7 +1297,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_49C7267038F7453CA325FAFB761FD8AD"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:Fertig"
+                    "DisplayName" = "8:Finished"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdFinishedDlg.wid"
@@ -837,7 +1341,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_CEA8A41FF9F24B40B504EF57AD1C799D"
                     {
                     "Sequence" = "3:300"
-                    "DisplayName" = "8:Installation bestätigen"
+                    "DisplayName" = "8:Confirm Installation"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdConfirmDlg.wid"
@@ -859,7 +1363,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_EAE7F8C2A27A4BC0B656D63DA4EE0205"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:Willkommen"
+                    "DisplayName" = "8:Welcome"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdWelcomeDlg.wid"
@@ -907,7 +1411,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_FE72D1A79A7941F6B0E8980FC2464853"
                     {
                     "Sequence" = "3:200"
-                    "DisplayName" = "8:Installationsordner"
+                    "DisplayName" = "8:Installation Folder"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdFolderDlg.wid"
@@ -963,7 +1467,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_7606267141D94869B6D571212FF2BC50"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:Status"
+                    "DisplayName" = "8:Progress"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdProgressDlg.wid"
@@ -1007,7 +1511,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_A8BFAA18DCBC461C829F98FF3BBDC727"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:Fertig"
+                    "DisplayName" = "8:Finished"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdAdminFinishedDlg.wid"
@@ -1038,7 +1542,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_3508A7842F984B02A5D8D04F15ADE180"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:Willkommen"
+                    "DisplayName" = "8:Welcome"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdAdminWelcomeDlg.wid"
@@ -1086,7 +1590,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_B21626FB48A3462691F70524CD5AA6CD"
                     {
                     "Sequence" = "3:200"
-                    "DisplayName" = "8:Installationsordner"
+                    "DisplayName" = "8:Installation Folder"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdAdminFolderDlg.wid"
@@ -1108,7 +1612,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_CFA818DD74A443C88F231D1AFD365AB2"
                     {
                     "Sequence" = "3:300"
-                    "DisplayName" = "8:Installation bestätigen"
+                    "DisplayName" = "8:Confirm Installation"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdAdminConfirmDlg.wid"
