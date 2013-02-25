@@ -1,0 +1,23 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5" DefaultTargets="Build">
+
+	<Target Name="Clean">
+		<ItemGroup>
+			<BinFiles Include="**\bin\**\*.*" />
+			<ObjFiles Include="**\obj\**\*.*" />
+		</ItemGroup>
+		<Delete Files="@(BinFiles)" />
+		<Delete Files="@(ObjFiles)" />
+	</Target>
+
+	<Target Name="Compile">
+		<ItemGroup>
+			<Solution Include="JiraSVN.sln" />
+		</ItemGroup>
+		<MSBuild Projects="@(Solution)" />
+	</Target>
+
+	<Target Name="Build" DependsOnTargets="Clean;Compile" />
+	
+	<Target Name="All" DependsOnTargets="Clean;Compile" />
+
+</Project>

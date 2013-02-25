@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include>
+	<?define ProductVersion		= "3.0.0.0" ?>
+	<?define ProductNameBase	= "TortoiseSVN Jira Plugin" ?>
+	<?define ProductCode		= "{FB78A350-2F0C-45AF-9756-797E24747596}" ?>
+	<?define Manufacturer		= "CSharpTest.Net" ?>
+	<?define ManufacturerLink	= "https://github.com/Wattos/JiraSVN" ?>
+	<?define SourceFolder		= $(var.SolutionDir)bin\$(var.Configuration)\ ?>
+
+	<?if $(var.Platform) = x64 ?>
+		<?define ProductName	= "$(var.ProductNameBase) (64 bit)" ?>
+		<?define Win64			= "yes" ?>
+		<?define PlatformProgramFilesFolder = "ProgramFiles64Folder" ?>
+	<?else ?>
+	<?define ProductName	= "$(var.ProductNameBase) (32 bit)" ?>
+		<?define Win64			= "no" ?>
+		<?define PlatformProgramFilesFolder = "ProgramFilesFolder" ?>
+	<?endif ?>
+</Include>
