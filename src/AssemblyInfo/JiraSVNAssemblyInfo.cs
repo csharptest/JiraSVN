@@ -15,12 +15,15 @@
 using System.Reflection;
 
 [assembly: AssemblyProduct("https://github.com/Wattos/JiraSVN")]
+
+#if DEBUG
 [assembly: AssemblyConfiguration("Debug")]
+#else
+[assembly: AssemblyConfiguration("Release")]
+#endif
 
 [assembly: AssemblyCompany("Roger Knapp")]
 [assembly: AssemblyCopyright("Copyright 2008 by Roger Knapp, Licensed under the Apache License, Version 2.0")]
 
 [assembly: AssemblyVersion("3.0.0.0")]
 [assembly: AssemblyFileVersion("3.0.0.0")]
-
-[assembly: ObfuscateAssembly(false)]

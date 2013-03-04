@@ -16,5 +16,5 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("JiraSVN Plugin")]
-[assembly: AssemblyDescription("This is dll which contains the JIRA SVN plugin")]
+[assembly: AssemblyDescription("This DLL contains the TortoiseSVN Jira plugin")]
 [assembly: Guid("EA95B04E-BECB-11E0-B581-4D474824019B")]
