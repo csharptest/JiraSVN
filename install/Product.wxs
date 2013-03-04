@@ -45,21 +45,21 @@
 				<Component Id="C__CSharpTest.Net.Logging.dll" Guid="{73D00187-9758-4E0C-B680-F049801B2F66}" Win64="$(var.Win64)">
 					<File Id="F__CSharpTest.Net.Logging.dll" Name="CSharpTest.Net.Logging.dll" Assembly=".net" KeyPath="yes" />
 				</Component>
-				<Component Id="C__CSharpTest.Net.JiraSVN.Common.dll" Guid="{0B5BD3B8-5DDA-49F8-940F-2145B94CAD83}" Win64="$(var.Win64)">
-					<File Id="F__CSharpTest.Net.JiraSVN.Common.dll" Name="CSharpTest.Net.JiraSVN.Common.dll" Assembly=".net" KeyPath="yes" />
+				<Component Id="C__JiraSVN.Common.dll" Guid="{0B5BD3B8-5DDA-49F8-940F-2145B94CAD83}" Win64="$(var.Win64)">
+					<File Id="F__JiraSVN.Common.dll" Name="JiraSVN.Common.dll" Assembly=".net" KeyPath="yes" />
 				</Component>
-				<Component Id="C__CSharpTest.Net.JiraSVN.Jira.dll" Guid="{B7008394-7B4A-4C60-A585-A0A42843AB62}" Win64="$(var.Win64)">
-					<File Id="F__CSharpTest.Net.JiraSVN.Jira.dll" Name="CSharpTest.Net.JiraSVN.Jira.dll" Assembly=".net" KeyPath="yes" />
+				<Component Id="C__JiraSVN.Jira.dll" Guid="{B7008394-7B4A-4C60-A585-A0A42843AB62}" Win64="$(var.Win64)">
+					<File Id="F__JiraSVN.Jira.dll" Name="JiraSVN.Jira.dll" Assembly=".net" KeyPath="yes" />
 				</Component>
 			</Directory>
 
 			<Directory Id="$(var.PlatformProgramFilesFolder)">
-				<Directory Id="INSTALLLOCATION" Name="$(var.ProductName)" FileSource="$(var.SourceFolder)">
+				<Directory Id="INSTALLLOCATION" Name="$(var.ProductNameBase)" FileSource="$(var.SourceFolder)">
 					<Component Id="C__JiraSVN" Guid="{CDE2D29D-41AB-4ACC-9174-B4D866FA801D}" Win64="$(var.Win64)">
-						<File Id="F__CSharpTest.Net.JiraSVN.Editor.exe" Name="CSharpTest.Net.JiraSVN.Editor.exe" KeyPath="yes" />
-						<File Id="F__CSharpTest.Net.JiraSVN.Editor.exe.config" Name="CSharpTest.Net.JiraSVN.Editor.exe.config" />
-						<File Id="F__CSharpTest.Net.JiraSVN.Plugin.dll" Name="CSharpTest.Net.JiraSVN.Plugin.dll" />
-						<File Id="F__CSharpTest.Net.JiraSVN.Plugin.dll.config" Name="CSharpTest.Net.JiraSVN.Plugin.dll.config" />
+						<File Id="F__JiraSVN.Editor.exe" Name="JiraSVN.Editor.exe" KeyPath="yes" />
+						<File Id="F__JiraSVN.Editor.exe.config" Name="JiraSVN.Editor.exe.config" />
+						<File Id="F__JiraSVN.Plugin.dll" Name="JiraSVN.Plugin.dll" />
+						<File Id="F__JiraSVN.Plugin.dll.config" Name="JiraSVN.Plugin.dll.config" />
 						<File Id="F__Tortoise.ico" Name="Tortoise.ico" Source="$(var.SolutionDir)res\Tortoise.ico" />
 						<File Id="F__LICENSE_2.0.txt" Name="LICENSE-2.0.txt" />
 						<File Id="F__SharpSvn.dll" Name="SharpSvn.dll" Source="$(var.SolutionDir)depend\SharpSvn\$(var.Platform)\SharpSvn.dll" />
@@ -68,16 +68,16 @@
 			</Directory>
 
 			<Component Id="C__Registry" Guid="{40D60013-3C50-4370-983D-D54F994D30D5}" Win64="$(var.Win64)">
-				<RegistryKey Root="HKCR" Key="CSharpTest.Net.JiraSVN.Plugin.TortoiseSvnPlugin" ForceDeleteOnUninstall="yes">
-					<RegistryValue Value="CSharpTest.Net.JiraSVN.Plugin.TortoiseSvnPlugin" Type="string" KeyPath="yes" Action="write" />
+				<RegistryKey Root="HKCR" Key="JiraSVN.Plugin.TortoiseSvnPlugin" ForceDeleteOnUninstall="yes">
+					<RegistryValue Value="JiraSVN.Plugin.TortoiseSvnPlugin" Type="string" KeyPath="yes" Action="write" />
 					<RegistryKey Key="CLSID">
 						<RegistryValue Value="{CF732FD7-AA8A-4E9D-9E15-025E4D1A7E9D}" Type="string" Action="write" />
 					</RegistryKey>
 				</RegistryKey>
 				<RegistryKey Root="HKCR" Key="CLSID\{CF732FD7-AA8A-4E9D-9E15-025E4D1A7E9D}" ForceDeleteOnUninstall="yes">
-					<RegistryValue Value="CSharpTest.Net.JiraSVN.Plugin.TortoiseSvnPlugin" Type="string" Action="write" />
+					<RegistryValue Value="JiraSVN.Plugin.TortoiseSvnPlugin" Type="string" Action="write" />
 					<RegistryKey Key="ProgId">
-						<RegistryValue Value="CSharpTest.Net.JiraSVN.Plugin.TortoiseSvnPlugin" Type="string" Action="write" />
+						<RegistryValue Value="JiraSVN.Plugin.TortoiseSvnPlugin" Type="string" Action="write" />
 					</RegistryKey>
 					<RegistryKey Key="Implemented Categories">
 						<RegistryKey Key="{3494FA92-B139-4730-9591-01135D5E7831}" ForceCreateOnInstall="yes" />
@@ -86,9 +86,9 @@
 					<RegistryKey Key="InprocServer32">
 						<RegistryValue Value="mscoree.dll" Type="string" Action="write" />
 						<RegistryValue Name="RuntimeVersion" Value="v2.0.50727" Type="string" Action="write" />
-						<RegistryValue Name="Assembly" Value="CSharpTest.Net.JiraSVN.Plugin, Version=3.0.0.0, Culture=neutral, PublicKeyToken=60c82babf932569d" Type="string" Action="write" />
-						<RegistryValue Name="Class" Value="CSharpTest.Net.JiraSVN.Plugin.TortoiseSvnPlugin" Type="string" Action="write" />
-						<RegistryValue Name="CodeBase" Value="[INSTALLLOCATION]CSharpTest.Net.JiraSVN.Plugin.dll" Type="string" Action="write" />
+						<RegistryValue Name="Assembly" Value="JiraSVN.Plugin, Version=3.0.0.0, Culture=neutral, PublicKeyToken=60c82babf932569d" Type="string" Action="write" />
+						<RegistryValue Name="Class" Value="JiraSVN.Plugin.TortoiseSvnPlugin" Type="string" Action="write" />
+						<RegistryValue Name="CodeBase" Value="[INSTALLLOCATION]JiraSVN.Plugin.dll" Type="string" Action="write" />
 						<RegistryValue Name="ThreadingModel" Value="Both" Type="string" Action="write" />
 					</RegistryKey>
 				</RegistryKey>
@@ -98,8 +98,8 @@
 		<ComponentGroup Id="CG__GAC">
 			<ComponentRef Id="C__CSharpTest.Net.Library.dll" />
 			<ComponentRef Id="C__CSharpTest.Net.Logging.dll" />
-			<ComponentRef Id="C__CSharpTest.Net.JiraSVN.Common.dll" />
-			<ComponentRef Id="C__CSharpTest.Net.JiraSVN.Jira.dll" />
+			<ComponentRef Id="C__JiraSVN.Common.dll" />
+			<ComponentRef Id="C__JiraSVN.Jira.dll" />
 		</ComponentGroup>
 
 		<Feature Id="JiraSVN" Title="JiraSVN" Level="1">

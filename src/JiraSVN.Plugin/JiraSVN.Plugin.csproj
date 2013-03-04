@@ -8,7 +8,7 @@
     <ProjectGuid>{CFF6CAA1-27A0-46FF-89D6-AD70F3575685}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>CSharpTest.Net.JiraSVN.Plugin</RootNamespace>
-    <AssemblyName>CSharpTest.Net.JiraSVN.Plugin</AssemblyName>
+    <AssemblyName>JiraSVN.Plugin</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <StartupObject>
     </StartupObject>
@@ -46,7 +46,7 @@
     <Optimize>False</Optimize>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <OutputPath>..\..\bin\Debug</OutputPath>
-    <DocumentationFile>..\..\bin\Debug\CSharpTest.Net.JiraSVN.Plugin.XML</DocumentationFile>
+    <DocumentationFile>..\..\bin\Debug\JiraSVN.Plugin.xml</DocumentationFile>
     <RegisterForComInterop>false</RegisterForComInterop>
     <DebugType>full</DebugType>
     <BaseAddress>5242880</BaseAddress>
@@ -58,7 +58,7 @@
     <DefineConstants>
     </DefineConstants>
     <OutputPath>..\..\bin\Release</OutputPath>
-    <DocumentationFile>..\..\bin\Release\CSharpTest.Net.JiraSVN.Plugin.XML</DocumentationFile>
+    <DocumentationFile>..\..\bin\Release\JiraSVN.Plugin.xml</DocumentationFile>
     <BaseAddress>5242880</BaseAddress>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>

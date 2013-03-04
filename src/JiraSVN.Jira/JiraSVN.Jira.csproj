@@ -8,7 +8,7 @@
     <ProjectGuid>{73680B86-524B-4296-90CE-740B2486D279}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>CSharpTest.Net.JiraSVN.Jira</RootNamespace>
-    <AssemblyName>CSharpTest.Net.JiraSVN.Jira</AssemblyName>
+    <AssemblyName>JiraSVN.Jira</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <StartupObject>
     </StartupObject>
@@ -47,7 +47,7 @@
     <Optimize>false</Optimize>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <OutputPath>..\..\bin\Debug</OutputPath>
-    <DocumentationFile>..\..\bin\Debug\CSharpTest.Net.JiraSVN.Jira.XML</DocumentationFile>
+    <DocumentationFile>..\..\bin\Debug\JiraSVN.Jira.xml</DocumentationFile>
     <DebugType>full</DebugType>
     <BaseAddress>6291456</BaseAddress>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
@@ -56,7 +56,7 @@
     <Optimize>true</Optimize>
     <DefineConstants>TRACE</DefineConstants>
     <OutputPath>..\..\bin\Release</OutputPath>
-    <DocumentationFile>..\..\bin\Release\CSharpTest.Net.JiraSVN.Jira.XML</DocumentationFile>
+    <DocumentationFile>..\..\bin\Release\JiraSVN.Jira.xml</DocumentationFile>
     <BaseAddress>6291456</BaseAddress>
     <DebugType>none</DebugType>
     <DebugSymbols>false</DebugSymbols>
