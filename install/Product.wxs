@@ -51,9 +51,6 @@
 				<Component Id="C__CSharpTest.Net.JiraSVN.Jira.dll" Guid="{B7008394-7B4A-4C60-A585-A0A42843AB62}" Win64="$(var.Win64)">
 					<File Id="F__CSharpTest.Net.JiraSVN.Jira.dll" Name="CSharpTest.Net.JiraSVN.Jira.dll" Assembly=".net" KeyPath="yes" />
 				</Component>
-				<Component Id="C__CSharpTest.Net.JiraSVN.Jira.XmlSerializers.dll" Guid="{E1DA2866-B0B9-404B-8227-BBFC4B0F76C2}" Win64="$(var.Win64)">
-					<File Id="F__CSharpTest.Net.JiraSVN.Jira.XmlSerializers.dll" Name="CSharpTest.Net.JiraSVN.Jira.XmlSerializers.dll" Assembly=".net" KeyPath="yes" />
-				</Component>
 			</Directory>
 
 			<Directory Id="$(var.PlatformProgramFilesFolder)">
@@ -102,7 +99,6 @@
 			<ComponentRef Id="C__CSharpTest.Net.Logging.dll" />
 			<ComponentRef Id="C__CSharpTest.Net.JiraSVN.Common.dll" />
 			<ComponentRef Id="C__CSharpTest.Net.JiraSVN.Jira.dll" />
-			<ComponentRef Id="C__CSharpTest.Net.JiraSVN.Jira.XmlSerializers.dll" />
 		</ComponentGroup>
 
 		<Feature Id="JiraSVN" Title="JiraSVN" Level="1">

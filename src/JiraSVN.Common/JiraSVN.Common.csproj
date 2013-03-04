@@ -12,6 +12,7 @@
     <AssemblyName>CSharpTest.Net.JiraSVN.Common</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>../../keys/jirasvn.snk</AssemblyOriginatorKeyFile>
     <FileUpgradeFlags>
@@ -60,7 +61,6 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <RegisterForComInterop>false</RegisterForComInterop>
-    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>

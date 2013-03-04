@@ -48,7 +48,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <OutputPath>..\..\bin\Debug</OutputPath>
     <DocumentationFile>..\..\bin\Debug\CSharpTest.Net.JiraSVN.Jira.XML</DocumentationFile>
-    <GenerateSerializationAssemblies>On</GenerateSerializationAssemblies>
     <DebugType>full</DebugType>
     <BaseAddress>6291456</BaseAddress>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
@@ -58,7 +57,6 @@
     <DefineConstants>TRACE</DefineConstants>
     <OutputPath>..\..\bin\Release</OutputPath>
     <DocumentationFile>..\..\bin\Release\CSharpTest.Net.JiraSVN.Jira.XML</DocumentationFile>
-    <GenerateSerializationAssemblies>On</GenerateSerializationAssemblies>
     <BaseAddress>6291456</BaseAddress>
     <DebugType>none</DebugType>
     <DebugSymbols>false</DebugSymbols>
