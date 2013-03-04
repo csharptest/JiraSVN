@@ -71,10 +71,12 @@
     <Reference Include="Library">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\depend\CSharpTest.Net.Library.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Logging">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\depend\CSharpTest.Net.Logging.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="SharpSvn, Version=1.7001.1937.11872, Culture=neutral, PublicKeyToken=d729672594885a28, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>

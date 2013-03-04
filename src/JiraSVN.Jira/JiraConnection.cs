@@ -299,7 +299,7 @@ namespace CSharpTest.Net.JiraSVN.Jira
             var remoteWorklog = new RemoteWorklog();
             remoteWorklog.comment = "Time logged";
             remoteWorklog.timeSpent = timeSpent;
-            remoteWorklog.startDate = new DateTime();
+            remoteWorklog.startDate = DateTime.Now;
 
             switch (method)
             {
