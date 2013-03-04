@@ -155,8 +155,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Properties\DataSources\CSharpTest.Net.SvnPlugin.Interfaces.IIssueFilter.datasource" />
-    <None Include="Properties\DataSources\CSharpTest.Net.SvnPlugin.UI.IssuesListView.datasource" />
     <None Include="SvnPlugin.reg">
     </None>
   </ItemGroup>
