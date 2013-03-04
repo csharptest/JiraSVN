@@ -62,6 +62,7 @@
 						<File Id="F__CSharpTest.Net.JiraSVN.Plugin.dll.config" Name="CSharpTest.Net.JiraSVN.Plugin.dll.config" />
 						<File Id="F__Tortoise.ico" Name="Tortoise.ico" Source="$(var.SolutionDir)res\Tortoise.ico" />
 						<File Id="F__LICENSE_2.0.txt" Name="LICENSE-2.0.txt" />
+						<File Id="F__SharpSvn.dll" Name="SharpSvn.dll" Source="$(var.SolutionDir)depend\SharpSvn\$(var.Platform)\SharpSvn.dll" />
 					</Component>
 				</Directory>
 			</Directory>
