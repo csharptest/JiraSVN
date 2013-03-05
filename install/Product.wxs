@@ -37,32 +37,20 @@
 		<Property Id="ARPHELPLINK" Value="$(var.ManufacturerLink)" />
 
 		<Directory Id="TARGETDIR" Name="SourceDir">
-
-			<Directory Id="GAC" Name="GAC" FileSource="$(var.SourceFolder)">
-				<Component Id="C__CSharpTest.Net.Library.dll" Guid="{52AB2A01-221E-4A5C-8562-50073E369BD7}" Win64="$(var.Win64)">
-					<File Id="F__CSharpTest.Net.Library.dll" Name="CSharpTest.Net.Library.dll" Assembly=".net" KeyPath="yes" />
-				</Component>
-				<Component Id="C__CSharpTest.Net.Logging.dll" Guid="{73D00187-9758-4E0C-B680-F049801B2F66}" Win64="$(var.Win64)">
-					<File Id="F__CSharpTest.Net.Logging.dll" Name="CSharpTest.Net.Logging.dll" Assembly=".net" KeyPath="yes" />
-				</Component>
-				<Component Id="C__JiraSVN.Common.dll" Guid="{0B5BD3B8-5DDA-49F8-940F-2145B94CAD83}" Win64="$(var.Win64)">
-					<File Id="F__JiraSVN.Common.dll" Name="JiraSVN.Common.dll" Assembly=".net" KeyPath="yes" />
-				</Component>
-				<Component Id="C__JiraSVN.Jira.dll" Guid="{B7008394-7B4A-4C60-A585-A0A42843AB62}" Win64="$(var.Win64)">
-					<File Id="F__JiraSVN.Jira.dll" Name="JiraSVN.Jira.dll" Assembly=".net" KeyPath="yes" />
-				</Component>
-			</Directory>
-
 			<Directory Id="$(var.PlatformProgramFilesFolder)">
 				<Directory Id="INSTALLLOCATION" Name="$(var.ProductNameBase)" FileSource="$(var.SourceFolder)">
 					<Component Id="C__JiraSVN" Guid="{CDE2D29D-41AB-4ACC-9174-B4D866FA801D}" Win64="$(var.Win64)">
+						<File Id="F__CSharpTest.Net.Library.dll" Name="CSharpTest.Net.Library.dll" />
+						<File Id="F__CSharpTest.Net.Logging.dll" Name="CSharpTest.Net.Logging.dll" />
+						<File Id="F__JiraSVN.Common.dll" Name="JiraSVN.Common.dll" />
 						<File Id="F__JiraSVN.Editor.exe" Name="JiraSVN.Editor.exe" KeyPath="yes" />
 						<File Id="F__JiraSVN.Editor.exe.config" Name="JiraSVN.Editor.exe.config" />
+						<File Id="F__JiraSVN.Jira.dll" Name="JiraSVN.Jira.dll" />
 						<File Id="F__JiraSVN.Plugin.dll" Name="JiraSVN.Plugin.dll" />
 						<File Id="F__JiraSVN.Plugin.dll.config" Name="JiraSVN.Plugin.dll.config" />
-						<File Id="F__Tortoise.ico" Name="Tortoise.ico" Source="$(var.SolutionDir)res\Tortoise.ico" />
-						<File Id="F__LICENSE_2.0.txt" Name="LICENSE-2.0.txt" />
 						<File Id="F__SharpSvn.dll" Name="SharpSvn.dll" Source="$(var.SolutionDir)depend\SharpSvn\$(var.Platform)\SharpSvn.dll" />
+						<File Id="F__Tortoise.ico" Name="Tortoise.ico" Source="$(var.SolutionDir)res\Tortoise.ico" />
+						<File Id="F__LICENSE_2.0.txt" Name="$(var.SolutionDir)LICENSE-2.0.txt" />
 					</Component>
 				</Directory>
 			</Directory>
@@ -95,15 +83,7 @@
 			</Component>
 		</Directory>
 
-		<ComponentGroup Id="CG__GAC">
-			<ComponentRef Id="C__CSharpTest.Net.Library.dll" />
-			<ComponentRef Id="C__CSharpTest.Net.Logging.dll" />
-			<ComponentRef Id="C__JiraSVN.Common.dll" />
-			<ComponentRef Id="C__JiraSVN.Jira.dll" />
-		</ComponentGroup>
-
 		<Feature Id="JiraSVN" Title="JiraSVN" Level="1">
-			<ComponentGroupRef Id="CG__GAC" />
 			<ComponentRef Id="C__JiraSVN" />
 			<ComponentRef Id="C__Registry" />
 		</Feature>
