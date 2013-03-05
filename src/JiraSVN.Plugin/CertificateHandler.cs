@@ -17,10 +17,10 @@ using System.Net;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
-using CSharpTest.Net.JiraSVN.Plugin.Properties;
+using JiraSVN.Plugin.Properties;
 using CSharpTest.Net.Serialization;
 
-namespace CSharpTest.Net.JiraSVN.Plugin
+namespace JiraSVN.Plugin
 {
     static class CertificateHandler
     {

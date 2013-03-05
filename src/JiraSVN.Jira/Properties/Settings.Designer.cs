@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CSharpTest.Net.JiraSVN.Jira.Properties {
+namespace JiraSVN.Jira.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -26,9 +26,9 @@ namespace CSharpTest.Net.JiraSVN.Jira.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:8080/rpc/soap/jirasoapservice-v2")]
-        public string CSharpTest_Net_JiraSVN_Jira_WebReference_JiraSoapServiceService {
+        public string JiraSVN_Jira_WebReference_JiraSoapServiceService {
             get {
-                return ((string)(this["CSharpTest_Net_JiraSVN_Jira_WebReference_JiraSoapServiceService"]));
+                return ((string)(this["JiraSVN_Jira_WebReference_JiraSoapServiceService"]));
             }
         }
     }

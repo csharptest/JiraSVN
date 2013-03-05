@@ -16,9 +16,9 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
-using CSharpTest.Net.JiraSVN.Common.Interfaces;
+using JiraSVN.Common.Interfaces;
 
-namespace CSharpTest.Net.JiraSVN.Plugin.UI
+namespace JiraSVN.Plugin.UI
 {
 	/// <summary>
 	/// A simple binding list interface IBindingList[T] that doubles as an IList[T]

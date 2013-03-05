@@ -15,7 +15,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace CSharpTest.Net.JiraSVN.Plugin
+namespace JiraSVN.Plugin
 {
 	partial class PasswordEntry : Form
 	{

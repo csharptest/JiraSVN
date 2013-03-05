@@ -14,9 +14,9 @@
 #endregion
 using System;
 using System.Web.Services.Protocols;
-using CSharpTest.Net.JiraSVN.Common.Interfaces;
+using JiraSVN.Common.Interfaces;
 
-namespace CSharpTest.Net.JiraSVN.Jira
+namespace JiraSVN.Jira
 {
 	/// <summary>
 	/// Provides an initial connection to Jira Services

@@ -16,11 +16,11 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
-using CSharpTest.Net.JiraSVN.Common.Interfaces;
+using JiraSVN.Common.Interfaces;
 using CSharpTest.Net.Reflection;
 using CSharpTest.Net.Serialization;
 
-namespace CSharpTest.Net.JiraSVN.Plugin.UI
+namespace JiraSVN.Plugin.UI
 {
 	class IssuesListView : IDisposable, INotifyPropertyChanged
 	{

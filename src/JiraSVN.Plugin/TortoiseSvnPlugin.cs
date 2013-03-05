@@ -19,8 +19,8 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 using CSharpTest.Net.Crypto;
-using CSharpTest.Net.JiraSVN.Common.Interfaces;
-using CSharpTest.Net.JiraSVN.Plugin.UI;
+using JiraSVN.Common.Interfaces;
+using JiraSVN.Plugin.UI;
 using CSharpTest.Net.Serialization;
 using CSharpTest.Net.WinForms;
 using Interop.BugTraqProvider;
@@ -28,12 +28,12 @@ using Microsoft.Win32;
 using System.Reflection;
 using System.ComponentModel;
 
-namespace CSharpTest.Net.JiraSVN.Plugin
+namespace JiraSVN.Plugin
 {
 	/// <summary>
 	/// COM Registered InterOp for TortoiseSVN integration
 	/// </summary>
-    [ComVisible(true), ProgId("CSharpTest.Net.JiraSVN.Plugin.TortoiseSvnPlugin"), Guid(GUID), ClassInterface(ClassInterfaceType.AutoDual)]
+    [ComVisible(true), ProgId("JiraSVN.Plugin.TortoiseSvnPlugin"), Guid(GUID), ClassInterface(ClassInterfaceType.AutoDual)]
     public class TortoiseSvnPlugin : IDisposable, IBugTraqProvider, IBugTraqProvider2
 	{
         const string GUID = "CF732FD7-AA8A-4E9D-9E15-025E4D1A7E9D";
@@ -104,7 +104,7 @@ namespace CSharpTest.Net.JiraSVN.Plugin
 					Log.Verbose("IIssuesService = '{0}'", fullClass);
 
 					if (string.IsNullOrEmpty(fullClass))
-						throw new ApplicationException("Unable to locate CSharpTest.Net.JiraSVN.Common.Interfaces.IIssuesService entry in app.config");
+						throw new ApplicationException("Unable to locate JiraSVN.Common.Interfaces.IIssuesService entry in app.config");
 					_connector = (IIssuesService)Type.GetType(fullClass, true).InvokeMember("", System.Reflection.BindingFlags.CreateInstance, null, null, null);
 				   
                     Log.Verbose("Connector Created");

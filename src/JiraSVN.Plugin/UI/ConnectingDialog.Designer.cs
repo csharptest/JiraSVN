@@ -1,4 +1,4 @@
-﻿namespace CSharpTest.Net.JiraSVN.Plugin.UI
+﻿namespace JiraSVN.Plugin.UI
 {
     partial class ConnectingDialog
     {

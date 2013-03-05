@@ -7,7 +7,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{9208F806-D81A-4C53-8805-49827FD399E2}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>CSharpTest.Net.JiraSVN.Editor</RootNamespace>
+    <RootNamespace>JiraSVN.Editor</RootNamespace>
     <AssemblyName>JiraSVN.Editor</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <RunPostBuildEvent>Always</RunPostBuildEvent>

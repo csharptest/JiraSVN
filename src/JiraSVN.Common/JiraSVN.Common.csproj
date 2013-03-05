@@ -8,7 +8,7 @@
     <ProjectGuid>{702EC31A-EAB5-4159-B9AC-24815F179550}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CSharpTest.Net.JiraSVN.Common</RootNamespace>
+    <RootNamespace>JiraSVN.Common</RootNamespace>
     <AssemblyName>JiraSVN.Common</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

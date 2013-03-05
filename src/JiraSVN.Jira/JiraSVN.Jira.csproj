@@ -7,7 +7,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{73680B86-524B-4296-90CE-740B2486D279}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>CSharpTest.Net.JiraSVN.Jira</RootNamespace>
+    <RootNamespace>JiraSVN.Jira</RootNamespace>
     <AssemblyName>JiraSVN.Jira</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <StartupObject>
@@ -297,7 +297,7 @@
       <CachedDynamicPropName>
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>CSharpTest_Net_JiraSVN_Jira_WebReference_JiraSoapServiceService</CachedSettingsPropName>
+      <CachedSettingsPropName>Jira_WebReference_JiraSoapServiceService</CachedSettingsPropName>
     </WebReferenceUrl>
   </ItemGroup>
   <ItemGroup>

@@ -14,7 +14,7 @@
 #endregion
 using System;
 
-namespace CSharpTest.Net.JiraSVN.Common.Interfaces
+namespace JiraSVN.Common.Interfaces
 {
 	/// <summary>
 	/// Wraps an established connection to an issue tracking system

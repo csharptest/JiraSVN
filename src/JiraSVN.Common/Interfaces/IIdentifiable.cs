@@ -13,7 +13,7 @@
  */
 #endregion
 
-namespace CSharpTest.Net.JiraSVN.Common.Interfaces
+namespace JiraSVN.Common.Interfaces
 {
 	/// <summary>
 	/// Represents a displayable and identifiable thing within the issue tracking system.

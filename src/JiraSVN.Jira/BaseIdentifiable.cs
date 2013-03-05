@@ -13,10 +13,10 @@
  */
 #endregion
 using System;
-using CSharpTest.Net.JiraSVN.Common.Interfaces;
-using CSharpTest.Net.JiraSVN.Jira.Jira;
+using JiraSVN.Common.Interfaces;
+using JiraSVN.Jira.Jira;
 
-namespace CSharpTest.Net.JiraSVN.Jira
+namespace JiraSVN.Jira
 {
 	class BaseIdentifiable<T> : IIdentifiable
 	{

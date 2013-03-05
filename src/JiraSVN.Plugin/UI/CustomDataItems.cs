@@ -12,9 +12,9 @@
  * limitations under the License.
  */
 #endregion
-using CSharpTest.Net.JiraSVN.Common.Interfaces;
+using JiraSVN.Common.Interfaces;
 
-namespace CSharpTest.Net.JiraSVN.Plugin.UI
+namespace JiraSVN.Plugin.UI
 {
 	class AllUsersFilter : IIssueUser
 	{

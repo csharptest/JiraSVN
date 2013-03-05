@@ -15,7 +15,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace CSharpTest.Net.JiraSVN.Plugin.UI
+namespace JiraSVN.Plugin.UI
 {
 	/// <summary>
 	/// What is this for?

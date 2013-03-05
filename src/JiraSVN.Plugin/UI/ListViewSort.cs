@@ -17,7 +17,7 @@ using System.Collections;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
-namespace CSharpTest.Net.JiraSVN.Plugin.UI
+namespace JiraSVN.Plugin.UI
 {
 	class ListViewSort
 	{
