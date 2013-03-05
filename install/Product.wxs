@@ -50,7 +50,7 @@
 						<File Id="F__JiraSVN.Plugin.dll.config" Name="JiraSVN.Plugin.dll.config" />
 						<File Id="F__SharpSvn.dll" Name="SharpSvn.dll" Source="$(var.SolutionDir)depend\SharpSvn\$(var.Platform)\SharpSvn.dll" />
 						<File Id="F__Tortoise.ico" Name="Tortoise.ico" Source="$(var.SolutionDir)res\Tortoise.ico" />
-						<File Id="F__LICENSE_2.0.txt" Name="$(var.SolutionDir)LICENSE-2.0.txt" />
+						<File Id="F__LICENSE_2.0.txt" Name="LICENSE-2.0.txt" Source="$(var.SolutionDir)LICENSE-2.0.txt" />
 					</Component>
 				</Directory>
 			</Directory>
