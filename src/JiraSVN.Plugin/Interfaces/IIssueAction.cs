@@ -15,7 +15,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace CSharpTest.Net.SvnPlugin.Interfaces
+namespace JiraSVN.Plugin.Interfaces
 {
 	/// <summary>
 	/// Represents an activity/action that can be performed on an issue

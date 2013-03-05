@@ -15,7 +15,7 @@
 using System;
 using System.ComponentModel;
 
-namespace CSharpTest.Net.SvnPlugin.Interfaces
+namespace JiraSVN.Plugin.Interfaces
 {
     ///<summary>
     /// Defines method Jira will use to update Estimated time.

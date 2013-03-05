@@ -17,7 +17,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
 
-namespace CSharpTest.Net.SvnPlugin.UI
+namespace JiraSVN.Plugin.UI
 {
 	class ImmediateUpdateForm : IDisposable
 	{

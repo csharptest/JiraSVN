@@ -15,7 +15,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace CSharpTest.Net.SvnPlugin.Interfaces
+namespace JiraSVN.Plugin.Interfaces
 {
 	/// <summary>
 	/// Wraps an established connection to an issue tracking system

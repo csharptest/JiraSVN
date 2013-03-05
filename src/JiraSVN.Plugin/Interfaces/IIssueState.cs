@@ -15,7 +15,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace CSharpTest.Net.SvnPlugin.Interfaces
+namespace JiraSVN.Plugin.Interfaces
 {
 	/// <summary>
 	/// Represents the current state of an issue (ie. Open, Closed, Resolved, etc.)
