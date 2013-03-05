@@ -63,7 +63,7 @@
 					</RegistryKey>
 				</RegistryKey>
 				<RegistryKey Root="HKCR" Key="CLSID\{CF732FD7-AA8A-4E9D-9E15-025E4D1A7E9D}" ForceDeleteOnUninstall="yes">
-					<RegistryValue Value="JiraSVN.Plugin.TortoiseSvnPlugin" Type="string" Action="write" />
+					<RegistryValue Value="TortoiseSVN Jira Plugin" Type="string" Action="write" />
 					<RegistryKey Key="ProgId">
 						<RegistryValue Value="JiraSVN.Plugin.TortoiseSvnPlugin" Type="string" Action="write" />
 					</RegistryKey>
