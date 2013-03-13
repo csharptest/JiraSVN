@@ -13,9 +13,9 @@
  */
 #endregion
 using System;
-using CSharpTest.Net.JiraSVN.Common.Interfaces;
+using JiraSVN.Common.Interfaces;
 
-namespace CSharpTest.Net.JiraSVN.Plugin.UI
+namespace JiraSVN.Plugin.UI
 {
 	class IssueItemView : IIssue
 	{

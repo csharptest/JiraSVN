@@ -15,7 +15,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace CSharpTest.Net.SvnPlugin.Interfaces
+namespace JiraSVN.Plugin.Interfaces
 {
 	/// <summary>
 	/// Represents a user of the issue tracking system, used to identify who reported the issue and 

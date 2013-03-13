@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<?include Variables.wxi ?>
+
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+	<Product Id="$(var.ProductCode)"
+			 UpgradeCode="{06CE0F15-76E1-4EF2-9B81-1EE0B88BCF6E}"
+			 Name="$(var.ProductName)"
+			 Version="$(var.ProductVersion)"
+			 Manufacturer="$(var.Manufacturer)"
+			 Language="1033"
+			 Codepage="1252">
+
+		<Package Comments="A plugin for TortoiseSVN to access the JIRA issue tracker."
+				 InstallerVersion="200"
+				 Platform="$(var.Platform)"
+				 Languages="1033"
+				 SummaryCodepage="1252"
+				 InstallPrivileges="elevated"
+				 Compressed="yes" />
+
+		<MajorUpgrade Schedule="afterInstallValidate"
+					  AllowDowngrades="no"
+					  DowngradeErrorMessage="There is a later version of this product installed" />
+
+		<Media Id="1" Cabinet="Data.cab" EmbedCab="yes" />
+
+		<Property Id="ALLUSERS" Value="1" />
+
+		<Icon Id="I__Application" SourceFile="$(var.SolutionDir)res\Tortoise.ico" />
+
+		<Property Id="ARPPRODUCTICON" Value="I__Application" />
+		<Property Id="ARPCONTACT" Value="CSharpTest.Net" />
+		<Property Id="ARPCOMMENTS" Value="A plugin for TortoiseSVN to access the JIRA issue tracker." />
+		<Property Id="ARPURLINFOABOUT" Value="$(var.ManufacturerLink)" />
+		<Property Id="ARPHELPLINK" Value="$(var.ManufacturerLink)" />
+
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="$(var.PlatformProgramFilesFolder)">
+				<Directory Id="INSTALLLOCATION" Name="$(var.ProductNameBase)" FileSource="$(var.SourceFolder)">
+					<Component Id="C__JiraSVN" Guid="{CDE2D29D-41AB-4ACC-9174-B4D866FA801D}" Win64="$(var.Win64)">
+						<File Id="F__CSharpTest.Net.Library.dll" Name="CSharpTest.Net.Library.dll" />
+						<File Id="F__CSharpTest.Net.Logging.dll" Name="CSharpTest.Net.Logging.dll" />
+						<File Id="F__JiraSVN.Common.dll" Name="JiraSVN.Common.dll" />
+						<File Id="F__JiraSVN.Editor.exe" Name="JiraSVN.Editor.exe" KeyPath="yes" />
+						<File Id="F__JiraSVN.Editor.exe.config" Name="JiraSVN.Editor.exe.config" />
+						<File Id="F__JiraSVN.Jira.dll" Name="JiraSVN.Jira.dll" />
+						<File Id="F__JiraSVN.Plugin.dll" Name="JiraSVN.Plugin.dll" />
+						<File Id="F__JiraSVN.Plugin.dll.config" Name="JiraSVN.Plugin.dll.config" />
+						<File Id="F__SharpSvn.dll" Name="SharpSvn.dll" Source="$(var.SolutionDir)depend\SharpSvn\$(var.Platform)\SharpSvn.dll" />
+						<File Id="F__Tortoise.ico" Name="Tortoise.ico" Source="$(var.SolutionDir)res\Tortoise.ico" />
+						<File Id="F__LICENSE_2.0.txt" Name="LICENSE-2.0.txt" Source="$(var.SolutionDir)LICENSE-2.0.txt" />
+					</Component>
+				</Directory>
+			</Directory>
+
+			<Component Id="C__Registry" Guid="{40D60013-3C50-4370-983D-D54F994D30D5}" Win64="$(var.Win64)">
+				<RegistryKey Root="HKCR" Key="JiraSVN.Plugin.TortoiseSvnPlugin" ForceDeleteOnUninstall="yes">
+					<RegistryValue Value="JiraSVN.Plugin.TortoiseSvnPlugin" Type="string" KeyPath="yes" Action="write" />
+					<RegistryKey Key="CLSID">
+						<RegistryValue Value="{CF732FD7-AA8A-4E9D-9E15-025E4D1A7E9D}" Type="string" Action="write" />
+					</RegistryKey>
+				</RegistryKey>
+				<RegistryKey Root="HKCR" Key="CLSID\{CF732FD7-AA8A-4E9D-9E15-025E4D1A7E9D}" ForceDeleteOnUninstall="yes">
+					<RegistryValue Value="TortoiseSVN Jira Plugin" Type="string" Action="write" />
+					<RegistryKey Key="ProgId">
+						<RegistryValue Value="JiraSVN.Plugin.TortoiseSvnPlugin" Type="string" Action="write" />
+					</RegistryKey>
+					<RegistryKey Key="Implemented Categories">
+						<RegistryKey Key="{3494FA92-B139-4730-9591-01135D5E7831}" ForceCreateOnInstall="yes" />
+						<RegistryKey Key="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" ForceCreateOnInstall="yes" />
+					</RegistryKey>
+					<RegistryKey Key="InprocServer32">
+						<RegistryValue Value="mscoree.dll" Type="string" Action="write" />
+						<RegistryValue Name="RuntimeVersion" Value="v2.0.50727" Type="string" Action="write" />
+						<RegistryValue Name="Assembly" Value="JiraSVN.Plugin, Version=3.0.0.0, Culture=neutral, PublicKeyToken=60c82babf932569d" Type="string" Action="write" />
+						<RegistryValue Name="Class" Value="JiraSVN.Plugin.TortoiseSvnPlugin" Type="string" Action="write" />
+						<RegistryValue Name="CodeBase" Value="[INSTALLLOCATION]JiraSVN.Plugin.dll" Type="string" Action="write" />
+						<RegistryValue Name="ThreadingModel" Value="Both" Type="string" Action="write" />
+					</RegistryKey>
+				</RegistryKey>
+			</Component>
+		</Directory>
+
+		<Feature Id="JiraSVN" Title="JiraSVN" Level="1">
+			<ComponentRef Id="C__JiraSVN" />
+			<ComponentRef Id="C__Registry" />
+		</Feature>
+
+		<UIRef Id="WixUI_Mondo"/>
+		<UIRef Id="WixUI_ErrorProgressText" />
+
+		<WixVariable Id="WixUILicenseRtf" Value="$(var.SolutionDir)LICENSE-2.0.rtf" />
+
+	</Product>
+</Wix>

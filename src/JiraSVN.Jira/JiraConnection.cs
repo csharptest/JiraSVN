@@ -14,11 +14,11 @@
 #endregion
 using System;
 using System.Collections.Generic;
-using CSharpTest.Net.JiraSVN.Common.Interfaces;
-using CSharpTest.Net.JiraSVN.Jira.Jira;
+using JiraSVN.Common.Interfaces;
+using JiraSVN.Jira.Jira;
 using CSharpTest.Net.Serialization;
 
-namespace CSharpTest.Net.JiraSVN.Jira
+namespace JiraSVN.Jira
 {
 	class JiraConnection : IIssuesServiceConnection
 	{
@@ -299,7 +299,7 @@ namespace CSharpTest.Net.JiraSVN.Jira
             var remoteWorklog = new RemoteWorklog();
             remoteWorklog.comment = "Time logged";
             remoteWorklog.timeSpent = timeSpent;
-            remoteWorklog.startDate = new DateTime();
+            remoteWorklog.startDate = DateTime.Now;
 
             switch (method)
             {

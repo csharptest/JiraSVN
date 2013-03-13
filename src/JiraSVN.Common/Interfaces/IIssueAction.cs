@@ -13,7 +13,7 @@
  */
 #endregion
 
-namespace CSharpTest.Net.JiraSVN.Common.Interfaces
+namespace JiraSVN.Common.Interfaces
 {
 	/// <summary>
 	/// Represents an activity/action that can be performed on an issue

@@ -8,10 +8,11 @@
     <ProjectGuid>{702EC31A-EAB5-4159-B9AC-24815F179550}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CSharpTest.Net.JiraSVN.Common</RootNamespace>
-    <AssemblyName>CSharpTest.Net.JiraSVN.Common</AssemblyName>
+    <RootNamespace>JiraSVN.Common</RootNamespace>
+    <AssemblyName>JiraSVN.Common</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>../../keys/jirasvn.snk</AssemblyOriginatorKeyFile>
     <FileUpgradeFlags>
@@ -42,7 +43,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\..\bin\Debug\CSharpTest.Net.JiraSVN.Common.XML</DocumentationFile>
+    <DocumentationFile>..\..\bin\Debug\JiraSVN.Common.xml</DocumentationFile>
     <BaseAddress>7340032</BaseAddress>
     <RegisterForComInterop>false</RegisterForComInterop>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
@@ -55,12 +56,11 @@
     </DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\CSharpTest.Net.JiraSVN.Common.XML</DocumentationFile>
+    <DocumentationFile>..\..\bin\Release\JiraSVN.Common.xml</DocumentationFile>
     <BaseAddress>7340032</BaseAddress>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <RegisterForComInterop>false</RegisterForComInterop>
-    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>

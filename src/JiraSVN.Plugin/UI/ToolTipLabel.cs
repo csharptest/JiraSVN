@@ -16,7 +16,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace CSharpTest.Net.JiraSVN.Plugin.UI
+namespace JiraSVN.Plugin.UI
 {
 	class ToolTipLabel : Label
 	{

@@ -7,8 +7,8 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{CFF6CAA1-27A0-46FF-89D6-AD70F3575685}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>CSharpTest.Net.JiraSVN.Plugin</RootNamespace>
-    <AssemblyName>CSharpTest.Net.JiraSVN.Plugin</AssemblyName>
+    <RootNamespace>JiraSVN.Plugin</RootNamespace>
+    <AssemblyName>JiraSVN.Plugin</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <StartupObject>
     </StartupObject>
@@ -46,7 +46,7 @@
     <Optimize>False</Optimize>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <OutputPath>..\..\bin\Debug</OutputPath>
-    <DocumentationFile>..\..\bin\Debug\CSharpTest.Net.JiraSVN.Plugin.XML</DocumentationFile>
+    <DocumentationFile>..\..\bin\Debug\JiraSVN.Plugin.xml</DocumentationFile>
     <RegisterForComInterop>false</RegisterForComInterop>
     <DebugType>full</DebugType>
     <BaseAddress>5242880</BaseAddress>
@@ -58,7 +58,7 @@
     <DefineConstants>
     </DefineConstants>
     <OutputPath>..\..\bin\Release</OutputPath>
-    <DocumentationFile>..\..\bin\Release\CSharpTest.Net.JiraSVN.Plugin.XML</DocumentationFile>
+    <DocumentationFile>..\..\bin\Release\JiraSVN.Plugin.xml</DocumentationFile>
     <BaseAddress>5242880</BaseAddress>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
@@ -71,10 +71,12 @@
     <Reference Include="Library">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\depend\CSharpTest.Net.Library.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Logging">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\depend\CSharpTest.Net.Logging.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="SharpSvn, Version=1.7001.1937.11872, Culture=neutral, PublicKeyToken=d729672594885a28, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
@@ -153,8 +155,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Properties\DataSources\CSharpTest.Net.SvnPlugin.Interfaces.IIssueFilter.datasource" />
-    <None Include="Properties\DataSources\CSharpTest.Net.SvnPlugin.UI.IssuesListView.datasource" />
     <None Include="SvnPlugin.reg">
     </None>
   </ItemGroup>

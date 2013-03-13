@@ -1,4 +1,4 @@
-﻿namespace CSharpTest.Net.JiraSVN.Plugin
+﻿namespace JiraSVN.Plugin
 {
 	partial class OptionUrlEntry
 	{

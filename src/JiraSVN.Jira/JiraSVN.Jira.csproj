@@ -7,8 +7,8 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{73680B86-524B-4296-90CE-740B2486D279}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>CSharpTest.Net.JiraSVN.Jira</RootNamespace>
-    <AssemblyName>CSharpTest.Net.JiraSVN.Jira</AssemblyName>
+    <RootNamespace>JiraSVN.Jira</RootNamespace>
+    <AssemblyName>JiraSVN.Jira</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <StartupObject>
     </StartupObject>
@@ -47,8 +47,7 @@
     <Optimize>false</Optimize>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <OutputPath>..\..\bin\Debug</OutputPath>
-    <DocumentationFile>..\..\bin\Debug\CSharpTest.Net.JiraSVN.Jira.XML</DocumentationFile>
-    <GenerateSerializationAssemblies>On</GenerateSerializationAssemblies>
+    <DocumentationFile>..\..\bin\Debug\JiraSVN.Jira.xml</DocumentationFile>
     <DebugType>full</DebugType>
     <BaseAddress>6291456</BaseAddress>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
@@ -57,8 +56,7 @@
     <Optimize>true</Optimize>
     <DefineConstants>TRACE</DefineConstants>
     <OutputPath>..\..\bin\Release</OutputPath>
-    <DocumentationFile>..\..\bin\Release\CSharpTest.Net.JiraSVN.Jira.XML</DocumentationFile>
-    <GenerateSerializationAssemblies>On</GenerateSerializationAssemblies>
+    <DocumentationFile>..\..\bin\Release\JiraSVN.Jira.xml</DocumentationFile>
     <BaseAddress>6291456</BaseAddress>
     <DebugType>none</DebugType>
     <DebugSymbols>false</DebugSymbols>
@@ -108,7 +106,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="App.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -299,7 +297,7 @@
       <CachedDynamicPropName>
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>CSharpTest_Net_JiraSVN_Jira_WebReference_JiraSoapServiceService</CachedSettingsPropName>
+      <CachedSettingsPropName>Jira_WebReference_JiraSoapServiceService</CachedSettingsPropName>
     </WebReferenceUrl>
   </ItemGroup>
   <ItemGroup>

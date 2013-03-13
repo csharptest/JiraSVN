@@ -16,9 +16,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
-using CSharpTest.Net.JiraSVN.Plugin;
+using JiraSVN.Plugin;
 
-namespace CSharpTest.Net.JiraSVN.Editor
+namespace JiraSVN.Editor
 {
 	static class Program
 	{

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace CSharpTest.Net.JiraSVN.Plugin.UI
+namespace JiraSVN.Plugin.UI
 {
     /// <summary>
     /// A connection Dialog

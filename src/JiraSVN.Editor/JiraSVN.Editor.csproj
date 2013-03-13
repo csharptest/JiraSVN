@@ -7,8 +7,8 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{9208F806-D81A-4C53-8805-49827FD399E2}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>CSharpTest.Net.JiraSVN.Editor</RootNamespace>
-    <AssemblyName>CSharpTest.Net.JiraSVN.Editor</AssemblyName>
+    <RootNamespace>JiraSVN.Editor</RootNamespace>
+    <AssemblyName>JiraSVN.Editor</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <RunPostBuildEvent>Always</RunPostBuildEvent>
     <DocumentationFile Condition="'$(OutputType)' == 'Library'">$(OutputPath)$(AssemblyName).xml</DocumentationFile>
@@ -45,7 +45,7 @@
     <Optimize>False</Optimize>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <OutputPath>..\..\bin\Debug</OutputPath>
-    <DocumentationFile>..\..\bin\Debug\CSharpTest.Net.JiraSVN.Editor.XML</DocumentationFile>
+    <DocumentationFile>..\..\bin\Debug\JiraSVN.Editor.xml</DocumentationFile>
     <DebugType>full</DebugType>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
@@ -54,7 +54,7 @@
     <DefineConstants>
     </DefineConstants>
     <OutputPath>..\..\bin\Release</OutputPath>
-    <DocumentationFile>..\..\bin\Release\CSharpTest.Net.JiraSVN.Editor.XML</DocumentationFile>
+    <DocumentationFile>..\..\bin\Release\JiraSVN.Editor.xml</DocumentationFile>
     <DebugType>none</DebugType>
     <DebugSymbols>false</DebugSymbols>
     <PlatformTarget>AnyCPU</PlatformTarget>

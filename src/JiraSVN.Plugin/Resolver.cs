@@ -18,7 +18,7 @@ using System.IO;
 using System.Reflection;
 using System.Threading;
 
-namespace CSharpTest.Net.JiraSVN.Plugin
+namespace JiraSVN.Plugin
 {
     static class Resolver
     {

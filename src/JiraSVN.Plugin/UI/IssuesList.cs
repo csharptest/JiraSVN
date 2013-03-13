@@ -16,10 +16,10 @@ using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
-using CSharpTest.Net.JiraSVN.Common.Interfaces;
+using JiraSVN.Common.Interfaces;
 using CSharpTest.Net.Reflection;
 
-namespace CSharpTest.Net.JiraSVN.Plugin.UI
+namespace JiraSVN.Plugin.UI
 {
     partial class IssuesList : Form
     {

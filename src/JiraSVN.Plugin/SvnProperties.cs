@@ -16,7 +16,7 @@ using System;
 using System.IO;
 using SharpSvn;
 
-namespace CSharpTest.Net.JiraSVN.Plugin
+namespace JiraSVN.Plugin
 {
 	class SvnProperties
 	{
