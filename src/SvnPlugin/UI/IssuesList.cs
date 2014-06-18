@@ -105,6 +105,7 @@ namespace CSharpTest.Net.SvnPlugin.UI
 		{
 			//Populate initial items...
 			FoundIssues_ListChanged(null, new ListChangedEventArgs(ListChangedType.Reset, 0));
+            _comment.Focus();
 		}
 
 		void Form_Closing(object sender, FormClosingEventArgs e)
@@ -220,6 +221,13 @@ namespace CSharpTest.Net.SvnPlugin.UI
         {
             if (showTimeTrackingToolStripMenuItem.Checked)
                 showTimeTrackingToolStripMenuItem.PerformClick();
+        }
+
+        protected override void OnKeyDown(KeyEventArgs e) {
+            base.OnKeyDown(e);
+            if(e.Control && !e.Alt && !e.Shift && e.KeyCode == Keys.Return) {
+                okButton.PerformClick();
+            }
         }
 	}
 }

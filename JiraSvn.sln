@@ -1,7 +1,15 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Installs", "Installs", "{F6560B64-884B-4DE8-98D7-F2F2FEBB6B9D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Files", "Files", "{E1990692-8620-4A91-8E10-8075633F04B7}"
+	ProjectSection(SolutionItems) = preProject
+		build.bat = build.bat
+		tools\copyright.txt = tools\copyright.txt
+		makefile = makefile
+		README = README
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SvnPlugin", "src\SvnPlugin\SvnPlugin.csproj", "{CFF6CAA1-27A0-46FF-89D6-AD70F3575685}"
 EndProject
@@ -22,14 +30,6 @@ Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Jira SVN Plugin-x64", "inst
 		{89199631-4493-44F6-AFCB-D3A49A30BDF6} = {89199631-4493-44F6-AFCB-D3A49A30BDF6}
 		{73680B86-524B-4296-90CE-740B2486D279} = {73680B86-524B-4296-90CE-740B2486D279}
 		{CFF6CAA1-27A0-46FF-89D6-AD70F3575685} = {CFF6CAA1-27A0-46FF-89D6-AD70F3575685}
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Files", "Files", "{E1990692-8620-4A91-8E10-8075633F04B7}"
-	ProjectSection(SolutionItems) = preProject
-		build.bat = build.bat
-		tools\copyright.txt = tools\copyright.txt
-		makefile = makefile
-		README = README
 	EndProjectSection
 EndProject
 Global

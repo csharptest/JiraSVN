@@ -14,6 +14,7 @@
 #endregion
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
@@ -38,7 +39,7 @@ namespace CSharpTest.Net.SvnPlugin
 	{
         const string GUID = "CF732FD7-AA8A-4E9D-9E15-025E4D1A7E9D";
         const string CLSID = "{" + GUID + "}";
-		const string BUTTON_TEXT = "{0} Issues";
+		const string BUTTON_TEXT = "(&J){0} Issues";
 
 		private IIssuesService _connector = null;
 		private IIssuesServiceConnection _service = null;
@@ -366,12 +367,18 @@ namespace CSharpTest.Net.SvnPlugin
 		{
 			try
 			{
-				bugIDOut = bugID;
+			    string productName = Process.GetCurrentProcess().MainModule.FileVersionInfo.ProductName;
+			    bool isGitOrHg = productName == "TortoiseGit" || productName == "TortoiseHg";
+			    if(!isGitOrHg) {
+    				bugIDOut = bugID;
+			    }
+                
+			    bugIDOut = string.Empty;
 				revPropNames = new string[0];
 				revPropValues = new string[0];
 
 				string message = GetCommitMsg(hParentWnd, parameters, originalMessage, commonRoot, pathList);
-				if (_issues != null)
+				if (_issues != null && !isGitOrHg)
 				{
 					foreach (IIssue issue in _issues.SelectedIssues)
 					{ bugIDOut = issue.DisplayId; break; }
